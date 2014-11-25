@@ -16,5 +16,14 @@ Services
 	Taxonomic data services
 	-----------------------
 	
+		1. TAXON search
+		
+		Desription
+		----------
+		Free text or indexed field search through taxonomic data from multiple data sources. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from all taxonomic statuses or levels, i.e. kingdom to varieties.
+		
+		
+		
+	
 		
 
