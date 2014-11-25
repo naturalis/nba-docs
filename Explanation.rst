@@ -32,27 +32,6 @@ Services
       - whole path
       
      *General meta parameters*
-      For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query. 
+      For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
       
-      Paging parameters
       
-      ===================  ========================================================================
-      Name                 Description
-      ===================  ========================================================================
-      _maxResults          - _maxResults instructs NBA to return maximum amount of search results per page
-      ===================  ========================================================================
-
-     
-
-       
-
-     
-
-    
-    
-    
-  
-
-
-
-
