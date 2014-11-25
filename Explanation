@@ -2,28 +2,5 @@ Introduction
 ============
 Naturalis offers web services for free text and indexed field search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxons, specimen occurrences and multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored text documents in Elastic search document store.
 
-The following information has been made available per service type
 
-Add table with in document links
-
-Access
-======
-Add info on access to API. Input from Ayco.
-
-Services
-========
-	
-	Taxonomic data services
-	-----------------------
-	
-		1. TAXON search
-		
-		Desription
-		----------
-		Free text or indexed field search through taxonomic data from multiple data sources. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from all taxonomic statuses or levels, i.e. kingdom to varieties.
-		
-		
-		
-	
-		
 
