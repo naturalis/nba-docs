@@ -33,5 +33,20 @@ Services
       
      *General meta parameters*
       For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
-      
-      
+     
+     Paging parameters
+     
+     ===========   =========================================================================================================
+     Name          Description
+     ===========   =========================================================================================================
+     _maxResults      
+                   - _maxResults instructs NBA to return maximum amount of search results per page 
+                   - example: <base url>/taxon/search/?..&_maxResults=60, shows maximum amount of 60 documents in responses
+                   - default setting: _maxResults=10
+     _offset      
+                   - _offset instructs NBA to start filling first response from search result no = offset value + 1
+                   - example: <base url>/taxon/search/?..&_offset=100. In first response search result no 101 is first document in response 
+                   - default setting: _offset=0
+     ===========   =========================================================================================================
+     
+     
