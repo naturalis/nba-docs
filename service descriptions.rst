@@ -6,7 +6,6 @@ Access
 ======
 Access information will be made available soon. 
 
-
 Taxonomic data services
 =======================
 
@@ -14,16 +13,16 @@ Taxonomic data services
 --------------
  
 *Description*
-Free text or indexed field search through taxonomic data from multiple data sources. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from all taxonomic statuses or levels, i.e. kingdom to varieties.
+  Free text or indexed field search through taxonomic data from multiple data sources. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from all taxonomic statuses or levels, i.e. kingdom to varieties.
 
 *Requests*
-*url*
- The basic request url for free text search is:
- <base url>/taxon/search/?_search=[term], e.g. <base url>/taxon/search/?_search=Abies
- 
- The basic request url for indexed field search is:
- <base url>/taxon/search/?indexedField1=[term]&indexedField2[term], e.g. <base url>/taxon/search/?genusOrMonomial=Parus or genusOrMonomial=Parus&species=major
- 
+ *url*
+  The basic request url for free text search is:
+  <base url>/taxon/search/?_search=[term], e.g. <base url>/taxon/search/?_search=Abies
+  
+  The basic request url for indexed field search is:
+  <base url>/taxon/search/?indexedField1=[term]&indexedField2[term], e.g. <base url>/taxon/search/?genusOrMonomial=Parus or genusOrMonomial=Parus&species=major
+  
  
 *indexed field parameters*
  For indexed field search indexed field parameters
