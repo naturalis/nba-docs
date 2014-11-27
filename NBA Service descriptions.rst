@@ -53,7 +53,7 @@ Taxonomic data services
   The basic request url for indexed field search is:
   <base url>/taxon/search/?indexedField1=[term]&indexedField2[term], e.g. http://10.42.1.177:8080/v0/taxon/search/?genusOrMonomial=Parus
   
- *indexed field name(s) in a url*
+ *indexed field name(s) in an url*
   A taxon document incorporates an extensive set of taxonomic fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
 
   a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
@@ -61,7 +61,7 @@ Taxonomic data services
 
  .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
   
- *general meta parameters in a url*
+ *general meta parameters in an url*
   For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
 
   Paging parameters
