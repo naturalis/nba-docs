@@ -1,13 +1,13 @@
 Introduction
 ============
 
-This document gives an overview of the available search field per service
+This document lists an overview of the available search fields per NBA service and term handling per field for single terms, e.g. Parus or koolmees and compound terms, e.g. Parus major or Great Brittain.
 
 1. TAXON search
 ---------------
 
 ================================================= =================================================== ====================
-Field name                                        NBA aliasses                                        Term handling
+Field path                                        NBA aliasses                                        Term handling
 ================================================= =================================================== ====================
 acceptedName.genusOrMonomial                      genus, genusOrMonomial                              *term* match
 acceptedName.subgenus                             subgenus                                            exact match
@@ -43,7 +43,7 @@ experts.fullName                                  expert                        
 ------------------
 
 ================================================= =================================================== ====================
-Field name                                        NBA aliasses                                        Term handling
+Field path                                        NBA aliasses                                        Term handling
 ================================================= =================================================== ====================
 unitID                                            registrationNumber, unitID                          exact match                                      
 typeStatus                                        typeStatus                                          exact match
@@ -61,7 +61,7 @@ _geoshape (= geo search parameter)                not applicable                
 -----------------------
 
 ===================================================== ============================================ ====================
-Field name                                            NBA aliasses                                 Term handling
+Field path                                            NBA aliasses                                 Term handling
 ===================================================== ============================================ ====================
 defaultClassification.kingdom                         kingdom                                      exact match                         
 defaultClassification.phylum                          phylum                                       exact match
@@ -87,7 +87,7 @@ _geoshape (= geo search parameter)                    not applicable            
 -----------------------
 
 ========================================================== =============================================== =============
-Field name                                                 NBA aliasses                                    Term handling
+Field path                                                 NBA aliasses                                    Term handling
 ========================================================== =============================================== =============
 unitID                                                     registrationNumber, unitID                      exact match
 sexes                                                      sex                                             exact match
