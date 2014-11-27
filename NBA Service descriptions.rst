@@ -22,7 +22,7 @@ Multimedia data services
 Multimedia search                  requests  searchable_fields  responses  examples
 ================================== ========= ================== ========== =========
 
-.. _searchable_fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
+.. _searchable_fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
 Access
 ======
@@ -59,7 +59,7 @@ Taxonomic data services
   a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
   b. field aliasses, e.g. <base url>/taxon/search/?genus=Abies
 
- .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
+ .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
   
  *general meta parameters in an url*
   For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
