@@ -103,7 +103,9 @@ Taxonomic data services
                 - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=AND
                 - default setting: _andOr=AND
   ===========   =========================================================================================================
-  
+
+.. _responses:
+
 *Responses*
   
  *basic response structure*
@@ -116,7 +118,9 @@ Taxonomic data services
    Request = http://10.42.1.177/v0/taxon/search/?_search=Parus major. The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientificname with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major will have a high chance of ending up on top of the score list because the highest number of hits (full scientific name, genus, species)
 
 .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
- 
+
+.. _examples:
+
 *Examples*
 
  1. Free text search
