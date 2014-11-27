@@ -111,14 +111,6 @@ Taxonomic data services
  *basic response structure*
   The xsd structure of a taxon response can be viewed here (document reference to be added, reengineer xsd structure from xml with xml spy). 
 
- *term handling*
-  Single term handling per taxon search field is mentioned in this document_. Term handling on compound terms, e.g. Parus major, is more or less similar to term handling on single terms, e.g. Abies. Elastic search breaks compound terms into parts: individual term components. The term handling on components terms is equal to the term handling on the single terms. 
-
-  Example
-   Request = http://10.42.1.177/v0/taxon/search/?_search=Parus major. The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientificname with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major will have a high chance of ending up on top of the score list because the highest number of hits (full scientific name, genus, species)
-
-.. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
-
 .. _examples:
 
 *Examples*
