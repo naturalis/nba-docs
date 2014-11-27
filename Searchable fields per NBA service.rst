@@ -1,7 +1,15 @@
 Introduction
 ============
 
-This document lists an overview of the available search fields per NBA service and term handling per field for single terms, e.g. Parus or koolmees and compound terms, e.g. Parus major or Great Brittain.
+This document lists an overview of the search fields per NBA service and per search field the available field aliasses and the handling of search terms (term handling), e.g. Parus or Netherlands, by the NBA. 
+
+Term handling is executed for both single terms, e.g. Parus of Netherlands, and compound terms, e.g. Parus major or Great Brittain. 
+
+Note!
+Term handling on compound terms, e.g. Parus major, is more or less similar to term handling on single terms, e.g. Abies. NBA (an Elastic search implementation) breaks compound terms into parts: individual term components. The term handling on components terms is equal to the term handling on the single terms. 
+
+ A taxon example
+  Request = http://10.42.1.177/v0/taxon/search/?_search=Parus major. The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
 
 1. TAXON search
 ---------------
