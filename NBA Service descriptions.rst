@@ -2,7 +2,7 @@ Introduction
 ============
 Naturalis offers web services for free text and indexed field search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxons, specimen occurrences and multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored text documents in Elastic search document store. 
 
-Per service type the following information is available.
+Per service type the following information is available. 
 
 ================================== ========= ======== =========== =========
 Taxonomic data services
@@ -24,15 +24,11 @@ Multimedia data services
 Multimedia search                  requests fields     responses  examples
 ================================== ======== ========== ========== ========
 
-Kees :ref:'Link title<label-Jan1>'
-
 .. _fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
 
 Access
 ======
 The access to all Naturalis data services is open. 
-
-.. _label-Jan1:
 
 Taxonomic data services
 =======================
@@ -41,7 +37,9 @@ Taxonomic data services
 --------------
  
 *Description*
- Free text or indexed field search through taxonomic data from two data sources, i.e. 1. Nederlands Soortenregister, and 2. Catalogue of Life. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from basically species and subspecies. All searchable fields in taxon documents are listed here (refer to fields information per service document). 
+ Free text or indexed field search through taxonomic data from two data sources, i.e. 1. Nederlands Soortenregister, and 2. Catalogue of Life. It searches a specific predefined set of indexed taxon document fields and returns taxonomic data from basically species and subspecies. All searchable fields in taxon documents are listed here_
+
+.. _here: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service 
 
  Base url: http://10.42.1.177:8080/v0
 
