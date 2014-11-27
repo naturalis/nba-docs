@@ -26,7 +26,7 @@ Multimedia search                  requests fields     responses  examples
 
 Kees :ref:'Link title<label-Jan1>'
 
-.. _fields: http://www.naturalis.nl/
+.. _fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service
 
 Access
 ======
