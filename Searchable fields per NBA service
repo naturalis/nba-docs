@@ -1,0 +1,58 @@
+Introduction
+============
+
+This document gives an overview of the available search field per service
+
+1. TAXON SEARCH
+---------------
+
+================================================= =================================================== ====================
+Field name                                        NBA_aliasses                                        Term handling
+================================================= =================================================== ====================
+acceptedName.genusOrMonomial                      genus, genusOrMonomial                              *term* match
+acceptedName.subgenus                             subgenus                                            exact match
+acceptedName.specificEpithet                      species, speciesEpithet, specificEpithet            exact match
+acceptedName.infraspecificEpithet                 infraspecificEpithet, subspecies, subspeciesEpithet exact match
+acceptedName.experts.fullName                     expert                                              exact match
+acceptedName.experts.organization.name            expertOrganisation                                  exact match
+acceptedName.taxonomicStatus                      taxonomicStatus                                     exaxt match
+vernacularNames.name                              commonName, vernacularName                          *term* match
+vernacularNames.experts.fullName                  expert                                              exact match
+vernacularNames.experts.organization.name         expertOrganisation                                  exact match
+synonyms.genusOrMonomial                          genus, genusOrMonomial                              exact match
+synonyms.subgenus                                 subgenus                                            exact match
+synonyms.specificEpithet                          species, specificEpithet, speciesEpithet            exact match
+synonyms.infraspecificEpithet                     infraspecificEpithet, subspecies, subspeciesEpithet exact match
+synonyms.expert.fullName                          expert                                              exact match
+synonyms.expert.organization.name                 expertOrganisation                                  exact match
+synonyms.taxonomicStatus                          taxonomicStatus                                     exaxt match
+defaultClassification.kingdom                     kingdom                                             exact match
+defaultClassification.phylum                      phylum                                              exact match
+defaultClassification.className                   class, className                                    exact match 
+defaultClassification.order                       order                                               exact match
+defaultClassification.family                      family                                              exact match
+defaultClassification.genus                       genus, genusOrMonomial                              exact match
+defaultClassification.subgenus                    subgenus                                            exaxt match
+defaultClassification.specificEpithet             species, specificEpithet, speciesEpithet            exact match
+defaultClassification.infraspecificEpithet        infraspecificEpithet, subspecies, subspeciesEpithet exact match
+systemClassification.name  ???                       
+experts.fullName                                  expert                                              exact match
+================================================= =================================================== ====================
+
+2. SPECIMEN SEARCH
+------------------
+
+================================================= =================================================== ====================
+Field name                                        NBA_aliasses                                        Term handling
+================================================= =================================================== ====================
+unitID                                            registrationNumber, unitID                          exact match                                      
+typeStatus                                        typeStatus                                          exact match
+phaseOrStage                                      phaseOrStage                                        exact match
+sex                                               sex                                                 exact match
+collectorsFieldNumber                             collectorsFieldNumber                               exact match
+gatheringEvent.localityText                       locality, localityText                              *term* match
+gatheringEvent.gatheringAgents.fullName           HIER GEBLEVEN
+gatheringEvent.gatheringAgents.organization       
+gatheringEvent.dateTimeBegin
+_geoshape (= geo search parameter)
+================================================= =================================================== ====================
