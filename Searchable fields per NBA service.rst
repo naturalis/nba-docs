@@ -1,12 +1,13 @@
-Introduction
-============
+=================================
+Searchable fields per NBA service
+=================================
 
-This document lists an overview of the search fields per NBA service and per search field the available field aliasses and the handling of search terms (term handling), e.g. Parus or Netherlands, by the NBA. 
+This document lists an overview of the search fields per NBA service and per search field the available field aliasses and the handling of search terms (term handling), e.g. Parus or Netherlands, by the NBA.
 
-Term handling is executed for both single terms, e.g. Parus of Netherlands, and compound terms, e.g. Parus major or Great Brittain. 
+Term handling is executed for both single terms, e.g. Parus of Netherlands, and compound terms, e.g. Parus major or Great Brittain.
 
 Note!
-Term handling on compound terms, e.g. Parus major, is more or less similar to term handling on single terms, e.g. Abies. NBA (an Elastic search implementation) breaks compound terms into parts: individual term components. The term handling on components terms is equal to the term handling on the single terms. 
+Term handling on compound terms, e.g. Parus major, is more or less similar to term handling on single terms, e.g. Abies. NBA (an Elastic search implementation) breaks compound terms into parts: individual term components. The term handling on components terms is equal to the term handling on the single terms.
 
  A Taxon search example
   Request = http://10.42.1.177/v0/taxon/search/?_search=Parus major. The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
@@ -36,7 +37,7 @@ synonyms.expert.organization.name                 expertOrganisation            
 synonyms.taxonomicStatus                          taxonomicStatus                                     exaxt match
 defaultClassification.kingdom                     kingdom                                             exact match
 defaultClassification.phylum                      phylum                                              exact match
-defaultClassification.className                   class, className                                    exact match 
+defaultClassification.className                   class, className                                    exact match
 defaultClassification.order                       order                                               exact match
 defaultClassification.family                      family                                              exact match
 defaultClassification.genus                       genus, genusOrMonomial                              exact match
@@ -53,13 +54,13 @@ experts.fullName                                  expert                        
 ================================================= =================================================== ====================
 Field path                                        NBA aliasses                                        Term handling
 ================================================= =================================================== ====================
-unitID                                            registrationNumber, unitID                          exact match                                      
+unitID                                            registrationNumber, unitID                          exact match
 typeStatus                                        typeStatus                                          exact match
 phaseOrStage                                      phaseOrStage                                        exact match
 sex                                               sex                                                 exact match
 collectorsFieldNumber                             collectorsFieldNumber                               exact match
-gatheringEvent.localityText                       locality, localityText                              *term* match 
-gatheringEvent.gatheringAgents.fullName           collector, gatheringAgent                           exact match 
+gatheringEvent.localityText                       locality, localityText                              *term* match
+gatheringEvent.gatheringAgents.fullName           collector, gatheringAgent                           exact match
 gatheringEvent.gatheringAgents.organization       collector, gatheringAgent                           exact match
 gatheringEvent.dateTimeBegin                      collectingStartDate                                 exact match
 _geoshape (= geo search parameter)                not applicable                                      in geoshape match
@@ -71,13 +72,13 @@ _geoshape (= geo search parameter)                not applicable                
 ===================================================== ============================================ ====================
 Field path                                            NBA aliasses                                 Term handling
 ===================================================== ============================================ ====================
-defaultClassification.kingdom                         kingdom                                      exact match                         
+defaultClassification.kingdom                         kingdom                                      exact match
 defaultClassification.phylum                          phylum                                       exact match
 defaultClassification.className                       class, className                             exact match
 defaultClassification.order                           order                                        exact match
 defaultClassification.family                          family                                       exact match
 defaultClassification.genus                           genus, genusOrMonomial                       *term* match
-defaultClassification.subgenus                        subgenus                                     exact match 
+defaultClassification.subgenus                        subgenus                                     exact match
 defaultClassification.specificEpithet                 species, speciesEpither, specificEpithet     exact match
 defaultClassification.infraspecificEpithet            infraspecificEpithet, subpspecies            exact match
 systemClassification.name                             not applicable                               exact match
@@ -111,7 +112,7 @@ identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomia
 identifications.defaultClassification.subgenus             subgenus                                        exact match
 identifications.defaultClassification.specificEpithet      species, speciesEpithet, specificEpithet        exact match
 identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies                exact match
-identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          *term* match 
+identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          *term* match
 identifications.scientificName.subgenus                    subgenus                                        exact match
 identifications.scientificName.specificEpithet             species, speciesEpithet, specificEpithet        exact match
 identifications.scientificName.infraspecificEpithet        infraspecificEpithet, subspecies                exact match
