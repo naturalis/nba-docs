@@ -92,7 +92,7 @@ identifications.vernacularNames.name                  commonName, vernacularName
 _geoshape (= geo search parameter)                    not applicable                               in geoshape match
 ===================================================== ============================================ ====================
 
-4. MULTIMEDIA SEARCH
+4. MULTIMEDIA search
 -----------------------
 
 ========================================================== =============================================== =============
