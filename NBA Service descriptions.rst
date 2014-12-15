@@ -408,7 +408,7 @@ Specimen data services
                    .. code:: html
 
                      <base url>/specimen/search/?typeStatus=holotype&_sort=unitID
-   --------------   ------------------------------------------------------------------------------------------------------
+  --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
                    - example: request results in list sorted on unitID and sortDirection is descending
@@ -548,9 +548,9 @@ Specimen data services
  *additional integrated search capabilities*
   Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
 
-.. code:: html
+  .. code:: html
 
-  <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+    <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
 
   The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
 
