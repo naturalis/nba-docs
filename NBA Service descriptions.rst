@@ -183,17 +183,17 @@ Taxonomic data services
   ==============   ======================================================================================================
   _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          - default NBA setting sort: _score (for requests without _score parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
-                   - example: request results in response sorted on unitID
+                   - example: request results in response sorted on unitID (in ascending order)
                    
                    .. code:: html
                      <base url>/taxon/search/?genus=Abies&_sort=unitID, 
   --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
+                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                   - example: request results in response sorted on unitID in descending order
 
                    .. code:: html
-
-                     - example: <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=ASC
-                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                     <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=DESC
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
@@ -203,8 +203,12 @@ Taxonomic data services
   Name          Description
   ===========   =========================================================================================================
   _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
                 - default NBA setting andOr: AND (for requests without _andOR parameter)
+                - example: request results in response with result of OR search on genus = Parus and species = major
+
+                .. code:: html
+                
+                  <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
   ===========   =========================================================================================================
 
 .. _responses:
@@ -221,6 +225,9 @@ Taxonomic data services
  1. Free text search
 
   Search for value Parus in any taxon document
+
+  .. code:: html
+ 
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus
 
   Search for value paardenbloem (lower case term  search- english term = Dandelion) in any taxon document
@@ -652,3 +659,5 @@ Multimedia data services
 
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
+
+                
