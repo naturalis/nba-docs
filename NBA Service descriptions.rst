@@ -661,11 +661,11 @@ Specimen data services
 
  2. Indexed field search
 
-  Search with name resolution for key:value pair order=Decapoda in any specimen document
+  Search with name resolution for key:value pairs order=Decapoda, family=Dynomenidae and genus=Dynomene in any specimen document
 
   .. code:: html 
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?order=Decapoda
+    http://api.biodiversitydata.nl/v0/specimen/name-search/?order=Decapoda&family=Dynomenidae&genus=Dynomene
 
   Search with name resolution for key:value pair vernacularName=koolmees in any specimen document
   
