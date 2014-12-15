@@ -22,7 +22,7 @@ The Netherlands Biodiversity API offers web services for free text search and sp
 For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data read operations - are available.
 Each service is described in this document. Per service the following information is available. 
 
-.. list-table:: Taxonomic data services!
+.. list-table:: **Taxonomic data services**
    :widths: 23 8 10 10 10 
    :header-rows: 1
 
@@ -32,14 +32,14 @@ Each service is described in this document. Per service the following informatio
      - Responses
      - Examples
    * - Taxon search returns taxon documents
-     - view requests_
-     - view searchable_fields_
-     - view responses_
-     - view examples_
+     - requests_
+     - searchable_fields_
+     - responses_
+     - examples_
 
 | 
 
-.. list-table:: Specimen occurrence data services!
+.. list-table:: **Specimen occurrence data services**
    :widths: 23 8 10 10 10 
    :header-rows: 1
 
@@ -49,19 +49,19 @@ Each service is described in this document. Per service the following informatio
      - Responses
      - Examples
    * - Specimen search returns specimen documents
-     - view requests
-     - view searchable_fields
-     - view responses
-     - view examples
+     - requests
+     - searchable_fields
+     - responses
+     - examples
    * - Specimen name-search returns specimen documents
-     - view requests
-     - view searchable_fields
-     - view responses
-     - view examples
+     - requests
+     - searchable_fields
+     - responses
+     - examples
 
 | 
 
-.. list-table:: Multimedia data services!
+.. list-table:: **Multimedia data services**
    :widths: 23 8 10 10 10 
    :header-rows: 1
 
@@ -71,10 +71,10 @@ Each service is described in this document. Per service the following informatio
      - Responses
      - Examples
    * - Multimedia search returns multimedia documents
-     - view requests
-     - view searchable_fields
-     - view responses
-     - view examples
+     - requests
+     - searchable_fields
+     - responses
+     - examples
 
 .. _searchable_fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
