@@ -19,14 +19,14 @@ NBA Service descriptions
 
 The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. 
 
-For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data read operations - are available.
+For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data read operations - are available. 
 Each service is described in this document. Per service the following information is available. 
 
-.. list-table:: **Taxonomic data services**
-   :widths: 25 10 10 10 10 
+.. list-table:: 
+   :widths: 25 10 12 10 10 
    :header-rows: 1
 
-   * - Taxonomic data services
+   * - Taxonomic data service
      - Requests
      - Searchable fields
      - Responses
@@ -39,8 +39,8 @@ Each service is described in this document. Per service the following informatio
 
 | 
 
-.. list-table:: **Specimen occurrence data services**
-   :widths: 25 8 10 10 10 
+.. list-table:: 
+   :widths: 25 10 12 10 10 
    :header-rows: 1
 
    * - Specimen occurrence data services
@@ -61,11 +61,11 @@ Each service is described in this document. Per service the following informatio
 
 | 
 
-.. list-table:: **Multimedia data services**
-   :widths: 25 10 10 10 10 
+.. list-table:: 
+   :widths: 25 10 12 10 10 
    :header-rows: 1
 
-   * - Specimen occurrence data services
+   * - Multimedia occurrence data services
      - Requests
      - Searchable fields
      - Responses
@@ -76,13 +76,21 @@ Each service is described in this document. Per service the following informatio
      - responses
      - examples
 
+|
+
+The base url for each service is: http://api.biodiversitydata.nl/v0. For more information about the API version you are working with click here_. 
+
+.. _here: http://api.biodiversitydata.nl/v0/version
+
 .. _searchable_fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
 Quick start
 ===========
 The Netherlands Biodiversity API endpoints follows the general form:
 
-http://api.biodiversitydata.nl/{api_version}{endpoint}{optional parameters}
+.. code:: html
+
+  http://api.biodiversitydata.nl/{api_version}{endpoint}{optional parameters}
 
 In nearly all cases an API request returns data as a JSON-formatted document.
 
@@ -96,8 +104,8 @@ Version v0 is a stable version, ready for public use. The documentation related 
 
 Bugfixes or other changes on version v0 will lead be processed in small version updates. Backward compatibility with previous v0 versions is guaranteed. The version number in the url of the API, currently v0, will not change as a result of these small changes. 
 
-Version v0 does not yet contain all core data services and documentation  relevant for optimal data gathering.
-Version v1, which will include additional core data services and documentation, will replace version v0. Naturalis strives to make this version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
+Version v0 does not yet contain all core data services and documentation relevant for optimal data gathering.
+Version v1 which will replace version v0 should largely fill this gap. Naturalis strives to make this higher version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
 
 Naturalis reserves the right to deviate from the above text and/or to limit access to the API in case security issues arise or incorrect usage of the API. 
 
@@ -117,10 +125,7 @@ Taxonomic data services
 
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
  .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
-
- The base url for this service is: http://api.biodiversitydata.nl/v0
-
-.. _requests:
+ .. _requests:
 
 *Requests*
  *url*
@@ -128,13 +133,13 @@ Taxonomic data services
   <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
 
   The basic request url for indexed field search is:
-  <base url>/taxon/search/?indexedField1=[term]&indexedField2[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
+  <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
 
  *indexed field name(s) in an url*
-  A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+  A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
 
   a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
-  b. field aliasses, e.g. <base url>/taxon/search/?genus=Abies
+  b. field aliases, e.g. <base url>/taxon/search/?genus=Abies
 
  .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
@@ -148,11 +153,11 @@ Taxonomic data services
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                 - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, shows maximum amount of 60 documents in a response
-                - default setting: _maxResults=10
+                - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - example: <base url>/taxon/search/?_search=Abies&_offset=20. In first response search result no 21 is first document in response
-                - default setting: _offset=0
+                - default NBA setting offset: 0 (for requests without _offset parameter)
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -162,12 +167,12 @@ Taxonomic data services
   ==============   ======================================================================================================
   _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents
                    - example: <base url>/taxon/search/?genus=Abies&_sort=unitID, shows taxon documents sorted on unitID
-                   - default setting: _sort = _score
+                   - default NBA setting sort: _score (for requests without _score parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
   --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending or ascending
+  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - example: <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=ASC
-                   - default setting: _sortDirection=ASC
+                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
@@ -177,8 +182,8 @@ Taxonomic data services
   Name          Description
   ===========   =========================================================================================================
   _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=AND
-                - default setting: _andOr=AND
+                - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
+                - default NBA setting andOr: AND (for requests without _andOR parameter)
   ===========   =========================================================================================================
 
 .. _responses:
@@ -186,8 +191,8 @@ Taxonomic data services
 *Responses*
 
  *basic response structure*
-  The xsd structure of a taxon response can be viewed here (document reference to be added, reengineer xsd structure from xml with xml spy).
-
+  The basic structure of the responses can be viewed in the subsequent example section. 
+  
 .. _examples:
 
 *Examples*
@@ -197,22 +202,22 @@ Taxonomic data services
   Search for value Parus in any taxon document
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus
 
-  Search for value paardenbloem in any taxon document
+  Search for value paardenbloem (lower case term  search- english term = Dandelion) in any taxon document
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=paardenbloem
 
-  Search for value PAARDENBLOEM in any taxon document
+  Search for value PAARDENBLOEM (upper case term search - english term = Dandelion) in any taxon document 
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=PAARDENBLOEM
 
-  Search for value BLOEM in any taxon document
+  Search for value Bloem in any taxon document
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem
 
-  Search for value BLOEM in any taxon document, 20 documents in result, sort = ascending
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=DESC
+  Search for value Bloem in any taxon document, maximum of 20 documents in result, sort = ascending (ASC)
+   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
-  Search for value BLOEM in any taxon document, start from document 21
+  Search for value Bloem in any taxon document, start from document 21
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
 
-  Search for value BLOEM in any taxon document, start from document 21
+  Search for value Bloem in any taxon document, start from document 21
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
 
  2. Indexed field search
@@ -235,8 +240,8 @@ Taxonomic data services
   Search for key:value pair BLOEM in any taxon document
    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem
 
-  Search for key:value pair BLOEM in any taxon document, 20 documents in result, sort = ascending
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=DESC
+  Search for key:value pair BLOEM in any taxon document, 20 documents in result, sort = ascending (ASC)
+   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
   Search for value BLOEM pair in any taxon document, start from document 21
    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
@@ -253,9 +258,7 @@ Specimen data services
 -----------------
 
 *Description*
- This services also comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. This subset contains only not-identifications fields, e.g. unitID and locality. Searches on specimen identification fields can be done with the NBA service Specimen-name-search_.
-
-The base url for this service is: http://api.biodiversitydata.nl/v0
+ This service also comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. This subset contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
 
 *Requests*
  *url*
@@ -275,7 +278,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========  ========================================================================================================================================
    _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
                  - example: <base url>/specimen/search/?_geoshape=decoded coordinates of Jordan, shows all specimen found in Jordan
-                 - default setting: not applicable
+                 - default NBA setting geoshape: not applicable
                  - remarks: use lat/long coordinates.
   ===========  ========================================================================================================================================
 
@@ -283,7 +286,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
 
   a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
-  b. field aliasses, e.g. <base url>/specimen/search/?genus=Abies
+  b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
 
  .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
@@ -297,11 +300,11 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                 - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, shows maximum amount of 60 documents in a response
-                - default setting: _maxResults=10
+                - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - example: <base url>/taxon/search/?_search=Abies&_offset=20. In first response search result no 21 is first document in response
-                - default setting: _offset=0
+                - default NBA setting offset: 0 (for requests without _offset parameter)
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -311,12 +314,12 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ==============   ======================================================================================================
   _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents
                    - example: <base url>/taxon/search/?genus=Abies&_sort=unitID, shows taxon documents sorted on unitID
-                   - default setting: _sort = _score
+                   - default NBA setting sort: _score (for requests without _sort parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
   --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending or ascending
+  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - example: <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=ASC
-                   - default setting: _sortDirection=ASC
+                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
@@ -326,14 +329,14 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   Name          Description
   ===========   =========================================================================================================
   _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=AND
-                - default setting: _andOr=AND
+                - example: <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
+                - default NBA setting andOr: AND (for requests without _andOr parameter)
   ===========   =========================================================================================================
 
 *Responses*
 
  *basic response structure*
-  The xsd structure of a taxon response can be viewed here (document reference to be added, reengineer xsd structure from xml with xml spy).
+   The basic structure of the responses can be viewed in the subsequent example section. 
 
 *Examples*
 
@@ -376,9 +379,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
 *Description*
  This service comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on specimen documents, and, b. specimen document search based on the outcome of the name-resolution process_. This preceding process is executed on taxonomic data from the available taxonomic data sources.
 
- Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen identification fields where-as a search on specimen not-identifications fields can be done with the NBA service Specimen-search_.
-
-The base url for this service is: http://api.biodiversitydata.nl/v0
+ Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
 
 *Requests*
  *url*
@@ -398,7 +399,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========  ========================================================================================================================================
    _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
                  - example: <base url>/specimen/search/?_geoshape=decoded coordinates of Jordan, shows all specimen found in Jordan
-                 - default setting: not applicable
+                 - default NBA setting geoshape: not applicable
                  - remarks: use lat/long coordinates.
   ===========  ========================================================================================================================================
 
@@ -406,7 +407,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
 
   a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
-  b. field aliasses, e.g. <base url>/specimen/search/?genus=Abies
+  b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
 
  .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
@@ -428,10 +429,10 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                 - example: <base url>/specimen/name-search/?_search=bloem&_maxResults=50, shows maximum amount of 50 documents in responses
-                - default setting: _maxResults=10
+                - default NBA setting maxResults:10 (for requests without _maxResults parameter)
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - example: <base url>/specimen/name-search/?_search=paardenbloem&_offset=20. In first response search result no 21 is first document in response
-                - default setting: _offset=0
+                - default NBA setting offset:0 (for requests without _offset parameter)
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -441,11 +442,11 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ==============   ======================================================================================================
   _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Specimen documents.
                    - example: <base url>/specimen/name-search/?genus=Larus&_sort=identifications.scientificName.genusOrMonomial.
-                   - default setting: _sort = _score
+                   - default NBA setting sort: _score (for requests without _sort parameter)
 	           - remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending or ascending
+  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - example: <base url>/specimen/name-search/?genus=Larus&_sort=..&_sortDirection=ASC
-                   - default setting: _sortDirection=ASC
+                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
@@ -455,14 +456,14 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   Name          Description
   ===========   =========================================================================================================
   _andOr		 - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - example: <base url>/specimen/name-search/?..&_andOr=AND
-                - default setting: _andOr=AND
+                - example: <base url>/specimen/name-search/?..&_andOr=OR
+                - default NBA setting andOr: AND (for requests without _andOr parameter)
   ===========   =========================================================================================================
 
 *Responses*
 
  *basic response structure*
-  The xsd structure of a taxon response can be viewed here (document reference to be added, reengineer xsd structure from xml with xml spy).
+    The basic structure of the responses can be viewed in the subsequent example section. 
 
 *Examples*
 
@@ -517,9 +518,7 @@ Multimedia data services
 
  Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a predefined subset of indexed multimedia document fields and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
 
- Due to the nature of it's sources contains the list of searchable fields for this service both identification fields (taxonomic data) and not-identifications fields.
-
-The base url for this service is: http://api.biodiversitydata.nl/v0
+ Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
 
 *Requests*
  *url*
@@ -539,7 +538,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========  ========================================================================================================================================
    _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
                  - example: <base url>/multimedia/search/?_geoshape=decoded coordinates of Jordan, shows all specimen found in Jordan
-                 - default setting: not applicable
+                 - default NBA setting geoshape: not applicable
                  - remarks: use lat/long coordinates.
   ===========  ========================================================================================================================================
 
@@ -547,7 +546,7 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
 
   a. field path(s), e.g. <base url>/multimedia/search/?genusOrMonomial=Larus
-  b. field aliasses, e.g. <base url>/multimedia/search/?genus=Larus
+  b. field aliases, e.g. <base url>/multimedia/search/?genus=Larus
 
  .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
 
@@ -565,11 +564,11 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                 - example: <base url>/multimedia/search/?_search=Larus&_maxResults=20, shows maximum amount of 20 documents in a response
-                - default setting: _maxResults=10
+                - default NBA setting maxResults:10 (for requests without _maxResults parameter)
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - example: <base url>/multimedia/search/?_search=Larus&_offset=20. In first response search result no 21 is first document in response
-                - default setting: _offset=0
+                - default NBA setting offset:0 (for requests without _offset parameter)
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -579,12 +578,12 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   ==============   ======================================================================================================
   _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in multimedia documents
                    - example: <base url>/multimedia/search/?genus=Larus&_sort=unitID, shows multimedia documents sorted on unitID
-                   - default setting: _sort = _score
+                   - default NBA setting sort: _score (for requests without _score parameter)
                    - remarks: _sort parameter can be used for all fields in a multimedia document. Sort parameter values should be a fieldpath, e.g. identifications.scientificName.subgenus
   --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending or ascending
+  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC) 
                    - example: <base url>/multimedia/search/?genus=Larus&_sort=unitID&_sortDirection=ASC
-                   - default setting: _sortDirection=ASC
+                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
@@ -594,14 +593,14 @@ The base url for this service is: http://api.biodiversitydata.nl/v0
   Name          Description
   ===========   =========================================================================================================
   _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - example: <base url>/multimedia/search/?genus=Larus&species=argentatus&_andOr=AND
-                - default setting: _andOr=AND
+                - example: <base url>/multimedia/search/?genus=Larus&species=argentatus&_andOr=OR
+                - default NBA setting andOr: AND (for requests without _andOR parameter)
   ===========   =========================================================================================================
 
 *Responses*
 
  *basic response structure*
-  The xsd structure of a Multimedia response can be viewed here (document reference to be added, reengineer xsd structure from xml with xml spy).
+  The basic structure of the responses can be viewed in the subsequent example section. 
 
 *Examples*
 
