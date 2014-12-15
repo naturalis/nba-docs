@@ -1,3 +1,6 @@
+RESPONSES UTF8, LINKS URL DECODED, sort wacht op antwoord Ayco
+
+
 .. sidebar:: Table of contents
 
     .. contents::
@@ -130,9 +133,15 @@ Taxonomic data services
 *Requests*
  *url*
   The basic request url for free text search is:
+
+.. code:: html
+
   <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
 
   The basic request url for indexed field search is:
+
+.. code:: html
+
   <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
 
  *indexed field name(s) in an url*
