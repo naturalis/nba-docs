@@ -129,7 +129,7 @@ Taxonomic data services
 --------------
 
 *Description*
- This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
+This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
 Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a.    Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
