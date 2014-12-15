@@ -1,9 +1,3 @@
-.. sidebar:: Table of contents
-
-    .. contents::
-
-.. sectnum:
-
 =========================
 Document management
 =========================
