@@ -193,6 +193,7 @@ Taxonomic data services
                    - example: request results in list sorted on unitID (in ascending order)
                    
                    .. code:: html
+ 
                      <base url>/taxon/search/?genus=Abies&_sort=unitID, 
   --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
@@ -200,6 +201,7 @@ Taxonomic data services
                    - example: request results in list sorted on unitID in descending order
 
                    .. code:: html
+ 
                      <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=DESC
   ==============   ======================================================================================================
 
