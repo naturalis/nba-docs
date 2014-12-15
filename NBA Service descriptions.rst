@@ -340,7 +340,7 @@ Specimen data services
 
   .. code:: html
  
-    <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=koolmees
+    <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=male
 
   The basic request url for indexed field search is:
 
@@ -363,7 +363,7 @@ Specimen data services
                  
                  .. code:: html
  
-                   <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan, shows all specimen found in Jordan
+                   <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan
   ===========  ========================================================================================================================================
 
  *indexed field name(s) in an url*
@@ -388,14 +388,14 @@ Specimen data services
 
                 .. code:: html
                 
-                  <base url>/specimen/search/?_search=Abies&_maxResults=20
+                  <base url>/specimen/search/?_search=male&_maxResults=20
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - default NBA setting offset: 0 (for requests without _offset parameter)
                 - example: request results in list in which first document is search result no 21
                 .. code:: html
 
-                  <base url>/specimen/search/?_search=Abies&_offset=20. 
+                  <base url>/specimen/search/?_search=allotype&_offset=20. 
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -452,29 +452,23 @@ Specimen data services
   
     http://api.biodiversitydata.nl/v0/specimen/search/?_search=RMNH.MAM.50017
 
-  Search for Melicertus kerathurus in any specimen document
+  Search for synotype in any specimen document
 
   .. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=Melicertus kerathurus
+    http://api.biodiversitydata.nl/v0/specimen/search/?_search=synotype
 
-  Search for koolmees in any specimen document
+  Search for phase or stage in any specimen document
 
   .. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=koolmees
+    http://api.biodiversitydata.nl/v0/specimen/search/?_search=juvenile
 
   Search for mees in any specimen document
 
   .. code:: html
   
     http://api.biodiversitydata.nl/v0/specimen/search/?_search=mees
-
-  Search for Parus major in any specimen document
-
-  .. code:: html
-  
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=Parus major
 
  2. Indexed field search
 
