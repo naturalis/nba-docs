@@ -1,5 +1,3 @@
-CASE INSENTIVITY GELDIT NIET ALTIJD, LIJST BIJWERKEN DOOR AYCO
-
 =================================
 Searchable fields per NBA service
 =================================
