@@ -85,13 +85,13 @@ The base url for each service is:
 
 .. code:: html
 
-  http://api.biodiversitydata.nl/v0. 
+  http://api.biodiversitydata.nl/v0
   
 For more information about the API version you are working with click here_. 
 
 .. _here: http://api.biodiversitydata.nl/v0/version
 
-.. _searchable_fields: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
+.. _searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
 Quick start
 ===========
