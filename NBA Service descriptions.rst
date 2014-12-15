@@ -412,7 +412,8 @@ Specimen data services
   ==============   ======================================================================================================
   Name             Description
   ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          - default NBA setting sort: _score (for requests without _sort parameter)
+  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          
+                   - default NBA setting sort: _score (for requests without _sort parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
                    - example: request results in list sorted on unitID (sortDirection is default Ascending) 
 
@@ -584,6 +585,7 @@ Specimen data services
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
                 - default NBA setting offset:0 (for requests without _offset parameter)
                 - example: request results in list in which first document is search result no 21. 
+                
                 .. code:: html
 
                   <base url>/specimen/name-search/?_search=paardenbloem&_offset=20
@@ -594,7 +596,7 @@ Specimen data services
   ==============   ======================================================================================================
   Name             Description
   ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Specimen documents.
+  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Specimen documents
                    - default NBA setting sort: _score (for requests without _sort parameter)
 	           - remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths
                    - example: request results in list sorted on genus
@@ -760,9 +762,9 @@ Multimedia data services
  *additional integrated search capabilities*
   Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
 
-.. code:: html
+  .. code:: html
 
-  <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+    <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
 
   The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
 
