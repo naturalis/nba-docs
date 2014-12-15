@@ -121,7 +121,7 @@ Taxonomic data services
 
 *Description*
  This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
- Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
+Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a.    Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
  .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
@@ -333,10 +333,16 @@ Specimen data services
 *Requests*
  *url*
   The basic request url for free text search is:
-  <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=koolmees
+
+  .. code:: html
+ 
+    <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=koolmees
 
   The basic request url for indexed field search is:
-  <base url>/specimen/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/search/?typeStatus=holotype
+
+  .. code:: html
+ 
+    <base url>/specimen/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/search/?typeStatus=holotype
 
  *geospatial search option in an url*
   Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
@@ -347,9 +353,13 @@ Specimen data services
    Name          Description
   ===========  ========================================================================================================================================
    _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
-                 - example: <base url>/specimen/search/?_geoshape=decoded coordinates of Jordan, shows all specimen found in Jordan
                  - default NBA setting geoshape: not applicable
                  - remarks: use lat/long coordinates.
+                 - example: request results in list of specimen gathered in Jordan
+                 
+                 .. code:: html
+ 
+                   <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan, shows all specimen found in Jordan
   ===========  ========================================================================================================================================
 
  *indexed field name(s) in an url*
@@ -369,12 +379,20 @@ Specimen data services
   Name          Description
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, shows maximum amount of 60 documents in a response
                 - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
+                - example: request results in response with a maximum amount of 60 documents inside
+
+                .. code:: html
+                
+                  <base url>/specimen/search/?_search=Abies&_maxResults=20
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-                - example: <base url>/taxon/search/?_search=Abies&_offset=20. In first response search result no 21 is first document in response
                 - default NBA setting offset: 0 (for requests without _offset parameter)
+                - example: request results in response in which search result no 21 is first document
+                
+                .. code:: html
+
+                  <base url>/specimen/search/?_search=Abies&_offset=20. 
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -382,11 +400,14 @@ Specimen data services
   ==============   ======================================================================================================
   Name             Description
   ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents
-                   - example: <base url>/taxon/search/?genus=Abies&_sort=unitID, shows taxon documents sorted on unitID
-                   - default NBA setting sort: _score (for requests without _sort parameter)
+  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          - default NBA setting sort: _score (for requests without _sort parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
-  --------------   ------------------------------------------------------------------------------------------------------
+                   - example: request results in search result 
+
+                   .. code:: html
+
+                     <base url>/specimen/search/?genus=Abies&_sort=unitID
+   --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - example: <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=ASC
                    - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
@@ -701,5 +722,3 @@ Multimedia data services
 
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
-
- 
