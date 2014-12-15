@@ -84,7 +84,7 @@ defaultClassification.infraspecificEpithet            infraspecificEpithet, subp
 systemClassification.name                             not applicable                               exact match
 gatheringEvent.gatheringAgents.fullName               collector, gatheringAgent                    exact match
 gatheringEvent.dateTimeBegin                          collectingStartDate                          exact match
-identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       \*term*\  match
+identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       exact match
 identifications.scientificName.subgenus               subgenus                                     exact match
 identifications.scientificName.specificEpithet        species, speciesEpither, specificEpithet     exact match
 identifications.scientificName.infraspecificEpithet   infraspecificEpithet, subpspecies            exact match
