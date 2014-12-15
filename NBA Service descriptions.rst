@@ -1,3 +1,6 @@
+RESPONSES UTF8, LINKS URL DECODED, sort wacht op antwoord Ayco
+
+
 .. sidebar:: Table of contents
 
     .. contents::
@@ -160,19 +163,17 @@ Taxonomic data services
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                 - default NBA setting maxResults: 10 (for requests without _maxResults parameter)                
-                - example: 
+                - example: request results in maximum amount of 60 documents in response
                 .. code:: html
 
                   <base url>/taxon/search/?_search=Abies&_maxResults=20, 
-                shows maximum amount of 60 documents in a response
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-
+                - default NBA setting offset: 0 (for requests without _offset parameter)
+                - example: request results in response with search result no 21 as first document in response
                 .. code:: html
 
-                  - example: <base url>/taxon/search/?_search=Abies&_offset=20. 
-                In first response search result no 21 is first document in response
-                - default NBA setting offset: 0 (for requests without _offset parameter)
+                  <base url>/taxon/search/?_search=Abies&_offset=20. 
   ===========   =========================================================================================================
 
   Sorting parameters
@@ -180,13 +181,12 @@ Taxonomic data services
   ==============   ======================================================================================================
   Name             Description
   ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents
-                   .. code:: html
-
-                     - example: <base url>/taxon/search/?genus=Abies&_sort=unitID, 
-                   shows taxon documents sorted on unitID
-                   - default NBA setting sort: _score (for requests without _score parameter)
+  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          - default NBA setting sort: _score (for requests without _score parameter)
                    - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
+                   - example: request results in response sorted on unitID
+                   
+                   .. code:: html
+                     <base url>/taxon/search/?genus=Abies&_sort=unitID, 
   --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
 
