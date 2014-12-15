@@ -1,11 +1,20 @@
 =========================
 Document management
 =========================
-| Author: Naturalis ICT department, subdivision Software Development
-| Version: c1.0.
-| Publication date: 15-12-2014
 
-| Content: description of Netherlands Biodiversity API services in NBA API version 0
+.. list-table:: 
+   :widths: 25 10
+   :header-rows: 0
+   
+   * - Author
+     - Naturalis ICT sector, Software Development department
+   * - Version
+     - c1.0.
+   * - Publication date
+     - 15-12-2014
+   * - Content
+     - description of Netherlands Biodiversity API services in NBA API version 0
+
 
 ========================
 NBA Service descriptions
