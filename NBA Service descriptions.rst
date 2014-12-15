@@ -1,3 +1,6 @@
+RESPONSES UTF8, LINKS URL DECODED, sort wacht op antwoord Ayco
+
+
 .. sidebar:: Table of contents
 
     .. contents::
@@ -139,7 +142,7 @@ Taxonomic data services
 
   .. code:: html
 
-    <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?  genusOrMonomial=Parus
+    <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
 
  *indexed field name(s) in an url*
   A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
@@ -158,7 +161,10 @@ Taxonomic data services
   Name          Description
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, shows maximum amount of 60 documents in a response
+                
+                .. code:: html
+
+                  - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, shows maximum amount of 60 documents in a response
                 - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
@@ -637,4 +643,5 @@ Multimedia data services
 
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
+
 
