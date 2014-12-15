@@ -458,7 +458,7 @@ Specimen data services
   
     http://api.biodiversitydata.nl/v0/specimen/search/?_search=synotype
 
-  Search for phase or stage in any specimen document
+  Search for juvenile in any specimen document
 
   .. code:: html
   
