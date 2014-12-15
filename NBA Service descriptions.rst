@@ -78,7 +78,7 @@ Taxonomic data services
 =======================
 
 1.TAXON SEARCH
----------------
+--------------
 
 *Description*
  This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
