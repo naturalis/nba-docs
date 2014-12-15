@@ -159,12 +159,12 @@ Taxonomic data services
   Name          Description
   ===========   =========================================================================================================
   _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                
+                - default NBA setting maxResults: 10 (for requests without _maxResults parameter)                
+                - example: 
                 .. code:: html
 
-                  - example: <base url>/taxon/search/?_search=Abies&_maxResults=20, 
+                  <base url>/taxon/search/?_search=Abies&_maxResults=20, 
                 shows maximum amount of 60 documents in a response
-                - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
   -----------   ---------------------------------------------------------------------------------------------------------
   _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
 
@@ -652,4 +652,3 @@ Multimedia data services
 
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
-
