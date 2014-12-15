@@ -1,6 +1,3 @@
-RESPONSES UTF8, LINKS URL DECODED, sort wacht op antwoord Ayco
-
-
 .. sidebar:: Table of contents
 
     .. contents::
@@ -129,7 +126,7 @@ Taxonomic data services
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
  .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
 
- .. _requests:
+.. _requests:
 
 *Requests*
  *url*
@@ -231,51 +228,96 @@ Taxonomic data services
    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus
 
   Search for value paardenbloem (lower case term  search- english term = Dandelion) in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=paardenbloem
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=paardenbloem
 
   Search for value PAARDENBLOEM (upper case term search - english term = Dandelion) in any taxon document 
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=PAARDENBLOEM
+ 
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=PAARDENBLOEM
 
   Search for value Bloem in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem
 
   Search for value Bloem in any taxon document, maximum of 20 documents in result, sort = ascending (ASC)
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
+   
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
   Search for value Bloem in any taxon document, start from document 21
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
 
   Search for value Bloem in any taxon document, start from document 21
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
 
  2. Indexed field search
 
   Search for key:value pair genus=Parus in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus
+ 
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus
 
   Search for key:value pair genus=Parus and species=major in any taxon document (default=AND)
-   http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major
 
   Search for key:value pair genus=Parus or species=major in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major&_andOr=OR
+   
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major&_andOr=OR
 
   Search for key:value pair paardenbloem in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=paardenbloem
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=paardenbloem
 
   Search for key:value pair PAARDENBLOEM in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=PAARDENBLOEM
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=PAARDENBLOEM
 
   Search for key:value pair BLOEM in any taxon document
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem
 
   Search for key:value pair BLOEM in any taxon document, 20 documents in result, sort = ascending (ASC)
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
+
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
   Search for value BLOEM pair in any taxon document, start from document 21
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
+ 
+  .. code:: html
+  
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
 
   Search for value BLOEM pair in any taxon document, start from document 21
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
+  
+  .. code:: html
+ 
+    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
 
 Specimen data services
 ======================
@@ -660,4 +702,4 @@ Multimedia data services
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
 
-                
+ 
