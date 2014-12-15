@@ -103,7 +103,7 @@ The Netherlands Biodiversity API endpoints follows the general form:
 
 In nearly all cases an API request returns data as a JSON-formatted document.
 
-For Quick start purposes you can consult per service a set of examples which can be accessed via the example links in the previous service information overview. Information on requests, searchable fields and responses can also be accessed via this overview. 
+For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the service information overview. Information on requests, searchable fields and responses can also be accessed via this overview in the previous paragraph. 
 
 Versioning
 ==========
@@ -129,8 +129,8 @@ Taxonomic data services
 --------------
 
 *Description*
-This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
-Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a.    Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
+ This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search.
+ Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a.    Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
  .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
@@ -157,7 +157,7 @@ Both search types execute searches through taxonomic data harvested from - curre
   a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
   b. field aliases, e.g. <base url>/taxon/search/?genus=Abies
 
- .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
+ .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
  *general meta parameters in an url*
   For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
@@ -378,7 +378,7 @@ Specimen data services
   a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
   b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
 
- .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
+ .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
  *general meta parameters in an url*
   For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
@@ -549,7 +549,7 @@ Specimen data services
   a. field path(s), e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies
   b. field aliases, e.g. <base url>/specimen/name-search/?genus=Abies
 
- .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
+ .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
  .. _process:
 
@@ -752,7 +752,7 @@ Multimedia data services
   a. field path(s), e.g. <base url>/multimedia/search/?genusOrMonomial=Larus
   b. field aliases, e.g. <base url>/multimedia/search/?genus=Larus
 
- .. _document: https://github.com/naturalis/nba-docs/blob/master/Searchable%20fields%20per%20NBA%20service.rst
+ .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
  *additional integrated search capabilities*
   Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
