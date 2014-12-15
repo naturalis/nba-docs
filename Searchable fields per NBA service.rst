@@ -88,7 +88,7 @@ identifications.scientificName.genusOrMonomial        genus, genusOrMonomial    
 identifications.scientificName.subgenus               subgenus                                     exact match
 identifications.scientificName.specificEpithet        species, speciesEpither, specificEpithet     exact match
 identifications.scientificName.infraspecificEpithet   infraspecificEpithet, subpspecies            exact match
-identifications.vernacularNames.name                  commonName, vernacularName                   *term* match
+identifications.vernacularNames.name                  commonName, vernacularName                   \*term*\  match
 _geoshape (= geo search parameter)                    not applicable                               in geoshape match
 ===================================================== ============================================ ====================
 
