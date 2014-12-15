@@ -1,3 +1,20 @@
+========================
+Document management
+=========================
+
+.. list-table:: 
+   :widths: 25 10
+   :header-rows: 0
+   
+   * - Author
+     - Naturalis ICT sector, Software Development department
+   * - Version
+     - c1.0.
+   * - Publication date
+     - 15-12-2014
+   * - Content
+     - description of searchable fields per NBA service in NBA API version 0
+
 =================================
 Searchable fields per NBA service
 =================================
