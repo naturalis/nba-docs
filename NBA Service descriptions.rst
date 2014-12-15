@@ -188,11 +188,9 @@ Taxonomic data services
   ==============   ======================================================================================================
   Name             Description
   ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in 
-                   Taxon documents          
+  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in taxon documents          
                    - default NBA setting sort: _score (for requests without _score parameter)
-                   - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values
-                   should be fieldpaths, e.g. gatheringEvent.locality
+                   - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
                    - example: request results in list sorted on unitID (in ascending order)
                    
                    .. code:: html
