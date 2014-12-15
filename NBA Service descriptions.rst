@@ -818,12 +818,6 @@ Multimedia data services
 
  1. Free test search
 
-  Search for RMNH.MAM.50017 in CRS in any multimedia document
-
-  .. code:: html
-
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=RMNH.MAM.50017
-
   Search for koolmees in any multimedia document
 
   .. code:: html
@@ -847,7 +841,14 @@ Multimedia data services
   .. code:: html 
 
     http://api.biodiversitydata.nl/v0/multimedia/search/?_search=Abies abies
+    
+  Search for L.4275659 in Brahms in any multimedia document
 
+  .. code:: html
+
+    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=L.4275659
+
+  
  2. Indexed field search
 
   Search for key:value pair unitID=AHCYFCKPYRK:1560587210 in NSR in any multimedia document
