@@ -1,3 +1,5 @@
+CASE INSENTIVITY GELDIT NIET ALTIJD, LIJST BIJWERKEN DOOR AYCO
+
 =================================
 Searchable fields per NBA service
 =================================
@@ -18,14 +20,14 @@ Term handling on compound terms, e.g. Parus major, is more or less similar to te
 ================================================= =================================================== ====================
 Field path                                        NBA aliasses                                        Term handling
 ================================================= =================================================== ====================
-acceptedName.genusOrMonomial                      genus, genusOrMonomial                              *term* match
+acceptedName.genusOrMonomial                      genus, genusOrMonomial                              exact match
 acceptedName.subgenus                             subgenus                                            exact match
 acceptedName.specificEpithet                      species, speciesEpithet, specificEpithet            exact match
 acceptedName.infraspecificEpithet                 infraspecificEpithet, subspecies, subspeciesEpithet exact match
 acceptedName.experts.fullName                     expert                                              exact match
 acceptedName.experts.organization.name            expertOrganisation                                  exact match
 acceptedName.taxonomicStatus                      taxonomicStatus                                     exaxt match
-vernacularNames.name                              commonName, vernacularName                          *term* match
+vernacularNames.name                              commonName, vernacularName                          \*term*\ match
 vernacularNames.experts.fullName                  expert                                              exact match
 vernacularNames.experts.organization.name         expertOrganisation                                  exact match
 synonyms.genusOrMonomial                          genus, genusOrMonomial                              exact match
@@ -59,7 +61,7 @@ typeStatus                                        typeStatus                    
 phaseOrStage                                      phaseOrStage                                        exact match
 sex                                               sex                                                 exact match
 collectorsFieldNumber                             collectorsFieldNumber                               exact match
-gatheringEvent.localityText                       locality, localityText                              *term* match
+gatheringEvent.localityText                       locality, localityText                              \*term*\  match
 gatheringEvent.gatheringAgents.fullName           collector, gatheringAgent                           exact match
 gatheringEvent.gatheringAgents.organization       collector, gatheringAgent                           exact match
 gatheringEvent.dateTimeBegin                      collectingStartDate                                 exact match
@@ -77,14 +79,14 @@ defaultClassification.phylum                          phylum                    
 defaultClassification.className                       class, className                             exact match
 defaultClassification.order                           order                                        exact match
 defaultClassification.family                          family                                       exact match
-defaultClassification.genus                           genus, genusOrMonomial                       *term* match
+defaultClassification.genus                           genus, genusOrMonomial                       exact match
 defaultClassification.subgenus                        subgenus                                     exact match
 defaultClassification.specificEpithet                 species, speciesEpither, specificEpithet     exact match
 defaultClassification.infraspecificEpithet            infraspecificEpithet, subpspecies            exact match
 systemClassification.name                             not applicable                               exact match
 gatheringEvent.gatheringAgents.fullName               collector, gatheringAgent                    exact match
 gatheringEvent.dateTimeBegin                          collectingStartDate                          exact match
-identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       *term* match
+identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       \*term*\  match
 identifications.scientificName.subgenus               subgenus                                     exact match
 identifications.scientificName.specificEpithet        species, speciesEpither, specificEpithet     exact match
 identifications.scientificName.infraspecificEpithet   infraspecificEpithet, subpspecies            exact match
@@ -102,17 +104,17 @@ unitID                                                     registrationNumber, u
 sexes                                                      sex                                             exact match
 specimenTypeStatus                                         typeStatus                                      exact match
 phasesOrStages                                             phaseOrStage                                    exact match
-identifications.vernacularNames.name                       commonName, vernacularName                      *term* match
+identifications.vernacularNames.name                       commonName, vernacularName                      \*term*\  match
 identifications.defaultClassification.kingdom              kingdom                                         exact match
 identifications.defaultClassification.phylum               phylum                                          exact match
 identifications.defaultClassification.className            class, className                                exact match
 identifications.defaultClassification.order                order                                           exact match
 identifications.defaultClassification.family               family                                          exact match
-identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomial                          *term* match
+identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomial                          \*term*\  match
 identifications.defaultClassification.subgenus             subgenus                                        exact match
 identifications.defaultClassification.specificEpithet      species, speciesEpithet, specificEpithet        exact match
 identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies                exact match
-identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          *term* match
+identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          exact match
 identifications.scientificName.subgenus                    subgenus                                        exact match
 identifications.scientificName.specificEpithet             species, speciesEpithet, specificEpithet        exact match
 identifications.scientificName.infraspecificEpithet        infraspecificEpithet, subspecies                exact match
