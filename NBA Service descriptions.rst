@@ -1,6 +1,3 @@
-RESPONSES UTF8, LINKS URL DECODED, sort wacht op antwoord Ayco
-
-
 .. sidebar:: Table of contents
 
     .. contents::
@@ -134,15 +131,15 @@ Taxonomic data services
  *url*
   The basic request url for free text search is:
 
-.. code:: html
+  .. code:: html
 
-  <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
+    <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
 
   The basic request url for indexed field search is:
 
-.. code:: html
+  .. code:: html
 
-  <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
+    <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?  genusOrMonomial=Parus
 
  *indexed field name(s) in an url*
   A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
@@ -640,3 +637,4 @@ Multimedia data services
 
   Search for key:value pair genus=Parus and species=major in any multimedia document
    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
+
