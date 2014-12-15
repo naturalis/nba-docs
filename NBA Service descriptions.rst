@@ -13,7 +13,7 @@ Document management
    * - Publication date
      - 15-12-2014
    * - Content
-     - description of Netherlands Biodiversity API services in NBA API version 0
+     - description of data retrieval services in NBA API version 0
 
 
 ========================
@@ -22,7 +22,7 @@ NBA Service descriptions
 
 The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. 
 
-For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data read operations - are available. 
+For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data retrieval operations - are available. 
 Each service is described in this document. Per service the following information is available. 
 
 .. list-table:: 
