@@ -23,7 +23,7 @@ For each type of data, i.e. taxon, specimen occurrence and multimedia, one or mo
 Each service is described in this document. Per service the following information is available. 
 
 .. list-table:: **Taxonomic data services**
-   :widths: 23 8 10 10 10 
+   :widths: 25 10 10 10 10 
    :header-rows: 1
 
    * - Taxonomic data services
@@ -40,7 +40,7 @@ Each service is described in this document. Per service the following informatio
 | 
 
 .. list-table:: **Specimen occurrence data services**
-   :widths: 23 8 10 10 10 
+   :widths: 25 8 10 10 10 
    :header-rows: 1
 
    * - Specimen occurrence data services
@@ -62,7 +62,7 @@ Each service is described in this document. Per service the following informatio
 | 
 
 .. list-table:: **Multimedia data services**
-   :widths: 23 8 10 10 10 
+   :widths: 25 10 10 10 10 
    :header-rows: 1
 
    * - Specimen occurrence data services
