@@ -1,6 +1,10 @@
-=========================
+========================
+NBA Service descriptions
+========================
+
+-------------------------
 Document management
-=========================
+-------------------------
 
 .. list-table:: 
    :widths: 25 10
@@ -15,11 +19,9 @@ Document management
    * - Content
      - description of data retrieval services in NBA API version 0
 
-
-========================
-NBA Service descriptions
-========================
-
+-------------------------
+Introduction
+-------------------------
 The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. 
 
 For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data retrieval operations - are available. 
@@ -99,8 +101,9 @@ For more information about the API version you are working with click here_.
 
 .. _m_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
+-----------
 Quick start
-===========
+-----------
 The Netherlands Biodiversity API endpoints follows the general form:
 
 .. code:: html
@@ -111,8 +114,9 @@ In nearly all cases an API request returns data as a JSON-formatted document.
 
 For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the service information overview. Information on requests, searchable fields and responses can also be accessed via this overview in the previous paragraph. 
 
+----------
 Versioning
-==========
+----------
 The API's current version = v0.
 
 Version v0 is a stable version, ready for public use. The documentation related to this version is still under construction and might therefore grow or change in the near future. 
@@ -124,771 +128,810 @@ Version v1 which will replace version v0 should largely fill this gap. Naturalis
 
 Naturalis reserves the right to deviate from the above text and/or to limit access to the API in case security issues arise or incorrect usage of the API. 
 
+------
 Access
-======
+------
 This API is a public API which can be accessed directly. 
 
+-----------------------
 Taxonomic data services
-=======================
+-----------------------
 
 1.TAXON SEARCH
---------------
+==============
 
-*Description*
- This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. 
+Description
+-----------
+This services comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
- Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
+Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a predefined subset of indexed taxon document fields and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
- .. _Catalogue_of_Life: http://www.catalogueoflife.org/
- .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
+.. _Catalogue_of_Life: http://www.catalogueoflife.org/
+.. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
 
 .. _t_requests:
 
-*Requests*
- *url*
-  The basic request url for free text search is:
+Requests
+--------
+url
+```
+The basic request url for free text search is:
 
-  .. code:: html
+.. code:: html
 
-    <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
+  <base url>/taxon/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?_search=Abies
 
-  The basic request url for indexed field search is:
+The basic request url for indexed field search is:
 
-  .. code:: html
+.. code:: html
 
-    <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
+  <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
 
- *indexed field name(s) in an url*
-  A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
+indexed field name(s) in an url
+```````````````````````````````
+A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
 
-  a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
-  b. field aliases, e.g. <base url>/taxon/search/?genus=Abies
+a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
+b. field aliases, e.g. <base url>/taxon/search/?genus=Abies
 
- .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
- *general meta parameters in an url*
-  For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
+general meta parameters in an url
+`````````````````````````````````
+For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
 
-  Paging parameters
+Paging parameters
 
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
                           
-                - example: request results in a list of maximum 60 documents i
+              - example: request results in a list of maximum 60 documents i
 
-                .. code:: html
+              .. code:: html
 
-                  <base url>/taxon/search/?_search=Abies&_maxResults=20, 
-  -----------   ---------------------------------------------------------------------------------------------------------
-  _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-                - default NBA setting offset: 0 (for requests without _offset parameter)
-                - example: request results in a list with search result no 21 as first document in list
-                .. code:: html
+                <base url>/taxon/search/?_search=Abies&_maxResults=20, 
+-----------   ---------------------------------------------------------------------------------------------------------
+_offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
+              - default NBA setting offset: 0 (for requests without _offset parameter)
+              - example: request results in a list with search result no 21 as first document in list
 
-                  <base url>/taxon/search/?_search=Abies&_offset=20. 
-  ===========   =========================================================================================================
+              .. code:: html
 
-  Sorting parameters
+                <base url>/taxon/search/?_search=Abies&_offset=20. 
+===========   =========================================================================================================
 
-  ==============   ======================================================================================================
-  Name             Description
-  ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in taxon documents          
-                   - default NBA setting sort: _score (for requests without _score parameter)
-                   - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
-                   - example: request results in list sorted on unitID (in ascending order)
+Sorting parameters
+
+==============   ======================================================================================================
+Name             Description
+==============   ======================================================================================================
+_sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in taxon documents          
+                 - default NBA setting sort: _score (for requests without _score parameter)
+                 - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
+                 - example: request results in list sorted on unitID (in ascending order)
                    
-                   .. code:: html
+                 .. code:: html
  
-                     <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet
-  --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
-                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
-                   - example: request results in list sorted on unitID in descending order
+                   <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet
+--------------   ------------------------------------------------------------------------------------------------------
+_sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
+                 - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                 - example: request results in list sorted on unitID in descending order
 
-                   .. code:: html
+                 .. code:: html
  
-                     <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet&_sortDirection=DESC
-  ==============   ======================================================================================================
+                   <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet&_sortDirection=DESC
+==============   ======================================================================================================
 
- *specific meta parameters for indexed field search*
-  For indexed field search extra meta parameters are available.
+specific meta parameters for indexed field search
+`````````````````````````````````````````````````
+For indexed field search extra meta parameters are available.
 
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - default NBA setting andOr: AND (for requests without _andOR parameter)
-                - example: request results in list with result of OR search on genus = Parus and species = major
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
+              - default NBA setting andOr: AND (for requests without _andOR parameter)
+              - example: request results in list with result of OR search on genus = Parus and species = major
 
-                .. code:: html
-                
-                  <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
-  ===========   =========================================================================================================
+              .. code:: html
+               
+                <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
+===========   =========================================================================================================
 
 .. _t_responses:
 
-*Responses*
-
- *basic response structure*
-  The basic structure of the responses can be viewed in the subsequent example section. 
+Responses
+---------
+basic response structure
+````````````````````````
+The basic structure of the responses can be viewed in the subsequent example section. 
   
 .. _t_examples:
 
-*Examples*
+Examples
+--------
 
- 1. Free text search
+1. Free text search
+```````````````````
+Search for value Parus in any taxon document
 
-  Search for value Parus in any taxon document
-
-  .. code:: html
+.. code:: html
  
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus
 
-  Search for value paardenbloem (lower case term  search- english term = Dandelion) in any taxon document
+Search for value paardenbloem (lower case term  search- english term = Dandelion) in any taxon document
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?_search=paardenbloem
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=paardenbloem
 
-  Search for value PAARDENBLOEM (upper case term search - english term = Dandelion) in any taxon document 
+Search for value PAARDENBLOEM (upper case term search - english term = Dandelion) in any taxon document 
  
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?_search=PAARDENBLOEM
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=PAARDENBLOEM
 
-  Search for value Bloem in any taxon document
+Search for value Bloem in any taxon document
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem
 
-  Search for value Bloem in any taxon document, maximum of 20 documents in result, sort = ascending (ASC)
+Search for value Bloem in any taxon document, maximum of 20 documents in result, sort = ascending (ASC)
    
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
-  Search for value Bloem in any taxon document, start from document 21
+Search for value Bloem in any taxon document, start from document 21
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=Bloem&_offset=20
 
- 2. Indexed field search
-
-  Search for key:value pair genus=Parus in any taxon document
+2. Indexed field search
+```````````````````````
+Search for key:value pair genus=Parus in any taxon document
  
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus
+  http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus
 
-  Search for key:value pairs genus=Parus and species=major in any taxon document (default=AND)
+Search for key:value pairs genus=Parus and species=major in any taxon document (default=AND)
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major
+  http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major
 
-  Search for key:value pair genus=Parus or species=major in any taxon document
+Search for key:value pair genus=Parus or species=major in any taxon document
    
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major&_andOr=OR
+  http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major&_andOr=OR
 
-  Search for key:value pair paardenbloem in any taxon document
+Search for key:value pair paardenbloem in any taxon document
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=paardenbloem
+  http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=paardenbloem
 
-  Search for key:value pair PAARDENBLOEM in any taxon document
+Search for key:value pair PAARDENBLOEM in any taxon document
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=PAARDENBLOEM
+  http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=PAARDENBLOEM
 
-  Search for key:value pair Bloem in any taxon document
+Search for key:value pair Bloem in any taxon document
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem
+  http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem
 
-  Search for key:value pair Bloem in any taxon document, 20 documents in result, sort = ascending (ASC)
+Search for key:value pair Bloem in any taxon document, 20 documents in result, sort = ascending (ASC)
 
-  .. code:: html
+.. code:: html
  
-    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
+  http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_maxResults=20&_sort=_score&_sortDirection=ASC
 
-  Search for value Bloem pair in any taxon document, start from document 21
+Search for value Bloem pair in any taxon document, start from document 21
  
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
+  http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=Bloem&_offset=20
 
+----------------------
 Specimen data services
-======================
+----------------------
 
 .. _Specimen-search:
 
 1.SPECIMEN SEARCH
------------------
+=================
 
-*Description*
- This service also comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. 
+Description
+-----------
+This service also comes in two flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
- Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. This subset contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
+Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. This subset contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
 
 .. _s_requests:
 
-*Requests*
- *url*
-  The basic request url for free text search is:
+Requests
+--------
+url
+```
+The basic request url for free text search is:
 
-  .. code:: html
+.. code:: html
  
-    <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=male
+  <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=male
 
-  The basic request url for indexed field search is:
+The basic request url for indexed field search is:
 
-  .. code:: html
+.. code:: html
  
-    <base url>/specimen/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/search/?typeStatus=holotype
+  <base url>/specimen/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/search/?typeStatus=holotype
 
- *geospatial search option in an url*
-  Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+geospatial search option in an url
+``````````````````````````````````
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
 
-  Geospatial parameter
+Geospatial parameter
 
-  ===========  ========================================================================================================================================
-   Name          Description
-  ===========  ========================================================================================================================================
-   _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
-                 - default NBA setting geoshape: not applicable
-                 - remarks: use lat/long coordinates.
-                 - example: request results in list of specimen gathered in Jordan
+===========  ========================================================================================================================================
+Name         Description
+===========  ========================================================================================================================================
+_geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
+              - default NBA setting geoshape: not applicable
+              - remarks: use lat/long coordinates.
+              - example: request results in list of specimen gathered in Jordan
                  
-                 .. code:: html
+              .. code:: html
  
-                   <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan
-  ===========  ========================================================================================================================================
+                <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan
+===========  ========================================================================================================================================
 
- *indexed field name(s) in an url*
-  A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+indexed field name(s) in an url
+```````````````````````````````
+A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
 
-  a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
-  b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
+a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
+b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
 
- .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
- *general meta parameters in an url*
-  For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
+general meta parameters in an url
+`````````````````````````````````
+For both types of searches optional extra request parameters – so called meta parameters - can be added to the request. These meta-parameters instruct the NBA on how to execute a query.
 
-  Paging parameters
+Paging parameters
 
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
-                - example: request results in list of maximum 60 documents
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
+              - default NBA setting maxResults: 10 (for requests without _maxResults parameter)
+              - example: request results in list of maximum 60 documents
 
-                .. code:: html
-                
-                  <base url>/specimen/search/?_search=male&_maxResults=20
-  -----------   ---------------------------------------------------------------------------------------------------------
-  _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-                - default NBA setting offset: 0 (for requests without _offset parameter)
-                - example: request results in list in which first document is search result no 21
-                .. code:: html
+              .. code:: html
+               
+                <base url>/specimen/search/?_search=male&_maxResults=20
+-----------   ---------------------------------------------------------------------------------------------------------
+_offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
+              - default NBA setting offset: 0 (for requests without _offset parameter)
+              - example: request results in list in which first document is search result no 21
+ 
+              .. code:: html
 
-                  <base url>/specimen/search/?_search=allotype&_offset=20. 
-  ===========   =========================================================================================================
+                <base url>/specimen/search/?_search=allotype&_offset=20. 
+===========   =========================================================================================================
 
-  Sorting parameters
+Sorting parameters
+ 
+==============   ======================================================================================================
+Name             Description
+==============   ======================================================================================================
+_sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          
+                 - default NBA setting sort: _score (for requests without _sort parameter)
+                 - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
+                 - example: request results in list sorted on unitID (sortDirection is default Ascending) 
 
-  ==============   ======================================================================================================
-  Name             Description
-  ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Taxon documents          
-                   - default NBA setting sort: _score (for requests without _sort parameter)
-                   - remarks: _sort parameter can be used for all fields in a taxon document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
-                   - example: request results in list sorted on unitID (sortDirection is default Ascending) 
+                 .. code:: html
 
-                   .. code:: html
+                   <base url>/specimen/search/?typeStatus=holotype&_sort=unitID
+--------------   ------------------------------------------------------------------------------------------------------
+_sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
+                 - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                 - example: request results in list sorted on unitID and sortDirection is descending
 
-                     <base url>/specimen/search/?typeStatus=holotype&_sort=unitID
-  --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
-                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
-                   - example: request results in list sorted on unitID and sortDirection is descending
+                 .. code:: html
 
+                   <base url>/specimen/search/?typeStatus=holotype&_sort=unitID&_sortDirection=DESC
+==============   ======================================================================================================
 
-                   .. code:: html
+specific meta parameters for indexed field search
+`````````````````````````````````````````````````
+For indexed field search extra meta parameters are available.
+ 
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
+              - default NBA setting andOr: AND (for requests without _andOr parameter)
+              - example: request results in list based on OR search
 
-                     <base url>/specimen/search/?typeStatus=holotype&_sort=unitID&_sortDirection=DESC
-  ==============   ======================================================================================================
-
- *specific meta parameters for indexed field search*
-  For indexed field search extra meta parameters are available.
-
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - default NBA setting andOr: AND (for requests without _andOr parameter)
-                - example: request results in list based on OR search
-
-                .. code:: html
+              .. code:: html
                   
-                  <base url>/specimen/search/?typeStatus=holotype&unitID=RMNH.MAM.50017&_andOr=OR
-  ===========   =========================================================================================================
+                <base url>/specimen/search/?typeStatus=holotype&unitID=RMNH.MAM.50017&_andOr=OR
+===========   =========================================================================================================
 
 .. _s_responses:
 
-*Responses*
-
- *basic response structure*
-   The basic structure of the responses can be viewed in the subsequent example section. 
+Responses
+---------
+basic response structure
+````````````````````````
+The basic structure of the responses can be viewed in the subsequent example section. 
 
 .. _s_examples:
 
-*Examples*
-
- 1. Free text search
-
-  Search for RMNH.MAM.50017 in CRS in any specimen document
+Examples
+--------
+1. Free text search
+```````````````````
+Search for RMNH.MAM.50017 in CRS in any specimen document
   
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=RMNH.MAM.50017
+  http://api.biodiversitydata.nl/v0/specimen/search/?_search=RMNH.MAM.50017
 
-  Search for synotype in any specimen document
+Search for synotype in any specimen document
 
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=synotype
+  http://api.biodiversitydata.nl/v0/specimen/search/?_search=synotype
 
-  Search for juvenile in any specimen document
+Search for juvenile in any specimen document
 
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=juvenile
+  http://api.biodiversitydata.nl/v0/specimen/search/?_search=juvenile
 
-  Search for mees in any specimen document
+Search for mees in any specimen document
 
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?_search=mees
+  http://api.biodiversitydata.nl/v0/specimen/search/?_search=mees
 
- 2. Indexed field search
-
-  Search for key:value pair unitID=RMNH.MAM.50017 in CRS in any specimen document
+2. Indexed field search
+```````````````````````
+Search for key:value pair unitID=RMNH.MAM.50017 in CRS in any specimen document
    
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?unitID=RMNH.MAM.50017
+  http://api.biodiversitydata.nl/v0/specimen/search/?unitID=RMNH.MAM.50017
 
-  Search for key:value pair sex=male in any specimen document
+Search for key:value pair sex=male in any specimen document
 
-  .. code:: html
+.. code:: html
   
-    http://api.biodiversitydata.nl/v0/specimen/search/?sex=male
+  http://api.biodiversitydata.nl/v0/specimen/search/?sex=male
 
-  Search for key:value pair collectorsFieldNumber=add a fieldnumber from a Brahms specimen
+Search for key:value pair collectorsFieldNumber=add a fieldnumber from a Brahms specimen
 
-  .. code:: html
+.. code:: html
    
-    http://api.biodiversitydata.nl/v0/specimen/search/?collectorsFieldNumber=[Brahms fieldnumber]
+  http://api.biodiversitydata.nl/v0/specimen/search/?collectorsFieldNumber=[Brahms fieldnumber]
     
-  .. _Specimen-name-search:
+.. _Specimen-name-search:
 
 2.SPECIMEN-NAME SEARCH
-----------------------
+======================
 
-*Description*
- This service comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on specimen documents, and, b. specimen document search based on the outcome of the name-resolution process_. This preceding process is executed on taxonomic data from the available taxonomic data sources.
+Description
+-----------
+This service comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on specimen documents, and, b. specimen document search based on the outcome of the name-resolution process_. This preceding process is executed on taxonomic data from the available taxonomic data sources.
 
- Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
+Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
 
 .. _sn_requests:
 
-*Requests*
- *url*
-  The basic request url for free text search is:
+Requests
+--------
+url
+```
+The basic request url for free text search is:
 
-  .. code:: html
+.. code:: html
   
-    <base url>/specimen/name-search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Larus
+  <base url>/specimen/name-search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Larus
 
-  The basic request url for indexed field search is:
+The basic request url for indexed field search is:
 
-  .. code:: html
+.. code:: html
   
-    <base url>/specimen/name-search/?indexedField1=[term]&indexedField2, e.g. http://api.biodiversitydata.nl/specimen/name-search/?typeStatus=holotype
+  <base url>/specimen/name-search/?indexedField1=[term]&indexedField2, e.g. http://api.biodiversitydata.nl/specimen/name-search/?typeStatus=holotype
 
- *geospatial search option in an url*
-  Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+geospatial search option in an url
+``````````````````````````````````
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
 
-  Geospatial parameter
+Geospatial parameter
 
-  ===========  ========================================================================================================================================
-   Name          Description
-  ===========  ========================================================================================================================================
-   _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
-                 - default NBA setting geoshape: not applicable
-                 - remarks: use lat/long coordinates.
-                 - example: request results in list of specimen gathered in Jordan
+===========  ========================================================================================================================================
+Name         Description
+===========  ========================================================================================================================================
+_geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
+              - default NBA setting geoshape: not applicable
+              - remarks: use lat/long coordinates.
+              - example: request results in list of specimen gathered in Jordan
+
+              .. code:: html
+
+                <base url>/specimen/name-search/?_geoshape=decoded lat. and long coordinates of Jordan
+===========  ========================================================================================================================================
+
+indexed field name(s) in an url
+```````````````````````````````
+A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+
+a. field path(s), e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies
+b. field aliases, e.g. <base url>/specimen/name-search/?genus=Abies
+
+.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+
+.. _process:
+
+additional integrated search capabilities
+`````````````````````````````````````````
+Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
+
+.. code:: html
+
+  <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+
+The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
+
+general meta parameters
+```````````````````````
+For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
+
+Paging parameters
+
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
+              - default NBA setting maxResults:10 (for requests without _maxResults parameter)
+              - example: request results in list of maximum 50 documents included.
+
+              .. code:: html                 
+
+                <base url>/specimen/name-search/?_search=bloem&_maxResults=50
+
+_offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
+              - default NBA setting offset:0 (for requests without _offset parameter)
+              - example: request results in list in which first document is search result no 21. 
+                
+              .. code:: html
+
+                <base url>/specimen/name-search/?_search=paardenbloem&_offset=20
+===========   =========================================================================================================
+
+Sorting parameters
+
+==============   ======================================================================================================
+Name             Description
+==============   ======================================================================================================
+_sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Specimen documents
+                 - default NBA setting sort: _score (for requests without _sort parameter)
+                 - remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths
+                 - example: request results in list sorted on genus
 
                  .. code:: html
 
-                   <base url>/specimen/name-search/?_geoshape=decoded lat. and long coordinates of Jordan
-  ===========  ========================================================================================================================================
+                   <base url>/specimen/name-search/?genus=Larus&_sort=identifications.scientificName.genusOrMonomial.
 
- *indexed field name(s) in an url*
-  A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+_sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
+                 - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                 - example: request results in list sorted on genus and with sort direction descending. 
 
-  a. field path(s), e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies
-  b. field aliases, e.g. <base url>/specimen/name-search/?genus=Abies
+                 .. code:: html
 
- .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+                   <base url>/specimen/name-search/?genus=Larus&_sort=..&_sortDirection=DESC
+==============   ======================================================================================================
 
- .. _process:
+specific meta parameters for indexed field search
+`````````````````````````````````````````````````
+For indexed fields search specific search meta parameters are available.
 
- *additional integrated search capabilities*
-  Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_andOr	      - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
+              - default NBA setting andOr: AND (for requests without _andOr parameter)
+              - example: request results in list based on OR search
 
-  .. code:: html
+              .. code:: html
 
-    <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
-
-  The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
-
- *general meta parameters*
-  For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
-
-  Paging parameters
-
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                - default NBA setting maxResults:10 (for requests without _maxResults parameter)
-                - example: request results in list of maximum 50 documents included.
-
-                .. code:: html                 
-
-                  <base url>/specimen/name-search/?_search=bloem&_maxResults=50
-
-  _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-                - default NBA setting offset:0 (for requests without _offset parameter)
-                - example: request results in list in which first document is search result no 21. 
-                
-                .. code:: html
-
-                  <base url>/specimen/name-search/?_search=paardenbloem&_offset=20
-  ===========   =========================================================================================================
-
-  Sorting parameters
-
-  ==============   ======================================================================================================
-  Name             Description
-  ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in Specimen documents
-                   - default NBA setting sort: _score (for requests without _sort parameter)
-	           - remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths
-                   - example: request results in list sorted on genus
-
-                   .. code:: html
-
-                     <base url>/specimen/name-search/?genus=Larus&_sort=identifications.scientificName.genusOrMonomial.
-
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
-                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
-                   - example: request results in list sorted on genus and with sort direction descending. 
-
-                   .. code:: html
-
-                     <base url>/specimen/name-search/?genus=Larus&_sort=..&_sortDirection=DESC
-  ==============   ======================================================================================================
-
- *specific meta parameters for indexed field search*
-  For indexed fields search specific search meta parameters are available.
-
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _andOr		 - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - default NBA setting andOr: AND (for requests without _andOr parameter)
-                - example: request results in list based on OR search
-
-                .. code:: html
-
-                  <base url>/specimen/name-search/?genus=Abies&species=alba&_andOr=OR
-  ===========   =========================================================================================================
+                <base url>/specimen/name-search/?genus=Abies&species=alba&_andOr=OR
+===========   =========================================================================================================
 
 .. _sn_responses:
 
-*Responses*
-
- *basic response structure*
-    The basic structure of the responses can be viewed in the subsequent example section. 
+Responses
+---------
+basic response structure
+````````````````````````
+The basic structure of the responses can be viewed in the subsequent example section. 
 
 .. _sn_examples:
 
-*Examples*
-
- 1. Free text search
-
-  Search with name resolution for Melicertus kerathurus in any specimen document
+Examples
+--------
+1. Free text search
+```````````````````
+Search with name resolution for Melicertus kerathurus in any specimen document
  
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Melicertus kerathurus
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Melicertus kerathurus
 
-  Search with name resolution for koolmees in any specimen document
+Search with name resolution for koolmees in any specimen document
   
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=koolmees
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=koolmees
 
-  Search with name resolution for vroedmeesterpad in any specimen document
+Search with name resolution for vroedmeesterpad in any specimen document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=vroedmeesterpad
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=vroedmeesterpad
 
-  Search with name resolution for mees in any specimen document
+Search with name resolution for mees in any specimen document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=mees
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=mees
 
-  Search with name resolution for paardenbloem in any specimen document
+Search with name resolution for paardenbloem in any specimen document
    
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=paardenbloem
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=paardenbloem
 
-  Search with name resolution for Parus major in any specimen document
+Search with name resolution for Parus major in any specimen document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Parus major
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?_search=Parus major
 
- 2. Indexed field search
+2. Indexed field search
+````````````````````````
+Search with name resolution for key:value pairs order=Decapoda, family=Dynomenidae and genus=Dynomene in any specimen document
 
-  Search with name resolution for key:value pairs order=Decapoda, family=Dynomenidae and genus=Dynomene in any specimen document
+.. code:: html 
 
-  .. code:: html 
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?order=Decapoda&family=Dynomenidae&genus=Dynomene
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?order=Decapoda&family=Dynomenidae&genus=Dynomene
-
-  Search with name resolution for key:value pair vernacularName=koolmees in any specimen document
+Search with name resolution for key:value pair vernacularName=koolmees in any specimen document
   
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=koolmees
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=koolmees
 
-  Search with name resolution for key:value pair vernacularName=paardenbloem in any specimen document
+Search with name resolution for key:value pair vernacularName=paardenbloem in any specimen document
    
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=paardenbloem
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=paardenbloem
 
-  Search with name resolution for key:value pair vernacularName=bloem in any specimen document
+Search with name resolution for key:value pair vernacularName=bloem in any specimen document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=bloem
+  http://api.biodiversitydata.nl/v0/specimen/name-search/?vernacularName=bloem
 
-
+------------------------
 Multimedia data services
-========================
+------------------------
 
 1.MULTIMEDIA SEARCH
--------------------
+===================
 
-*Description*
- This service comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on multimedia documents, and, b. multimedia document search based on the outcome of a name-resolution process_. This preceding process is executed on taxonomic data from the available taxonomic data sources.
+Description
+-----------
+This service comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on multimedia documents, and, b. multimedia document search based on the outcome of a name-resolution process_. This preceding process is executed on taxonomic data from the available taxonomic data sources.
 
- Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a predefined subset of indexed multimedia document fields and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
+Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a predefined subset of indexed multimedia document fields and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
 
- Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
+Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
 
 .. _m_requests:
 
-*Requests*
- *url*
-  The basic request url for free text search is:
+Requests
+--------
+url
+```
+The basic request url for free text search is:
 
-  .. code:: html
+.. code:: html
 
-    <base url>/multimedia/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/multimedia/search/?_search=paardenbloem
+  <base url>/multimedia/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/multimedia/search/?_search=paardenbloem
 
-  The basic request url for indexed field search is:
+The basic request url for indexed field search is:
 
-  .. code:: html
+.. code:: html
 
-    <base url>/multimedia/search/?indexedField1=[term]&indexedField2[term], e.g. http://api.biodiversitydata.nl/v0/multimedia/search/?genusOrMonomial=Parus
+  <base url>/multimedia/search/?indexedField1=[term]&indexedField2[term], e.g. http://api.biodiversitydata.nl/v0/multimedia/search/?genusOrMonomial=Parus
 
- *geospatial search option in an url*
-  Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+geospatial search option in an url
+``````````````````````````````````
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
 
-  Geospatial parameter
+Geospatial parameter
 
-  ===========  ========================================================================================================================================
-   Name          Description
-  ===========  ========================================================================================================================================
-   _geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
-                 - default NBA setting geoshape: not applicable
-                 - remarks: use lat/long coordinates.
-                 - example: request results in list of specimen gathered in Jordan 
+===========  ========================================================================================================================================
+Name         Description
+===========  ========================================================================================================================================
+_geoshape     - _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
+              - default NBA setting geoshape: not applicable
+              - remarks: use lat/long coordinates.
+              - example: request results in list of specimen gathered in Jordan 
+
+              .. code:: html
+           
+                <base url>/multimedia/search/?_geoshape=decoded coordinates of Jordan
+===========  ========================================================================================================================================
+
+indexed field name(s) in an url
+```````````````````````````````
+A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+
+a. field path(s), e.g. <base url>/multimedia/search/?genusOrMonomial=Larus
+b. field aliases, e.g. <base url>/multimedia/search/?genus=Larus
+
+.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+
+additional integrated search capabilities
+`````````````````````````````````````````
+Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
+
+.. code:: html
+
+  <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+
+The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
+
+general meta parameters
+```````````````````````
+For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
+
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
+              - default NBA setting maxResults:10 (for requests without _maxResults parameter)
+              - example: request results in list of maximum 20 documents
+
+              .. code:: html
+
+                <base url>/multimedia/search/?_search=Larus&_maxResults=20
+-----------   ---------------------------------------------------------------------------------------------------------
+_offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
+              - default NBA setting offset:0 (for requests without _offset parameter)
+              - example: request results in list in which first document is search result no 21.
+
+              .. code:: html
+
+                <base url>/multimedia/search/?_search=Larus&_offset=20
+===========   =========================================================================================================
+
+Sorting parameters
+
+==============   ======================================================================================================
+Name             Description
+==============   ======================================================================================================
+_sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in multimedia documents
+                 - default NBA setting sort: _score (for requests without _score parameter)
+                 - remarks: _sort parameter can be used for all fields in a multimedia document. Sort parameter values should be a fieldpath, e.g. identifications.scientificName.subgenus
+                 - example: request results in list sorted on unitID
 
                  .. code:: html
-           
-                   <base url>/multimedia/search/?_geoshape=decoded coordinates of Jordan
-  ===========  ========================================================================================================================================
 
- *indexed field name(s) in an url*
-  A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+                   <base url>/multimedia/search/?genus=Larus&_sort=unitID
+--------------   ------------------------------------------------------------------------------------------------------
+_sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC) 
+                 - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
+                 - example: request results in list sorted on unitID and sort direction is descending
 
-  a. field path(s), e.g. <base url>/multimedia/search/?genusOrMonomial=Larus
-  b. field aliases, e.g. <base url>/multimedia/search/?genus=Larus
+                 .. code:: html
 
- .. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+                   <base url>/multimedia/search/?genus=Larus&_sort=unitID&_sortDirection=DESC
+==============   ======================================================================================================
 
- *additional integrated search capabilities*
-  Name resolution is a search process on taxonomic data from the available taxonomic data sources. This process carries out a Taxon search of the indexed field type. The basic request url is:
+specific meta parameters for indexed field search
+`````````````````````````````````````````````````
+For indexed field search extra meta parameters are available.
 
-  .. code:: html
+===========   =========================================================================================================
+Name          Description
+===========   =========================================================================================================
+_andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
+              - default NBA setting andOr: AND (for requests without _andOR parameter)
+              - example: request results in list based on OR search
 
-    <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+              .. code:: html
 
-  The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
-
- *general meta parameters*
-  For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
-
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _maxResults   - _maxResults instructs NBA to return maximum amount of search results per page
-                - default NBA setting maxResults:10 (for requests without _maxResults parameter)
-                - example: request results in list of maximum 20 documents
-
-                .. code:: html
-
-                  <base url>/multimedia/search/?_search=Larus&_maxResults=20
-  -----------   ---------------------------------------------------------------------------------------------------------
-  _offset       - _offset instructs NBA to start filling first response from search result no = offset value + 1
-                - default NBA setting offset:0 (for requests without _offset parameter)
-                - example: request results in list in which first document is search result no 21.
-
-                .. code:: html
-
-                  <base url>/multimedia/search/?_search=Larus&_offset=20
-  ===========   =========================================================================================================
-
-  Sorting parameters
-
-  ==============   ======================================================================================================
-  Name             Description
-  ==============   ======================================================================================================
-  _sort            - _sort instructs NBA to return responses sorted on a single specified indexed field included in multimedia documents
-                   - default NBA setting sort: _score (for requests without _score parameter)
-                   - remarks: _sort parameter can be used for all fields in a multimedia document. Sort parameter values should be a fieldpath, e.g. identifications.scientificName.subgenus
-                   - example: request results in list sorted on unitID
-
-                   .. code:: html
-
-                     <base url>/multimedia/search/?genus=Larus&_sort=unitID
-  --------------   ------------------------------------------------------------------------------------------------------
-  _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC) 
-                   - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
-                   - example: request results in list sorted on unitID and sort direction is descending
-
-                   .. code:: html
-
-                     <base url>/multimedia/search/?genus=Larus&_sort=unitID&_sortDirection=DESC
-  ==============   ======================================================================================================
-
- *specific meta parameters for indexed field search*
-  For indexed field search extra meta parameters are available.
-
-  ===========   =========================================================================================================
-  Name          Description
-  ===========   =========================================================================================================
-  _andOr        - _andOr instructs NBA to use logical operator AND (conjunction) for multiple indexed field search
-                - default NBA setting andOr: AND (for requests without _andOR parameter)
-                - example: request results in list based on OR search
-
-                .. code:: html
-
-                  <base url>/multimedia/search/?genus=Larus&species=argentatus&_andOr=OR
-  ===========   =========================================================================================================
+                <base url>/multimedia/search/?genus=Larus&species=argentatus&_andOr=OR
+===========   =========================================================================================================
 
 .. _m_responses:
 
-*Responses*
-
- *basic response structure*
-  The basic structure of the responses can be viewed in the subsequent example section. 
+Responses
+---------
+basic response structure
+````````````````````````
+The basic structure of the responses can be viewed in the subsequent example section. 
 
 .. _m_examples:
 
-*Examples*
+Examples
+--------
+1. Free text search
+```````````````````
 
- 1. Free test search
+Search for koolmees in any multimedia document
 
-  Search for koolmees in any multimedia document
+.. code:: html
 
-  .. code:: html
+  http://api.biodiversitydata.nl/v0/multimedia/search/?_search=koolmees
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=koolmees
+Search for mees in any multimedia document
 
-  Search for mees in any multimedia document
+.. code:: html
 
-  .. code:: html
+  http://api.biodiversitydata.nl/v0/multimedia/search/?_search=mees
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=mees
+Search for Parus major in any multimedia document
 
-  Search for Parus major in any multimedia document
+.. code:: html
 
-  .. code:: html
+  http://api.biodiversitydata.nl/v0/multimedia/search/?_search=Parus major
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=Parus major
+Search for Melicertus kerathurus in any multimedia document
 
-  Search for Melicertus kerathurus in any multimedia document
+.. code:: html 
 
-  .. code:: html 
-
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=Abies abies
+  http://api.biodiversitydata.nl/v0/multimedia/search/?_search=Abies abies
     
-  Search for L.4275659 in Brahms in any multimedia document
+Search for L.4275659 in Brahms in any multimedia document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?_search=L.4275659
+  http://api.biodiversitydata.nl/v0/multimedia/search/?_search=L.4275659
 
+2. Indexed field search
+```````````````````````
+
+Search for key:value pair unitID=AHCYFCKPYRK:1560587210 in NSR in any multimedia document
   
- 2. Indexed field search
+.. code:: html
 
-  Search for key:value pair unitID=AHCYFCKPYRK:1560587210 in NSR in any multimedia document
-  
-  .. code:: html
+  http://api.biodiversitydata.nl/v0/multimedia/search/?unitID=AHCYFCKPYRK:1560587210
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?unitID=AHCYFCKPYRK:1560587210
-
-  Search for key:value pair vernacularName=paardenbloem in any multimedia document
+Search for key:value pair vernacularName=paardenbloem in any multimedia document
    
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?vernacularName=paardenbloem
+  http://api.biodiversitydata.nl/v0/multimedia/search/?vernacularName=paardenbloem
 
-  Search for key:value pairs genus=Parus and species=major in any multimedia document
+Search for key:value pairs genus=Parus and species=major in any multimedia document
 
-  .. code:: html
+.. code:: html
 
-    http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
+  http://api.biodiversitydata.nl/v0/multimedia/search/?genus=Parus&species=major
