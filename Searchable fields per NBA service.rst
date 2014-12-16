@@ -35,6 +35,8 @@ A Taxon search example
  
  The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
 
+.. _t_searchable_fields:
+
 1. TAXON search
 ---------------
 
