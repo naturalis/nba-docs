@@ -1,6 +1,10 @@
-===================
+=================================
+Searchable fields per NBA service
+=================================
+
+-------------------
 Document management
-===================
+-------------------
 
 .. list-table:: 
    :widths: 25 10
@@ -15,10 +19,9 @@ Document management
    * - Content
      - description of searchable fields per NBA service in NBA API version 0
 
-=================================
-Searchable fields per NBA service
-=================================
-
+------------
+Introduction
+------------
 This document lists an overview of the search fields per NBA service and per search field the available field aliasses and the handling of search terms (term handling), e.g. Parus or Netherlands, by the NBA.
 
 Term handling is executed for both single terms, e.g. Parus of Netherlands, and compound terms, e.g. Parus major or Great Brittain.
@@ -27,14 +30,15 @@ Note!
 Term handling on compound terms, e.g. Parus major, is more or less similar to term handling on single terms, e.g. Abies. NBA (an Elastic search implementation) breaks compound terms into parts: individual term components. The term handling on components terms is equal to the term handling on the single terms.
 
 A Taxon search example
- Request 
+Request 
  
- .. code:: html
+.. code:: html
  
-   http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus major. 
+  http://api.biodiversitydata.nl/v0/taxon/search/?_search=Parus major. 
  
- The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
+The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
 
+---------------
 1. TAXON search
 ---------------
 
@@ -71,6 +75,7 @@ systemClassification.name                         not applicable                
 experts.fullName                                  expert                                              exact match
 ================================================= =================================================== ====================
 
+------------------
 2. SPECIMEN search
 ------------------
 
@@ -89,6 +94,7 @@ gatheringEvent.dateTimeBegin                      collectingStartDate           
 _geoshape (= geo search parameter)                not applicable                                      in geoshape match
 ================================================= =================================================== ====================
 
+-----------------------
 3. SPECIMEN-NAME search
 -----------------------
 
@@ -115,8 +121,9 @@ identifications.vernacularNames.name                  commonName, vernacularName
 _geoshape (= geo search parameter)                    not applicable                               in geoshape match
 ===================================================== ============================================ ====================
 
+--------------------
 4. MULTIMEDIA search
------------------------
+--------------------
 
 ========================================================== =============================================== =============
 Field path                                                 NBA aliasses                                    Term handling
