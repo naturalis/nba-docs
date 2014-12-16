@@ -91,13 +91,13 @@ For more information about the API version you are working with click here_.
 
 .. _here: http://api.biodiversitydata.nl/v0/version
 
-.. t_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _t_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
-.. s_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _s_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
-.. sn_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _sn_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
-.. m_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _m_searchable_fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
 
 Quick start
 ===========
