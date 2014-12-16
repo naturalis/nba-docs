@@ -202,7 +202,7 @@ Taxonomic data services
                    
                    .. code:: html
  
-                     <base url>/taxon/search/?genus=Abies&_sort=unitID, 
+                     <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet
   --------------   ------------------------------------------------------------------------------------------------------
   _sortDirection   - _sortDirection instructs NBA on sorting direction, i.e. either descending (DESC) or ascending (ASC)
                    - default NBA setting sortDirection: ASC (for requests without _sortDirection parameter)
@@ -210,7 +210,7 @@ Taxonomic data services
 
                    .. code:: html
  
-                     <base url>/taxon/search/?genus=Abies&_sort=unitID&_sortDirection=DESC
+                     <base url>/taxon/search/?genus=Abies&_sort=defaultClassification.specificEpithet&_sortDirection=DESC
   ==============   ======================================================================================================
 
  *specific meta parameters for indexed field search*
