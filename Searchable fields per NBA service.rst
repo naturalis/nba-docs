@@ -7,7 +7,7 @@ Document management
 -------------------
 
 .. list-table:: 
-   :widths: 25 10
+   :widths: 10 25
    :header-rows: 0
    
    * - Author
