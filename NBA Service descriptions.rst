@@ -136,7 +136,7 @@ Taxonomic data services
  .. _Catalogue_of_Life: http://www.catalogueoflife.org/
  .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
 
-.. t_requests:
+.. _t_requests:
 
 *Requests*
  *url*
@@ -222,14 +222,14 @@ Taxonomic data services
                   <base url>/taxon/search/?genus=Parus&species=major&_andOr=OR
   ===========   =========================================================================================================
 
-.. t_responses:
+.. _t_responses:
 
 *Responses*
 
  *basic response structure*
   The basic structure of the responses can be viewed in the subsequent example section. 
   
-.. t_examples:
+.. _t_examples:
 
 *Examples*
 
@@ -334,7 +334,7 @@ Specimen data services
  
  Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. This subset contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
 
-.. s_requests:
+.. _s_requests:
 
 *Requests*
  *url*
@@ -439,14 +439,14 @@ Specimen data services
                   <base url>/specimen/search/?typeStatus=holotype&unitID=RMNH.MAM.50017&_andOr=OR
   ===========   =========================================================================================================
 
-.. s_responses:
+.. _s_responses:
 
 *Responses*
 
  *basic response structure*
    The basic structure of the responses can be viewed in the subsequent example section. 
 
-.. s_examples:
+.. _s_examples:
 
 *Examples*
 
@@ -506,7 +506,7 @@ Specimen data services
 
  Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a predefined subset of indexed specimen occurrence document fields and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
 
-.. sn_requests:
+.. _sn_requests:
 
 *Requests*
  *url*
@@ -622,14 +622,14 @@ Specimen data services
                   <base url>/specimen/name-search/?genus=Abies&species=alba&_andOr=OR
   ===========   =========================================================================================================
 
-.. sn_responses:
+.. _sn_responses:
 
 *Responses*
 
  *basic response structure*
     The basic structure of the responses can be viewed in the subsequent example section. 
 
-.. sn_examples:
+.. _sn_examples:
 
 *Examples*
 
@@ -711,7 +711,7 @@ Multimedia data services
 
  Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
 
-.. m_requests:
+.. _m_requests:
 
 *Requests*
  *url*
@@ -823,14 +823,14 @@ Multimedia data services
                   <base url>/multimedia/search/?genus=Larus&species=argentatus&_andOr=OR
   ===========   =========================================================================================================
 
-.. m_responses:
+.. _m_responses:
 
 *Responses*
 
  *basic response structure*
   The basic structure of the responses can be viewed in the subsequent example section. 
 
-.. m_examples:
+.. _m_examples:
 
 *Examples*
 
