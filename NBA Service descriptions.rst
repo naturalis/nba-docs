@@ -38,7 +38,7 @@ Each service is described in this document. Per service the following informatio
      - Examples
    * - Taxon search returns taxon documents
      - t_requests_
-     - t_searchable_fields_
+     - :ref:'searchable-fields-multimedia-search'
      - t_responses_
      - t_examples_
 
