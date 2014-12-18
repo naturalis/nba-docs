@@ -38,6 +38,8 @@ Request
  
 The response contains taxon documents with hits on the values Parus and major and sometimes both because of a scientific name with the value Parus major. The amount of hits on a document determines the ranking or score of the taxon document in the response. The taxon Parus major has a high chance of ending up on top of the score list because of it high number of hits, i.e. hits on full scientific name, genus and species.
 
+.. _searchable-fields-taxon-search:
+
 ---------------
 1. TAXON search
 ---------------
@@ -75,6 +77,8 @@ systemClassification.name                         not applicable                
 experts.fullName                                  expert                                              exact match
 ================================================= =================================================== ====================
 
+.. _searchable-fields-specimen-search:
+
 ------------------
 2. SPECIMEN search
 ------------------
@@ -93,6 +97,8 @@ gatheringEvent.gatheringAgents.organization       collector, gatheringAgent     
 gatheringEvent.dateTimeBegin                      collectingStartDate                                 exact match
 _geoshape (= geo search parameter)                not applicable                                      in geoshape match
 ================================================= =================================================== ====================
+
+.. _searchable-fields-specimen-name-search:
 
 -----------------------
 3. SPECIMEN-NAME search
@@ -120,6 +126,8 @@ identifications.scientificName.infraspecificEpithet   infraspecificEpithet, subp
 identifications.vernacularNames.name                  commonName, vernacularName                   \*term*\  match
 _geoshape (= geo search parameter)                    not applicable                               in geoshape match
 ===================================================== ============================================ ====================
+
+.. _searchable-fields-multimedia-search:
 
 --------------------
 4. MULTIMEDIA search
