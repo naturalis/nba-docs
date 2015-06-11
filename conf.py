@@ -204,6 +204,7 @@ latex_elements = {
 #  ('index', 'NetherlandsBiodiversityAPIdocumentation.tex', u'Netherlands Biodiversity API documentation Documentation',
 #   u'Naturalis Biodiversity Center', 'manual'),
 #]
+# This variable is left empty to disable PDF generation
 latex_documents = []
 
 # The name of an image file (relative to this directory) to place at the top of
