@@ -13,11 +13,11 @@ Document management
    * - Author
      - Naturalis ICT sector, Software Development department
    * - Document version
-     - c1.1.
+     - c1.2.
    * - Document publication date
-     - 11-06-2015
+     - 13-07-2015
    * - Content
-     - Description of data retrieval services in NBA API v0.12.2
+     - Description of data retrieval services in NBA API v0.13.1.
 
 -------------------------
 Summary
