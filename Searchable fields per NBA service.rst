@@ -13,11 +13,11 @@ Document management
    * - Author
      - Naturalis ICT sector, Software Development department
    * - Version
-     - c1.0.
+     - c1.2.
    * - Publication date
-     - 15-12-2014
+     - 13-07-2015
    * - Content
-     - description of searchable fields per NBA service in NBA API version 0
+     - description of searchable fields per NBA service in NBA API version 0.13.1.
 
 ------------
 Introduction
