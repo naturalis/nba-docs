@@ -140,7 +140,7 @@ identifications.defaultClassification.order                order                
 identifications.defaultClassification.family               family                                          exact match
 identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomial                          \*term*\  match
 identifications.defaultClassification.subgenus             subgenus                                        exact match
-identifications.defaultClassification.specificEpithet      species, speciesEpithet, specificEpithet        exact match
+identifications.defaultClassification.specificEpithet      species, specificEpithet                        exact match
 identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies                exact match
 identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          exact match
 identifications.scientificName.subgenus                    subgenus                                        exact match
