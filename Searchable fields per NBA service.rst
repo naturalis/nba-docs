@@ -144,7 +144,7 @@ identifications.defaultClassification.specificEpithet      species, specificEpit
 identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies                exact match
 identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                          exact match
 identifications.scientificName.subgenus                    subgenus                                        exact match
-identifications.scientificName.specificEpithet             species, speciesEpithet, specificEpithet        exact match
+identifications.scientificName.specificEpithet             species, specificEpithet                        exact match
 identifications.scientificName.infraspecificEpithet        infraspecificEpithet, subspecies                exact match
 _geoshape (= geo search parameter)                         not applicable                                  in geoshape match
 ========================================================== =============================================== =============
