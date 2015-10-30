@@ -101,7 +101,7 @@ Taxonomic data services
 
    * - TAXON search
      - 
-   * - **Description**
+   * - | **Description**
      - | This direct search service returns TAXON documents. Available direct search types are a. free text search, and b. indexed field search.
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
@@ -172,7 +172,7 @@ Specimen Occurrence data services
 
    * - SPECIMEN search
      - 
-   * - **Description**
+   * - | **Description**
      - | This direct search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search.
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
@@ -238,7 +238,7 @@ Specimen Occurrence data services
 
    * - SPECIMEN NAME search
      - 
-   * - **Description**
+   * - | **Description**
      - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
@@ -308,7 +308,7 @@ Specimen Occurrence data services
 
    * - SPECIMEN COLLECTION search
      - 
-   * - **Description**
+   * - | **Description**
      - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
    * - | **Examples**
      - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
@@ -353,7 +353,7 @@ Multimedia data services
 
    * - MULTIMEDIA search
      - 
-   * - **Description**
+   * - | **Description**
      - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
