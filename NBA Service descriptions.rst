@@ -13,18 +13,84 @@ Document management
    * - Author
      - Naturalis ICT sector, Software Development department
    * - Document version
-     - c1.2.
+     - c1.3.
    * - Document publication date
-     - 13-07-2015
+     - 30-10-2015
    * - Content
-     - Description of data retrieval services in NBA API v0.13.1.
+     - Description of data retrieval services in NBA API v0.14.4.
 
+------
+Access
+------
+This API is a public API which can be accessed directly. It is primarly intended for computers to communicate with other computers.
+	 
+---------
+Base url
+---------
+The base url for each service is: 
+
+.. code:: html
+
+  http://api.biodiversitydata.nl/v0
+  
+For more information about the API version you are working with click here_. 
+
+-------------------
+Recommended tooling
+-------------------
+
+For exploration or testing of the NBA services and/or new specimen PURL service we recommend using a command-line tool 
+for transferring data like e.g. `curl`_ or in case a rest client browser plugin, e.g. the chrome rest client, in case
+you want to work with a browser.
+
+.. _curl : http://curl.haxx.se/
+
+-----------
+Quick start
+-----------
+
+The Netherlands Biodiversity API endpoints follow the general form:
+
+.. code:: html
+
+  http://api.biodiversitydata.nl/{api_version}{endpoint}{optional parameters}
+
+In nearly all cases an API request returns data as a JSON-formatted document.
+
+For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the `services summary`_ . Information on requests, searchable fields and responses can also be accessed via the services summary. 
+
+Naturalis has created the Bioportal for sharing it's collection data with experts and the general public.
+The bioportal uses NBA search services for collection data retrieval. Just have a look at the `Bioportal`_ to get an idea of the NBA services' possibilities and 
+the available biodiversity data.
+
+.. _Bioportal : http://bioportal.naturalis.nl
+
+----------
+Versioning
+----------
+The API's current version = v0.
+
+Version v0 is a stable version, ready for public use. The documentation related to this version is still under construction and might therefore grow or change in the near future. 
+
+Bugfixes or other changes on version v0 will lead be processed in small version updates. Backward compatibility with previous v0 versions is guaranteed. The version number in the url of the API, currently v0, will not change as a result of these small changes. 
+
+Version v0 does not yet contain all core data services and documentation relevant for optimal data gathering.
+Version v1 which will replace version v0 should largely fill this gap. Naturalis strives to make this higher version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
+
+Naturalis reserves the right to deviate from the above text and/or to limit access to the API in case security issues arise or incorrect usage of the API. 
+
+.. _services summary:
+	 
 -------------------------
-Summary
+Services summary
 -------------------------
+
+Introduction
+========================
 The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. Our latest specimen collection service returns per Naturalis collection a DwCA file. 
 
 For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data retrieval operations - are available. Each service is described in this document. 
+
 
 Taxonomic data services
 ========================
@@ -37,6 +103,8 @@ Taxonomic data services
      - 
    * - **Description**
      - | This direct search service returns TAXON documents. Available direct search types are a. free text search, and b. indexed field search.
+   * - | **Examples**
+     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
    * - | **Request**
        |
        |
@@ -93,10 +161,7 @@ Taxonomic data services
             - JSON
           * - *Details*
             - | A response example can be viewed after calling a request example in the `free text taxon search examples section`_
-            - | A response example can be viewed after calling a request example in the `indexed field taxon search examples section`_
-   * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
-        
+            - | A response example can be viewed after calling a request example in the `indexed field taxon search examples section`_     
 
 Specimen Occurrence data services
 =================================
@@ -109,6 +174,8 @@ Specimen Occurrence data services
      - 
    * - **Description**
      - | This direct search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search.
+   * - | **Examples**
+     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
    * - | **Request**
        |
        |
@@ -163,9 +230,6 @@ Specimen Occurrence data services
             - | A response example can be viewed after calling a request example in the `free text specimen search examples section`_
             - | A response example can be viewed after calling a request example in the `indexed field specimen search examples section`_
 
-   * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
-
 |
 
 .. list-table:: 
@@ -176,6 +240,8 @@ Specimen Occurrence data services
      - 
    * - **Description**
      - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+   * - | **Examples**
+     - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
    * - | **Request**
        |
        |
@@ -233,8 +299,6 @@ Specimen Occurrence data services
           * - *Details*
             - | A response example can be viewed after calling a request example in the `free text specimen name search examples section`_
             - | A response example can be viewed after calling a request example in the `indexed field specimen name search examples section`_
-   * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
 
 |
 
@@ -246,7 +310,8 @@ Specimen Occurrence data services
      - 
    * - **Description**
      - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
-
+   * - | **Examples**
+     - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
    * - | **Request**
        |
        |
@@ -278,9 +343,6 @@ Specimen Occurrence data services
             - DwCA
           * - *Details*
             - The basic structure of a DwCA file can be viewed after calling a request example in the `specimen collection examples section`_
-   * - | **Examples**
-     - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
-
 
 Multimedia data services
 ========================
@@ -293,6 +355,8 @@ Multimedia data services
      - 
    * - **Description**
      - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+   * - | **Examples**
+     - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
    * - | **Request**
        |
        |
@@ -345,20 +409,6 @@ Multimedia data services
           * - *Details*
             - | The basic structure of the responses can be viewed in `free text multimedia search examples section`_
             - | The basic structure of the responses can be viewed in `indexed field multimedia search examples section`_
-   * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
-
-	 
-Base url
-========
-
-The base url for each service is: 
-
-.. code:: html
-
-  http://api.biodiversitydata.nl/v0
-  
-For more information about the API version you are working with click here_. 
 
 .. _here: http://api.biodiversitydata.nl/v0/version
 
@@ -369,38 +419,6 @@ For more information about the API version you are working with click here_.
 .. _list of selected specimen document fields for specimen name search: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-name-search
 
 .. _list of selected multimedia document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#multimedia-search
-
------------
-Quick start
------------
-The Netherlands Biodiversity API endpoints follows the general form:
-
-.. code:: html
-
-  http://api.biodiversitydata.nl/{api_version}{endpoint}{optional parameters}
-
-In nearly all cases an API request returns data as a JSON-formatted document.
-
-For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the service information overview. Information on requests, searchable fields and responses can also be accessed via this overview in the previous paragraph. 
-
-----------
-Versioning
-----------
-The API's current version = v0.
-
-Version v0 is a stable version, ready for public use. The documentation related to this version is still under construction and might therefore grow or change in the near future. 
-
-Bugfixes or other changes on version v0 will lead be processed in small version updates. Backward compatibility with previous v0 versions is guaranteed. The version number in the url of the API, currently v0, will not change as a result of these small changes. 
-
-Version v0 does not yet contain all core data services and documentation relevant for optimal data gathering.
-Version v1 which will replace version v0 should largely fill this gap. Naturalis strives to make this higher version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
-
-Naturalis reserves the right to deviate from the above text and/or to limit access to the API in case security issues arise or incorrect usage of the API. 
-
-------
-Access
-------
-This API is a public API which can be accessed directly. 
 
 -----------------------
 Taxonomic data services
@@ -588,7 +606,7 @@ Search for key:value pair genus=Parus in any taxon document
  
    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus
 
-Search for key:value pairs genus=Parus and species=major in any taxon document (default=AND)
+Search for key:value pair genus=Parus and species=major in any taxon document (default=AND)
 
 .. code:: html
  
@@ -600,11 +618,11 @@ Search for key:value pair genus=Parus or species=major in any taxon document
  
    http://api.biodiversitydata.nl/v0/taxon/search/?genus=Parus&species=major&_andOr=OR
 
-Search for key:value pair paardenbloem in any taxon document
+Search for key:value pair sourceSystem=Naturalis - Nederlands Soortenregister in any taxon document
 
 .. code:: html
  
-   http://api.biodiversitydata.nl/v0/taxon/search/?vernacularNames.name=paardenbloem
+   http://api.biodiversitydata.nl/v0/taxon/search/?sourceSystem=Naturalis - Nederlands Soortenregister
 
 Search for key:value pair PAARDENBLOEM in any taxon document
 
@@ -657,7 +675,7 @@ The basic request url for free text search is:
 
 .. code:: html
  
-   <base url>/specimen/search/?_search=[term], e.g. http:/api.biodiversitydata.nl/v0/specimen/search/?_search=male
+   <base url>/specimen/search/?_search=[term], e.g. http://api.biodiversitydata.nl/v0/specimen/search/?_search=male
 
 The basic request url for indexed field search is:
 
@@ -769,7 +787,7 @@ For indexed field search extra meta parameters are available.
 
        .. code:: html
                   
-          <base url>/specimen/search/?typeStatus=holotype&unitID=RMNH.MAM.50017&_andOr=OR
+          <base url>/specimen/search/?typeStatus=holotype&unitID=RMNH.AVES.110000&_andOr=OR
 
 .. _specimen response section:
 
@@ -788,17 +806,17 @@ Examples
 
 1. Free text search
 ```````````````````
-Search for RMNH.MAM.50017 in CRS in any specimen document
+Search for RMNH.AVES.110000 in CRS in any specimen document
   
 .. code:: html
   
-   http://api.biodiversitydata.nl/v0/specimen/search/?_search=RMNH.MAM.50017
+   http://api.biodiversitydata.nl/v0/specimen/search/?_search=RMNH.AVES.110000
 
-Search for synotype in any specimen document
+Search for syntype in any specimen document
 
 .. code:: html
   
-   http://api.biodiversitydata.nl/v0/specimen/search/?_search=synotype
+   http://api.biodiversitydata.nl/v0/specimen/search/?_search=syntype
 
 Search for juvenile in any specimen document
 
@@ -816,11 +834,11 @@ Search for mees in any specimen document
 
 2. Indexed field search
 ```````````````````````
-Search for key:value pair unitID=RMNH.MAM.50017 in CRS in any specimen document
+Search for key:value pair unitID=WAG.1500001 in CRS in any specimen document
    
 .. code:: html
   
-   http://api.biodiversitydata.nl/v0/specimen/search/?unitID=RMNH.MAM.50017
+   http://api.biodiversitydata.nl/v0/specimen/search/?unitID=WAG.1500001
 
 Search for key:value pair sex=male in any specimen document
 
@@ -833,7 +851,19 @@ Search for key:value pair collectorsFieldNumber=add a fieldnumber from a Brahms 
 .. code:: html
    
    http://api.biodiversitydata.nl/v0/specimen/search/?collectorsFieldNumber=[Brahms fieldnumber]
-    
+
+Search for key:value pair sourceSystem=Naturalis - Zoology and Geology catalogues
+
+.. code:: html
+   
+   http://api.biodiversitydata.nl/v0/specimen/search/?sourceSystem=Naturalis - Zoology and Geology catalogues
+
+Search for key:value pair collectionType=Aves
+
+.. code:: html
+   
+   http://api.biodiversitydata.nl/v0/specimen/search/?collectionType=Aves
+   
 .. _Specimen-name-search:
 
 2.SPECIMEN-NAME SEARCH
@@ -1084,33 +1114,33 @@ The creation of DwCA files is done batchwise once a month.
    * - Botany
      - Geology
      - Zoology
-   * - Botany
-     - Cainozoic mollusca
-     - Amphibia and Reptilia
+   * - botany
+     - cainozoic mollusca
+     - amphibia and Reptilia
    * - 
-     - Micropaleontology
-     - Chelicerata and Myriapoda
+     - micropaleontology
+     - chelicerata and Myriapoda
    * - 
-     - Paleontology invertebrates
-     - Colembola
-   * - 
-     - 
-     - Coleoptera
+     - paleontology invertebrates
+     - colembola
    * - 
      - 
-     - Crustacea
+     - coleoptera
    * - 
      - 
-     - Hymenoptera
+     - crustacea
    * - 
      - 
-     - Lepidoptera
+     - hymenoptera
    * - 
      - 
-     - Mammalia
+     - lepidoptera
    * - 
      - 
-     - Mollusca
+     - mammalia
+   * - 
+     - 
+     - mollusca
 
 .. _specimen collection request section:
 
