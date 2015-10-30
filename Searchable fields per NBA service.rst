@@ -209,22 +209,20 @@ _geoshape (= geo search parameter)                         not applicable       
 Search values per field
 =======================
 
-================================================= ===========================================================================
+================================================= ==========================================================================
 Field path                                        Search values
-================================================= =========================================================================== 
+================================================= ========================================================================== 
 sourceSystem.name                                 Naturalis - Zoology and Geology catalogues, Naturalis - Botany catalogues,
                                                   Naturalis - Nederlands Soortenregister
 typeStatus                                        allotype, epitype, holotype, isoepitype, isolectortype, isoneotype,
-                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype,
-												  syntype, topotype
+                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype,								  syntype, topotype
 phaseOrStage                                      adult, egg, embryo, immature, juvenile, larva, nymph, subadult
 sex                                               female, hermaphrodite, male, mixed
 collectionType                                    Arts, Aves, Brachiopoda, Bryozoa, Botany, Cainozoic Mollusca, 
-                                                  Chelicerata and Myriapoda, Cnidaria, Coleoptera, 
-												  Collembola, Crustacea, Diptera, Entomology, Foraminifera, 
-												  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, Mammalia, 
-												  Micropaleontology, Mineralogy, Mineralogy and Petrology, Mollusca,
-												  Odonata, Orthopteroidea, Paleobotany, Paleontology, Paleontology 
-												  Invertebrates, Petrology, Porifera, Protozoa, 
-												  Remaining insects, Tunicata, Vermes, miscellaneous
-================================================= ===========================================================================
+                                                  Chelicerata and Myriapoda, Cnidaria, Coleoptera, Collembola, Crustacea, 
+                                                  Diptera, Entomology, Foraminifera, Hemiptera, Hymenoptera, Invertebrates,
+                                                  Lepidoptera, Mammalia, Micropaleontology, Mineralogy, Mineralogy and
+                                                  Petrology, Mollusca, Odonata, Orthopteroidea, Paleobotany, Paleontology,
+                                                  Paleontology Invertebrates, Petrology, Porifera, Protozoa, Remaining
+                                                  insects, Tunicata, Vermes, miscellaneous
+================================================= ==========================================================================
