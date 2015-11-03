@@ -15,7 +15,7 @@ Document management
    * - Document version
      - c1.0.
    * - Document publication date
-     - 26-10-2015
+     - 3-11-2015
    * - Content
      - Description of purl specimen retrieval services in PURL v.1.0.
 
