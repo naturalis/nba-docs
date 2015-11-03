@@ -35,26 +35,25 @@ A specimen PURL example:
 
   http://data.biodiversitydata.nl/naturalis/specimen/RMNH.INS.389961
 
-*PURL description 1*
- | PURLs (Persistent Uniform Resource Locators) are Web addresses that act as permanent identifiers in the face of a 
- | dynamic and changing Web infrastructure. Instead of resolving directly to Web resources, PURLs provide a level of 
- | indirection that allows the underlying Web addresses of resources to change over time without negatively affecting 
- | systems that depend on them. This capability provides continuity of references to network resources that may migrate 
- | from machine to machine for business, social or technical reasons. 
- |  
- | Source: `wiki`_
+PURL description (1)
+  PURLs (Persistent Uniform Resource Locators) are Web addresses that act as permanent identifiers in the face of a 
+  dynamic and changing Web infrastructure. Instead of resolving directly to Web resources, PURLs provide a level of 
+  indirection that allows the underlying Web addresses of resources to change over time without negatively affecting 
+  systems that depend on them. This capability provides continuity of references to network resources that may migrate 
+  from machine to machine for business, social or technical reasons. 
+  
+  Source: `wiki`_
 
-*PURL description 2*
- | PURL identifiers are based on URIs and use the HTTP redirect mechanism to avoid broken links.
- |  a. e.g., http://purl.oclc.org/example/specimen/12921 and http://purl.org/dc/terms/contributor;
- |  b. web-based identifier using standard HTTP and HTTP redirect. Can be resolved through use of a common PURL resolver;
- |  c. promoted by the OCLC (Online Computer Library Center) [OCLC];
- |  d. independent generation is enabled by the use of domain names;
- |  e. may not be opaque due to the use of domain names, context names and sometimes descriptive object identifiers;
- |  f. authority, context and object identifier components can be defined using the path portion of the PURL (as shown in
- |  the example above).
- |  
- |  Source: `A Beginner's Guide to Persistent Identifiers`_
+PURL description (2)
+  PURL identifiers are based on URIs and use the HTTP redirect mechanism to avoid broken links.
+  a. e.g., http://purl.oclc.org/example/specimen/12921 and http://purl.org/dc/terms/contributor;
+  b. web-based identifier using standard HTTP and HTTP redirect. Can be resolved through use of a common PURL resolver;
+  c. promoted by the OCLC (Online Computer Library Center) [OCLC];
+  d. independent generation is enabled by the use of domain names;
+  e. may not be opaque due to the use of domain names, context names and sometimes descriptive object identifiers;
+  f. authority, context and object identifier components can be defined using the path portion of the PURL (as shown in the example above).
+   
+  Source: `A Beginner's Guide to Persistent Identifiers`_
   
 With the publication of the specimen PURL service Naturalis takes a first step in it's planned contribution to 
 the need of persistent identifiers for Life Sciences. Naturalis has decided to use PURL as a persistent identifier mechanism because of their ease-of-use, relative implementation-ease and strong technical community support. 
