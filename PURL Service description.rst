@@ -35,25 +35,26 @@ A specimen PURL example:
 
   http://data.biodiversitydata.nl/naturalis/specimen/RMNH.INS.389961
 
-PURL description 1
-   PURLs (Persistent Uniform Resource Locators) are Web addresses that act as permanent identifiers in the face of a 
-   dynamic and changing Web infrastructure. Instead of resolving directly to Web resources, PURLs provide a level of 
-   indirection that allows the underlying Web addresses of resources to change over time without negatively affecting 
-   systems that depend on them. This capability provides continuity of references to network resources that may migrate 
-   from machine to machine for business, social or technical reasons. 
-   
-   Source: `wiki`_
+*PURL description 1*
+ | PURLs (Persistent Uniform Resource Locators) are Web addresses that act as permanent identifiers in the face of a 
+ | dynamic and changing Web infrastructure. Instead of resolving directly to Web resources, PURLs provide a level of 
+ | indirection that allows the underlying Web addresses of resources to change over time without negatively affecting 
+ | systems that depend on them. This capability provides continuity of references to network resources that may migrate 
+ | from machine to machine for business, social or technical reasons. 
+ |  
+ | Source: `wiki`_
 
-PURL description 2
-   PURL identifiers are based on URIs and use the HTTP redirect mechanism to avoid broken links.
-    a. e.g., http://purl.oclc.org/example/specimen/12921 and http://purl.org/dc/terms/contributor
-    b. web-based identifier using standard HTTP and HTTP redirect. Can be resolved through use of a common PURL resolver.
-    c. promoted by the OCLC (Online Computer Library Center) [OCLC]
-    d. independent generation is enabled by the use of domain names.
-    e. may not be opaque due to the use of domain names, context names and sometimes descriptive object identifiers.  
-    f. authority, context and object identifier components can be defined using the path portion of the PURL (as shown in the example above).
-   
-   Source: `A Beginner's Guide to Persistent Identifiers`_
+*PURL description 2*
+ | PURL identifiers are based on URIs and use the HTTP redirect mechanism to avoid broken links.
+ |  a. e.g., http://purl.oclc.org/example/specimen/12921 and http://purl.org/dc/terms/contributor;
+ |  b. web-based identifier using standard HTTP and HTTP redirect. Can be resolved through use of a common PURL resolver;
+ |  c. promoted by the OCLC (Online Computer Library Center) [OCLC];
+ |  d. independent generation is enabled by the use of domain names;
+ |  e. may not be opaque due to the use of domain names, context names and sometimes descriptive object identifiers;
+ |  f. authority, context and object identifier components can be defined using the path portion of the PURL (as shown in
+ |  the example above).
+ |  
+ |  Source: `A Beginner's Guide to Persistent Identifiers`_
   
 With the publication of the specimen PURL service Naturalis takes a first step in it's planned contribution to 
 the need of persistent identifiers for Life Sciences. Naturalis has decided to use PURL as a persistent identifier mechanism because of their ease-of-use, relative implementation-ease and strong technical community support. 
@@ -167,23 +168,24 @@ All purl requests are subjected to two basic checks.
 1. specimen unitID presence check, if no, purl service responds with HTTP 404 (Not Found)
 2. content type presence check, i.e.
 
-a. purl service forwards to `Bioportal`_ (303 See Other). A text/html document is available for all specimens if accept header value(s) is either
-     - absent, e,g, empty, or
-     - solely text/html, or
-     - text/html followed by other content types, e.g. text/html,application/json,image/jpeg, or
-     - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types are not available.
+   a. purl service forwards to `Bioportal`_ (303 See Other). A text/html document is available for all specimens if accept header value(s) is either
+    - absent, e,g, empty, or
+    - solely text/html, or
+    - text/html followed by other content types, e.g. text/html,application/json,image/jpeg, or
+    - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types are not available.
 		
-b. purl service forwards to `NBA`_ (303 See Other). An application/json document is available for all specimens if accept header value(s) is either
-     - solely application/json, or,
-     - application/json followed by other content types, e.g. application/json,text/hrml,image/jpeg etc, or
-     - other content types followed by application/json, e.g. image/jpeg,video/mp4,application/json, if all the other
-       content types, or are not available.
+   b. purl service forwards to `NBA`_ (303 See Other). An application/json document is available for all specimens if accept header value(s) is either
+    - solely application/json, or,
+    - application/json followed by other content types, e.g. application/json,text/hrml,image/jpeg etc, or
+    - other content types followed by application/json, e.g. image/jpeg,video/mp4,application/json, if all the other
+      content types, or are not available.
 	
-c. purl service forwards to `Naturalis Medialib`_ (303 See Other) if
-     - one of the multimedia content types is available, i.e. image/jpeg or video/mp4, and
-     - text/html and application/json are not requested in the accept header.
+   c. purl service forwards to `Naturalis Medialib`_ (303 See Other) if
+    - one of the multimedia content types is available, i.e. image/jpeg or video/mp4, and
+    - text/html and application/json are not requested in the accept header.
 		
-d. purl service responds with HTTP 406 (Not Acceptable) if non of the requested multimedia content types is available. Along with the response comes a list of alternative media types that are servicable.
+   d. purl service responds with HTTP 406 (Not Acceptable) if non of the requested multimedia content types is available.
+Along with the response comes a list of alternative media types that are servicable.
 
 .. _Bioportal : http://bioportal.naturalis.nl
 
