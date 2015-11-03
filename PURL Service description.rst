@@ -1,6 +1,6 @@
-=========================
-PURL Service description
-=========================
+=================================
+Specimen PURL Service description
+=================================
 
 -------------------------
 Document management
