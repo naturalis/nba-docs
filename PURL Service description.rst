@@ -53,7 +53,7 @@ PURL description 2
     e. may not be opaque due to the use of domain names, context names and sometimes descriptive object identifiers.  
     f. authority, context and object identifier components can be defined using the path portion of the PURL (as shown in the example above).
    
-  Source: `A Beginner's Guide to Persistent Identifiers`_
+   Source: `A Beginner's Guide to Persistent Identifiers`_
   
 With the publication of the specimen PURL service Naturalis takes a first step in it's planned contribution to 
 the need of persistent identifiers for Life Sciences. Naturalis has decided to use PURL as a persistent identifier mechanism because of their ease-of-use, relative implementation-ease and strong technical community support. 
@@ -69,6 +69,7 @@ Through 'HTTP content negotiation'_ three other document content types can - dep
 .. _A Beginner's Guide to Persistent Identifiers : http://www.gbif.org/resource/80575
 
 .. _a specimen detail page of the Naturalis Bioportal : http://data.biodiversitydata.nl/naturalis/specimen/ZMA.MOLL.228360
+
 ------
 Access
 ------
@@ -167,20 +168,20 @@ All purl requests are subjected to two basic checks.
 2. content type presence check, i.e.
 
 a. purl service forwards to `Bioportal`_ (303 See Other). A text/html document is available for all specimens if accept header value(s) is either
-    - absent, e,g, empty, or
-    - solely text/html, or
-    - text/html followed by other content types, e.g. text/html,application/json,image/jpeg, or
-    - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types are not available.
+     - absent, e,g, empty, or
+     - solely text/html, or
+     - text/html followed by other content types, e.g. text/html,application/json,image/jpeg, or
+     - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types are not available.
 		
 b. purl service forwards to `NBA`_ (303 See Other). An application/json document is available for all specimens if accept header value(s) is either
-    - solely application/json, or,
-    - application/json followed by other content types, e.g. application/json,text/hrml,image/jpeg etc, or
-    - other content types followed by application/json, e.g. image/jpeg,video/mp4,application/json, if all the other
-      content types, or are not available.
+     - solely application/json, or,
+     - application/json followed by other content types, e.g. application/json,text/hrml,image/jpeg etc, or
+     - other content types followed by application/json, e.g. image/jpeg,video/mp4,application/json, if all the other
+       content types, or are not available.
 	
 c. purl service forwards to `Naturalis Medialib`_ (303 See Other) if
-    - one of the multimedia content types is available, i.e. image/jpeg or video/mp4, and
-    - text/html and application/json are not requested in the accept header.
+     - one of the multimedia content types is available, i.e. image/jpeg or video/mp4, and
+     - text/html and application/json are not requested in the accept header.
 		
 d. purl service responds with HTTP 406 (Not Acceptable) if non of the requested multimedia content types is available. Along with the response comes a list of alternative media types that are servicable.
 
