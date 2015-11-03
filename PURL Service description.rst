@@ -55,7 +55,7 @@ PURL description (2)
    
   Source: `A Beginner's Guide to Persistent Identifiers`_
   
-With the publication of the specimen PURL service Naturalis takes a first step in it's planned contribution to 
+With the publication of the specimen PURL service Naturalis takes a first step in its planned contribution to 
 the need of persistent identifiers for Life Sciences. Naturalis has decided to use PURL as a persistent identifier mechanism because of their ease-of-use, relative implementation-ease and strong technical community support. 
 
 Every Naturalis specimen PURL refers to a physical object in the our botanical, geological and zoological collections. Because Naturalis cannot (yet) serve a physicial object via the http protocol, Naturalis will instead serve one or more digital representations of the requested physical object, e.g. a specimen document in text/html format.  
@@ -203,7 +203,7 @@ Persistent identifier compliancy
 As said, each PURL is a kind of Persistent Identifier that relies on HTTP.
 But how does this service comply to the general characteristics of a Persistent Identifier mentioned in 
 `A Beginner's Guide to Persistent Identifiers`_ published by GBIF_? 
-We've tried to 'score' the service and/or comment on it's feature.
+We've tried to 'score' the service and/or comment on its feature.
 
 *A PID is globally unique:*
 Naturalis beliefs the chosen url structure guarantees global uniqueness for specimens.
@@ -231,7 +231,7 @@ Naturalis makes a dedicated effort to assure the permanent assignment to an obje
 
 *A PID is actionable:*
 Naturalis PURL specimen service is highly actionable. 
-It's actionability is mainly restricted by the availability of the requested specimen representations.
+Its actionability is mainly restricted by the availability of the requested specimen representations.
 
 *A PID allows for universal cross linking of information:*
 Cross linking through PIDs is not yet implemented in the specimen PURL service.
