@@ -8,6 +8,7 @@ Contents:
 
    NBA Service descriptions
    Searchable fields per NBA service
+   PURL Service description
 
 Indices and tables
 ==================
