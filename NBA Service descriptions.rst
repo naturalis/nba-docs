@@ -1115,13 +1115,13 @@ The creation of DwCA files is done batchwise once a month.
      - Geology
      - Zoology
    * - botany
-     - cainozoic mollusca
-     - amphibia and Reptilia
+     - cainozoic_mollusca
+     - amphibia_and_reptilia
    * - 
      - micropaleontology
-     - chelicerata and Myriapoda
+     - chelicerata_and_myriapoda
    * - 
-     - paleontology invertebrates
+     - paleontology_invertebrates
      - colembola
    * - 
      - 
