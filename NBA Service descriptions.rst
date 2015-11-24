@@ -1122,7 +1122,7 @@ The creation of DwCA files is done batchwise once a month.
      - chelicerata_and_myriapoda
    * - 
      - paleontology_invertebrates
-     - colembola
+     - collembola
    * - 
      - 
      - coleoptera
