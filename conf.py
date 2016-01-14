@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Netherlands Biodiversity Data Services documentation documentation build configuration file, created by
+# Netherlands Biodiversity Data Services documentation build configuration file, created by
 # sphinx-quickstart on Wed Aug 20 11:47:10 2014.
 #
 # This file is execfile()d with the current directory set to its containing dir.
