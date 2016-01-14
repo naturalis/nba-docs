@@ -201,7 +201,7 @@ htmlhelp_basename = 'NetherlandsBiodiversityDataServicesc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'NetherlandsBiodiversityDataServices.tex', u'Netherlands Biodiversity API Documentation',
+  ('index', 'NetherlandsBiodiversityDataServices.tex', u'Netherlands Biodiversity Data Services',
    u'Naturalis Biodiversity Center', 'manual'),
 #]
 # This variable is left empty to disable PDF generation
