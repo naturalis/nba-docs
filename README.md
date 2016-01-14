@@ -1,4 +1,4 @@
 nba-docs
 ========
 
-Netherlands Biodiversity API documentation
+Netherlands Biodiversity Data Services documentation
