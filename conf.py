@@ -182,7 +182,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'NetherlandsBiodiversityDataServicesdoc'
+htmlhelp_basename = 'NetherlandsBiodiversityDataServicesc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -233,7 +233,7 @@ latex_documents = []
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'netherlandsbiodiversitydataservicesdocumentation', u'Netherlands Biodiversity Data Services Documentation',
+    ('index', 'netherlandsbiodiversitydataservices', u'Netherlands Biodiversity Data Services',
      [u'Naturalis Biodiversity Center'], 1)
 ]
 
@@ -247,8 +247,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'NetherlandsBiodiversityDataServicesdocumentation', u'Netherlands Biodiversity Data Services Documentation',
-   u'Naturalis Biodiversity Center', 'NetherlandsBiodiversityDataServicesdocumentation', 'One line description of project.',
+  ('index', 'NetherlandsBiodiversityDataServices', u'Netherlands Biodiversity Data Services',
+   u'Naturalis Biodiversity Center', 'NetherlandsBiodiversityDataServices', 'One line description of project.',
    'Miscellaneous'),
 ]
 
