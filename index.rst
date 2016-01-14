@@ -1,5 +1,5 @@
-Welcome to Netherlands Biodiversity API's documentation!
-========================================================
+Welcome to Netherlands Biodiversity Data Services documentation!
+================================================================
 
 Contents:
 
