@@ -761,7 +761,9 @@ typeStatus                                        typeStatus                    
 phaseOrStage                                      phaseOrStage                                        exact match
 sex                                               sex                                                 exact match
 collectorsFieldNumber                             collectorsFieldNumber                               exact match
-collectionType                                    not applicable                                      exact match			gatheringEvent.localityText                       locality, localityText                              \*term*\  match
+collectionType                                    not applicable                                      exact match
+
+gatheringEvent.localityText                       locality, localityText                              \*term*\  match
 gatheringEvent.gatheringAgents.fullName           collector, gatheringAgent                           exact match
 gatheringEvent.gatheringAgents.organization       collector, gatheringAgent                           exact match
 gatheringEvent.dateTimeBegin                      collectingStartDate                                 exact match
@@ -1617,7 +1619,9 @@ sourceSystem.name                                          sourceSystem		       
 sexes                                                      sex                                           exact match
 specimenTypeStatus                                         typeStatus                                    exact match
 phasesOrStages                                             phaseOrStage                                  exact match
-collectionType                                             not applicable                                exact match			identifications.vernacularNames.name                       commonName, vernacularName                    \*term*\  match
+collectionType                                             not applicable                                exact match
+
+identifications.vernacularNames.name                       commonName, vernacularName                    \*term*\  match
 identifications.defaultClassification.kingdom              kingdom                                       exact match
 identifications.defaultClassification.phylum               phylum                                        exact match
 identifications.defaultClassification.className            class, className                              exact match
@@ -1642,8 +1646,8 @@ Indexed field                                     Search values
 sourceSystem.name                                 Naturalis - Zoology and Geology catalogues, Naturalis - Botany catalogues,
                                                   Naturalis - Nederlands Soortenregister
 typeStatus                                        allotype, epitype, holotype, isoepitype, isolectortype, isoneotype,
-                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype, syntype, 
-topotype
+                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype, syntype,
+                                                  topotype
 phaseOrStage                                      adult, egg, embryo, immature, juvenile, larva, nymph, subadult
 sex                                               female, hermaphrodite, male, mixed
 collectionType                                    Arts, Aves, Brachiopoda, Bryozoa, Botany, Cainozoic Mollusca, 
