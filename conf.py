@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Netherlands Biodiversity Data Services'
-copyright = u'2014, Naturalis Biodiversity Center'
+copyright = u'2016, Naturalis Biodiversity Center'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -187,7 +187,7 @@ htmlhelp_basename = 'NetherlandsBiodiversityDataServices'
 
 # -- Options for LaTeX output --------------------------------------------------
 
-# latex_elements = {
+latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
@@ -196,15 +196,16 @@ htmlhelp_basename = 'NetherlandsBiodiversityDataServices'
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
-# }
+}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [
-  ('index', 'NetherlandsBiodiversityDataServices.tex', u'Netherlands Biodiversity Data Services',
-   u'Naturalis Biodiversity Center', 'manual'),
+# latex_documents = [
+#  ('index', 'NetherlandsBiodiversityDataServices.tex', u'Netherlands Biodiversity Data Services',
+#   u'Naturalis Biodiversity Center', 'manual'),
 #]
 # This variable is left empty to disable PDF generation
+latex_documents = []
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
