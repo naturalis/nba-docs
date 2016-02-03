@@ -237,9 +237,7 @@ Specimen Occurrence data services
    * - SPECIMEN NAME search
      - 
    * - | **Description**
-     - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed 
-
-field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+     - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
    * - | **Request**
@@ -270,12 +268,8 @@ field search. The indirect search service is an in-built name resolution service
             - GET
             - GET
           * - *Searchable fields*
-            - `list of indexed specimen document fields for specimen name search`_ are queried. There is no overlap between this list and the list of 
-
-selected fields for specimen seaerch. 
-            - `list of indexed specimen document fields for specimen name search`_ can be queried. There is no overlap between this list and the list of 
-
-selected fields for specimen seaerch. 
+            - `list of indexed specimen document fields for specimen name search`_ are queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
+            - `list of indexed specimen document fields for specimen name search`_ can be queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -317,9 +311,7 @@ selected fields for specimen seaerch.
    * - SPECIMEN COLLECTION search
      - 
    * - | **Description**
-     - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have 
-
-a similar internal file structure and comply to multiple data standards. 
+     - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
    * - | **Examples**
      - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
    * - | **Request**
@@ -364,9 +356,7 @@ Multimedia data services
    * - MULTIMEDIA search
      - 
    * - | **Description**
-     - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed 
-
-field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+     - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
    * - | **Request**
@@ -406,7 +396,6 @@ field search. The indirect search service is an in-built name resolution service
           * - *Details*
             - | Request examples are listed in the `free text multimedia search examples section`_
             - | Request examples are listed in the `indexed field multimedia search examples section`_
-
    * - | **Response**
        |
        |
@@ -786,26 +775,15 @@ Indexed field                                     Search values
 ================================================= =========================================================================== 
 sourceSystem.name                                 Naturalis - Zoology and Geology catalogues, Naturalis - Botany catalogues
 typeStatus                                        allotype, epitype, holotype, isoepitype, isolectortype, isoneotype,
-                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype,
-												  syntype, topotype
+                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype, syntype,
+                                                  topotype
 phaseOrStage                                      adult, egg, embryo, immature, juvenile, larva, nymph, subadult
 sex                                               female, hermaphrodite, male, mixed
 collectionType                                    Amphibia and Reptilia, Arts, Aves, Brachiopoda, Bryozoa, Botany, 
                                                   Cainozoic Mollusca, Chelicerata and Myriapoda, Cnidaria, Coleoptera, 
-												  Collembola, Crustacea, Diptera, Echinodermata, Entomology, 
-
-Foraminifera, 
-												  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, 
-
-Mammalia, 
-												  Micropaleontology, Mineralogy, Mineralogy and Petrology, 
-
-Mollusca,
-												  Odonata, Orthopteroidea, Paleobotany, Paleontology, 
-
-Paleontology 
-												  Invertebrates, Petrology, Pisces, Porifera, Protozoa, 
-												  Remaining insects, Tunicata, Vermes, miscellaneous		
+                                                  Collembola, Crustacea, Diptera, Echinodermata, Entomology, Foraminifera, 
+                                                  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, Mammalia, 									  Micropaleontology, Mineralogy, Mineralogy and Petrology, Mollusca,								  Odonata, Orthopteroidea, Paleobotany, Paleontology, Paleontology 									  Invertebrates, Petrology, Pisces, Porifera, Protozoa, Remaining insects,
+                                                  Tunicata, Vermes, miscellaneous		
 ================================================= ===========================================================================
 
 general meta parameters in an url
@@ -848,9 +826,7 @@ Sorting parameters
    * - _sort
      - | • _sort instructs NBA to return responses sorted on a single specified indexed field included in specimen documents          
        | • default NBA setting sort: _score (for requests without _score parameter)
-       | • remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths, e.g. 
-
-gatheringEvent.locality
+       | • remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
        | • example: request results in list sorted on unitID (sortDirection is default Ascending) 
                    
        .. code:: html
