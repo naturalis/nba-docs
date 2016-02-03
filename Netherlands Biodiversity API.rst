@@ -1,6 +1,6 @@
-========================
-NBA Service descriptions
-========================
+============================
+Netherlands Biodiversity API
+============================
 
 -------------------------
 Document management
@@ -13,16 +13,16 @@ Document management
    * - Author
      - Naturalis ICT sector, Software Development department
    * - Document version
-     - c1.3.
+     - c1.4.
    * - Document publication date
-     - 30-10-2015
+     - 03-02-2016
    * - Content
-     - Description of data retrieval services in NBA API v0.14.4.
+     - Description of data acquisition services in Netherlands Biodiversity API v0.15.
 
 ------
 Access
 ------
-This API is a public API which can be accessed directly. It is primarly intended for computers to communicate with other computers.
+The Netherlands Biodiversity API, a.k.a. NBA, is a public API which can be accessed directly. It is primarly intended for computers to communicate with other computers.
 	 
 ---------
 Base url
@@ -39,9 +39,7 @@ For more information about the API version you are working with click here_.
 Recommended tooling
 -------------------
 
-For exploration or testing of the NBA services and/or new specimen PURL service we recommend using a command-line tool 
-for transferring data like e.g. `curl`_ or in case a rest client browser plugin, e.g. the chrome rest client, in case
-you want to work with a browser.
+For exploration or testing of the NBA services and/or new specimen PURL service we recommend using a command-line tool for transferring data like e.g. `curl`_ or in case a rest client browser plugin, e.g. the chrome rest client, in case you want to work with a browser.
 
 .. _curl : http://curl.haxx.se/
 
@@ -55,27 +53,24 @@ The Netherlands Biodiversity API endpoints follow the general form:
 
   http://api.biodiversitydata.nl/{api_version}{endpoint}{optional parameters}
 
-In nearly all cases an API request returns data as a JSON-formatted document.
+In nearly all cases an API request returns data as a JSON-formatted document. 
 
-For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the `services summary`_ . Information on requests, searchable fields and responses can also be accessed via the services summary. 
+For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the `services summary`_ . 
 
-Naturalis has created the Bioportal for sharing it's collection data with experts and the general public.
-The bioportal uses NBA search services for collection data retrieval. Just have a look at the `Bioportal`_ to get an idea of the NBA services' possibilities and 
-the available biodiversity data.
+Information on requests, searchable fields and responses can also be accessed via the services summary. 
 
-.. _Bioportal : http://bioportal.naturalis.nl
+Naturalis has created the Bioportal for sharing it's collection data with experts and the general public. The bioportal uses NBA search services for collection data acquisition. Just have a look at the `Bioportal`_ to get an idea of the NBA services' possibilities and the available biodiversity data.
+
+.. _Bioportal : http://bioportal.naturalis.nl/?language=en&back
 
 ----------
 Versioning
 ----------
 The API's current version = v0.
 
-Version v0 is a stable version, ready for public use. The documentation related to this version is still under construction and might therefore grow or change in the near future. 
+Version v0 is a stable version, ready for public use. The documentation related to this version is still under construction and might therefore grow or change in the near future. Bugfixes or other changes on version v0 will lead be processed in small version updates. Backward compatibility with previous v0 versions is guaranteed. The version number in the url of the API, currently v0, will not change as a result of these small changes. 
 
-Bugfixes or other changes on version v0 will lead be processed in small version updates. Backward compatibility with previous v0 versions is guaranteed. The version number in the url of the API, currently v0, will not change as a result of these small changes. 
-
-Version v0 does not yet contain all core data services and documentation relevant for optimal data gathering.
-Version v1 which will replace version v0 should largely fill this gap. Naturalis strives to make this higher version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
+Version v0 does not yet contain all core data services and documentation relevant for optimal data gathering. Version v1 which will replace version v0 should largely fill this gap. Naturalis strives to make this higher version backwards compatible with version v0. If backwards compatiblity can not be reached version v0 will be serviced at least half a year after version v1 has been released. 
 
 Naturalis reserves the right to deviate from the above text and/or to limit access to the API in case security issues arise or incorrect usage of the API. 
 
@@ -87,16 +82,16 @@ Services summary
 
 Introduction
 ========================
-The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. Our latest specimen collection service returns per Naturalis collection a DwCA file. 
+The Netherlands Biodiversity API offers web services for free text search and specific indexed field(s) search in multiple taxonomy and specimen occurrence data sources. Searches can be done on either taxa, specimen occurrences, and, multimedia linked to either a taxon or a specimen occurrence. The searchable data is stored as text documents in Elasticsearch document store. In nearly all cases an API request returns data as a JSON-formatted document. 
 
-For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data retrieval operations - are available. Each service is described in this document. 
+For each type of data, i.e. taxon, specimen occurrence and multimedia, one or more http GET services - data acquisition operations - are available. Each service is described in this document. 
 
 
 Taxonomic data services
 ========================
 
 .. list-table:: 
-   :widths: 50 100
+   :widths: 30 100
    :header-rows: 1
 
    * - TAXON search
@@ -121,7 +116,7 @@ Taxonomic data services
        | More details in
        | `taxon request section`_       
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -131,8 +126,8 @@ Taxonomic data services
             - GET
             - GET
           * - *Searchable fields*
-            - all taxon document fields are queried
-            - `list of selected taxon document fields <http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#taxon-search>`_ are queried
+            - `list of indexed taxon document fields`_ are queried
+            - `list of indexed taxon document fields`_ can be queried
           * - *Geospatial search*
             - Not available
             - Not available
@@ -142,15 +137,15 @@ Taxonomic data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | A response example can be viewed after calling a request example in the `free text taxon search examples section`_
-            - | A response example can be viewed after calling a request example in the `indexed field taxon search examples section`_
+            - | Request examples are listed in the `free text taxon search examples section`_
+            - | Request examples are listed in the `indexed field taxon search examples section`_
    * - | **Response**
        |
        |
        | More details in
        | `taxon response section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -167,7 +162,7 @@ Specimen Occurrence data services
 =================================
 
 .. list-table:: 
-   :widths: 50 100
+   :widths: 30 100
    :header-rows: 1
 
    * - SPECIMEN search
@@ -190,7 +185,7 @@ Specimen Occurrence data services
        | More details in
        | `specimen request section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -200,8 +195,8 @@ Specimen Occurrence data services
             - GET
             - GET
           * - *Searchable fields*
-            - all specimen document fields are queried
-            - `list of selected specimen document fields`_ are queried
+            - `list of indexed specimen document fields`_ are queried
+            - `list of indexed specimen document fields`_ can be queried
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -210,6 +205,9 @@ Specimen Occurrence data services
             - | Paging and sorting parameters are available. 
               |
               | Additional logical operator _andOr for indexed field search.  
+          * - *Details*
+            - | Request examples are listed in the `free text specimen search examples section`_
+            - | Request examples are listed in the `indexed field specimen search examples section`_
    * - | **Response**
        |
        |
@@ -217,7 +215,7 @@ Specimen Occurrence data services
        | More details in
        | `specimen response section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -233,13 +231,15 @@ Specimen Occurrence data services
 |
 
 .. list-table:: 
-   :widths: 50 100
+   :widths: 30 100
    :header-rows: 1
 
    * - SPECIMEN NAME search
      - 
    * - | **Description**
-     - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+     - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed 
+
+field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
    * - | **Request**
@@ -260,7 +260,7 @@ Specimen Occurrence data services
        | More details in
        | `specimen name request section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -270,8 +270,12 @@ Specimen Occurrence data services
             - GET
             - GET
           * - *Searchable fields*
-            - all specimen document fields are queried
-            - `list of selected specimen document fields for specimen name search`_ are queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
+            - `list of indexed specimen document fields for specimen name search`_ are queried. There is no overlap between this list and the list of 
+
+selected fields for specimen seaerch. 
+            - `list of indexed specimen document fields for specimen name search`_ can be queried. There is no overlap between this list and the list of 
+
+selected fields for specimen seaerch. 
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -280,6 +284,10 @@ Specimen Occurrence data services
             - | Paging and sorting parameters are available. 
               |
               | Additional logical operator _andOr for indexed field search.  
+          * - *Details*
+            - | Request examples are listed in the `free text specimen name search examples section`_
+            - | Request examples are listed in the `indexed field specimen name search examples section`_
+
    * - | **Response**
        |
        |
@@ -287,7 +295,7 @@ Specimen Occurrence data services
        | More details in
        | `specimen name response section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -303,24 +311,24 @@ Specimen Occurrence data services
 |
 
 .. list-table:: 
-   :widths: 50 100
+   :widths: 30 100
    :header-rows: 1
 
    * - SPECIMEN COLLECTION search
      - 
    * - | **Description**
-     - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
+     - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have 
+
+a similar internal file structure and comply to multiple data standards. 
    * - | **Examples**
      - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
    * - | **Request**
        |
        |
-       | 
-       |
        | More details in
        | `specimen collection request section`_
      - .. list-table:: 
-          :widths: 50 150
+          :widths: 40 150
           :header-rows: 0
 
           * - *HTTP support*
@@ -331,6 +339,8 @@ Specimen Occurrence data services
             - Not available
           * - *Meta parameters*
             - No specific meta parameters are available
+          * - *Details*
+            - Request examples are listed in the `specimen collection examples section`_
    * - | **Response**
        |
        | More details in
@@ -348,13 +358,15 @@ Multimedia data services
 ========================
 
 .. list-table:: 
-   :widths: 50 100
+   :widths: 30 100
    :header-rows: 1
 
    * - MULTIMEDIA search
      - 
    * - | **Description**
-     - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
+     - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed 
+
+field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
      - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
    * - | **Request**
@@ -371,7 +383,7 @@ Multimedia data services
        | More details in
        | `multimedia request section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -381,8 +393,8 @@ Multimedia data services
             - GET
             - GET
           * - *Searchable fields*
-            - all specimen document fields are queried
-            - `list of selected multimedia document fields`_ are queried
+            - `list of indexed multimedia document fields`_ are queried
+            - `list of indexed multimedia document fields`_ can be queried
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -391,13 +403,17 @@ Multimedia data services
             - | Paging and sorting parameters are available. 
               |
               | Additional logical operator _andOr for indexed field search.  
+          * - *Details*
+            - | Request examples are listed in the `free text multimedia search examples section`_
+            - | Request examples are listed in the `indexed field multimedia search examples section`_
+
    * - | **Response**
        |
        |
        | More details in
        | `multimedia response section`_
      - .. list-table:: 
-          :widths: 60 100 100
+          :widths: 40 100 100
           :header-rows: 1
 
           * - 
@@ -412,14 +428,6 @@ Multimedia data services
 
 .. _here: http://api.biodiversitydata.nl/v0/version
 
-.. _list of selected taxon document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#taxon-search
-
-.. _list of selected specimen document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-search
-
-.. _list of selected specimen document fields for specimen name search: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-name-search
-
-.. _list of selected multimedia document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#multimedia-search
-
 -----------------------
 Taxonomic data services
 -----------------------
@@ -433,13 +441,10 @@ Description
 -----------
 This direct search service returns TAXON documents. It comes in two search type flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
-Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a `predefined subset of indexed taxon document fields`_ and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
+Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a `list of indexed taxon document fields`_ and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
 .. _Catalogue_of_Life: http://www.catalogueoflife.org/
 .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
-
-.. _predefined subset of indexed taxon document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#taxon-search
-
 .. _taxon request section:
 
 Requests
@@ -460,12 +465,54 @@ The basic request url for indexed field search is:
 
 indexed field name(s) in an url
 ```````````````````````````````
-A taxon document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in an indexed field search request can be done by either,
+A taxon document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by the using either,
 
-a. field path(s), e.g. <base url>/taxon/search/?genusOrMonomial=Abies
-b. field aliases, e.g. <base url>/taxon/search/?genus=Abies
+a. a field path, e.g. <base url>/taxon/search/?genusOrMonomial=Abies, or
+b. a field alias, e.g. <base url>/taxon/search/?genus=Abies
 
-.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _list of indexed taxon document fields:
+
+================================================= ================================================= =====================
+Indexed field                                     Aliasses                                          Single term handling
+================================================= ================================================= =====================
+sourceSystem.name                                 sourceSystem		                                 exact match	
+acceptedName.genusOrMonomial                      genus, genusOrMonomial                            exact match
+acceptedName.subgenus                             subgenus                                          exact match
+acceptedName.specificEpithet                      species, specificEpithet                          exact match
+acceptedName.infraspecificEpithet                 infraspecificEpithet, subspecies                  exact match
+acceptedName.taxonomicStatus                      taxonomicStatus                                   exaxt match
+defaultClassification.kingdom                     kingdom                                           exact match
+defaultClassification.phylum                      phylum                                            exact match
+defaultClassification.className                   class, className                                  exact match
+defaultClassification.order                       order                                             exact match
+defaultClassification.family                      family                                            exact match
+defaultClassification.genus                       genus, genusOrMonomial                            exact match
+defaultClassification.subgenus                    subgenus                                          exaxt match
+defaultClassification.specificEpithet             species, specificEpithet                          exact match
+defaultClassification.infraspecificEpithet        infraspecificEpithet, subspecies                  exact match
+experts.fullName                                  expert                                            exact match
+experts.organization.name                         expertOrganisation                                exact match
+synonyms.genusOrMonomial                          genus, genusOrMonomial                            exact match
+synonyms.subgenus                                 subgenus                                          exact match
+synonyms.specificEpithet                          species, specificEpithet                          exact match
+synonyms.infraspecificEpithet                     infraspecificEpithet, subspecies                  exact match
+synonyms.experts.fullName                         expert                                            exact match
+synonyms.experts.organization.name                expertOrganisation                                exact match
+synonyms.taxonomicStatus                          taxonomicStatus                                   exaxt match
+systemClassification.name                         not applicable                                    exact match
+vernacularNames.name                              commonName, vernacularName                        \*term*\ match
+vernacularNames.experts.fullName                  expert                                            exact match
+vernacularNames.experts.organization.name         expertOrganisation                                exact match
+================================================= ================================================= =====================
+
+Some of the searchable fields have a predefined set of search values.
+
+================================================= ========================================================================== 
+Indexed field                                     Search values
+================================================= ========================================================================== 
+sourceSystem.name                                 Naturalis - Nederlands Soortenregister, Species 2000 - Catalogue of Life
+defaultClassification.kingdom                     Animalia, Archea, Bacteria, Chromista, Fungi, Plantae, Protozoa, Viruses
+================================================= ==========================================================================
 
 general meta parameters in an url
 `````````````````````````````````
@@ -661,9 +708,9 @@ Description
 -----------
 This direct search service returns TAXON documents. It comes in two search type flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
-Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a `predefined subset of indexed specimen occurrence document fields`_ and returns multilingual specimen documents in JSON responses. This subset contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
+Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields`_ and returns multilingual specimen documents in JSON responses. This list of searchable fields contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service 
 
-.. _predefined subset of indexed specimen occurrence document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-search
+Specimen-name-search_.
 
 .. _specimen request section:
 
@@ -685,7 +732,9 @@ The basic request url for indexed field search is:
 
 geospatial search option in an url
 ``````````````````````````````````
-Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. 
+
+Geosearch can also be done without additional free text or indexed field search.
 
 Geospatial parameter
 
@@ -707,12 +756,57 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
-a. field path(s), e.g. <base url>/specimen/search/?genusOrMonomial=Abies
-b. field aliases, e.g. <base url>/specimen/search/?genus=Abies
+a. a field path, e.g. <base url>/specimen/search/?genusOrMonomial=Abies, or
+b. a field alias, e.g. <base url>/specimen/search/?genus=Abies
 
-.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _list of indexed specimen document fields:
+
+================================================= =================================================== ======================
+Indexed field                                     Aliasses                                            Single term handling
+================================================= =================================================== ======================
+unitID                                            registrationNumber, unitID                          exact match
+sourceSystem.name                                 sourceSystem		                                  exact match	
+typeStatus                                        typeStatus                                          exact match
+phaseOrStage                                      phaseOrStage                                        exact match
+sex                                               sex                                                 exact match
+collectorsFieldNumber                             collectorsFieldNumber                               exact match
+collectionType                                    not applicable                                      exact match			gatheringEvent.localityText                       locality, localityText                              \*term*\  match
+gatheringEvent.gatheringAgents.fullName           collector, gatheringAgent                           exact match
+gatheringEvent.gatheringAgents.organization       collector, gatheringAgent                           exact match
+gatheringEvent.dateTimeBegin                      collectingStartDate                                 exact match
+_geoshape (= geo search parameter)                not applicable                                      in geoshape match
+================================================= =================================================== ======================
+
+Some searchable fields have a predefined set of search values.
+
+================================================= ===========================================================================
+Indexed field                                     Search values
+================================================= =========================================================================== 
+sourceSystem.name                                 Naturalis - Zoology and Geology catalogues, Naturalis - Botany catalogues
+typeStatus                                        allotype, epitype, holotype, isoepitype, isolectortype, isoneotype,
+                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype,
+												  syntype, topotype
+phaseOrStage                                      adult, egg, embryo, immature, juvenile, larva, nymph, subadult
+sex                                               female, hermaphrodite, male, mixed
+collectionType                                    Amphibia and Reptilia, Arts, Aves, Brachiopoda, Bryozoa, Botany, 
+                                                  Cainozoic Mollusca, Chelicerata and Myriapoda, Cnidaria, Coleoptera, 
+												  Collembola, Crustacea, Diptera, Echinodermata, Entomology, 
+
+Foraminifera, 
+												  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, 
+
+Mammalia, 
+												  Micropaleontology, Mineralogy, Mineralogy and Petrology, 
+
+Mollusca,
+												  Odonata, Orthopteroidea, Paleobotany, Paleontology, 
+
+Paleontology 
+												  Invertebrates, Petrology, Pisces, Porifera, Protozoa, 
+												  Remaining insects, Tunicata, Vermes, miscellaneous		
+================================================= ===========================================================================
 
 general meta parameters in an url
 `````````````````````````````````
@@ -754,7 +848,9 @@ Sorting parameters
    * - _sort
      - | • _sort instructs NBA to return responses sorted on a single specified indexed field included in specimen documents          
        | • default NBA setting sort: _score (for requests without _score parameter)
-       | • remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths, e.g. gatheringEvent.locality
+       | • remarks: _sort parameter can be used for all fields in a specimen document. Sort parameter values should be fieldpaths, e.g. 
+
+gatheringEvent.locality
        | • example: request results in list sorted on unitID (sortDirection is default Ascending) 
                    
        .. code:: html
@@ -873,9 +969,9 @@ Description
 -----------
 This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two search varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on specimen occurrence documents, and, b. specimen occurrence document search based on the outcome of the name-resolution process (indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
 
-Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a `subset of indexed specimen occurrence document fields`_ and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
+Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields for specimen name search`_ and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service 
 
-.. _subset of indexed specimen occurrence document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-name-search
+Specimen-search_.
 
 .. _specimen name request section:
 
@@ -893,11 +989,13 @@ The basic request url for indexed field search is:
 
 .. code:: html
   
-   <base url>/specimen/name-search/?indexedField1=[term]&indexedField2, e.g. http://api.biodiversitydata.nl/specimen/name-search/?typeStatus=holotype
+   <base url>/specimen/name-search/?indexedField1=[term]&indexedField2, e.g. http://api.biodiversitydata.nl/v0/specimen/name-search/?typeStatus=holotype
 
 geospatial search option in an url
 ``````````````````````````````````
-Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. 
+
+Geosearch can also be done without additional free text or indexed field search.
 
 Geospatial parameter
 
@@ -919,12 +1017,42 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
-a. field path(s), e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies
-b. field aliases, e.g. <base url>/specimen/name-search/?genus=Abies
+a. a field path, e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies, or
+b. a field alias, e.g. <base url>/specimen/name-search/?genus=Abies
 
-.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _list of indexed specimen document fields for specimen name search:
+
+===================================================== ============================================ =====================
+Indexed field                                         Aliasses                                     Single term handling
+===================================================== ============================================ =====================
+defaultClassification.kingdom                         kingdom                                      exact match
+defaultClassification.phylum                          phylum                                       exact match
+defaultClassification.className                       class, className                             exact match
+defaultClassification.order                           order                                        exact match
+defaultClassification.family                          family                                       exact match
+defaultClassification.genus                           genus, genusOrMonomial                       exact match
+defaultClassification.subgenus                        subgenus                                     exact match
+defaultClassification.specificEpithet                 species, speciesEpithet, specificEpithet     exact match
+defaultClassification.infraspecificEpithet            infraspecificEpithet, subpspecies            exact match
+gatheringEvent.gatheringAgents.fullName               collector, gatheringAgent                    exact match
+gatheringEvent.dateTimeBegin                          collectingStartDate                          exact match
+identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       exact match
+identifications.scientificName.subgenus               subgenus                                     exact match
+identifications.scientificName.specificEpithet        species, speciesEpithet, specificEpithet     exact match
+identifications.scientificName.infraspecificEpithet   infraspecificEpithet, subpspecies            exact match
+identifications.vernacularNames.name                  commonName, vernacularName                   \*term*\  match
+systemClassification.name                             not applicable                               exact match
+_geoshape (= geo search parameter)                    not applicable                               in geoshape match
+===================================================== ============================================ =====================
+
+Some searchable fields have a predefined set of search values.
+
+================================================= ========================================================================= 
+Indexed field                                     Search values
+================================================= ========================================================================= 
+defaultClassification.kingdom                     Animalia, Archea, Bacteria, Chromista, Fungi, Plantae, Protozoa, Viruses          ================================================= =========================================================================
 
 .. _process:
 
@@ -951,7 +1079,7 @@ Paging parameters
    * - Name
      - Description
    * - _maxResults
-     - | • _maxResults instructs NBA to return maximum amount of search results per page
+     - | • _maxResults instructs NBA to retrn maximum amount of search results per page
        | • default NBA setting maxResults: 10 (for requests without _maxResults parameter)
        | • example: request results in list of maximum 50 documents included.
 
@@ -1160,8 +1288,7 @@ Responses
 ---------
 basic response structure
 ````````````````````````
-
-All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
+All DwCA zip files have a similar internal file structure and comply to multiple data standards.  
 
 DwCA zip file features
 
@@ -1451,11 +1578,9 @@ Description
 -----------
 This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on multimedia documents, and, b. multimedia document search based on the outcome of the name-resolution process (indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
 
-Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a `predefined subset of indexed multimedia document fields`_ and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
+Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a `list of indexed multimedia document fields`_ and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
 
 Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
-
-.. _predefined subset of indexed multimedia document fields: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html#specimen-name-search
 
 .. _multimedia request section:
 
@@ -1477,7 +1602,9 @@ The basic request url for indexed field search is:
 
 geospatial search option in an url
 ``````````````````````````````````
-Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. Geosearch can also be done without additional free text or indexed field search.
+Geospatial search can be combined with either a free text search or an indexed field search. This combined search uses default the boolean operator AND. 
+
+Geosearch can also be done without additional free text or indexed field search.
 
 Geospatial parameter
 
@@ -1499,12 +1626,58 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A specimen document incorporates an extensive set of fields. A subset of this set is searchable and is listed in this document_. Stating a field name in a indexed field search request can be done by either,
+A multimedia document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
-a. field path(s), e.g. <base url>/multimedia/search/?genusOrMonomial=Larus
-b. field aliases, e.g. <base url>/multimedia/search/?genus=Larus
+a. a field path, e.g. <base url>/multimedia/search/?genusOrMonomial=Larus, or
+b. a field alias, e.g. <base url>/multimedia/search/?genus=Larus
 
-.. _document: http://docs.biodiversitydata.nl/en/latest/Searchable%20fields%20per%20NBA%20service.html
+.. _list of indexed multimedia document fields:
+
+========================================================== ============================================= =====================
+Indexed field                                              Aliasses                                      Single term handling
+========================================================== ============================================= =====================
+unitID                                                     registrationNumber, unitID                    exact match
+sourceSystem.name                                          sourceSystem		                             exact match
+sexes                                                      sex                                           exact match
+specimenTypeStatus                                         typeStatus                                    exact match
+phasesOrStages                                             phaseOrStage                                  exact match
+collectionType                                             not applicable                                exact match			identifications.vernacularNames.name                       commonName, vernacularName                    \*term*\  match
+identifications.defaultClassification.kingdom              kingdom                                       exact match
+identifications.defaultClassification.phylum               phylum                                        exact match
+identifications.defaultClassification.className            class, className                              exact match
+identifications.defaultClassification.order                order                                         exact match
+identifications.defaultClassification.family               family                                        exact match
+identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomial                        \*term*\  match
+identifications.defaultClassification.subgenus             subgenus                                      exact match
+identifications.defaultClassification.specificEpithet      species, specificEpithet                      exact match
+identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies              exact match
+identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                        exact match
+identifications.scientificName.subgenus                    subgenus                                      exact match
+identifications.scientificName.specificEpithet             species, specificEpithet                      exact match
+identifications.scientificName.infraspecificEpithet        infraspecificEpithet, subspecies              exact match
+_geoshape (= geo search parameter)                         not applicable                                in geoshape match
+========================================================== ============================================= =====================
+
+Some searchable fields have a predefined set of search values.
+
+================================================= ==========================================================================
+Indexed field                                     Search values
+================================================= ========================================================================== 
+sourceSystem.name                                 Naturalis - Zoology and Geology catalogues, Naturalis - Botany catalogues,
+                                                  Naturalis - Nederlands Soortenregister
+typeStatus                                        allotype, epitype, holotype, isoepitype, isolectortype, isoneotype,
+                                                  isosyntype, isotype, lectotype, neotype, paralectotype, paratype, syntype, 
+topotype
+phaseOrStage                                      adult, egg, embryo, immature, juvenile, larva, nymph, subadult
+sex                                               female, hermaphrodite, male, mixed
+collectionType                                    Arts, Aves, Brachiopoda, Bryozoa, Botany, Cainozoic Mollusca, 
+                                                  Chelicerata and Myriapoda, Cnidaria, Coleoptera, Collembola, Crustacea, 
+                                                  Diptera, Entomology, Foraminifera, Hemiptera, Hymenoptera, Invertebrates,
+                                                  Lepidoptera, Mammalia, Micropaleontology, Mineralogy, Mineralogy and
+                                                  Petrology, Mollusca, Odonata, Orthopteroidea, Paleobotany, Paleontology,
+                                                  Paleontology Invertebrates, Petrology, Porifera, Protozoa, Remaining
+                                                  insects, Tunicata, Vermes, miscellaneous
+================================================= ==========================================================================
 
 additional integrated search capabilities
 `````````````````````````````````````````
