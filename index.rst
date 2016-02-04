@@ -32,15 +32,12 @@ The main documentation for this site is organized in a couple of sections:
    :maxdepth: 2
    :caption: PURL Service
 
-   document management
-   introduction
-   access
-   base url
-   recommended tooling
-   quick start
-   purl processing in detail
-   versioning
-   persistent identifier compliancy
-   background information purls
+   purl_document_management
+   purl_introduction
+   purl_quick start
+   purl_versioning
+   purl_processing_in_detail
+   purl_persistent_identifier_compli
+   purl_background_information_purls
    
    rtfd
