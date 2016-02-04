@@ -11,7 +11,7 @@ The main documentation for this site is organized in a couple of sections:
 * :ref:`PURL-docs`
 
 
-.. _API-docs
+.. _API-docs:
 
 .. toctree::
    :maxdepth: 2
@@ -26,7 +26,7 @@ The main documentation for this site is organized in a couple of sections:
    api_specimen_data_services
    api_multimedia_data_services
    
-   .. _API-docs
+.. _PURL-docs:
 
 .. toctree::
    :maxdepth: 2
