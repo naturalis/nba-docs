@@ -17,7 +17,7 @@ The main documentation for this site is organized in a couple of sections:
    :maxdepth: 2
    :caption: Netherlands Biodiversity API 
 
-   document management
+   api_document_management
    access
    base url
    recommended tooling
