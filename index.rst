@@ -34,7 +34,7 @@ The main documentation for this site is organized in a couple of sections:
 
    purl_document_management
    purl_introduction
-   purl_quick start
+   purl_quick_start
    purl_versioning
    purl_processing_in_detail
    purl_persistent_identifier_compli
