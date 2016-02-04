@@ -18,15 +18,13 @@ The main documentation for this site is organized in a couple of sections:
    :caption: Netherlands Biodiversity API 
 
    api_document_management
-   access
-   base url
-   recommended tooling
-   quick start
-   versioning
-   services summary
-   taxonomic data services
-   specimen Occurrence data services
-   multimedia data services
+   api_recommended_tooling
+   api_quick_start
+   api_versioning
+   api_services_summary
+   api_taxonomic_data_services
+   api_specimen_data_services
+   api_multimedia_data_services
    
    .. _API-docs
 
