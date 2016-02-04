@@ -18,7 +18,7 @@ The main documentation for this site is organized in a couple of sections:
    :caption: Netherlands Biodiversity API 
 
    api_document_management
-   api_recommended_tooling
+   api_introduction
    api_quick_start
    api_versioning
    api_services_summary
