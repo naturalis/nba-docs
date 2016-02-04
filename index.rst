@@ -10,7 +10,6 @@ The main documentation for this site is organized in a couple of sections:
 * :ref:`API-docs`
 * :ref:`PURL-docs`
 
-
 .. _API-docs:
 
 .. toctree::
