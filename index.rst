@@ -24,7 +24,7 @@ The main documentation for this site is organized in a couple of sections:
    api_taxonomic_data_services
    api_specimen_data_services
    api_multimedia_data_services
-   
+
 .. _purldocs:
 
 .. toctree::
