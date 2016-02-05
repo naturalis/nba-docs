@@ -150,6 +150,8 @@ Specimen Occurrence data services
             - | A response example can be viewed after calling a request example in the `free text specimen search examples section`_
             - | A response example can be viewed after calling a request example in the `indexed field specimen search examples section`_
 
+.. _list of indexed taxon document fields: http://docs.biodiversitydata.nl/en/latest/api_taxonomic_data_services.html#indexed-field-name-s-in-an-url
+
 |
 
 .. list-table:: 
