@@ -10,7 +10,7 @@ The base url for each service is:
 
   http://api.biodiversitydata.nl/v0
   
-For more information about the API version you are working with click :doc:`here </api_versioning>`
+For more information about the API version you are working with view the :doc:`versioning </api_versioning>` document.
 
 The Netherlands Biodiversity API endpoints follow the general form:
 
