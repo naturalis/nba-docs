@@ -33,14 +33,14 @@ The basic request url for indexed field search is:
 
    <base url>/taxon/search/?indexedField1=[term]&indexedField2=[term], e.g. http://api.biodiversitydata.nl/v0/taxon/search/?genusOrMonomial=Parus
 
-.. _list of indexed taxon document fields:
-
 indexed field name(s) in an url
 ```````````````````````````````
 A taxon document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by the using either,
 
 a. a field path, e.g. <base url>/taxon/search/?genusOrMonomial=Abies, or
 b. a field alias, e.g. <base url>/taxon/search/?genus=Abies
+
+.. _list of indexed taxon document fields:
 
 ================================================= ================================================= =====================
 Indexed field                                     Aliasses                                          Single term handling
