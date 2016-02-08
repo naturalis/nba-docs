@@ -21,7 +21,7 @@ Taxonomic data services
    * - | **Description**
      - | This direct search service returns TAXON documents. Available direct search types are a. free text search, and b. indexed field search.
    * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
+     - | Examples of both free text and indexed field taxon searches can be found in the taxon :ref:`taxon examples section` section
    * - | **Request**
        |
        |
@@ -49,7 +49,7 @@ Taxonomic data services
             - GET
           * - *Searchable fields*
             - :ref:`list of indexed taxon document fields <list of indexed taxon document fields>` are queried
-            - `list of indexed taxon document fields`_ can be queried
+            - :ref:`list of indexed taxon document fields`<list of indexed taxon document fields> can be queried
           * - *Geospatial search*
             - Not available
             - Not available
