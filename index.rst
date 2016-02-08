@@ -39,4 +39,3 @@ The main documentation for this site is organized in a couple of sections:
    purl_persistent_identifier_compli
    purl_background_information_purls
    
-   rtfd
