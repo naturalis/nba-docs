@@ -65,7 +65,7 @@ Taxonomic data services
        |
        |
        | More details in the
-       | taxon `taxon response section` section
+       | taxon :ref:`taxon response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -92,7 +92,7 @@ Specimen Occurrence data services
    * - | **Description**
      - | This direct search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search.
    * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen examples section`_
+     - | Examples of both free text and indexed field taxon searches can be found in the specimen :ref:`specimen examples section` section
    * - | **Request**
        |
        |
@@ -105,7 +105,7 @@ Specimen Occurrence data services
        |
        |
        | More details in
-       | `specimen request section`_
+       | the specimen :ref:`specimen request section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -117,8 +117,8 @@ Specimen Occurrence data services
             - GET
             - GET
           * - *Searchable fields*
-            - `list of indexed specimen document fields`_ are queried
-            - `list of indexed specimen document fields`_ can be queried
+            - :ref:`list of indexed specimen document fields <list of indexed specimen document fields>` are queried
+            - :ref:`list of indexed specimen document fields <list of indexed specimen document fields>` can be queried
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -128,14 +128,14 @@ Specimen Occurrence data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | Request examples are listed in the `free text specimen search examples section`_
-            - | Request examples are listed in the `indexed field specimen search examples section`_
+            - | Request examples are listed in the specimen :ref:`free text specimen search examples section` section
+            - | Request examples are listed in the specimen :ref:`indexed field specimen search examples section` section
    * - | **Response**
        |
        |
        |
        | More details in
-       | `specimen response section`_
+       | the specimen :ref:`specimen response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -147,8 +147,8 @@ Specimen Occurrence data services
             - JSON
             - JSON
           * - *Details*
-            - | A response example can be viewed after calling a request example in the `free text specimen search examples section`_
-            - | A response example can be viewed after calling a request example in the `indexed field specimen search examples section`_
+            - | A response example can be viewed after calling a request example in the specimen :ref:`free text specimen search examples section` section
+            - | A response example can be viewed after calling a request example in the :ref:`indexed field specimen search examples section` section
 
 |
 
@@ -161,7 +161,7 @@ Specimen Occurrence data services
    * - | **Description**
      - | This combined direct and indirect search service returns SPECIMEN documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `specimen name examples section`_
+     - | Examples of both free text and indexed field taxon searches can be found in the specimen :ref:`specimen name examples section` section
    * - | **Request**
        |
        |
@@ -178,7 +178,7 @@ Specimen Occurrence data services
        |
        |
        | More details in
-       | `specimen name request section`_
+       | the :ref:`specimen name request section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -190,8 +190,8 @@ Specimen Occurrence data services
             - GET
             - GET
           * - *Searchable fields*
-            - `list of indexed specimen document fields for specimen name search`_ are queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
-            - `list of indexed specimen document fields for specimen name search`_ can be queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
+            - :ref:`list of indexed specimen document fields for specimen name search <list of indexed specimen document fields for specimen name search>` are queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
+            - :ref:`list of indexed specimen document fields for specimen name search <list of indexed specimen document fields for specimen name search>` can be queried. There is no overlap between this list and the list of selected fields for specimen seaerch. 
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -201,15 +201,14 @@ Specimen Occurrence data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | Request examples are listed in the `free text specimen name search examples section`_
-            - | Request examples are listed in the `indexed field specimen name search examples section`_
-
+            - | Request examples are listed in the specimen name :ref:`free text specimen name search examples section` section
+            - | Request examples are listed in the specimen name :ref:`indexed field specimen name search examples section` section
    * - | **Response**
        |
        |
        |
        | More details in
-       | `specimen name response section`_
+       | the specimen :ref:`specimen name response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -221,8 +220,8 @@ Specimen Occurrence data services
             - JSON
             - JSON
           * - *Details*
-            - | A response example can be viewed after calling a request example in the `free text specimen name search examples section`_
-            - | A response example can be viewed after calling a request example in the `indexed field specimen name search examples section`_
+            - | A response example can be viewed after calling a request example in the specimen name :ref:`free text specimen name search examples section` section
+            - | A response example can be viewed after calling a request example in the specimen name :ref:`indexed field specimen name search examples section` section
 
 |
 
@@ -235,12 +234,12 @@ Specimen Occurrence data services
    * - | **Description**
      - | This direct search service returns a DwCA zip file containing all available SPECIMEN occurrences of a Naturalis Collection. All DwCA zip files have a similar internal file structure and comply to multiple data standards. 
    * - | **Examples**
-     - | Examples of DwCA file downloads can be found in the `specimen collection examples section`_
+     - | Examples of DwCA file downloads can be found in the specimen collection :ref:`specimen collection examples section` section
    * - | **Request**
        |
        |
        | More details in
-       | `specimen collection request section`_
+       | the :ref:`specimen collection request section` section
      - .. list-table:: 
           :widths: 40 150
           :header-rows: 0
@@ -248,17 +247,17 @@ Specimen Occurrence data services
           * - *HTTP support*
             - GET
           * - *Downloadable collections*
-            - `list of Naturalis collections`_ which are available for download. The list is living document. 
+            - :ref:`list of Naturalis collections <list of Naturalis collections>` which are available for download. The list is living document. 
           * - *Geospatial search*
             - Not available
           * - *Meta parameters*
             - No specific meta parameters are available
           * - *Details*
-            - Request examples are listed in the `specimen collection examples section`_
+            - Request examples are listed in the specimen collection :ref:`specimen collection examples section` section
    * - | **Response**
        |
        | More details in
-       | `specimen collection response section`_
+       | the :ref:`specimen collection response section` section
      - .. list-table:: 
           :widths: 50 150
           :header-rows: 0
@@ -266,8 +265,8 @@ Specimen Occurrence data services
           * - *Data format*
             - DwCA
           * - *Details*
-            - The basic structure of a DwCA file can be viewed after calling a request example in the `specimen collection examples section`_
-
+            - The basic structure of a DwCA file can be viewed after calling a request example in the specimen collection :ref:`specimen collection examples section` section
+            
 Multimedia data services
 ========================
 
@@ -280,7 +279,7 @@ Multimedia data services
    * - | **Description**
      - | This combined direct and indirect search service returns MULTIMEDIA documents. Available direct search types are a. free text search, and b. indexed field search. The indirect search service is an in-built name resolution service which is default active. Name resolution can not be deactivated. 
    * - | **Examples**
-     - | Examples of both free text and indexed field taxon searches can be found in the `multimedia examples section`_
+     - | Examples of both free text and indexed field taxon searches can be found in the multimedia :ref:`multimedia examples section` section
    * - | **Request**
        |
        |
@@ -293,7 +292,7 @@ Multimedia data services
        |
        |
        | More details in
-       | `multimedia request section`_
+       | the multimedia :ref:`multimedia request section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -305,8 +304,8 @@ Multimedia data services
             - GET
             - GET
           * - *Searchable fields*
-            - `list of indexed multimedia document fields`_ are queried
-            - `list of indexed multimedia document fields`_ can be queried
+            - :ref:`list of indexed multimedia document fields <list of indexed multimedia document fields>` are queried
+            - :ref:`list of indexed multimedia document fields <list of indexed multimedia document fields>` can be queried
           * - *Geospatial search*
             - Geosearch is available. Combined geo - free text search uses default the boolean operator AND. Sec geosearch is also possible.
             - Geosearch is available. Combined geo - indexed field search uses default the boolean operator AND. Sec geosearch is also possible.
@@ -316,13 +315,13 @@ Multimedia data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | Request examples are listed in the `free text multimedia search examples section`_
-            - | Request examples are listed in the `indexed field multimedia search examples section`_
+            - | Request examples are listed in the multimedia :ref:`free text multimedia search examples section` section
+            - | Request examples are listed in the multimedia :ref:`indexed field multimedia search examples section` section
    * - | **Response**
        |
        |
        | More details in
-       | `multimedia response section`_
+       | the :ref:`multimedia response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -334,7 +333,7 @@ Multimedia data services
             - JSON
             - JSON
           * - *Details*
-            - | The basic structure of the responses can be viewed in `free text multimedia search examples section`_
-            - | The basic structure of the responses can be viewed in `indexed field multimedia search examples section`_
+            - | The basic structure of the responses can be viewed in the multimedia :ref:`free text multimedia search examples section` section
+            - | The basic structure of the responses can be viewed in the multimedia :ref:`indexed field multimedia search examples section` section
 
 .. _here: http://api.biodiversitydata.nl/v0/version
