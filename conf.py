@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Netherlands Biodiversity Data Services'
-copyright = u'2014, Naturalis Biodiversity Center'
+copyright = u'2016, Naturalis Biodiversity Center'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
