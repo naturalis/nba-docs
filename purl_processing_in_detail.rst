@@ -12,9 +12,7 @@ a. purl service forwards to Bioportal (303 See Other) - text/html is available f
     - absent, e,g, empty, or
     - solely text/html, or
     - text/html followed by other content types, e.g. text/html,application/json,image/jpeg, or
-    - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types
-       are not available.
-		
+    - other content types followed by text/html, e.g. image/jpeg,video/mp4,text/html, if all the other content types are not available
 		
 b. purl service forwards to NBA (303 See Other) -  application/json is available for all specimens
 	
