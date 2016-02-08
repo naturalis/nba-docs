@@ -1,5 +1,5 @@
-Welcome to Netherlands Biodiversity Data Services documentation!
-================================================================
+Welcome to the Netherlands Biodiversity Data Services documentation!
+====================================================================
 
 `Naturalis Biodiversity Center`_ hosts the Netherlands Biodiversity Data Services for the scientific community and other interested parties.
 
