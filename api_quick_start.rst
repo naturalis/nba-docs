@@ -1,7 +1,7 @@
 -----------
 Quick start
 -----------
-For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the `services summary`_ . 
+For Quick start purposes you can consult per service a set of examples which can be accessed through the example links in the :doc:`Services summary </api_services_summary>` document. 
 
 Information on requests, searchable fields and responses can also be accessed via the services summary. 
 
