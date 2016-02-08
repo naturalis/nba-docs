@@ -38,3 +38,4 @@ It's actionability is mainly restricted by the availability of the requested spe
 Cross linking through PIDs is not yet implemented in the specimen PURL service.
 
 .. _GBIF: http://www.gbif.org/resource/80575
+.. _A Beginner's Guide to Persistent Identifiers: http://www.gbif.org/resource/80575
