@@ -36,7 +36,7 @@ Taxonomic data services
        |
        |
        | More details in the
-       |  taxon :ref:`taxon request section` section       
+       | taxon :ref:`taxon request section` section       
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -65,7 +65,7 @@ Taxonomic data services
        |
        |
        | More details in the
-       |  taxon `taxon response section` section
+       | taxon `taxon response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
