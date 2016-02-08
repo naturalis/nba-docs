@@ -48,7 +48,7 @@ Taxonomic data services
             - GET
             - GET
           * - *Searchable fields*
-            - :ref:`list of indexed taxon document fields` are queried
+            - :ref:`test <list of indexed taxon document fields>` are queried
             - `list of indexed taxon document fields`_ can be queried
           * - *Geospatial search*
             - Not available
