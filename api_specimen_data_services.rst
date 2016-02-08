@@ -529,7 +529,7 @@ The creation of DwCA files is done batchwise once a month.
 .. _list of Naturalis collections:
 
 .. list-table:: 
-   :widths: 100 100 100
+   :widths: 150 150 150
    :header-rows: 1
 
    * - Botany
