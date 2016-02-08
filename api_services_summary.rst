@@ -35,8 +35,8 @@ Taxonomic data services
        | 
        |
        |
-       | More details in
-       | `taxon request section`_       
+       | More details in the
+       |  taxon :ref:`taxon request section` section       
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
@@ -49,7 +49,7 @@ Taxonomic data services
             - GET
           * - *Searchable fields*
             - :ref:`list of indexed taxon document fields <list of indexed taxon document fields>` are queried
-            - :ref:`list of indexed taxon document fields`<list of indexed taxon document fields>` can be queried
+            - :ref:`list of indexed taxon document fields <list of indexed taxon document fields>` can be queried
           * - *Geospatial search*
             - Not available
             - Not available
@@ -59,13 +59,13 @@ Taxonomic data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | Request examples are listed in the in the taxon :ref:`free text taxon search examples section` section
+            - | Request examples are listed in the taxon :ref:`free text taxon search examples section` section
             - | Request examples are listed in the taxon :ref:`indexed field taxon search examples section` section
    * - | **Response**
        |
        |
-       | More details in
-       | `taxon response section`_
+       | More details in the
+       |  taxon `taxon response section` section
      - .. list-table:: 
           :widths: 40 100 100
           :header-rows: 1
