@@ -96,11 +96,10 @@ sex                                               female, hermaphrodite, male, m
 collectionType                                    Amphibia and Reptilia, Arts, Aves, Brachiopoda, Bryozoa, Botany, 
                                                   Cainozoic Mollusca, Chelicerata and Myriapoda, Cnidaria, Coleoptera, 
                                                   Collembola, Crustacea, Diptera, Echinodermata, Entomology, Foraminifera, 
-                                                  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, Mammalia, 									  
-
-Micropaleontology, Mineralogy, Mineralogy and Petrology, Mollusca,								  Odonata, Orthopteroidea, Paleobotany, Paleontology, 
-
-Paleontology 									  Invertebrates, Petrology, Pisces, Porifera, Protozoa, Remaining insects,
+                                                  Hemiptera, Hymenoptera, Invertebrates, Lepidoptera, Mammalia, 
+                                                  Micropaleontology, Mineralogy, Mineralogy and Petrology, Mollusca,	
+                                                  Odonata, Orthopteroidea, Paleobotany, Paleontology, Paleontology 
+                                                  Invertebrates, Petrology, Pisces, Porifera, Protozoa, Remaining insects,
                                                   Tunicata, Vermes, miscellaneous		
 ================================================= ===========================================================================
 
