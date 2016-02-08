@@ -15,9 +15,7 @@ Both search types execute searches through specimen occurrence data harvested fr
 
 zoological and geological specimen) and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields`_ and returns multilingual specimen documents in JSON 
 
-responses. This list of searchable fields contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service 
-
-Specimen-name-search_.
+responses. This list of searchable fields contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
 
 .. _specimen request section:
 
@@ -279,9 +277,7 @@ Both search types execute searches though specimen occurrence data harvested fro
 
 zoological and geological specimen, and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields for specimen name search`_ and returns multilingual 
 
-specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done 
-
-with the NBA service Specimen-search_.
+specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
 
 .. _specimen name request section:
 
@@ -547,9 +543,7 @@ Description
 -----------
 This direct search service returns a DwCA file containing all available SPECIMEN occurrences of a specific Naturalis Collection, Currently this service serves a DwCA file for each member of 
 
-this group of Naturalis collections. The collections are categorized by the science domain for which they were gathered: animal science or Zoology, plant science or Botany and earth science 
-
-or Geology. 
+this group of Naturalis collections. The collections are categorized by the science domain for which they were gathered: animal science or Zoology, plant science or Botany and earth science or Geology. 
 
 The creation of DwCA files is done batchwise once a month. 
 
