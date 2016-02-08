@@ -9,21 +9,11 @@ Multimedia data services
 
 Description
 -----------
-This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it 
+This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on multimedia documents, and, b. multimedia document search based on the outcome of the name-resolution process (indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
 
-combines the outcomes of two document search processes, a. direct search on multimedia documents, and, b. multimedia document search based on the outcome of the name-resolution process 
+Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded source is Catalogue of Life. The service searches a `list of indexed multimedia document fields`_ and returns multilingual specimen documents in JSON responses. The contents of these multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
 
-(indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
-
-Both search types execute searches through both specimen occurrence data and taxonomic data which include multimedia references. This data is harvested from three data sources. The excluded 
-
-source is Catalogue of Life. The service searches a `list of indexed multimedia document fields`_ and returns multilingual specimen documents in JSON responses. The contents of these 
-
-multimedia documents depend on the type of data source. They always include taxomic information. Geospatial and temporal information are present in specimen-derivded multimedia documents.
-
-Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal 
-
-fields 
+Due to the nature of it's sources the list of searchable fields for this service contains both taxonomic fields (taxonomic data) and not-taxonomic fields, e.g. geographic and temporal fields 
 
 .. _multimedia request section:
 
@@ -69,9 +59,7 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A multimedia document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done 
-
-by using either,
+A multimedia document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
 a. a field path, e.g. <base url>/multimedia/search/?genusOrMonomial=Larus, or
 b. a field alias, e.g. <base url>/multimedia/search/?genus=Larus
@@ -138,9 +126,7 @@ The full scientific names of the taxon documents in the responses are input for 
 
 general meta parameters
 ```````````````````````
-For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a 
-
-query.
+For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
 
 Paging parameters
 
