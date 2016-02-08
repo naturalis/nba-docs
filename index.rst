@@ -7,10 +7,10 @@ Welcome to Netherlands Biodiversity Data Services documentation!
 
 The main documentation for this site is organized in a couple of sections:
 
-* :ref:`apidocs`
-* :ref:`purldocs`
+* :ref:`api-docs`
+* :ref:`purl-docs`
 
-.. _apidocs:
+.. _api-docs:
 
 .. toctree::
    :maxdepth: 2
@@ -25,7 +25,7 @@ The main documentation for this site is organized in a couple of sections:
    api_specimen_data_services
    api_multimedia_data_services
 
-.. _purldocs:
+.. _purl-docs:
 
 .. toctree::
    :maxdepth: 2
