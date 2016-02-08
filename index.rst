@@ -3,7 +3,7 @@ Welcome to Netherlands Biodiversity Data Services documentation!
 
 `Naturalis Biodiversity Center`_ hosts the Netherlands Biodiversity Data Services for the scientific community and other interested parties.
 
-.. _Naturalis Biodiversity Center: http://www.naturalis.nl/en
+.. _Naturalis Biodiversity Center: https://science.naturalis.nl/en/
 
 The main documentation for this site is organized in a couple of sections:
 
