@@ -11,11 +11,7 @@ Description
 -----------
 This direct search service returns TAXON documents. It comes in two search type flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
-Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for 
-
-zoological and geological specimen) and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields`_ and returns multilingual specimen documents in JSON 
-
-responses. This list of searchable fields contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
+Both search types execute searches through specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System for zoological and geological specimen) and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields`_ and returns multilingual specimen documents in JSON responses. This list of searchable fields contains only fields that are not taxonomic, e.g. unitID and locality. Searches on specimen taxonomic fields can be done with the NBA service Specimen-name-search_.
 
 .. _specimen request section:
 
@@ -61,9 +57,7 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by 
-
-using either,
+A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
 a. a field path, e.g. <base url>/specimen/search/?genusOrMonomial=Abies, or
 b. a field alias, e.g. <base url>/specimen/search/?genus=Abies
@@ -267,17 +261,9 @@ Search for key:value pair collectionType=Aves
 
 Description
 -----------
-This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two search varieties, i.e. 1. Free text search, and 2. Indexed field search. In the 
+This combined direct and indirect search service returns SPECIMEN occurrence documents. It comes in two search varieties, i.e. 1. Free text search, and 2. Indexed field search. In the responses it combines the outcomes of two document search processes, a. direct search on specimen occurrence documents, and, b. specimen occurrence document search based on the outcome of the name-resolution process (indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
 
-responses it combines the outcomes of two document search processes, a. direct search on specimen occurrence documents, and, b. specimen occurrence document search based on the outcome of 
-
-the name-resolution process (indirect search). This preceding process is executed on taxonomic data from all available taxonomic data sources.
-
-Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for 
-
-zoological and geological specimen, and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields for specimen name search`_ and returns multilingual 
-
-specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
+Both search types execute searches though specimen occurrence data harvested from - currently - two voluminous, Naturalis data sources, i.e. a. CRS (Collection Registration System) for zoological and geological specimen, and b. Brahms for botanical specimen. It searches a `list of indexed specimen document fields for specimen name search`_ and returns multilingual specimen documents in JSON responses. The list of searchable fields for this service contains only specimen taxonomic fields where-as a search on specimen not taxonomic fields can be done with the NBA service Specimen-search_.
 
 .. _specimen name request section:
 
@@ -323,9 +309,7 @@ Geospatial parameter
 
 indexed field name(s) in an url
 ```````````````````````````````
-A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by 
-
-using either,
+A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
 
 a. a field path, e.g. <base url>/specimen/name-search/?genusOrMonomial=Abies, or
 b. a field alias, e.g. <base url>/specimen/name-search/?genus=Abies
@@ -378,9 +362,7 @@ The full scientific names of the taxon documents in the responses are input for 
 
 general meta parameters
 ```````````````````````
-For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a 
-
-query.
+For both free text and indexed field search requests optional extra request parameters – so called meta parameters - can be added. These parameters instruct the NBA on how to execute a query.
 
 Paging parameters
 
@@ -541,9 +523,7 @@ Search with name resolution for key:value pair vernacularName=bloem in any speci
 
 Description
 -----------
-This direct search service returns a DwCA file containing all available SPECIMEN occurrences of a specific Naturalis Collection, Currently this service serves a DwCA file for each member of 
-
-this group of Naturalis collections. The collections are categorized by the science domain for which they were gathered: animal science or Zoology, plant science or Botany and earth science or Geology. 
+This direct search service returns a DwCA file containing all available SPECIMEN occurrences of a specific Naturalis Collection, Currently this service serves a DwCA file for each member of this group of Naturalis collections. The collections are categorized by the science domain for which they were gathered: animal science or Zoology, plant science or Botany and earth science or Geology. 
 
 The creation of DwCA files is done batchwise once a month. 
 
@@ -655,9 +635,7 @@ Naturalis has validated the DwCA files by the use of the GBIF tool `DwCA Validat
 
 occurrence.txt file
 ```````````````````
-All collections have a similar occurrence.txt file structure, i.e. similar list of fields. Because each science domain has a (slightly) different preference for relevant DwC occurrence 
-
-values, Naturalis tries to populate DwC fields in occurrence.txt files as mentioned in the list below. 
+All collections have a similar occurrence.txt file structure, i.e. similar list of fields. Because each science domain has a (slightly) different preference for relevant DwC occurrence values, Naturalis tries to populate DwC fields in occurrence.txt files as mentioned in the list below. 
 
 .. warning:: ..tries to populate, because the data sources do not always supply sufficient data!
 
