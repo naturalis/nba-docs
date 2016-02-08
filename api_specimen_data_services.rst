@@ -540,9 +540,15 @@ The creation of DwCA files is done batchwise once a month.
      - amphibia_and_reptilia
    * - 
      - micropaleontology
-     - chelicerata_and_myriapoda
+     - aves
    * - 
      - paleontology_invertebrates
+     - cnidaria
+   * - 
+     - 
+     - chelicerata_and_myriapoda
+   * - 
+     - 
      - collembola
    * - 
      - 
@@ -550,6 +556,9 @@ The creation of DwCA files is done batchwise once a month.
    * - 
      - 
      - crustacea
+   * - 
+     - 
+     - diptera
    * - 
      - 
      - hymenoptera
@@ -562,7 +571,10 @@ The creation of DwCA files is done batchwise once a month.
    * - 
      - 
      - mollusca
-
+   * - 
+     - 
+     - porifera
+     
 .. _specimen collection request section:
 
 Requests
