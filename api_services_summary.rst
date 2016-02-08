@@ -49,7 +49,7 @@ Taxonomic data services
             - GET
           * - *Searchable fields*
             - :ref:`list of indexed taxon document fields <list of indexed taxon document fields>` are queried
-            - :ref:`list of indexed taxon document fields`<list of indexed taxon document fields> can be queried
+            - :ref:`list of indexed taxon document fields`<list of indexed taxon document fields>` can be queried
           * - *Geospatial search*
             - Not available
             - Not available
@@ -59,8 +59,8 @@ Taxonomic data services
               |
               | Additional logical operator _andOr for indexed field search.  
           * - *Details*
-            - | Request examples are listed in the `free text taxon search examples section`_
-            - | Request examples are listed in the `indexed field taxon search examples section`_
+            - | Request examples are listed in the in the taxon :ref:`free text taxon search examples section` section
+            - | Request examples are listed in the taxon :ref:`indexed field taxon search examples section` section
    * - | **Response**
        |
        |
@@ -77,8 +77,8 @@ Taxonomic data services
             - JSON
             - JSON
           * - *Details*
-            - | A response example can be viewed after calling a request example in the `free text taxon search examples section`_
-            - | A response example can be viewed after calling a request example in the `indexed field taxon search examples section`_     
+            - | A response example can be viewed after calling a request example in the taxon :ref:`free text taxon search examples section` section
+            - | A response example can be viewed after calling a request example in the taxon :ref:`indexed field taxon search examples section` section     
 
 Specimen Occurrence data services
 =================================
