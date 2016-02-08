@@ -11,9 +11,9 @@ Description
 -----------
 This direct search service returns TAXON documents. It comes in two search type flavours, i.e. 1. Free text search, and 2. Indexed field search. 
  
-Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. Catalogue_of_life_, b. Nederlands_Soortenregister_. It searches a `list of indexed taxon document fields`_ and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
+Both search types execute searches through taxonomic data harvested from - currently - two data sources, i.e. a. :ref:`Catalogue of life <Catalogue of life>`, b. Nederlands_Soortenregister_. It searches a `list of indexed taxon document fields`_ and returns taxon multilingual taxon documents in JSON responses from basically species and subspecies.
 
-.. _Catalogue_of_Life: http://www.catalogueoflife.org/
+.. _Catalogue of Life: http://www.catalogueoflife.org/
 .. _Nederlands_Soortenregister: http://www.nederlandsesoorten.nl
 .. _taxon request section:
 
