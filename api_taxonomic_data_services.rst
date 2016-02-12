@@ -175,8 +175,8 @@ Examples
 
 .. _free text taxon search examples section:
 
-1. Free text search
-```````````````````
+free text search
+````````````````
 Search for value Parus in any taxon document
 
 .. code:: html
@@ -215,8 +215,8 @@ Search for value Bloem in any taxon document, start from document 21
 
 .. _indexed field taxon search examples section:
 
-2. Indexed field search
-```````````````````````
+indexed field search
+````````````````````
 Search for key:value pair genus=Parus in any taxon document
  
 .. code:: html
