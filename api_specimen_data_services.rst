@@ -193,8 +193,8 @@ Examples
 
 .. _free text specimen search examples section:
 
-1. Free text search
-```````````````````
+free text search
+````````````````
 Search for RMNH.AVES.110000 in CRS in any specimen document
   
 .. code:: html
@@ -221,8 +221,8 @@ Search for mees in any specimen document
 
 .. _indexed field specimen search examples section:
 
-2. Indexed field search
-```````````````````````
+indexed field search
+````````````````````
 Search for key:value pair unitID=WAG.1500001 in CRS in any specimen document
    
 .. code:: html
@@ -449,8 +449,8 @@ Examples
 
 .. _free text specimen name search examples section:
 
-1. Free text search
-```````````````````
+free text search
+````````````````
 Search with name resolution for Melicertus kerathurus in any specimen document
  
 .. code:: html
@@ -489,8 +489,8 @@ Search with name resolution for Parus major in any specimen document
 
 .. _indexed field specimen name search examples section:
 
-2. Indexed field search
-````````````````````````
+indexed field search
+````````````````````
 Search with name resolution for key:value pairs order=Decapoda, family=Dynomenidae and genus=Dynomene in any specimen document
 
 .. code:: html 
