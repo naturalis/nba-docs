@@ -214,8 +214,8 @@ Examples
 
 .. _free text multimedia search examples section:
 
-1. Free text search
-```````````````````
+free text search
+````````````````
 
 Search for koolmees in any multimedia document
 
@@ -249,8 +249,8 @@ Search for L.4275659 in Brahms in any multimedia document
 
 .. _indexed field multimedia search examples section:
 
-2. Indexed field search
-```````````````````````
+indexed field search
+````````````````````
 
 Search for key:value pair unitID=AHCYFCKPYRK:1560587210 in NSR in any multimedia document
   
