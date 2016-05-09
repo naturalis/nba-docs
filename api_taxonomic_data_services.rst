@@ -80,7 +80,7 @@ Some of the searchable fields have a predefined set of search values.
 ================================================= ========================================================================== 
 Indexed field                                     Search values
 ================================================= ========================================================================== 
-sourceSystem.name                                 Naturalis - Nederlands Soortenregister, Species 2000 - Catalogue of Life
+sourceSystem.name                                 Naturalis - Nederlands Soortenregister, Species 2000 - Catalogue Of Life
 defaultClassification.kingdom                     Animalia, Archea, Bacteria, Chromista, Fungi, Plantae, Protozoa, Viruses
 ================================================= ==========================================================================
 
