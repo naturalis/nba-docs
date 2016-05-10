@@ -235,11 +235,11 @@ Search for key:value pair sex=male in any specimen document
   
    http://api.biodiversitydata.nl/v0/specimen/search/?sex=male
 
-Search for key:value pair collectorsFieldNumber=add a fieldnumber from a Brahms specimen
+Search for key:value pair collectorsFieldNumber=add a fieldnumber from a CRS specimen
 
 .. code:: html
    
-   http://api.biodiversitydata.nl/v0/specimen/search/?collectorsFieldNumber=[Brahms fieldnumber]
+   http://api.biodiversitydata.nl/v0/specimen/search/?collectorsFieldNumber=[CRS fieldnumber]
 
 Search for key:value pair sourceSystem=Naturalis - Zoology and Geology catalogues
 
