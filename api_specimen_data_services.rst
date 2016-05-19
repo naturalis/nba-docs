@@ -329,7 +329,7 @@ defaultClassification.specificEpithet                 species, speciesEpithet, s
 defaultClassification.infraspecificEpithet            infraspecificEpithet, subpspecies            exact match
 gatheringEvent.gatheringAgents.fullName               collector, gatheringAgent                    exact match
 gatheringEvent.dateTimeBegin                          collectingStartDate                          exact match
-identifications.scientificName                        scientificName                               exact match
+identifications.scientificName.fullScientificName     scientificName                               exact match
 identifications.scientificName.genusOrMonomial        genus, genusOrMonomial                       exact match
 identifications.scientificName.subgenus               subgenus                                     exact match
 identifications.scientificName.specificEpithet        species, speciesEpithet, specificEpithet     exact match
