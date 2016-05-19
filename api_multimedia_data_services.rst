@@ -86,6 +86,7 @@ identifications.defaultClassification.genusOrMonomial      genus, genusOrMonomia
 identifications.defaultClassification.subgenus             subgenus                                      exact match
 identifications.defaultClassification.specificEpithet      species, specificEpithet                      exact match
 identifications.defaultClassification.infraspecificEpithet infraspecificEpithet, subspecies              exact match
+identifications.scientificName.fullScientificName          scientificName                                exact match
 identifications.scientificName.genusOrMonomial             genus, genusOrMonomial                        exact match
 identifications.scientificName.subgenus                    subgenus                                      exact match
 identifications.scientificName.specificEpithet             species, specificEpithet                      exact match
