@@ -19,7 +19,7 @@ The specimen PURL service serves digital representations of physical specimens i
 Multiple content types per physical specimen can be requested. 
 Specimen representations are being served based on their availability. 
 
-**A PID is opace**
+**A PID is opaque**
 One of the most important qualities of a good Persistent identifier is opacity. 
 That is, the identifier itself should not contain any readable information. 
 Underlying argument is that Persistent identifiers are intended for computers to communicate with other computers. 
