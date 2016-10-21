@@ -51,7 +51,7 @@ Geospatial parameter
      - | • _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
        | • default NBA setting geoshape: not applicable
        | • remarks: use lat/long coordinates.
-       | • example_1: request results in list of specimen gathered in rectangular area within the Netherlands. The geoshape needs to be added as a postfield. 
+       | • example: request results in list of specimen gathered within a specified rectangular geographical area within the Netherlands. The geoshape needs to be added as a postfield. 
 
        .. code:: html
            
