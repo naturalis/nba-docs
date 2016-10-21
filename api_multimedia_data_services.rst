@@ -51,12 +51,13 @@ Geospatial parameter
      - | • _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
        | • default NBA setting geoshape: not applicable
        | • remarks: use lat/long coordinates.
-       | • example: request results in list of specimen gathered in Jordan 
+       | • example_1: request results in list of specimen gathered in rectangular area within the Netherlands
 
        .. code:: html
            
-          <base url>/multimedia/search/?_geoshape=decoded coordinates of Jordan
-
+          <base url>/multimedia/search/?_geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]}&_andOr=OR&_maxResults=10&_sort=_score&_sortDirection=DESC
+        
+          
 indexed field name(s) in an url
 ```````````````````````````````
 A multimedia document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
