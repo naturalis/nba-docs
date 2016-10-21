@@ -51,11 +51,13 @@ Geospatial parameter
      - | • _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
        | • default NBA setting geoshape: not applicable
        | • remarks: use lat/long coordinates.
-       | • example_1: request results in list of specimen gathered in rectangular area within the Netherlands
+       | • example_1: request results in list of specimen gathered in rectangular area within the Netherlands. The geoshape needs to be added as a postfield. 
 
        .. code:: html
            
-          <base url>/multimedia/search/?_geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]}
+          <base url>/multimedia/search/?
+          
+          postfield: _geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]
         
           
 indexed field name(s) in an url
