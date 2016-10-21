@@ -49,11 +49,14 @@ Geospatial parameter
      - | • _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
        | • default NBA setting geoshape: not applicable
        | • remarks: use lat/long coordinates.
-       | • example: request results in list of specimen gathered in Jordan
-                 
+       | • example: example: request results in list of specimen gathered in a specified rectangular geographical area within the Netherlands. The geoshape needs to be added as a postfield. 
+
        .. code:: html
- 
-          <base url>/specimen/search/?_geoshape=list of decoded coordinates of Jordan
+           
+          <base url>/specimen/search/?
+          
+          postfield: _geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]
+        
 
 indexed field name(s) in an url
 ```````````````````````````````
@@ -300,12 +303,14 @@ Geospatial parameter
      - | • _geoshape instructs NBA to return specimen documents which are  gathered by collectors during field research in a specific area
        | • default NBA setting geoshape: not applicable
        | • remarks: use lat/long coordinates.
-       | • example: request results in list of specimen gathered in Jordan
-                 
-       .. code:: html
- 
-          <base url>/specimen/name-search/?_geoshape=decoded lat. and long coordinates of Jordan
+       | • example: request results in list of specimen gathered in a specified rectangular geographical area within the Netherlands. The geoshape needs to be added as a postfield. 
 
+       .. code:: html
+           
+          <base url>/specimen/search/?
+          
+          postfield: _geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]
+              
 indexed field name(s) in an url
 ```````````````````````````````
 A specimen document incorporates an extensive set of fields. A subset of this set is indexed and therefore searchable. Stating a field name in an indexed field search request can be done by using either,
