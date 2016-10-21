@@ -55,7 +55,7 @@ Geospatial parameter
 
        .. code:: html
            
-          <base url>/multimedia/search/?_geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]}&_andOr=OR&_maxResults=10&_sort=_score&_sortDirection=DESC
+          <base url>/multimedia/search/?_geoShape={"type":"Polygon","coordinates":[[[4.41650390625,52.709675332198856],[6.998291015625,52.709675332198856],[6.998291015625,51.93749209045434],[4.41650390625,51.93749209045434],[4.41650390625,52.709675332198856]]]}
         
           
 indexed field name(s) in an url
