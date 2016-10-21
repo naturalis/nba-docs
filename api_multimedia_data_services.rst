@@ -122,7 +122,7 @@ Name resolution is a search process on taxonomic data from the available taxonom
 
 .. code:: html
 
-   <basic url>/taxon/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
+   <basic url>/multimedia/search/?vernacularNames.name=[terms out specimen name search, either simple or indexed field search].
 
 The full scientific names of the taxon documents in the responses are input for an additional search on specimen documents.
 
