@@ -13,7 +13,7 @@ The current version of our API (NBA v0) will be replaced by new version (NBA v2)
 
 Note NBA v2 is not backward compatible with NBA v0. Documentation for NBA v2 will be published with the new software. 
 
-NBA V2 has greatly improved query capabilities and a more stable and reliable query engine.
+NBA v2 has greatly improved query capabilities and a more stable and reliable query engine.
 
 For further information please contact the Naturalis development team: nba@naturalis.nl
 
