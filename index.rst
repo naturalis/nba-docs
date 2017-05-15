@@ -10,7 +10,7 @@ Welcome to the Netherlands Biodiversity Data Services documentation!
 Announcement launch of NBA v2 and discontinuation of NBA v0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**The current version of our API (NBA v0) will be replaced by new version (NBA v2) in the course of the following months. At this moment NBA v0 is still available but is no longer supported and will be phased out from October 1, 2017.**
+**The current version of our API (NBA v0) will be replaced by a new version (NBA v2) over the course of the following months. At this moment NBA v0 is still available but is no longer supported and will be discontinued in October 1, 2017.**
 
 **Note that NBA v2 is not backward compatible with NBA v0. Documentation for NBA v2 will be published with the new software.** 
 
