@@ -6,11 +6,11 @@ title = "DocuAPI Example Site"
 
 # Code higlighting settings
 pygmentsCodefences = true
-pygmentsCodeFencesGuesSsyntax = false
+pygmentsCodeFencesGuesSyntax = false
 pygmentsOptions = ""
 pygmentsStyle = "monokai"
 # The monokai stylesheet is included in the base template.
-pygmentsUseClasses = true
+## pygmentsUseClasses = true
 
 defaultContentLanguage = "en"
 
@@ -19,10 +19,13 @@ search = true
   
 # Configure the language example tabs.
 [[params.language_tabs]]
+key = "JSON"
+name = "json" 
+[[params.language_tabs]]
 key = "cURL"
 name = "cURL" 
 [[params.language_tabs]]
-key = "Java"
+key = "java"
 name = "Java" 
 [[params.language_tabs]]
 key = "go"
