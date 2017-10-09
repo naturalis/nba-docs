@@ -3,14 +3,12 @@ weight: 30
 title: Advanced queries
 ---
 
-# Advanced queries
-
 ## Special query parameters
 
 For extended query functionality, the NBA offers a set of extended query parameters:
 
 ### Filter in results: _fields
-The *_fields* parameter allows for filtering certain fields of interest in result documents. 
+The `_fields` parameter allows for filtering certain fields of interest in result documents. 
 Suppose one would like to query all taxa in the genus *Hydrochoerus* but is only interested 
 in the title of the scientific publication associated with that taxon,
 
@@ -74,24 +72,24 @@ A *QuerySpec* generally consists of an array of *QueryCondition* objects (please
 documentation for detailed documentation of these object types) that, in turn, have the fields field, 
 operator and value. A simple QuerySpec for specimens of the genus *Hydrochoerus* looks as follows
 
-`
+```JSON
 {
   "conditions" : 
       [
           { "field" : "identifications.defaultClassification.genus", 
-      "operator" : "EQUALS", 
-      "value" : "Hydrochoerus" }
+            "operator" : "EQUALS", 
+            "value" : "Hydrochoerus" }
       ]
 }
-`
+```
 
 and the entire query (with the URL encoded QuerySpec json):
 
-http://145.136.240.125:30076/v2/specimen/query/?_querySpec=%7B%0A%20%20%22conditions%22%20%3A%20%0A%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.genus%22%2C%20%0A%20%20%20%20%20%20%22operator%22%20%3A%20%22EQUALS%22%2C%20%0A%20%20%20%20%20%20%22value%22%20%3A%20%22Hydrochoerus%22%20%7D%0A%20%20%20%20%20%20%5D%0A%7D%0A
+[`http://145.136.240.125:30076/v2/specimen/query/?_querySpec=%7B%0A%20%20%22conditions%22%20%3A%20%0A%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.genus%22%2C%20%0A%20%20%20%20%20%20%22operator%22%20%3A%20%22EQUALS%22%2C%20%0A%20%20%20%20%20%20%22value%22%20%3A%20%22Hydrochoerus%22%20%7D%0A%20%20%20%20%20%20%5D%0A%7D%0A`](http://145.136.240.125:30076/v2/specimen/query/?_querySpec=%7B%0A%20%20%22conditions%22%20%3A%20%0A%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.genus%22%2C%20%0A%20%20%20%20%20%20%22operator%22%20%3A%20%22EQUALS%22%2C%20%0A%20%20%20%20%20%20%22value%22%20%3A%20%22Hydrochoerus%22%20%7D%0A%20%20%20%20%20%20%5D%0A%7D%0A)
 
 The QuerySpec object allows for partial matching of a query term. To find, for instance, all specimen of mammal genera that start with *Hydro*, we could query with two conditions:
 
-`
+```JSON
 {
   "conditions" : 
       [
@@ -103,15 +101,15 @@ The QuerySpec object allows for partial matching of a query term. To find, for i
           "value" : "Mammalia" }
     ]
 }
-`
+```
 
 ### Further QuerySpec options
-Next to the QueryCondition(s), the parameters *fields, size, from, logicalOperator, sortFields* can be set. 
-Note that these parameters are identical to the parameters *_fields, _size*, etc. introduced above for 
+Next to the QueryCondition(s), the parameters `fields, size, from, logicalOperator, sortFields` can be set. 
+Note that these parameters are identical to the parameters `_fields, _size`, etc. introduced above for 
 human-readable queries. Suppose, we want to query with the above conditions with maximal 100 results, 
 sorted by the country where the specimen was found and only retrieve a subset of the specimen properties:
 
-`
+```JSON
 {
 	"conditions" : 
     [
@@ -128,7 +126,7 @@ sorted by the country where the specimen was found and only retrieve a subset of
     "sortFields" : [{"path" : "gatheringEvent.country", "sortOrder" : "ASC"}],
  "fields" : [ "identifications.defaultClassification.genus",  "identifications.scientificName.fullScientificName", "gatheringEvent.country"]
 }
-`
+```
 
 ## Comparison Operators
 The available operators differ between search fields, depending if they are words, numbers, or dates. 
