@@ -19,14 +19,24 @@ via a REST interface and several clients such as the [BioPortal](http://bioporta
 a web application for browsing biodiversity data that is based on the NBA.
 
 
-{{< figure src="https://github.com/naturalis/nba-docs/raw/V2_master/static/images/overview.png" class="alignright" title="NBA overview: From data sources to end users" >}}
+<!-- {{< figure src="https://github.com/naturalis/nba-docs/raw/V2_master/static/images/overview.png" class="alignright" title="NBA overview: From data sources to end users" >}} -->
+
+<figure>
+<div style="text-align: center;">
+	<p><img src="https://github.com/naturalis/nba-docs/raw/V2_master/static/images/overview.png" align="center"
+		alt="overview" width=500>
+		<figcaption>NBA overview: From data sources to end users</figcaption>
+	</div>
+</figure>
+
 
 ## Available data
 The NBA provides access to four basic document types that are interlinked:
+
 * A **Specimen** document represents a biological (botanical or zoological) or 
   geological entity stored at Naturalis. Specimen documents usually hold information 
   on preservation, identification, classification, taxonomy (see Taxon documents), and 
-  details about the gathering /acquisition process of the specimen, such as 
+  details about the gathering/acquisition process of the specimen, such as 
   geographic location and coordinates.
 * **Taxonomic** information about a biological entity is provided in Taxon documents, 
   comprising hierarchy and placement in the Tree of Life, information on synonymy and the 

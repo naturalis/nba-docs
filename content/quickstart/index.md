@@ -24,7 +24,7 @@ http://145.136.240.125:30076/v2/specimen/query
 
 ## Query parameters
 Simple queries for specific fields in documents can be queried using standard URL query parameters, 
-for example the parameter *collectionType* can be queried to get all specimens from the *Mammalia* collection:
+for example the parameter `collectionType` can be queried to get all specimens from the *Mammalia* collection:
 
 http://145.136.240.125:30076/v2/specimen/query/?collectionType=Mammalia
 

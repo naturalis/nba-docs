@@ -3,8 +3,6 @@ weight: 50
 title: PURL services
 ---
 
-# PURL services
-
 ## What is a PURL?
 A *Persistent Uniform Resource locator* (PURL) of an object is an URL that does not directly resolve to a web resource but to a link resolver 
 which then, in turn, returns the actual web resource of the object. This uncouples the identifier of an object from its actual 
@@ -33,7 +31,7 @@ Specimen records can have associated content such as videos or images. PURL reso
 available through *content negotiation*. This means that one and the same PURL can redirect to different locations based on 
 the requested content type. The following content types are accessible from a PURL, accessible via the query parameter `__accept`:
 
-* `text/html` is the default content type, for example: http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?\_\_accept=text/html
-* `image/jpeg` redirects to an image resource, if available, for example: http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=image/jpeg
-* `video/mp4` redirects to a video resource, if available, for example: http://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.110091?\_\_accept=video/mp4
-* `text/json` gives the JSON representation of the specimen, as served by the NBA, for example: http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=application/json
+* `text/html` is the default content type, e.g.  http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?\_\_accept=text/html
+* `image/jpeg` redirects to an image resource, if available, e.g. http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=image/jpeg
+* `video/mp4` redirects to a video resource, if available, e.g. http://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.110091?\_\_accept=video/mp4
+* `text/json` gives the JSON representation of the specimen, as served by the NBA, e.g http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=application/json

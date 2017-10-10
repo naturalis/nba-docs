@@ -3,8 +3,6 @@ weight: 40
 title: Document specific services
 ---
 
-# Document specific services
-
 ## Specimen occurrence services
 Specimen documents constitute the core of data served by the NBA. Museum specimens can represent a whole variety of 
 different objects such as plants, animals or single parts thereof, DNA samples, fossils, rocks or meteorites. 
@@ -29,9 +27,9 @@ Will return all plant and fungi specimens. In the future, we plan to also includ
 third-party data providers.
 
 ### Identifiers
-Specimen documents have several identifiers. The field  *untitID* is the identifier from the specific source system. 
-Since uniqueness across source systems is not ensured, the field id, consisting of *{unitID}@{sourceSystem.code}*. Further, the 
-field *unitGUID* represents the a permanent uniform web location (PURL, see also PURL services [LINK]).
+Specimen documents have several identifiers. The field  `untitID` is the identifier from the specific source system. 
+Since uniqueness across source systems is not ensured, the field id, consisting of `{unitID}@{sourceSystem.code}`. Further, the 
+field `unitGUID` represents the a permanent uniform web location (PURL, see also PURL services [LINK]).
 
 ### Collection types
 All of our more than 8 million specimens are categorised into different subcollections (e.g. mammals, aves, 
@@ -44,51 +42,65 @@ The gatheringEvent field in a specimen document holds all relevant information a
 This includes finder, date, exact location, and information about the estimated specimen age (biostratigraphy/litostratigraphy). 
 A use-case could be for instance the retrieval of all specimens that were collected between 1750 and 1800 by P. Miller:
 
-`
+```JSON
 {
-  "conditions" : 
-      [
-        { "field" : "gatheringEvent.dateTimeBegin",
-          "operator" : "BETWEEN", 
-           "value" : ["1750", "1800"] },
-         { "field" : "gatheringEvent.gatheringPersons.fullName",
-          "operator" : "EQUALS", 
-           "value" : "Miller, P" }
-    ],
- "sortFields" : [{"path" : "gatheringEvent.dateTimeBegin", "sortOrder" : "ASC"}],
+  "conditions": [
+    {
+      "field": "gatheringEvent.dateTimeBegin",
+      "operator": "BETWEEN",
+      "value": [
+        "1750",
+        "1800"
+      ]
+    },
+    {
+      "field": "gatheringEvent.gatheringPersons.fullName",
+      "operator": "EQUALS",
+      "value": "Miller, P"
+    }
+  ],
+  "sortFields": [
+    {
+      "path": "gatheringEvent.dateTimeBegin",
+      "sortOrder": "ASC"
+    }
+  ]
 }
-`
+```
 
 As a second example, we query for all specimen that are classified within the family *Passifloraceae* and that have lat-long 
-coordinates (fields *gatheringEvent.siteCoordinates.latitudeDecimal*, *gatheringEvent.siteCoordinates.longitudeDecimal*):
+coordinates (fields `gatheringEvent.siteCoordinates.latitudeDecimal`, `gatheringEvent.siteCoordinates.longitudeDecimal`):
 
-`
+```JSON
 {
-  "conditions" : 
-      [
-        { "field" : "identifications.defaultClassification.family",
-          "operator" : "EQUALS", 
-           "value" : "Passifloraceae" },
-       { "field" : "gatheringEvent.siteCoordinates.longitudeDecimal",
-          "operator" : "NOT_EQUALS",
-          “value” : null
-       },
-      { "field" : "gatheringEvent.siteCoordinates.latitudeDecimal",
-          "operator" : "NOT_EQUALS",
-          “value” : null
-      }
-    ]
+  "conditions": [
+    {
+      "field": "identifications.defaultClassification.family",
+      "operator": "EQUALS",
+      "value": "Passifloraceae"
+    },
+    {
+      "field": "gatheringEvent.siteCoordinates.longitudeDecimal",
+      "operator": "NOT_EQUALS",
+      "value": null
+    },
+    {
+      "field": "gatheringEvent.siteCoordinates.latitudeDecimal",
+      "operator": "NOT_EQUALS",
+      "value": null
+    }
+  ]
 }
-`
+```
 
 ### Identifications
 A crucial part of information about a biological specimen is its identification, i.e. the  assignment to an existing 
 taxonomic classification. The identifications field in a specimen document can contain one or more species identifications. 
 Multiple identifications are possible if for instance a specimen has been re-identified e.g. using a new identification 
 key or DNA barcoding. Also concretions containing multiple fossils species will have multiple identifications. To indicate 
-that one identification is more reliable than the others, one identification of a specimen can have the *identification.preferred* flag 
-set to *true*. Identifications usually store taxonomic rank, the scientific (*identifications.scientificName*) name and higher-level 
-classifications (*identifications.defaultClassification*) of the specimen. Also the person who identified the specimen, 
+that one identification is more reliable than the others, one identification of a specimen can have the `identification.preferred` flag 
+set to `true`. Identifications usually store taxonomic rank, the scientific (`identifications.scientificName`) name and higher-level 
+classifications (`identifications.defaultClassification`) of the specimen. Also the person who identified the specimen, 
 date and references to scientific publications, type status and vernacular (common) taxon names are stored in the identifications block. 
 	Furthermore, the identification block features taxonomic enrichments. Taxonomic enrichments basically hold synonyms for species 
 name, scientific name, but also for names of higher level taxa. The synonyms are extracted from the Catalogue of Life and 
@@ -96,51 +108,59 @@ the Dutch Species Registry. This allows for taxonomic name resolution.
 Example: The common vampire bat was previously classified as *Phyllostoma rotundum* but now the accepted scientific 
 name is *Desmodus rotondus*. If we search for the previous name: 
 
-`
+```JSON
 {
-  "conditions" : 
-      [
-        { "field" : "identifications.scientificName.fullScientificName",
-          "operator" : "MATCHES", 
-           "value" : "Phyllostoma rotundum" }
-    ],
-    "fields" : ["identifications.scientificName.fullScientificName"],
-    "size" : 1000
+  "conditions": [
+    {
+      "field": "identifications.scientificName.fullScientificName",
+      "operator": "MATCHES",
+      "value": "Phyllostoma rotundum"
+    }
+  ],
+  "fields": [
+    "identifications.scientificName.fullScientificName"
+  ],
+  "size": 1000
 }
-`
+```
 
 We won’t find any specimens of the vampire bat. If we, however, include synonyms into the search:
 
-`
+```JSON
 {
-  "conditions" : 
-      [
-        { "field" : "identifications.scientificName.fullScientificName",
-          "operator" : "MATCHES", 
-           "value" : "Phyllostoma rotundum",
-           "or" : [ 
-                  {  "field" : "identifications.taxonomicEnrichments.synonyms.fullScientificName",
-                     "operator" : "MATCHES", 
-                     "value" : "Phyllostoma rotundum"
-                  }  
-                ]
+  "conditions": [
+    {
+      "field": "identifications.scientificName.fullScientificName",
+      "operator": "MATCHES",
+      "value": "Phyllostoma rotundum",
+      "or": [
+        {
+          "field": "identifications.taxonomicEnrichments.synonyms.fullScientificName",
+          "operator": "MATCHES",
+          "value": "Phyllostoma rotundum"
         }
-    ],
-    "fields" : ["identifications.scientificName.fullScientificName"],
-    "size" : 1000
+      ]
+    }
+  ],
+  "fields": [
+    "identifications.scientificName.fullScientificName"
+  ],
+  "size": 1000
 }
-`
+```
 
 We will have multiple vampire bat specimen in the results. 
 
 ### Multimedia
 A specimen document can link to one or more multimedia items. Multimedia information is stored in the document type multimedia. 
 Additionally, links to the associated multimedia documents are also stored within specimen documents, 
-in the fields *associatedMultiMediaUris.accessUri* and *associatedMultiMediaUris.format*.
+in the fields `associatedMultiMediaUris.accessUri` and `associatedMultiMediaUris.format`.
 
 
 ## Taxonomic data services
-A taxon document stores the hierarchical classification of a taxon, its scientific names and synonyms, and other relevant data retrieved from the respective source system. All components and data types in the taxon model, as well as a comprehensive list of all taxon-related endpoints are documented in the NBA reference documentation [LINK]. A list of available fields is also available at
+A taxon document stores the hierarchical classification of a taxon, its scientific names and synonyms, and other relevant data retrieved 
+from the respective source system. All components and data types in the taxon model, as well as a comprehensive list of all 
+taxon-related endpoints are documented in the NBA reference documentation [LINK]. A list of available fields is also available at
 
 http://145.136.240.125:30076/v2/taxon/metadata/getFieldInfo
 
@@ -173,18 +193,18 @@ http://145.136.240.125:31932/v2/taxon/query/?acceptedName.author=Linnaeus
 Furthermore, taxon documents can have a list of synonyms, descriptions, references and vernacular names (common names). 
 Suppose we would like to search for passion flowers, without having any prior knowledge (e.g. without knowing that their genus is *Passiflora*):
 
-`
+```JSON
 {
-  "conditions" : 
-      [
-        { "field" : "vernacularNames.name",
-          "operator" : "MATCHES",            
-          "value" : "passion flower" 
-        }
-    ],
-    "size" : 100
+  "conditions": [
+    {
+      "field": "vernacularNames.name",
+      "operator": "MATCHES",
+      "value": "passion flower"
+    }
+  ],
+  "size": 100
 }
-`
+```
 
 And there at least three species of genus *Passiflora* in the result set. Note that our datasets also include vernacular names in different 
 languages; searching for the term “passiebloem” also yields a Passiflora taxon.
@@ -215,14 +235,17 @@ http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassif
 
 ### Downloading multimedia content
 Each multimedia document has one or more download URLs retrievable via the field(s) `serviceAccessPoints.accessURI`. Below we query for 
-the image location of the pygmy cormoran: 
+the image location of the pygmy cormorant: 
 
-http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri
+[http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus
+&_fields=serviceAccessPoints.accessUri](http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri)
 
 <figure>
-  <p><img src="http://medialib.naturalis.nl/file/id/ZMA.AVES.38187/format/large" align="middle"
-    alt="pigmy-cormorant">
-  <figcaption>Museum specimen of the Pygmy cormorant (Phalacrocorax pygmeus)</figcaption>
+<div style="text-align: center;">
+	<p><img src="http://medialib.naturalis.nl/file/id/ZMA.AVES.38187/format/large" align="center"
+		alt="pigmy-cormorant" width=300>
+		<figcaption>Museum specimen of the Pygmy cormorant (Phalacrocorax pygmeus)</figcaption>
+	</div>
 </figure>
 
 
@@ -236,9 +259,11 @@ http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassif
 Among the results we find for instance this nice drawing of *Phalacrocorax aristotoles*:
  
 <figure>
-  <p><img src="http://medialib.naturalis.nl/file/id/image-134788/format/large" align="middle"
+<div style="text-align: center;">
+	<p><img src="http://medialib.naturalis.nl/file/id/image-134788/format/large" align="center" width=500
     alt="shag-drawing">
-  <figcaption>Drawing of the European shag (*Phalacrocorax aristotoles*)</figcaption>
+  <figcaption>Drawing of the European shag (Phalacrocorax aristotoles)</figcaption>
+</div>
 </figure>
 
 ### Licensing
@@ -273,7 +298,7 @@ If a specimen is geo-referenced, the GeoJSON can be found in the field `gatherin
 
 http://145.136.240.125:31932/v2/specimen/query/?unitID=L.1213823&_fields=gatheringEvent.siteCoordinates
 
-Note that GeoJSON encodes a coordinate as a [longitude, latitude] array and that all GeoJSON coordinates in the NBA represent decimal degrees. 
+Note that GeoJSON encodes a coordinate as a `[longitude, latitude]` array and that all GeoJSON coordinates in the NBA represent decimal degrees. 
 
 ### Area type and Locality
 The NBA offers polygon data for the following areas (field areaType). Countries (world), and Nature, Municipality and Province (NL). Entries with 
@@ -287,14 +312,22 @@ its locality field.
 
 Example: Retrieve all Nature reservation located in the Dutch province “Noord-Holland”. 
 
-`
-{"conditions": 
-  [ 
-    { "field" : "areaType", "operator" : "EQUALS", "value" : "Nature" },
-    { "field":"shape","operator":"IN",  "value": "Noord-Holland"} 
+```JSON
+{
+  "conditions": [
+    {
+      "field": "areaType",
+      "operator": "EQUALS",
+      "value": "Nature"
+    },
+    {
+      "field": "shape",
+      "operator": "IN",
+      "value": "Noord-Holland"
+    }
   ]
 }
-`
+```
 
 We would get the same results when querying with the id of the area Noord-Holland (`"value": "1003483@GEO"`). 
 
@@ -302,14 +335,17 @@ Likewise, we can look for specimens that have coordinates in a certain area. Sup
 collected in the country Bermuda. 
 This time, we search for specimen documents, using either the search term “Bermuda” or the id for Bermuda (`1003922@GEO`):
 
-`
-{"conditions": 
-  [ 
-    {"field":"gatheringEvent.siteCoordinates.geoShape","operator":"IN",  "value": "Bermuda"
-    } 
+```JSON
+{
+  "conditions": [
+    {
+      "field": "gatheringEvent.siteCoordinates.geoShape",
+      "operator": "IN",
+      "value": "Bermuda"
+    }
   ]
 }
-`
+```
 
 This query yields 14 specimen occurrences.
 
@@ -318,30 +354,48 @@ It is also possible to enter a GeoJSON directly into a query term. Suppose that 
 collected in the *Bermuda Triangle*. However, the Bermuda Triangle is not available as a geo shape in the NBA, so we cannot search 
 using locality or id but must specify a custom location. The GeoJSON describing the Bermuda triangle is as follows:
 
-`
+```JSON
 {
-    "type": "MultiPolygon",
-    "coordinates": [[
+  "type": "MultiPolygon",
+  "coordinates": [
+    [
       [
-        [-64.73, 32.31],
-        [-80.19, 25.76],
-        [-66.09, 18.43],
-        [-64.73, 32.31]
+        [
+          -64.73,
+          32.31
+        ],
+        [
+          -80.19,
+          25.76
+        ],
+        [
+          -66.09,
+          18.43
+        ],
+        [
+          -64.73,
+          32.31
+        ]
       ]
-    ]]
-}
-`
-We can then query for specimen documents using the JSON string:
-
-`
-{"conditions": 
-  [ 
-    {"field":"gatheringEvent.siteCoordinates.geoShape","operator":"IN",  "value":
-      "{\"type\":\"MultiPolygon\",\"coordinates\":[[[[-64.73, 32.31],[-80.19, 25.76],[-66.09, 18.43],[-64.73, 32.31]]]]}"
-    } 
+    ]
   ]
 }
-`
+```
+
+We can then query for specimen documents using the JSON string:
+
+
+```JSON
+{
+  "conditions": [
+    {
+      "field": "gatheringEvent.siteCoordinates.geoShape",
+      "operator": "IN",
+      "value": "{\"type\":\"MultiPolygon\",\"coordinates\":[[[[-64.73, 32.31],[-80.19, 25.76],[-66.09, 18.43],[-64.73, 32.31]]]]}"
+    }
+  ]
+}
+```
 
 Note that the quotes in the GeoJSON string have to be escaped and that linebreaks are removed. 
 This query will yield 158 specimens that have been collected within the boundaries of the Bermuda Triangle. 
