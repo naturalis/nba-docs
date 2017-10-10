@@ -21,12 +21,12 @@ http://145.136.240.125:30076//v2/taxon/query/?defaultClassification.genus=Hydroc
  
 ### Basic sorting: _sortFields
 To structure the documents in a query result, it is possible to sort the result by the values of user-defined fields. 
-This example extracts all geo objects with *areaType* ‘Country’ and sorts the results by the name of the 
+This example extracts all geo objects with `areaType` ‘Country’ and sorts the results by the name of the 
 locality (country):
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality
 
-Note that more than one *_sortField* can be provided, separated by commata. The results will then be first 
+Note that more than one `_sortField` can be provided, separated by commata. The results will then be first 
 sorted on the first field, and if multiple documents match the first field, the 
 latter fields will be considered in sorting the results.
 
@@ -42,33 +42,33 @@ http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_so
 By default, the NBA returns the first 10 best-scoring matches. The total size is always the first number in the 
 result set when using the query endpoint. It is important to note that by default, the documents returned from a 
 query are not sorted on any field. Controlling the size of the result therefore makes most sense on sorted 
-data. The below example uses the *_size* parameter
+data. The below example uses the `_size` parameter
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100
 
-to return the first 100 geo documents that are countries. The scrolling parameter *_from* controls the offset from which 
+to return the first 100 geo documents that are countries. The scrolling parameter `_from` controls the offset from which 
 documents are retrieved. The query 
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100&_from=100
 
 thus returns 100 documents starting from the 100th result. The first item in this set is therefore ‘Hungary’ and 
-not ‘Afghanistan’, which would be the first hit of the query without *_from*.
+not ‘Afghanistan’, which would be the first hit of the query without `_from`.
 
 ### _ignoreCase
 By default, search fields are case-sensitive in the NBA. As the name indicates, 
 this parameter makes a query term case insensitive.
 
 ### Combined search on multiple fields: _logicalOperator
-By default, when querying multiple fields, the query terms are conjoined by the operator *AND* meaning that each 
-condition has to be met. To use an *OR* conjunction, the query parameter *_logicalOperator* can be used, e.g. 
+By default, when querying multiple fields, the query terms are conjoined by the operator `AND` meaning that each 
+condition has to be met. To use an `OR` conjunction, the query parameter `_logicalOperator` can be used, e.g. 
 
 http://145.136.240.125:30076/v2/specimen/query/?gatheringEvent.worldRegion=Neotropical&gatheringEvent.continent=Southern%20America&_logicalOperator=OR
 
 ## Complex queries: The _querySpec parameter
 Human readable queries, as outlined above, provide an intuitive way to search for one or multiple fields in the 
 data. However, these queries have limited power and therefore the NBA allows for a detailed query specification 
-in JSON format, a so-called *QuerySpec* object. 
-A *QuerySpec* generally consists of an array of *QueryCondition* objects (please refer to the NBA reference 
+in JSON format, a so-called `QuerySpec` object. 
+A `QuerySpec` generally consists of an array of `QueryCondition` objects (please refer to the NBA reference 
 documentation for detailed documentation of these object types) that, in turn, have the fields field, 
 operator and value. A simple QuerySpec for specimens of the genus *Hydrochoerus* looks as follows
 
