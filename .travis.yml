@@ -1,0 +1,16 @@
+language: none
+services:
+  - docker
+branches:
+  only:
+  - V2_master
+env:
+  global:
+    - DOCKER_TAG=latest
+    - DOCKER_IMAGE_NAME=naturalis/nba-docs:$DOCKER_TAG
+script:
+  - docker build -t $DOCKER_IMAGE_NAME ./
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push $DOCKER_IMAGE_NAME
+  - docker logout
