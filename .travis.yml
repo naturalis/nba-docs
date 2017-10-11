@@ -1,7 +1,7 @@
 ## Config file for travis automatic build.
 ## Make sure credentials have been set for this repo:
-## travis env set DOCKER_USERNAME
-## travis env set DOCKER_PASSWORD		
+## travis env set DOCKER_USER
+## travis env set DOCKER_PASS
 
 language: generic
 services:
