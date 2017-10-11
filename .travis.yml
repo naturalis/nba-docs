@@ -1,4 +1,9 @@
-language: none
+## Config file for travis automatic build.
+## Make sure credentials have been set once:
+## travis env set DOCKER_USERNAME
+## travis env set DOCKER_PASSWORD		
+
+language: generic
 services:
   - docker
 branches:
@@ -10,6 +15,7 @@ env:
     - DOCKER_IMAGE_NAME=naturalis/nba-docs:$DOCKER_TAG
 script:
   - docker build -t $DOCKER_IMAGE_NAME ./
+
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker push $DOCKER_IMAGE_NAME
