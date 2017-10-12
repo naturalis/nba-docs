@@ -41,10 +41,7 @@ googleAnalytics = ""
 
 
 [social]
-	##twitter = "qqq"
 	github  = "digitalcraftsman"
-	##email   = "hello@email.com"
-
 
 [[menu.main]]
 	name   = "Introduction"
