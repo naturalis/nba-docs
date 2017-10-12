@@ -44,16 +44,17 @@
           </li>
           {{ end }}
 		</ul>
-		<!--
-        {{ with .Site.Params.support_email }}
-        <li>
-          <a href="mailto:{{ . }}" title="Email of {{ . }}">
-            Contact support
-          </a>
-        </li>
-        {{ end }}
-		</hr>
-		-->
+
+		<ul>
+		{{ with .Site.Params.license }}
+          <li>
+            <a href="{{ . }}" title="License" target="blanc">
+              License
+            </a>
+          </li>
+          {{ end }}
+		</ul>
+
 		<!--
         {{ if isset .Site.Params "author" }}
         <hr>
