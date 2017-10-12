@@ -20,7 +20,7 @@ googleAnalytics = ""
 	repo_url = "https://github.com/naturalis/naturalis_data_api"
 
 	version = "1.0.0"
-	logo = "images/logo.jpg"
+	logo = "images/Naturalis_logo_notext.png"
 	favicon = ""
 
 	permalink = "#"
