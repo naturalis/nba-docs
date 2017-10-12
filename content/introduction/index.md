@@ -1,6 +1,7 @@
 ---
-weight: 20
+type: index
 title: Introduction
+weight: 10
 ---
 
 ## Background

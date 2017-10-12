@@ -1,6 +1,6 @@
 ---
-weight: 20
 title: Quick Start
+weight: 20
 ---
 
 A collection of all services for all data types is available in the API endpoint reference documentation: 

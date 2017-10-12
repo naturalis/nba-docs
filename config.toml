@@ -11,6 +11,7 @@ googleAnalytics = ""
 	# General information
 	author = "Naturalis"
 	support_email="support@naturalis.nl"
+	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
 	description = "Naturalis Biodiversit Api user documentation"	
 	copyright = "Released under the MIT license"
 

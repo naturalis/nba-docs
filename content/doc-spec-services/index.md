@@ -1,6 +1,6 @@
 ---
-weight: 40
 title: Document specific services
+weight: 40
 ---
 
 ## Specimen occurrence services

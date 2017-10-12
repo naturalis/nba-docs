@@ -1,6 +1,6 @@
 ---
-weight: 40
 title: Download Services
+weight: 50
 ---
 
 # Download services
