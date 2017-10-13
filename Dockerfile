@@ -1,3 +1,4 @@
+## use hugo image based on alpine linux
 FROM jojomi/hugo:latest
 
 MAINTAINER hettling <hannes.hettling@naturalis.nl>
@@ -9,6 +10,7 @@ RUN mkdir /nba-docs
 ADD . /nba-docs/
 WORKDIR /nba-docs
 
+## install git to get the theme
 RUN apk --update add git openssh && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
@@ -17,14 +19,12 @@ RUN apk --update add git openssh && \
 RUN git clone https://github.com/digitalcraftsman/hugo-material-docs.git \
 	themes/hugo-material-docs		
 
-## make static site 
+## build static site 
 RUN hugo
 
-## expose port, still needs to be published!
-EXPOSE 1313	
-
-# XXX it seems to necessary to give base URL to hugo!
-ENV HUGO_BASE_URL http://localhost:1313
-
-# By default, serve site
-CMD hugo server -b ${HUGO_BASE_URL} --bind=0.0.0.0
+## expose port; caution: still need to publish when running!
+EXPOSE $NBADOCS_PORT
+	
+# by default, serve site
+CMD hugo server -b http://${NBADOCS_HOST}:${NBADOCS_PORT} \
+	 --bind=0.0.0.0 -p $NBADOCS_PORT

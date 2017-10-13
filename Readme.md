@@ -9,11 +9,17 @@ subdirectory.
 ## Running with Docker
 A docker container with this site and a hugo server is regularly 
 pushed to [docker-hub](https://hub.docker.com/r/naturalis/nba-docs/).
-Run with:
+Pass the following variables to `docker run`: 
 
-`docker run -p 1313:1313 naturalis/nba-docs`
+* `NBADOCS_HOST`: ip of host 
+* `NBADOCS_PORT`: port where website can be reached
+ 
+The port must be published with the `-p` option.
+Example: Running with
 
-and the site should be available at http://localhost:1313
+`docker run -p 8098:8098 -e NBADOCS_HOST=145.136.242.164 -e NBADOCS_PORT=8098 -it naturalis/nba-docs`
+
+should make the site available at http://145.136.242.164:8098.
 
 ## Local installation
 Building the docs and running a small web server hosting the docs
@@ -24,4 +30,4 @@ top-level directorym issue
 
 `hugo server -D`
 
-The site should now be available at http://localhost:1313
+The site should now be available at http://localhost:1313. 
