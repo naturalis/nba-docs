@@ -21,9 +21,6 @@ RUN git clone https://github.com/digitalcraftsman/hugo-material-docs.git \
 
 ## build static site 
 RUN hugo
-
-## expose port; caution: still need to publish when running!
-EXPOSE $NBADOCS_PORT
 	
 # by default, serve site
 CMD hugo server -b http://${NBADOCS_HOST}:${NBADOCS_PORT} \
