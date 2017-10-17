@@ -2,7 +2,10 @@
 FROM jojomi/hugo:latest
 
 MAINTAINER hettling <hannes.hettling@naturalis.nl>
-	
+
+##
+ENV SWAGGER_UI_URL="localhost:8080/v2/reference-doc"
+		
 ## site will ge installed in /nba-docs
 RUN mkdir /nba-docs
 

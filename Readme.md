@@ -13,11 +13,12 @@ Pass the following variables to `docker run`:
 
 * `NBADOCS_HOST`: ip of host 
 * `NBADOCS_PORT`: port where website can be reached
- 
+* `SWAGGER_UI_URL`: URL of swagger API endpoint reference documentation (see [here](https://github.com/naturalis/swagger-ui))
+
 The port must be published with the `-p` option.
 Example: Running with
 
-`docker run -p 8098:8098 -e NBADOCS_HOST=145.136.242.164 -e NBADOCS_PORT=8098 -it naturalis/nba-docs`
+`docker run -p 8098:8098 -e NBADOCS_HOST=145.136.242.164 -e NBADOCS_PORT=8098 -e SWAGGER_UI_URL=145.136.242.164:8080/v2/reference-doc naturalis/nba-docs`
 
 should make the site available at http://145.136.242.164:8098.
 
@@ -26,7 +27,7 @@ Building the docs and running a small web server hosting the docs
 requires the installation of [hugo](https://gohugo.io/). From the 
 top-level directorym issue
 
-`hugo -v -t docuapi`
+`hugo`
 
 `hugo server -D`
 
