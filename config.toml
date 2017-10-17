@@ -21,7 +21,7 @@ googleAnalytics = ""
 
 	version = "1.0.0"
 	logo = "images/Naturalis_logo_notext.png"
-	favicon = ""
+	favicon = "images/favicon.ico"
 
 	permalink = "#"
 
