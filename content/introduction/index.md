@@ -5,6 +5,7 @@ weight: 10
 ---
 
 ## Background
+
 The Netherlands Biodiversity API (NBA) is a public service for retrieving biodiversity 
 related data from one of the largest natural history collections in the world, present 
 in the Naturalis Biodiversity Center, Leiden, the Netherlands.The NBA provides access to 
@@ -54,7 +55,7 @@ The NBA provides access to four basic document types that are interlinked:
 
 ## Access
 * **REST**: The NBA offers a number of RESTful services that can be directly queried. Most services 
-  return JSON content. A summary of available endpoints and data models present in the NBA can be found here [Link: REST endpoints API reference]. 
+  return JSON content. A summary of available endpoints and data models present in the NBA can be found {{<swagger-ui-link text="here">}}. 
 
 * **API clients:** To provide easy programmatic access to the NBA, we are currently developing clients for 
   several programming languages. We currently offer the following clients:

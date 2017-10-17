@@ -3,8 +3,8 @@ title: Quick Start
 weight: 20
 ---
 
-A collection of all services for all data types is available in the API endpoint reference documentation: 
-[Link: REST endpoints API reference]. A JSON document of available REST endpoints can also be retreived at 
+A collection of all services for all data types is available in the {{<swagger-ui-link text="API endpoint reference">}}. 
+A JSON document of available REST endpoints can also be retreived at 
 
 http://145.136.242.167:8080/v2/metadata/getRestServices
 

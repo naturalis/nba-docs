@@ -36,7 +36,16 @@
         <!--<span class="section">Support</span>-->
 
 		<ul>
-		{{ with .Site.Params.support_email }}
+		  {{ with getenv "SWAGGER_UI_URL" }}
+          <li>
+			<a href="{{ . }}" target="_blank">API endpoint reference</a>
+          </li>
+		  {{ end }}
+		</ul>
+				
+		
+		<ul>
+		  {{ with .Site.Params.support_email }}
           <li>
             <a href="mailto:{{ . }}" title="Email of {{ . }}">
               Contact & Support

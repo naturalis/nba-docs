@@ -8,7 +8,7 @@ Specimen documents constitute the core of data served by the NBA. Museum specime
 different objects such as plants, animals or single parts thereof, DNA samples, fossils, rocks or meteorites. 
 The specimens in our collection are therefore described using an extensive data model. All components and data 
 types in the Specimen model, as well as a comprehensive list of all specimen-related endpoints are documented in 
-the NBA reference documentation [LINK]. Below, we will illustrate the major components of specimen documents and 
+the {{<swagger-ui-link text="API endpoint reference">}}. Below, we will illustrate the major components of specimen documents and 
 how to query them. A list of available fields is also available at
 
 http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo
@@ -160,7 +160,7 @@ in the fields `associatedMultiMediaUris.accessUri` and `associatedMultiMediaUris
 ## Taxonomic data services
 A taxon document stores the hierarchical classification of a taxon, its scientific names and synonyms, and other relevant data retrieved 
 from the respective source system. All components and data types in the taxon model, as well as a comprehensive list of all 
-taxon-related endpoints are documented in the NBA reference documentation [LINK]. A list of available fields is also available at
+taxon-related endpoints are documented in the {{<swagger-ui-link text="API endpoint reference">}}. A list of available fields is also available at
 
 http://145.136.240.125:30076/v2/taxon/metadata/getFieldInfo
 
@@ -403,8 +403,8 @@ This query will yield 158 specimens that have been collected within the boundari
 
 ## Metadata services
 
-Metadata services provide miscellaneous information about the data available via the NBA. For a full list of services, please refer API 
-reference documentation [Link]. Metadata services can be categorised into two classes:
+Metadata services provide miscellaneous information about the data available via the NBA. For a full list of services, please refer ti the
+{{<swagger-ui-link text="API endpoint reference">}}. Metadata services can be categorised into two classes:
 
 ### Controlled vocabularies
 To maintain data integrity, some fields in our source systems are constrained by controlled vocabularies. These exist for 
