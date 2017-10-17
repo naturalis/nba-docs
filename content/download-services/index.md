@@ -3,8 +3,6 @@ title: Download Services
 weight: 50
 ---
 
-# Download services
-
 NBA’s download services offer bulk retrieval of taxonomic and specimen occurrence data. Instead of 
 JSON format, download services return zip files containing the data. The zip files are formatted according to the [Darwin Core 
 archive standard for the exchange of biodiversity data](http://tools.gbif.org/dwca-assistant/gbif\_dwc-a\_asst\_en\_v1.1.pdf) (also see below). 
