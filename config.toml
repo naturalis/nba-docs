@@ -1,6 +1,6 @@
 baseurl = "https://example.org/"
 languageCode = "en-us"
-title = "Naturalis Biodiversity Api user documentation"
+title = "Netherlands Biodiversity Data Services"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -12,7 +12,7 @@ googleAnalytics = ""
 	author = "Naturalis"
 	support_email="support@naturalis.nl"
 	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
-	description = "Naturalis Biodiversit Api user documentation"	
+	description = "Netherlans Biodiversity Data Services - User documentation"	
 	copyright = "Released under the MIT license"
 
 	# Repository
@@ -65,7 +65,8 @@ googleAnalytics = ""
 	url    = "download-services/"
 	weight = 50
 
-[[menu.main]]
+
+[[menu.purl]]
 	name   = "PURL services"
 	url    = "purl-services/"
 	weight = 60

@@ -20,10 +20,11 @@
           <i class="icon icon-github"></i> View on GitHub
         </a>
       </ul>
-      <hr>
       {{ end }}
 
-	  <!--<span class="section">Contents</span>-->
+      <hr>
+	  
+	  <span style="color:grey"><strong>NETHERLANDS BIODIVERSITY API</strong></span>
 	  
       <div class="toc">
         {{ if gt (len .Site.Menus.main) 0 }}
@@ -31,20 +32,27 @@
           {{ partial "nav" . }}
         </ul>
         {{ end }}
-
+		
 		<hr>
-        <!--<span class="section">Support</span>-->
 
+		<span style="color:grey"><strong>PURL SERVICES</strong></span>
+
+		<div class="toc">
+          {{ if gt (len .Site.Menus.purl) 0 }}
+          <ul>
+			{{ partial "nav-purl" . }}			
+          </ul>
+          {{ end }}
+		
+		  <hr/>
+		
 		<ul>
 		  {{ with getenv "SWAGGER_UI_URL" }}
           <li>
 			<a href="{{ . }}" target="_blank">API endpoint reference</a>
           </li>
 		  {{ end }}
-		</ul>
-				
-		
-		<ul>
+
 		  {{ with .Site.Params.support_email }}
           <li>
             <a href="mailto:{{ . }}" title="Email of {{ . }}">
@@ -52,10 +60,8 @@
             </a>
           </li>
           {{ end }}
-		</ul>
 
-		<ul>
-		{{ with .Site.Params.license }}
+		  {{ with .Site.Params.license }}
           <li>
             <a href="{{ . }}" title="License" target="blanc">
               License
@@ -63,35 +69,7 @@
           </li>
           {{ end }}
 		</ul>
-
-		<!--
-        {{ if isset .Site.Params "author" }}
-        <hr>
-        <span class="section">The author</span>
-        
-        <ul>
-		  
-          {{ with .Site.Params.github }}
-          <li>
-            <a href="https://github.com/{{ . }}" target="_blank" title="@{{ . }} on GitHub">
-              @{{ . }} on GitHub
-            </a>
-          </li>
-          {{ end }}
-		  
-		  
-          {{ with .Site.Params.support_email }}
-          <li>
-            <a href="mailto:{{ . }}" title="Email of {{ . }}">
-              Contact support
-            </a>
-          </li>
-          {{ end }}
-		  
-        </ul>
-	
-       {{ end }}
-		-->
+		
       </div>
     </div>
   </div>
