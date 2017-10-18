@@ -8,7 +8,7 @@ weight: 30
 For extended query functionality, the NBA offers a set of extended query parameters:
 
 ### Filter in results: _fields
-The `_fields` parameter allows for filtering certain fields of interest in result documents. 
+The `_fields` parameter allows for filtering certain fields of interest in query results. 
 Suppose one would like to query all taxa in the genus *Hydrochoerus* but is only interested 
 in the title of the scientific publication associated with that taxon,
 
@@ -20,14 +20,14 @@ be chosen if separated by commata, e.g.
 http://145.136.240.125:30076//v2/taxon/query/?defaultClassification.genus=Hydrochoerus&_fields=recordURI,references.titleCitation
  
 ### Basic sorting: _sortFields
-To structure the documents in a query result, it is possible to sort the result by the values of user-defined fields. 
-This example extracts all geo objects with `areaType` ‘Country’ and sorts the results by the name of the 
+To structure a query result, it is possible to sort the result by the values of user-defined fields. 
+This example extracts all geo area records with `areaType` ‘Country’ and sorts the results by the name of the 
 locality (country):
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality
 
 Note that more than one `_sortField` can be provided, separated by commata. The results will then be first 
-sorted on the first field, and if multiple documents match the first field, the 
+sorted on the first field, and if there are multiple results matching the first field, the 
 latter fields will be considered in sorting the results.
 
 It is also possible to specify a sort direction. To sort in ascending order:
@@ -40,18 +40,18 @@ http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_so
 
 ### Controlling result size: _size and _from 
 By default, the NBA returns the first 10 best-scoring matches. The total size is always the first number in the 
-result set when using the query endpoint. It is important to note that by default, the documents returned from a 
+result set when using the query endpoint. It is important to note that by default, the results returned from a 
 query are not sorted on any field. Controlling the size of the result therefore makes most sense on sorted 
 data. The below example uses the `_size` parameter
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100
 
-to return the first 100 geo documents that are countries. The scrolling parameter `_from` controls the offset from which 
-documents are retrieved. The query 
+to return the first 100 geo areas that are countries. The scrolling parameter `_from` controls the offset from which 
+results are retrieved. The query 
 
 http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100&_from=100
 
-thus returns 100 documents starting from the 100th result. The first item in this set is therefore ‘Hungary’ and 
+thus returns 100 results starting from the 100th result. The first item in this set is therefore ‘Hungary’ and 
 not ‘Afghanistan’, which would be the first hit of the query without `_from`.
 
 ### _ignoreCase
@@ -153,9 +153,9 @@ Most fields (except geo shapes) have the matching operators `EQUALS` and `NOT_EQ
 comparison operators such as `LT`, `GT` (less than and greater than, respectively) are usually important, as well as 
 querying numbers within or outside a certain range (`BETWEEN, NOT_BETWEEN`). Partial matching operators for text fields 
 are very powerful. With the operator `CONTAINS`, a search term must be an exact substring (upper/lower cases are ignored) 
-in a document. The operator `MATCHES` breaks up the query string into single terms which then are matched in the 
-documents (using an `OR` conjunction). The metadata service `{doctype}/metadata/getFieldInfo` lists all operators for 
-every field in a document:
+of a data field. The operator `MATCHES` breaks up the query string into single search terms which are conjoined with `OR` . 
+The metadata service `{doctype}/metadata/getFieldInfo` lists all operators for 
+every field in a data type:
 
 http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo 
 
@@ -219,11 +219,11 @@ Example: Search for all taxa that have no full scientific name in their synonyms
 ```
 
 Please note that if `“value” : null` is omitted in the above example, the result will be the same. 
-However, we find it more intuitive to explicitly specify the ‘null’ value in such queries.
+However, it seems more intuitive to explicitly specify the ‘null’ value in such queries.
 
 ## Scoring and Boosting
-By default, documents from a query are sorted by relevance, so the documents that match the query conditions best will 
-appear first in the results. The relevance is reflected in the score which is returned in any NBA search result. 
+By default, query results are sorted by relevance, so hits that match the query conditions best will 
+appear first. The relevance is reflected in the score which is returned in any NBA search result. 
 The higher the score, the more relevant 
 the search result. Please refer to the [ElasticSearch documentation] ( https://www.elastic.co/guide/en/elasticsearch/guide/current/practical-scoring-function.html) 
 on how the score is calculated. Suppose we look for taxa with genus name 
@@ -308,7 +308,7 @@ curl -X POST http://145.136.240.125:30076/v2/taxon/query/ -d '_querySpec=
 ```
 
 ## Searching with dates
-All date fields of specimen, taxon and multimedia documents (geo documents do not have a date field) are indexed and therefore searchable. 
+All date fields of specimen, taxon and multimedia data types (geo areas do not have a date field) are indexed and therefore searchable. 
 Dates can be entered in different levels of precision; the supported formats can be queried as follows:
 
 http://145.136.240.125:30076/v2/metadata/getAllowedDateFormats
@@ -317,7 +317,7 @@ The most precise format is `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, with resolution in mill
 example `1981-01-09T08:40:59.880+02:00`. The least precise format is `yyyy`. See also 
 [here](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/nl/naturalis/nba/common/es/ESDateInput.html) for information 
 and examples on NBA date formats. Date fields support the same operator as numeric fields 
-(see [here](http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo) e.g. for specimen documents), e.g. `EQUALS, IN, GT, LT` and `BETWEEN`. 
+(see [here](http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo) e.g. for specimens), e.g. `EQUALS, IN, GT, LT` and `BETWEEN`. 
 
 Example: Find all specimens that were gathered before 1800, sorted descendingly:
 
@@ -361,26 +361,26 @@ the `BETWEEN` operator. Example: retrieve all specimens collected in April 2001:
 ```
 
 ## Aggregation
-Aggregation functions summarise data from multiple documents based on certain conditions in order to get a higher-level 
+Aggregation functions summarise data from multiple query results based on certain conditions in order to get a higher-level 
 view on the whole dataset. The NBA features two different types of aggregation: Aggregation on distinct 
 field values and aggregation on scientific names.
 
 ### Distinct values for fields
-For a given field in a document, services with path `/{documentType}/getDistinctValues/{field}` return all distinct values of that 
-field in our data. Additionally, the frequency for each value for the field is given and the result is ordered by frequency. 
+For a given field in a data type, services with path `/{documentType}/getDistinctValues/{field}` return all distinct values of that 
+field in the data. Additionally, the frequency for each value for the field is given and the result is ordered by frequency. 
 This functionality is thus a simple count aggregation. Example: To identify the amounts of specimens per collection, one has to 
-aggregate specimen documents on all distinct values for the field collectionType:
+aggregate on all distinct values for the field collectionType:
 
 http://145.136.240.125:30076/v2/specimen/getDistinctValues/collectionType
 
 ### Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain taxon of a certain rank (e.g. species or subspecies) and the 
 taxon must be defined in some taxonomic reference resource. The concept of Scientific name groups in the NBA establishes this link 
-between a specimen and a taxon document. This allows to query which specimens are associated with which taxa and vice verse. 
+between a specimen and a taxon. This allows to query which specimens are associated with which taxa and vice versa. 
 The services available in the path `{specimen|taxon}/groupByScientificName/{query}` allow for aggregation of search results over both, 
-specimen and taxon documents at the same time. Aggregation is carried out on the field `scientificNameGroup` 
-(`identifications.scientificName.scientificNameGroup` in specimen documents and `acceptedName.scientificName.scientificNameGroup/synonyms.scientificName.scientificNameGroup` 
-in taxon documents). A query gives a list of objects which contain both, specimen and taxon document, 
+specimen and taxa at the same time. Aggregation is carried out on the field `scientificNameGroup` 
+(`identifications.scientificName.scientificNameGroup` for specimen and `acceptedName.scientificName.scientificNameGroup/synonyms.scientificName.scientificNameGroup` 
+for taxa). A query gives a list of objects which contain both, specimen and taxa, 
 that share the same value for `scientificNameGroup`. 
 Example: To retrieve all specimens and their associated taxa for the genus *Felis*:
 

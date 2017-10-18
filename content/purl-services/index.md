@@ -17,7 +17,7 @@ persist in the future, even if the location of the physical and data resource ha
 
 http://data.biodiversitydata.nl/naturalis/specimen/{unitID}
 
-Each specimen document stores its PURL in the field `unitGUID`. By default, the PURL returns the corresponding site of the specimen in the BioPortal 
+Each specimen record stores its PURL in the field `unitGUID`. By default, the PURL returns the corresponding site of the specimen in the BioPortal 
 in format `text/html`. For instance, the PURL for an Anarosaurus specimen 
 
 http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858

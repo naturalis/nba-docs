@@ -7,12 +7,12 @@ NBA’s download services offer bulk retrieval of taxonomic and specimen occurre
 JSON format, download services return zip files containing the data. The zip files are formatted according to the [Darwin Core 
 archive standard for the exchange of biodiversity data](http://tools.gbif.org/dwca-assistant/gbif\_dwc-a\_asst\_en\_v1.1.pdf) (also see below). 
 While static download services offer pre-compiled datasets, dynamic download services produce Darwin Core archives for the results of any query 
-for taxon or specimen documents.
+for taxon or specimen data types.
 
 
 ## Static download service
 The path for static downloads is `/{specimen|taxon}/dwca/getDataSet/{name}` with the name of a specific dataset. The names of predefined datasets can be 
-retrieved with the endpoint `getDataSetNames`, for example for specimen documents:
+retrieved with the endpoint `getDataSetNames`, for example for specimen data:
 
 http://145.136.240.125:31932/v2/specimen/dwca/getDataSetNames
 
