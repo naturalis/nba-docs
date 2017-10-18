@@ -8,7 +8,7 @@ weight: 10
 
 The Netherlands Biodiversity API (NBA) is a public service for retrieving biodiversity 
 related data from one of the largest natural history collections in the world, present 
-in the Naturalis Biodiversity Center, Leiden, the Netherlands.The NBA provides access to 
+in the Naturalis Biodiversity Center, Leiden, the Netherlands. The NBA provides access to 
 more than **8 million specimen records** and counts are steadily growing as our large-scale digitization 
 project proceeds. Other than specimen records and metadata, we provide access to taxonomic 
 classification and nomenclature, geographical information, and to multimedia files. By using 
@@ -32,28 +32,29 @@ a web application for browsing biodiversity data that is based on the NBA.
 </figure>
 
 
-## Available data
+## Available data types
 The NBA provides access to four basic document types that are interlinked:
 
 * A **Specimen** document represents a biological (botanical or zoological) or 
   geological entity stored at Naturalis. Specimen documents usually hold information 
   on preservation, identification, classification, taxonomy (see Taxon documents), and 
   details about the gathering/acquisition process of the specimen, such as 
-  geographic location and coordinates.
+  geospatial information. Data are harvested from -- currently -- two in-house collection registration systems 
+  for animal and plant specimens, respectively.
 * **Taxonomic** information about a biological entity is provided in Taxon documents, 
   comprising hierarchy and placement in the Tree of Life, information on synonymy and the 
-  mapping to common (species) names. These data consist of two taxonomic databases, 
+  mapping to common (species) names in different languages. These data are taken from two taxonomic databases, 
   the [Catalogue of Life](http://www.catalogueoflife.org/) and [NSR](http://www.nederlandsesoorten.nl/), 
   a comprehensive classification of all species in the Netherlands. Taxon and Specimen documents 
   can be aggregated on fields such as scientific or common taxon names.
-* **Multimedia documents**: Specimen and Taxon documents can have associated multimedia content, 
-  such as photos, videos or drawings. Multimedia documents contain download links to these resources and 
-  additional information about the associated specimen/taxon. 
+* **Multimedia documents**: store photos, videos or drawings that are associated with Specimen and Taxon documents.
+  Data sources are our in-house collection registration systems and the [NSR](http://www.nederlandsesoorten.nl/). 
 * Objects of type **GeoArea** refer to geographical regions coded as polygons in the GeoJSON format. 
   The NBA thereby facilitates geographical searches such as searching for all specimens that were collected in a 
-  certain region, or, vice versa, retrieve the region (e.g. a specific nature reserve) where a specimen was found. 
+  certain region, or, vice versa, retrieve the region (e.g. a specific nature reserve) where a specimen was found. Data sources
+  are listed in the [detailed service description](../doc-spec-services/#geo-sources).
 
-## Access
+## Access to data
 * **REST**: The NBA offers a number of RESTful services that can be directly queried. Most services 
   return JSON content. A summary of available endpoints and data models present in the NBA can be found {{<swagger-ui-link text="here">}}. 
 

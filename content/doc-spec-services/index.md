@@ -221,7 +221,7 @@ videos and also artistic drawings of animals and plants.
 The base URL for multimedia documents is http://145.136.240.125:31932/v2/multimedia
 
 ### Data Source Systems
-Most multimedia documents are retrieved from our internal registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
+Most multimedia documents are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
 and most objects are plant photos. A small fraction items is retrieved from the [Dutch Species Registry](http://www.nederlandsesoorten.nl/). As for 
 the other document types, the source system can be retrieved by querying the fields `sourceSystem.code` and `sourceSystem.name`. 
 
@@ -282,7 +282,7 @@ All polygons are coded in the GeoJSON format (see below).
 ### Base URL
 The base URL for geo documents is http://145.136.240.125:31932/v2/geo
 
-### Data Source Systems
+### Data Source Systems {#geo-sources}
 Besides a list of countries (obtained from http://gadm.org/), we offer detailed geographical data of the Netherlands, including dutch 
 provinces and municipalities (obtained from http://www.cbs.nl/ ), and a comprehensive list of nature reserves 
 (obtained from http://www.natura2000.nl/, http://www.staatsbosbeheer.nl/, https://www.natuurmonumenten.nl/, http://www.pwn.nl/,  http://www.landschapnoordholland.nl/).
