@@ -52,7 +52,7 @@ The NBA provides access to four basic document types that are interlinked:
 * Objects of type **GeoArea** refer to geographical regions coded as polygons in the GeoJSON format. 
   The NBA thereby facilitates geographical searches such as searching for all specimens that were collected in a 
   certain region, or, vice versa, retrieve the region (e.g. a specific nature reserve) where a specimen was found. Data sources
-  are listed in the [detailed service description](../doc-spec-services/#geo-sources).
+  are listed in the [detailed service description](/doc-spec-services/#geo-sources).
 
 ## Access to data
 * **REST**: The NBA offers a number of RESTful services that can be directly queried. Most services 
