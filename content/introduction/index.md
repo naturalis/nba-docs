@@ -55,12 +55,20 @@ The NBA provides access to four basic data types that are interlinked:
   are listed in the [detailed service description](/doc-spec-services/#geo-sources).
 
 ## Access to data
-* **REST**: The NBA offers a number of RESTful services that can be directly queried. Most services 
-  return JSON content. A summary of available endpoints and data models present in the NBA can be found {{<swagger-ui-link text="here">}}. 
+### REST
+The NBA is implemented as a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) API and can thus be accessed
+using standard REST clients or a web browser. For exploration or testing of the NBA services and/or PURL services we recommend using a 
+command-line tool for transferring data as e.g. [curl](https://curl.haxx.se/) or a rest 
+client browser plugin, e.g. the [chrome rest client](https://advancedrestclient.com/).
+A summary of available REST endpoints and data models present in the NBA can be found {{<swagger-ui-link text="here">}}.
 
-* **API clients:** To provide easy programmatic access to the NBA, Naturalis plans to develop clients for several programming languages. 
-  Currently, a [Java client](https://github.com/naturalis/naturalis_data_api) is available (see [javadoc](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/))
+### API clients
+To provide programmatic access to the NBA, Naturalis plans to develop clients for several programming languages. Thes clients 
+are build upon the NBA REST architecture and facilitate the integration of NBA access within scripts or software applications.
+Currently, a NBA [Java client](https://github.com/naturalis/naturalis_data_api) is 
+available (see [javadoc](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/)).
 
-* **Bioportal**
-  The [Bioportal](http://bioportal.naturalis.nl/) provides easy access to our data via a web browser. 
+### Bioportal
+The [Bioportal](http://bioportal.naturalis.nl/) provides easy access via a web interface from which the user can browse and query 
+the Naturalis collection data. The Bioportal makes use of (a part of) the NBA services to retrieve and display the data.
 
