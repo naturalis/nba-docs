@@ -54,6 +54,23 @@ The NBA provides access to four basic data types that are interlinked:
   certain region, or, vice versa, retrieve the region (e.g. a specific nature reserve) where a specimen was found. Data sources
   are listed in the [detailed service description](/doc-spec-services/#geo-sources).
 
+## Services summary
+
+{{%table-links type="specimen" ex="/quickstart/#human-readable"%}}
+
+
+
+
+
+| <br><br> Service type <p>  </p> |  | Document type              |            |   
+|-------------------------|:------------:|:--------:|:----------:|:-------------:|
+|                         |  **Specimen**  | **Taxon**  | **GeoArea**  | **Multimedia**  |
+| **Query (human readable)**  |  {{%table-links type="specimen" ex="/doc-spec-services/specimen"%}} | {{%table-links type="taxon" ex="/doc-spec-services/taxon"%}} | {{%table-links type="geo" ex="/doc-spec-services/geo"%}} |  {{%table-links type="multimedia" ex="/doc-spec-services/multimedia"%}}                |
+| **Query (JSON)**  |                |            |              |                 |
+| **Download (static)**  |                |            |              |                 |
+| **Download (dynamic)**  |                |            |              |                 |
+| **Metadata**  |                |            |              |                 |
+
 ## Access to data
 ### REST
 The NBA is implemented as a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) API and can thus be accessed

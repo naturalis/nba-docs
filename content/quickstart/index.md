@@ -1,9 +1,8 @@
 ---
 title: Quick Start
-weight: 20
 ---
 
-A collection of all services for all data types is available in the {{<swagger-ui-link text="API endpoint reference">}}. 
+A collection of all services for all data types is available in the {{swagger-ui-link text="API endpoint reference"}}. 
 A JSON representation of available REST endpoints can also be retreived at 
 
 http://145.136.242.167:8080/v2/metadata/getRestServices
@@ -11,7 +10,7 @@ http://145.136.242.167:8080/v2/metadata/getRestServices
 To get an idea of the NBA services’ possibilities and the available data, you can also have a look at the 
 [Bioportal](http://bioportal.naturalis.nl/). 
 
-## Basic (human readable) queries
+## Basic (human readable) queries {#human-readable}
 The base URL for querying the current version (v2) of the NBA is 
 
 http://145.136.240.125:30076/v2

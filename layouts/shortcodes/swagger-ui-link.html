@@ -1,10 +1,9 @@
 <!-- 
 	 Shortcode for providing a link to the swagger ui url, which must be 
-	 present as environment variable. If parameter "text" is given,
-	 this will be the link text.
+	 present as environment variable. If parameter "text" is given, this will be the link text.
   -->
 {{ if .Get "text" }} 
-<a href={{ getenv "SWAGGER_UI_URL" }} target="_blank"> {{ .Get "text" }} </a>
+<a href={{ getenv "SWAGGER_UI_URL" }}/{{.Inner}} target="_blank"> {{ .Get "text" }} </a>
 {{ else }}
-<a href={{ getenv "SWAGGER_UI_URL" }} target="_blank"> {{ getenv "SWAGGER_UI_URL" }} </a>
+<a href={{ getenv "SWAGGER_UI_URL" }}/{{.Inner}} target="_blank"> {{ getenv "SWAGGER_UI_URL" }}{{.Inner}} </a>
 {{ end }}
