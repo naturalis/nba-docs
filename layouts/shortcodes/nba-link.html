@@ -1,0 +1,11 @@
+<!-- 
+	 Shortcode for providing a link to the NBA, the base url must be 
+	 present as environment variable NBA_BASE_URL. If parameter "text" is given,
+	 this will be the link text. The string between the tags will be the path
+	 appended to the base url. 	
+  -->
+{{ if .Get "text" }} 
+<a href={{ getenv "NBA_BASE_URL" }}/{{.Inner}} target="_blank"> {{ .Get "text" }} </a>
+{{ else }}
+<a href={{ getenv "NBA_BASE_URL" }}/{{.Inner}} target="_blank"> {{ getenv "SWAGGER_UI_URL" }}{{.Inner}} </a>
+{{ end }}
