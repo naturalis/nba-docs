@@ -35,7 +35,7 @@ a web application for browsing biodiversity data that is based on the NBA.
 ## Available data types
 The NBA provides access to four basic data types that are interlinked:
 
-* A **Specimen** represents a biological (botanical or zoological) or 
+* A **Specimen** record represents a biological (botanical or zoological) or 
   geological entity stored at Naturalis. Specimen data usually comprise information 
   on preservation, identification, classification, taxonomy (see below), and 
   details about the gathering/acquisition process of the specimen, such as 

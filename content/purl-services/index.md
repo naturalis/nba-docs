@@ -19,7 +19,7 @@ technical community support. Every Naturalis specimen PURL refers to a physical 
 collections. If a researcher refers to such an object in a scientific publication via its PURL, it is guaranteed that this reference will 
 persist in the future, even if the location of the physical and data resource has changed. Specimen PURLs have the general form
 
-http://data.biodiversitydata.nl/{institution}/specimen/{unitID}
+`http://data.biodiversitydata.nl/{institution}/specimen/{unitID}`
 
 where institution is the data owner institution, e.g. *Naturalis*. 
 
