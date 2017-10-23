@@ -2,7 +2,7 @@
 <!-- makes a block of links for the table for each data type
   -->
 
-<a href={{ getenv "SWAGGER_UI_URL" }}/#/{{.Get "type"}} target="_blank"> Services details </a>
+<a href={{ getenv "SWAGGER_UI_URL" }}/#/{{.Get "type"}}/{{.Get "name"}} target="_blank"> Service details </a>
 <br>
 <a href={{ getenv "NBA_BASE_URL" }}/{{.Get "type"}}/metadata/getPaths target="_blank"> Search fields </a>
 <br>

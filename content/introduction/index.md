@@ -57,24 +57,33 @@ The NBA provides access to four basic data types that are interlinked:
 ## Services summary
 The services provided by the NBA can be roughly categorised into the following categories:
 
-* **Query services** provide access to all indexed (and therefore searchable) fields within a data type. Simple queries
+* **Query services** provide access to all indexed (and therefore
+searchable)  fields within a data type. Simple queries
 can be written as  [*human readable queries*](/quickstart/#human-readable) which means the query parameters are simply passed as 
-URL parameters. [*Complex JSON queries*](/quickstart/#human-readable)
-provide a more powerful mechanism to access the data, since query terms can be nested, weighted and filtered in a more sophisticated manner.
+URL parameters. [*Complex JSON queries*](/advanced-query/#queryspec)
+provide a more powerful mechanism to access the data, since query terms can be nested, weighted and/or filtered in a more sophisticated manner.
 
-* **Data access services** allow the access of specific fields within a data type. These fields are generally identifier fields.
+* **Data access services** allow the access of specific fields within
+  a data type. These fields are generally identifier fields. Note that
+  all data access services are essentially query services for a
+  certain value, implemented for a more convenient user experience.
 
 * **Type specific metadata services** give information about data type specific fields and settings. This includes information about available
 fields and paths and the supported operators for comparison. 
 
-* **General metadata services**
+* **General metadata services** provide general information not
+  specific to document types. This includes general settings and
+  controlled vocabularies for certain field values. 
 
 * **Download services** facilitate the bulk retrieval of query results as 
-[Darwin Core Archive (DwCA)](https://en.wikipedia.org/wiki/Darwin_Core_Archive) files. While [*static download services*](/download-services/#dl-static) offer predefined
-data sets from our collection, [*dynamic download services*](/download-services/#dl-dynamic) allow for the download of any query result as DwCA files.
+[Darwin Core Archive(DwCA)](https://en.wikipedia.org/wiki/Darwin_Core_Archive) files. While [*static download services*](/download-services/#dl-static)
+offer predefined data sets from our collection, [*dynamic download services*](/download-services/#dl-dynamic) allow for the download of any query result as DwCA files.
 
+* **Aggregation services** summarise a list of query results based on
+  values that are shared for certain fields. Currently, this grouping
+  is supported for specimen and taxon data types and the grouping is
+  done on the scientific name. 
 
-* **Aggregation services**
 
 A complete list of services can be found in the {{%swagger-ui-link text="API endpoint reference"%}}{{%/swagger-ui-link%}}.
 The table below lists the NBA's different service types and gives links to specific documentation 
@@ -83,15 +92,15 @@ resources and examples.
 <center>
 
 | <br> Service type |  | Document type |            | 
-|-------------------------|------------|--------|-----------------|-------------|
+|------------------------------|------------|--------|-----------------|-------------|
 |                         |  **Specimen**  | **Taxon**  | **GeoArea**  | **Multimedia**  |
-| [**Query (human readable)**](/quickstart/#human-readable)<br>for testing<br>[**Query (JSON)**](/advanced-queries/#queryspec)<br>for complex queries  | Path:<br> /specimen/query/<br>  {{%table-links type="specimen" ex="/doc-spec-services/specimen"%}} | Path:<br> /taxon/query/<br> {{%table-links type="taxon" ex="/doc-spec-services/taxon"%}} | Path: <br> /geo/query/<br>{{%table-links type="geo" ex="/doc-spec-services/geo"%}} |  Path: <br> /multimedia/query/<br> {{%table-links type="multimedia" ex="/doc-spec-services/multimedia"%}}                |
-| **Data access** | | {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
-| **Download (static)**  | Path: <br> /specimen/dwca/getDataSet/<br> {{%table-links-dl type="specimen" ex="/download-services/#dl-static" name="dwcaGetDataSet1"%}} | Path: <br> /taxon/dwca/getDataSet/ <br> {{%table-links-dl type="taxon" ex="/download-services/#dl-static" name="dwcaGetDataSet2"%}} | not available | not available |
-| **Download (dynamic)**  | Path: <br> /specimen/dwca/query/<br> {{%table-links-dl type="specimen" ex="/download-services/#dl-dynamic" name="dwcaQuery"%}} | Path: <br> /taxon/dwca/query/<br> {{%table-links-dl type="taxon" ex="/download-services/#dl-static" name="dwcaQueryHttpGet"%}} | not available | not available |
+| [**Query**](/quickstart/#human-readable)<br>[**Query (JSON)**](/advanced-queries/#queryspec) | Path:<br> /specimen/query/<br>  {{%table-links type="specimen" ex="/doc-spec-services/specimen" name="queryHttpGet_2"%}} | Path:<br> /taxon/query/<br> {{%table-links type="taxon" ex="/doc-spec-services/taxon" name="queryHttpGet_3"%}} | Path: <br> /geo/query/<br>{{%table-links type="geo" ex="/doc-spec-services/geo" name="queryHttpGet"%}} |  Path: <br> /multimedia/query/<br> {{%table-links type="multimedia" ex="/doc-spec-services/multimedia" name="queryHttpGet_1"%}}                |
+| **Data access** | {{%table-links-sw-ex ex="/doc-spec-services/specimen" name="findByUnitID"%}} | {{%table-links-sw-ex ex="/doc-spec-services/taxon" name="find_4"%}} | {{%table-links-sw-ex ex="/doc-spec-services/geo" name="find_1"%}} | {{%table-links-sw-ex ex="/doc-spec-services/multimedia" name="find_2"%}}
+| **Download (static)**  | Path: <br> /specimen/dwca/getDataSet/<br> {{%table-links-sw-ex type="specimen" ex="/download-services/#dl-static" name="dwcaGetDataSet1"%}} | Path: <br> /taxon/dwca/getDataSet/ <br> {{%table-links-sw-ex type="taxon" ex="/download-services/#dl-static" name="dwcaGetDataSet2"%}} | not available | not available |
+| **Download (dynamic)**  | Path: <br> /specimen/dwca/query/<br> {{%table-links-sw-ex type="specimen" ex="/download-services/#dl-dynamic" name="dwcaQuery"%}} | Path: <br> /taxon/dwca/query/<br> {{%table-links-sw-ex type="taxon" ex="/download-services/#dl-static" name="dwcaQueryHttpGet"%}} | not available | not available |
 | **Metadata (data specific)** | Path: <br>/specimen/metadata/ | Path: <br>/taxon/metadata/ | Path: <br>/geo/metadata/ | Multimedia: <br>/multimedia/metadata/
-| **Metadata (general)** | | {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
-
+| **Metadata (general)** | | Path: /metadata/ <br> {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
+| **Aggregation** | Path: <br> /specimen/groupByScientificName/ {{%table-links-sw-ex type="specimen" ex="/advanced-queries/#agg" name="groupByScientificName_GET1"%}} | Path: <br> /taxon/groupByScientificName/ {{%table-links-sw-ex type="taxon" ex="/advanced-queries/#agg" name="groupByScientificName_GET2"%}} | not available | not available
 
 </center>
 
@@ -101,7 +110,8 @@ The NBA is implemented as a [RESTful](https://en.wikipedia.org/wiki/Representati
 using standard REST clients or a web browser. For exploration or testing of the NBA services and/or PURL services we recommend using a 
 command-line tool for transferring data as e.g. [curl](https://curl.haxx.se/) or a rest 
 client browser plugin, e.g. the [chrome rest client](https://advancedrestclient.com/).
-A summary of available REST endpoints and data models present in the NBA can be found {{<swagger-ui-link text="here">}}.
+A summary of available REST endpoints and data models present in the
+NBA can be found {{%swagger-ui-link text="here"%}}{{%/swagger-ui-link%}}.
 
 ### API clients
 To provide programmatic access to the NBA, Naturalis plans to develop clients for several programming languages. Thes clients 

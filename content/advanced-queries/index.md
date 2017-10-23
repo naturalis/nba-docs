@@ -360,7 +360,7 @@ the `BETWEEN` operator. Example: retrieve all specimens collected in April 2001:
 }
 ```
 
-## Aggregation
+## Aggregation {#agg}
 Aggregation functions summarise data from multiple query results based on certain conditions in order to get a higher-level 
 view on the whole dataset. The NBA features two different types of aggregation: Aggregation on distinct 
 field values and aggregation on scientific names.

@@ -53,7 +53,7 @@ data owner institution or organisation and specimen unitID  .
 
 * **A PID exists indefinitely:** Naturalis aims to assure the permanent character of its PURLs.
 
-* **A PID is unambigious applied:** The specimen PURL service serves digital representations of physical 
+* **A PID is unambigiously applied:** The specimen PURL service serves digital representations of physical 
 specimens in our collection catalogues. Multiple content types per physical specimen can be requested. 
 Specimen representations are being served based on their availability.
 
