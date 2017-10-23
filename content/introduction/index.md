@@ -55,21 +55,45 @@ The NBA provides access to four basic data types that are interlinked:
   are listed in the [detailed service description](/doc-spec-services/#geo-sources).
 
 ## Services summary
+The services provided by the NBA can be roughly categorised into the following categories:
 
-{{%table-links type="specimen" ex="/quickstart/#human-readable"%}}
+* **Query services** provide access to all indexed (and therefore searchable) fields within a data type. Simple queries
+can be written as  [*human readable queries*](/quickstart/#human-readable) which means the query parameters are simply passed as 
+URL parameters. [*Complex JSON queries*](/quickstart/#human-readable)
+provide a more powerful mechanism to access the data, since query terms can be nested, weighted and filtered in a more sophisticated manner.
+
+* **Data access services** allow the access of specific fields within a data type. These fields are generally identifier fields.
+
+* **Type specific metadata services** give information about data type specific fields and settings. This includes information about available
+fields and paths and the supported operators for comparison. 
+
+* **General metadata services**
+
+* **Download services** facilitate the bulk retrieval of query results as 
+[Darwin Core Archive (DwCA)](https://en.wikipedia.org/wiki/Darwin_Core_Archive) files. While [*static download services*](/download-services/#dl-static) offer predefined
+data sets from our collection, [*dynamic download services*](/download-services/#dl-dynamic) allow for the download of any query result as DwCA files.
 
 
+* **Aggregation services**
 
+A complete list of services can be found in the {{%swagger-ui-link text="API endpoint reference"%}}{{%/swagger-ui-link%}}.
+The table below lists the NBA's different service types and gives links to specific documentation 
+resources and examples. 
 
+<center>
 
-| <br><br> Service type <p>  </p> |  | Document type              |            |   
-|-------------------------|:------------:|:--------:|:----------:|:-------------:|
+| <br> Service type |  | Document type |            | 
+|-------------------------|------------|--------|-----------------|-------------|
 |                         |  **Specimen**  | **Taxon**  | **GeoArea**  | **Multimedia**  |
-| **Query (human readable)**  |  {{%table-links type="specimen" ex="/doc-spec-services/specimen"%}} | {{%table-links type="taxon" ex="/doc-spec-services/taxon"%}} | {{%table-links type="geo" ex="/doc-spec-services/geo"%}} |  {{%table-links type="multimedia" ex="/doc-spec-services/multimedia"%}}                |
-| **Query (JSON)**  |                |            |              |                 |
-| **Download (static)**  |                |            |              |                 |
-| **Download (dynamic)**  |                |            |              |                 |
-| **Metadata**  |                |            |              |                 |
+| [**Query (human readable)**](/quickstart/#human-readable)<br>for testing<br>[**Query (JSON)**](/advanced-queries/#queryspec)<br>for complex queries  | Path:<br> /specimen/query/<br>  {{%table-links type="specimen" ex="/doc-spec-services/specimen"%}} | Path:<br> /taxon/query/<br> {{%table-links type="taxon" ex="/doc-spec-services/taxon"%}} | Path: <br> /geo/query/<br>{{%table-links type="geo" ex="/doc-spec-services/geo"%}} |  Path: <br> /multimedia/query/<br> {{%table-links type="multimedia" ex="/doc-spec-services/multimedia"%}}                |
+| **Data access** | | {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
+| **Download (static)**  | Path: <br> /specimen/dwca/getDataSet/<br> {{%table-links-dl type="specimen" ex="/download-services/#dl-static" name="dwcaGetDataSet1"%}} | Path: <br> /taxon/dwca/getDataSet/ <br> {{%table-links-dl type="taxon" ex="/download-services/#dl-static" name="dwcaGetDataSet2"%}} | not available | not available |
+| **Download (dynamic)**  | Path: <br> /specimen/dwca/query/<br> {{%table-links-dl type="specimen" ex="/download-services/#dl-dynamic" name="dwcaQuery"%}} | Path: <br> /taxon/dwca/query/<br> {{%table-links-dl type="taxon" ex="/download-services/#dl-static" name="dwcaQueryHttpGet"%}} | not available | not available |
+| **Metadata (data specific)** | Path: <br>/specimen/metadata/ | Path: <br>/taxon/metadata/ | Path: <br>/geo/metadata/ | Multimedia: <br>/multimedia/metadata/
+| **Metadata (general)** | | {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
+
+
+</center>
 
 ## Access to data
 ### REST

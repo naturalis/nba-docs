@@ -1,6 +1,6 @@
 ---
 title: Advanced queries
-weight: 30
+weight: 70
 ---
 
 ## Special query parameters
@@ -64,7 +64,7 @@ condition has to be met. To use an `OR` conjunction, the query parameter `_logic
 
 http://145.136.240.125:30076/v2/specimen/query/?gatheringEvent.worldRegion=Neotropical&gatheringEvent.continent=Southern%20America&_logicalOperator=OR
 
-## Complex queries: The _querySpec parameter
+## Complex queries: The _querySpec parameter {#queryspec}
 Human readable queries, as outlined above, provide an intuitive way to search for one or multiple fields in the 
 data. However, these queries have limited power and therefore the NBA allows for a detailed query specification 
 in JSON format, a so-called `QuerySpec` object. 

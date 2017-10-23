@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+weight: 10
 ---
 
 A collection of all services for all data types is available in the {{swagger-ui-link text="API endpoint reference"}}. 

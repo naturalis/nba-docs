@@ -1,6 +1,6 @@
 ---
 title: Download Services
-weight: 50
+weight: 80
 ---
 
 NBA’s download services offer bulk retrieval of taxonomic and specimen occurrence data. Instead of 
@@ -10,7 +10,7 @@ While static download services offer pre-compiled datasets, dynamic download ser
 for taxon or specimen data types.
 
 
-## Static download service
+## Static download service {#dl-static}
 The path for static downloads is `/{specimen|taxon}/dwca/getDataSet/{name}` with the name of a specific dataset. The names of predefined datasets can be 
 retrieved with the endpoint `getDataSetNames`, for example for specimen data:
 
@@ -21,7 +21,7 @@ A dataset, for instance the *tunicata* can then be downloaded as follows:
 http://145.136.240.125:31932/v2/specimen/dwca/getDataSet/tunicata
 
 
-## Dynamic download service
+## Dynamic download service{#dl-dynamic}
 Dynamic download queries follow the same syntax as regular queries with the query endpoint. Suppose we have a simple query 
 for taxa from the catalogue of life that are in the genus crocus: 
 
