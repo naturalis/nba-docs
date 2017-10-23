@@ -22,10 +22,21 @@ Example: Running with
 
 should make the site available at http://145.136.242.164:8098.
 
+## Docker-compose for complete NBA documentation
+A `docker-compose.yml` file is available in the top-level directory. 
+This orchestrates running containers of naturalis/nba-docs and [naturalis/swagger-ui](https://github.com/naturalis/swagger-ui).
+All hosts and ports that docker-compose needs to know are specified in the file `.env` and need to be adjusted accordingly. 
+The whole documentation can then be set up with 
+
+`docker-compose up` 
+
+from the top-level directory of this repo.
+
+
 ## Local installation
 Building the docs and running a small web server hosting the docs
 requires the installation of [hugo](https://gohugo.io/). From the 
-top-level directorym issue
+top-level directory issue
 
 `hugo`
 
