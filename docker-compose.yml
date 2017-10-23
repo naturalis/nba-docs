@@ -1,0 +1,21 @@
+version: '3'
+    
+services:
+    swagger-ui:
+        image: naturalis/swagger-ui
+        environment:
+            - VALIDATOR_URL=null
+            - API_URL=http://${NBA_HOST}:${NBA_PORT}/v2/reference-doc
+        ports:
+            - "$SWAGGER_UI_PORT:8080"
+
+    nba-docs:
+        image: naturalis/nba-docs
+        environment:
+            - SWAGGER_UI_URL=http://${SWAGGER_UI_HOST}:${SWAGGER_UI_PORT}
+            - NBADOCS_HOST=$NBADOCS_HOST
+            - NBADOCS_PORT=$NBADOCS_PORT
+            - NBA_BASE_URL=http://${NBA_HOST}:${NBA_PORT}
+        ports:
+            - "$NBADOCS_PORT:8098"
+
