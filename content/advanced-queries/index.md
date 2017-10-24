@@ -381,9 +381,25 @@ The services available in the path `{specimen|taxon}/groupByScientificName/{quer
 specimen and taxa at the same time. Aggregation is carried out on the field `scientificNameGroup` 
 (`identifications.scientificName.scientificNameGroup` for specimen and `acceptedName.scientificName.scientificNameGroup/synonyms.scientificName.scientificNameGroup` 
 for taxa). A query gives a list of objects which contain both, specimen and taxa, 
-that share the same value for `scientificNameGroup`. 
+that share the same value forscientificNameGroup
 Example: To retrieve all specimens and their associated taxa for the genus *Felis*:
 
 http://145.136.240.125:30076/v2/specimen/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis
 
 http://145.136.240.125:30076/v2/taxon/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis
+
+The output of the `scientificNameGroup` queries can be tuned with some additional parameters when using advanced queries:
+* `groupSort` determines how buckets are sorted. Valid values are COUNT_DESC, COUNT_ASC (sort by the number of documents in each bucket), NAME_ASC, NAME_DESC (sort by the scientific name by which the buckets are grouped) and TOP_HIT_SCORE (sort by the highest score-value within each bucket).
+* `groupFilter` allows for filtering of documents based on the scientific name. It can be configured to either accept or reject, and has an implementation for a regular expression, or an array of values:
+
+  * `{ "acceptRegexp" : ".*larus*." }`
+  * `{ "rejectRegexp" : ".*\?.*" }`
+  * `{ "acceptValues" : [ "meles meles", "larus fuscus" ] }`
+  * `{ "rejectValues" : [ "? ?", "? meles", "unknown" ] }`
+
+    See the [Elasticsearch-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html) for their implementation of the regular expressions-syntax.
+  * `specimensSortFields`: controls the sorting of specimen within each bucket. Same syntax as 'sortFields'.
+  * `specimensFrom` & `specimensSize`: 'specimensFrom' and 'specimensSize' allow you to control which and how large a subset of the documents within each bucket are included in the resultset. Same syntax as 'from' and 'size'. Note that these parameters control the contents of all buckets at once.
+  * `noTaxa`: the specimen groupBy-query also returns corresponding taxon-records with the results. Set 'noTaxa' to true to suppress.
+
+
