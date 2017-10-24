@@ -17,16 +17,16 @@ services:
             - NBADOCS_HOST=$NBADOCS_HOST
             - NBADOCS_PORT=$NBADOCS_PORT
             - NBA_BASE_URL=http://${NBA_HOST}:${NBA_PORT}
-	        - SCRATCHPAD_URL=http://${SCRATCHPAD_HOST}:${SCRATCHPAD_PORT}
+            - SCRATCHPAD_URL=http://${SCRATCHPAD_HOST}:${SCRATCHPAD_PORT}
         ports:
             - "$NBADOCS_PORT:8098"
    
     nba_scratchpad:
         image: naturalis/nba_scratchpad:latest
         environment:
-            - NBA_ADDRESS: $NBA_HOST
-            - NBA_PORT: $NBA_PORT
-            - NBA_TIMEOUT: 15
-            - PUBLIC_NBA_FULL_ADDRESS: ${NBA_HOST}:${NBA_PORT}
+            - NBA_ADDRESS=$NBA_HOST
+            - NBA_PORT=$NBA_PORT
+            - NBA_TIMEOUT=15
+            - PUBLIC_NBA_FULL_ADDRESS=${NBA_HOST}:${NBA_PORT}
         ports:
             - "$SCRATCHPAD_PORT:80"
