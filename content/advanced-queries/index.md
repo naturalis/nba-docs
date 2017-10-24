@@ -291,8 +291,7 @@ for the endpoints that can take a QuerySpec object: `query` and `count`. The que
 cURL example to query for all taxa of genus *Sempervivum* with POST:
 
 ```JSON
-curl -X POST http://145.136.240.125:30076/v2/taxon/query/ -d '_querySpec=
-{
+curl -X POST {{%nba-link-text%}}taxon/query/{{%/nba-link-text%}} -d '_querySpec={
   "conditions": [
     {
       "field": "defaultClassification.genus",
