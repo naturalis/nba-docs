@@ -6,6 +6,7 @@ services:
         environment:
             - VALIDATOR_URL=null
             - API_URL=http://${NBA_HOST}:${NBA_PORT}/v2/reference-doc
+            - NBA_PORT=${NBA_PORT}
         ports:
             - "$SWAGGER_UI_PORT:8080"
 
