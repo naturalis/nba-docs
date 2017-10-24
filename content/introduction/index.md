@@ -1,16 +1,12 @@
 ---
-type: index
 title: Introduction
-weight: 10
+weight: 20
 ---
 
 ## Background
 
-The Netherlands Biodiversity API (NBA) is a public service for retrieving biodiversity 
-related data from one of the largest natural history collections in the world, present 
-in the Naturalis Biodiversity Center, Leiden, the Netherlands. The NBA provides access to 
-more than **8 million specimen records** and counts are steadily growing as our large-scale digitization 
-project proceeds. Other than specimen records and metadata, access to taxonomic 
+The Naturalis Biodiversity API (NBA) facilitates access to the Natural History Collection at the 
+Naturalis Biodiversity Center. Next to than museum specimen records and metadata, access to taxonomic 
 classification and nomenclature, geographical information, and to multimedia files is provided. By using 
 the powerful Elasticsearch engine, the NBA facilitates searching for collection- and 
 biodiversity data in near real-time. Furthermore, by incorporating information from 
@@ -18,7 +14,7 @@ taxonomic databases, taxonomic name resolution can be accomplished with the NBA.
 Persistent Uniform Resource Identifiers (PURLs) ensure that each species accessible 
 via the NBA is represented by a citable unambiguous web reference. Access to our data is provided 
 via a REST interface and several clients such as the [BioPortal](http://bioportal.naturalis.nl/"), 
-a web application for browsing biodiversity data that is based on the NBA.
+a web application for browsing biodiversity data that is served by the NBA.
 
 
 <!-- {{< figure src="https://github.com/naturalis/nba-docs/raw/V2_master/static/images/overview.png" class="alignright" title="NBA overview: From data sources to end users" >}} -->
@@ -113,7 +109,7 @@ client browser plugin, e.g. the [chrome rest client](https://advancedrestclient.
 A summary of available REST endpoints and data models present in the
 NBA can be found {{%swagger-ui-link text="here"%}}{{%/swagger-ui-link%}}.
 
-### API clients
+### API clients {#api-clients}
 To provide programmatic access to the NBA, Naturalis plans to develop clients for several programming languages. Thes clients 
 are build upon the NBA REST architecture and facilitate the integration of NBA access within scripts or software applications.
 Currently, a NBA [Java client](https://github.com/naturalis/naturalis_data_api) is 

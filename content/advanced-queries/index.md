@@ -1,6 +1,6 @@
 ---
 title: Advanced queries
-weight: 70
+weight: 90
 ---
 
 ## Special query parameters

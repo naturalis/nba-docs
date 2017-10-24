@@ -1,6 +1,6 @@
 ---
 title: Metadata services
-weight: 60
+weight: 80
 ---
 
 Metadata services provide miscellaneous information about the data available via the NBA. For a full list of services, please refer ti the

@@ -1,6 +1,6 @@
 ---
 title: Download Services
-weight: 80
+weight: 100
 ---
 
 NBA’s download services offer bulk retrieval of taxonomic and specimen occurrence data. Instead of 

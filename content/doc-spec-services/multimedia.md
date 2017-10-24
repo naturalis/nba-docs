@@ -1,6 +1,6 @@
 ---
 title: Multimedia data services
-weight: 50
+weight: 70
 ---
 
 Digitisation of the specimens in our collection includes a detailed photographic documentation. So far, there are more than 

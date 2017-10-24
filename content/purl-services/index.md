@@ -1,6 +1,6 @@
 ---
 title: PURL services
-weight: 100
+weight: 110
 ---
 
 ## What is a PURL?
