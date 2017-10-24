@@ -7,10 +7,10 @@ A taxon record stores the hierarchical classification of a taxon, its scientific
 from the respective source system. All components and data types in the taxon model, as well as a comprehensive list of all 
 taxon-related endpoints are documented in the {{swagger-ui-link text="API endpoint reference"}}. A list of available fields is also available at
 
-http://145.136.240.125:30076/v2/taxon/metadata/getFieldInfo
+{{%nba-link%}}taxon/metadata/getFieldInfo{{%/nba-link%}}
 
 ## Base URL
-The base URL for taxon-specific services is http://145.136.240.125:31932/v2/taxon
+The base URL for taxon-specific services is {{%nba-link%}}taxon{{%/nba-link%}}
 
 ## Data source systems
 Currently, Naturalis provides data from (i) the [Catalogue of Life](http://www.catalogueoflife.org/) and (ii) 
@@ -33,7 +33,7 @@ Each taxon has an `acceptedName` that represents this taxon in the source system
 taxonomic information, such as species and genus names and the authors that termed the taxon name. For example, we 
 can retrieve all taxa that have been described by Linnaeus:
 
-http://145.136.240.125:31932/v2/taxon/query/?acceptedName.author=Linnaeus
+{{%nba-link%}}taxon/query/?acceptedName.author=Linnaeus{{%/nba-link%}}
 
 Furthermore, taxon records can have a list of synonyms, descriptions, references and vernacular names (common names). 
 Suppose we would like to search for passion flowers, without having any prior knowledge (e.g. without knowing that their genus is *Passiflora*):

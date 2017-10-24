@@ -11,7 +11,7 @@ To maintain data integrity, some fields in our source systems are constrained by
 the fields `PhaseOrStage`, `Sex`, `SpecimenTypeStatus` (Specimens), `TaxonomicStatus` (Taxa). The 
 endpoint `/medata/getControlledList/{field}` returns the allowed values for this field, e.g. for the type status:
 
-http://145.136.240.125:31932/v2/metadata/getControlledList/SpecimenTypeStatus
+{{%nba-link%}}metadata/getControlledList/SpecimenTypeStatus{{%/nba-link%}}
 
 Allowed formats for date fields can be retrieved with `/metadata/getAllowedDateFormats`. The service `/metadata/getRestServices` gives a list of all available NBA endpoints.
 
@@ -19,7 +19,7 @@ Allowed formats for date fields can be retrieved with `/metadata/getAllowedDateF
 These services reside under `/{dataType}/metadata` and give information about the field structure of the data type, such as all available 
 paths (`getPaths`) or detailed information about data types, allowed operators and whether a field is indexed or not (`getFieldInfo`), for example:
 
-http://145.136.240.125:31932/v2/multimedia/metadata/getPaths
+{{%nba-link%}}multimedia/metadata/getPaths{{%/nba-link%}}
 
-http://145.136.240.125:31932/v2/multimedia/metadata/getFieldInfo
+{{%nba-link%}}multimedia/metadata/getFieldInfo{{%/nba-link%}}
 

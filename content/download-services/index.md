@@ -14,22 +14,22 @@ for taxon or specimen data types.
 The path for static downloads is `/{specimen|taxon}/dwca/getDataSet/{name}` with the name of a specific dataset. The names of predefined datasets can be 
 retrieved with the endpoint `getDataSetNames`, for example for specimen data:
 
-http://145.136.240.125:31932/v2/specimen/dwca/getDataSetNames
+{{%nba-link%}}specimen/dwca/getDataSetNames{{%/nba-link%}}
 
 A dataset, for instance the *tunicata* can then be downloaded as follows:
 
-http://145.136.240.125:31932/v2/specimen/dwca/getDataSet/tunicata
+{{%nba-link%}}specimen/dwca/getDataSet/tunicata{{/%nba-link%}}
 
 
 ## Dynamic download service{#dl-dynamic}
 Dynamic download queries follow the same syntax as regular queries with the query endpoint. Suppose we have a simple query 
 for taxa from the catalogue of life that are in the genus crocus: 
 
-http://145.136.240.125:31932/v2/taxon/query?sourceSystem.code=COL&defaultClassification.genus=Crocus
+{{%nba-link%}}taxon/query?sourceSystem.code=COL&defaultClassification.genus=Crocus{{%/nba-link%}}
 
 Simply adding the path dwca in front of query will return the zipped archive:
 
-http://145.136.240.125:31932/v2/taxon/dwca/query?sourceSystem.code=COL&defaultClassification.genus=Crocus
+{{%nba-link%}}taxon/dwca/query?sourceSystem.code=COL&defaultClassification.genus=Crocus{{%/nba-link%}}
 
 
 ## Darwin Core archives

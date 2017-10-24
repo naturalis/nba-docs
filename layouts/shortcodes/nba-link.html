@@ -4,8 +4,10 @@
 	 this will be the link text. The string between the tags will be the path
 	 appended to the base url. 	
   -->
-{{ if .Get "text" }} 
-<a href={{ getenv "NBA_BASE_URL" }}/{{.Inner}} target="_blank"> {{ .Get "text" }} </a>
-{{ else }}
-<a href={{ getenv "NBA_BASE_URL" }}/{{.Inner}} target="_blank"> {{ getenv "SWAGGER_UI_URL" }}{{.Inner}} </a>
-{{ end }}
+<p>
+  {{ if .Get "text" }} 
+  <a href={{ getenv "NBA_BASE_URL" }}/{{htmlUnescape .Inner}} target="_blank"> {{ .Get "text" }} </a>
+  {{ else }}
+  <a href={{ getenv "NBA_BASE_URL" }}/v2/{{htmlUnescape .Inner}} target="_blank"> {{ getenv "NBA_BASE_URL" }}/v2/{{.Inner}} </a>
+  {{ end }}
+</p>

@@ -10,17 +10,17 @@ types in the Specimen model, as well as a comprehensive list of all specimen-rel
 the {{swagger-ui-link text="API endpoint reference"}}. Below, the major components of specimen records are introduced 
 and examples are given on how to query them. A list of available fields is also available at
 
-http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo
+{{%nba-link%}}specimen/metadata/getFieldInfo{{%/nba-link%}}
 
 ## Base URL
-The base URL for specimen-specific services is http://145.136.240.125:31932/v2/specimen/
+The base URL for specimen-specific services is {{%nba-link%}}specimen{{%/nba-link%}}
 
 ## Data source systems
 Specimen occurrence data are harvested from two main data sources, (i) the CRS (Collection Registration System for zoological and 
 geological specimens) and (ii) BRAHMS (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen including fungi. This 
 information is stored in the path sourceSystem.code. The query
 
-http://145.136.240.125:31932/v2/specimen/query/?sourceSystem.code=BRAHMS
+{{%nba-link%}}specimen/query/?sourceSystem.code=BRAHMS{{%/nba-link%}}
 
 Will return all plant and fungi specimens. In the future, Naturalis plans to also include specimen occurrence data from 
 third-party data providers.
@@ -34,7 +34,7 @@ field `unitGUID` represents the a permanent uniform web location (PURL, see also
 All of our more than 8 million specimens are categorised into different subcollections (e.g. mammals, aves, 
 petrology or paleobotany, …). The following query retrieves the names of all available collections and their specimen counts.
 
-http://145.136.240.125:31932/v2/specimen/getDistinctValues/collectionType
+{{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}
 
 ## Gathering events
 The gatheringEvent field of a specimen holds all relevant information about the process of obtaining the specimen. 

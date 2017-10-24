@@ -10,7 +10,7 @@ this dataset has great potential to be used in automatic image recognition appli
 videos and also artistic drawings of animals and plants. 
 
 ## Base URL
-The base URL for multimedia-specific services is http://145.136.240.125:31932/v2/multimedia
+The base URL for multimedia-specific services is {{%nba-link%}}multimedia{{%/nba-link%}}
 
 ## Data Source Systems
 Most multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
@@ -23,14 +23,14 @@ and `associatedTaxonReference`, respectively. In order to provide a faster searc
 content, their identifications block is included in a multimedia record. For example, one can search for 
 the pygmy cormorant, given its species name *Phalacrocorax pygmeus*:
 
-http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus
+{{%nba-link%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus{{%/nba-link%}}
 
 ## Downloading multimedia content
 Each multimedia record has one or more download URLs retrievable via the field(s) `serviceAccessPoints.accessURI`. Below we query for 
 the image location of the pygmy cormorant: 
 
-[http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus
-&_fields=serviceAccessPoints.accessUri](http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri)
+[{{%nba-link-text%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.
+defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri{{%/nba-link-text%}}]({{%nba-link-text%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri{{%/nba-link-text%}})
 
 <figure>
 <div style="text-align: center;">
@@ -46,7 +46,7 @@ Next to photos and videos of specimens, the NBA also gives access to about 2500 
 These documents are categorised in the collection Arts and can be retrieved via the field collectionType. To obtain all drawings 
 picturing species of genus Phalacrocorax, one can query within the Arts collection:
 
-http://145.136.240.125:30076/v2/multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&collectionType=Arts
+{{%nba-link%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&collectionType=Arts{{%/nba-link%}}
 
 Among the results we find for instance this nice drawing of *Phalacrocorax aristotoles*:
  

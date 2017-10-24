@@ -10,7 +10,7 @@ region, to e.g. retrieve all the primate species collected on Madagascar. The ar
 All polygons are coded in the GeoJSON format (see below).
 
 ## Base URL
-The base URL for geo-area specific services is http://145.136.240.125:31932/v2/geo
+The base URL for geo-area specific services is {{%nba-link%}}geo{{%/nba-link%}}
 
 ## Data Source Systems {#geo-sources}
 The data is comprised of 
@@ -24,11 +24,11 @@ Polygons of geographic regions as well as point occurrences of specimen are repr
 (https://en.wikipedia.org/wiki/GeoJSON), a geospatial data-exchange standard. GeoJSON allows for encoding various types of shapes. 
 Regions and point occurrences are represented by the GeoJSON types MultiPolygon and Point, respectively. In geo areas, the information is stored in the field `shape`, for instance:
 
-http://145.136.240.125:31932/v2/geo/query/?\_size=1&\_fields=shape
+{{%nba-link%}}geo/query/?\_size=1&\_fields=shape{{%/nba-link%}}
 
 If a specimen is geo-referenced, the GeoJSON can be found in the field `gatheringEvent.siteCoordinates.geoShape`, for example 
 
-http://145.136.240.125:31932/v2/specimen/query/?unitID=L.1213823&_fields=gatheringEvent.siteCoordinates
+{{%nba-link%}}specimen/query/?unitID=L.1213823&_fields=gatheringEvent.siteCoordinates{{%/nba-link%}}
 
 Note that GeoJSON encodes a coordinate as a `[longitude, latitude]` array and that all GeoJSON coordinates in the NBA represent decimal degrees. 
 

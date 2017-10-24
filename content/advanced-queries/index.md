@@ -12,19 +12,19 @@ The `_fields` parameter allows for filtering certain fields of interest in query
 Suppose one would like to query all taxa in the genus *Hydrochoerus* but is only interested 
 in the title of the scientific publication associated with that taxon,
 
-http://145.136.240.125:30076/v2/taxon/query/?defaultClassification.genus=Hydrochoerus&_fields=references.titleCitation
+{{%nba-link%}}taxon/query/?defaultClassification.genus=Hydrochoerus&_fields=references.titleCitation{{%/nba-link%}}
 
 This query will yield a minimal JSON document containing the desired data. Note that multiple fields can 
 be chosen if separated by commata, e.g. 
 
-http://145.136.240.125:30076//v2/taxon/query/?defaultClassification.genus=Hydrochoerus&_fields=recordURI,references.titleCitation
+{{%nba-link%}}taxon/query/?defaultClassification.genus=Hydrochoerus&_fields=recordURI,references.titleCitation{{%/nba-link%}}
  
 ### Basic sorting: _sortFields
 To structure a query result, it is possible to sort the result by the values of user-defined fields. 
 This example extracts all geo area records with `areaType` ‘Country’ and sorts the results by the name of the 
 locality (country):
 
-http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality
+{{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality{{%/nba-link%}}
 
 Note that more than one `_sortField` can be provided, separated by commata. The results will then be first 
 sorted on the first field, and if there are multiple results matching the first field, the 
@@ -32,11 +32,11 @@ latter fields will be considered in sorting the results.
 
 It is also possible to specify a sort direction. To sort in ascending order:
 
-http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality:ASC
+{{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality:ASC{{%/nba-link%}}
 
 To sort in descending order:
 
-http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality:DESC
+{{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality:DESC{{%/nba-link%}}
 
 ### Controlling result size: _size and _from 
 By default, the NBA returns the first 10 best-scoring matches. The total size is always the first number in the 
@@ -44,12 +44,12 @@ result set when using the query endpoint. It is important to note that by defaul
 query are not sorted on any field. Controlling the size of the result therefore makes most sense on sorted 
 data. The below example uses the `_size` parameter
 
-http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100
+{{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100{{%/nba-link%}}
 
 to return the first 100 geo areas that are countries. The scrolling parameter `_from` controls the offset from which 
 results are retrieved. The query 
 
-http://145.136.240.125:30076/v2/geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100&_from=100
+{{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100&_from=100{{%/nba-link%}}
 
 thus returns 100 results starting from the 100th result. The first item in this set is therefore ‘Hungary’ and 
 not ‘Afghanistan’, which would be the first hit of the query without `_from`.
@@ -62,7 +62,7 @@ this parameter makes a query term case insensitive.
 By default, when querying multiple fields, the query terms are conjoined by the operator `AND` meaning that each 
 condition has to be met. To use an `OR` conjunction, the query parameter `_logicalOperator` can be used, e.g. 
 
-http://145.136.240.125:30076/v2/specimen/query/?gatheringEvent.worldRegion=Neotropical&gatheringEvent.continent=Southern%20America&_logicalOperator=OR
+{{%nba-link%}}specimen/query/?gatheringEvent.worldRegion=Neotropical&gatheringEvent.continent=Southern%20America&_logicalOperator=OR{{%/nba-link%}}
 
 ## Complex queries: The _querySpec parameter {#queryspec}
 Human readable queries, as outlined above, provide an intuitive way to search for one or multiple fields in the 
@@ -84,11 +84,7 @@ operator and value. A simple QuerySpec for specimens of the genus *Hydrochoerus*
 }
 ```
 
-and the entire query (with the URL encoded QuerySpec json):
-
-[`http://145.136.240.125:30076/v2/specimen/query/?_querySpec=%7B%0A%20%20%22conditions%22%20%3A%20%0A%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%20%22
-field%22%20%3A%20%22identifications.defaultClassification.genus%22%2C%20%0A%20%20%20%20%20%20%22operator%22%20%3A%20%22
-EQUALS%22%2C%20%0A%20%20%20%20%20%20%22value%22%20%3A%20%22Hydrochoerus%22%20%7D%0A%20%20%20%20%20%20%5D%0A%7D%0A`](http://145.136.240.125:30076/v2/specimen/query/?_querySpec=%7B%0A%20%20%22conditions%22%20%3A%20%0A%20%20%20%20%20%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.genus%22%2C%20%0A%20%20%20%20%20%20%22operator%22%20%3A%20%22EQUALS%22%2C%20%0A%20%20%20%20%20%20%22value%22%20%3A%20%22Hydrochoerus%22%20%7D%0A%20%20%20%20%20%20%5D%0A%7D%0A)
+Here is the [entire query (URL encoded)]({{%nba-link-text%}}specimen/query/?_querySpec={{%/nba-link-text%}}%7B%0A%20%20%22conditions%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22field%22%3A%20%22identifications.defaultClassification.genus%22%2C%0A%20%20%20%20%20%20%22operator%22%3A%20%22EQUALS%22%2C%0A%20%20%20%20%20%20%22value%22%3A%20%22Hydrochoerus%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D).
 
 The QuerySpec object allows for partial matching of a query term. To find, for instance, all specimen of mammal genera that start with *Hydro*, we could query with two conditions:
 
@@ -157,11 +153,11 @@ of a data field. The operator `MATCHES` breaks up the query string into single s
 The metadata service `{doctype}/metadata/getFieldInfo` lists all operators for 
 every field in a data type:
 
-http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo 
+{{%nba-link%}}specimen/metadata/getFieldInfo{{%/nba-link%}}
 
 Alternatively, it is possible to ask the API whether an operator is valid for a specific field, e.g.
 
-http://145.136.240.125:30076/v2/specimen/metadata/isOperatorAllowed/collectionType/EQUALS
+{{%nba-link%}}specimen/metadata/isOperatorAllowed/collectionType/EQUALS{{%/nba-link%}}
 
 ## Logical conjunctions
 While the parameter logicalOperator can logically combine multiple QueryConditions, 
@@ -195,12 +191,12 @@ about details on nesting.
 The pre-defined parameter value **@NULL@** matches a non-existent value. Suppose we want to know which specimens are of rank species, 
 but do not have a default classification on the genus-level:
 
-http://145.136.240.125:30076/v2/specimen/query/?identifications.taxonRank=species&identifications.defaultClassification.genus=@NULL@
+{{%nba-link%}}specimen/query/?identifications.taxonRank=species&identifications.defaultClassification.genus=@NULL@{{%/nba-link%}}
 
 Conversely, it is possible to query for non-empty fields with the query parameter `@NOT_NULL@`. Example: get all specimens that 
 have lat-long coordinates:
 
-http://145.136.240.125:30076/v2/specimen/query/?identifications.taxonRank=species&gatheringEvent.siteCoordinates.latitudeDecimal=@NOT\_NULL@&gatheringEvent.siteCoordinates.longitudeDecimal=@NOT\_NULL@
+{{%nba-link%}}specimen/query/?identifications.taxonRank=species&gatheringEvent.siteCoordinates.latitudeDecimal=@NOT\_NULL@&gatheringEvent.siteCoordinates.longitudeDecimal=@NOT\_NULL@{{%/nba-link%}}
 
 The parameters `@NULL@` and `@NOT_NULL@` can only be used for human-readable queries. In QuerySpec JSON notation, we can use `“value” : null` 
 in combination with `“operator” : “EQUALS”` or `“operator” : “NOT_EQUALS”`.
@@ -311,13 +307,13 @@ curl -X POST http://145.136.240.125:30076/v2/taxon/query/ -d '_querySpec=
 All date fields of specimen, taxon and multimedia data types (geo areas do not have a date field) are indexed and therefore searchable. 
 Dates can be entered in different levels of precision; the supported formats can be queried as follows:
 
-http://145.136.240.125:30076/v2/metadata/getAllowedDateFormats
+{{%nba-link%}}metadata/getAllowedDateFormats{{%/nba-link%}}
 
 The most precise format is `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, with resolution in milliseconds (SSS) and specification of time zone (Z); for 
 example `1981-01-09T08:40:59.880+02:00`. The least precise format is `yyyy`. See also 
 [here](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/nl/naturalis/nba/common/es/ESDateInput.html) for information 
 and examples on NBA date formats. Date fields support the same operator as numeric fields 
-(see [here](http://145.136.240.125:30076/v2/specimen/metadata/getFieldInfo) e.g. for specimens), e.g. `EQUALS, IN, GT, LT` and `BETWEEN`. 
+(see [here]({{%nba-link-text%}}specimen/metadata/getFieldInfo{{%/nba-link-text%}}) e.g. for specimens), e.g. `EQUALS, IN, GT, LT` and `BETWEEN`. 
 
 Example: Find all specimens that were gathered before 1800, sorted descendingly:
 
@@ -371,7 +367,7 @@ field in the data. Additionally, the frequency for each value for the field is g
 This functionality is thus a simple count aggregation. Example: To identify the amounts of specimens per collection, one has to 
 aggregate on all distinct values for the field collectionType:
 
-http://145.136.240.125:30076/v2/specimen/getDistinctValues/collectionType
+{{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}
 
 ### Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain taxon of a certain rank (e.g. species or subspecies) and the 
@@ -384,9 +380,9 @@ for taxa). A query gives a list of objects which contain both, specimen and taxa
 that share the same value forscientificNameGroup
 Example: To retrieve all specimens and their associated taxa for the genus *Felis*:
 
-http://145.136.240.125:30076/v2/specimen/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis
+{{%nba-link%}}specimen/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis{{%/nba-link%}}
 
-http://145.136.240.125:30076/v2/taxon/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis
+{{%nba-link%}}taxon/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis{{%/nba-link%}}
 
 The output of the `scientificNameGroup` queries can be tuned with some additional parameters when using advanced queries:
 * `groupSort` determines how buckets are sorted. Valid values are COUNT_DESC, COUNT_ASC (sort by the number of documents in each bucket), NAME_ASC, NAME_DESC (sort by the scientific name by which the buckets are grouped) and TOP_HIT_SCORE (sort by the highest score-value within each bucket).

@@ -6,7 +6,7 @@ weight: 10
 
 Welcome to the user documentation of the Netherlands Biodiversity Data services - a collection of public services for retrieving biodiversity 
 related data from one of the largest natural history collections in the world, present 
-at the [Naturalis Biodiversity Center](www.naturalis.nl) in Leiden, the Netherlands. 
+at the [Naturalis Biodiversity Center](http://www.naturalis.nl) in Leiden, the Netherlands. 
 Our services provides access to more than **8 million** specimen records and counts are steadily growing as our large-scale digitization project proceeds. 
 
 ## Resources
