@@ -72,8 +72,7 @@ fields and paths and the supported operators for comparison.
   controlled vocabularies for certain field values. 
 
 * **Download services** facilitate the bulk retrieval of query results as 
-[Darwin Core Archive(DwCA)](https://en.wikipedia.org/wiki/Darwin_Core_Archive) files. While [*static download services*](/download-services/#dl-static)
-offer predefined data sets from our collection, [*dynamic download services*](/download-services/#dl-dynamic) allow for the download of any query result as DwCA files.
+[Darwin Core Archive(DwCA)](https://en.wikipedia.org/wiki/Darwin_Core_Archive) files. 
 
 * **Aggregation services** summarise a list of query results based on
   values that are shared for certain fields. Currently, this grouping
@@ -92,9 +91,9 @@ resources and examples.
 |                         |  **Specimen**  | **Taxon**  | **GeoArea**  | **Multimedia**  |
 | [**Query**](/quickstart/#human-readable)<br>[**Query (JSON)**](/advanced-queries/#queryspec) | Path:<br> /specimen/query/<br>  {{%table-links type="specimen" ex="/doc-spec-services/specimen" name="queryHttpGet_2"%}} | Path:<br> /taxon/query/<br> {{%table-links type="taxon" ex="/doc-spec-services/taxon" name="queryHttpGet_3"%}} | Path: <br> /geo/query/<br>{{%table-links type="geo" ex="/doc-spec-services/geo" name="queryHttpGet"%}} |  Path: <br> /multimedia/query/<br> {{%table-links type="multimedia" ex="/doc-spec-services/multimedia" name="queryHttpGet_1"%}}                |
 | **Data access** | {{%table-links-sw-ex ex="/doc-spec-services/specimen" name="findByUnitID"%}} | {{%table-links-sw-ex ex="/doc-spec-services/taxon" name="find_4"%}} | {{%table-links-sw-ex ex="/doc-spec-services/geo" name="find_1"%}} | {{%table-links-sw-ex ex="/doc-spec-services/multimedia" name="find_2"%}}
-| **Download (static)**  | Path: <br> /specimen/dwca/getDataSet/<br> {{%table-links-sw-ex type="specimen" ex="/download-services/#dl-static" name="dwcaGetDataSet1"%}} | Path: <br> /taxon/dwca/getDataSet/ <br> {{%table-links-sw-ex type="taxon" ex="/download-services/#dl-static" name="dwcaGetDataSet2"%}} | not available | not available |
-| **Download (dynamic)**  | Path: <br> /specimen/dwca/query/<br> {{%table-links-sw-ex type="specimen" ex="/download-services/#dl-dynamic" name="dwcaQuery"%}} | Path: <br> /taxon/dwca/query/<br> {{%table-links-sw-ex type="taxon" ex="/download-services/#dl-static" name="dwcaQueryHttpGet"%}} | not available | not available |
-| **Metadata (data specific)** | Path: <br>/specimen/metadata/ | Path: <br>/taxon/metadata/ | Path: <br>/geo/metadata/ | Multimedia: <br>/multimedia/metadata/
+| **Download (static)**  | Path: <br> /specimen/dwca/getDataSet/<br> {{%table-links-sw-ex type="specimen" ex="/doc-spec-services/specimen#dl" name="dwcaGetDataSet1"%}} | Path: <br> /taxon/dwca/getDataSet/ <br> {{%table-links-sw-ex type="taxon" ex="/doc-spec-services/taxon#dl" name="dwcaGetDataSet2"%}} | not available | not available |
+| **Download (dynamic)**  | Path: <br> /specimen/dwca/query/<br> {{%table-links-sw-ex type="specimen" ex="/doc-spec-services/specimen#dl" name="dwcaQuery"%}} | Path: <br> /taxon/dwca/query/<br> {{%table-links-sw-ex type="taxon" ex="/doc-spec-services/taxon#dl" name="dwcaQueryHttpGet"%}} | not available | not available |
+| **Metadata (data specific)** | Path: <br>/specimen/metadata/ <br> {{%table-links-sw-ex type="specimen" ex="/doc-spec-services/specimen#md"%}} | Path: <br>/taxon/metadata/ <br> {{%table-links-sw-ex type="taxon" ex="/doc-spec-services/taxon#md"%}}| Path: <br>/geo/metadata/  <br> {{%table-links-sw-ex type="geo" ex="/doc-spec-services/geo#md"%}} | Multimedia: <br>/multimedia/metadata/  <br> {{%table-links-sw-ex type="multimedia" ex="/doc-spec-services/multimedia#md"%}}
 | **Metadata (general)** | | Path: /metadata/ <br> {{%table-links-metadata ex="/doc-spec-services/metadata"%}} |
 | **Aggregation** | Path: <br> /specimen/groupByScientificName/ {{%table-links-sw-ex type="specimen" ex="/advanced-queries/#agg" name="groupByScientificName_GET1"%}} | Path: <br> /taxon/groupByScientificName/ {{%table-links-sw-ex type="taxon" ex="/advanced-queries/#agg" name="groupByScientificName_GET2"%}} | not available | not available
 

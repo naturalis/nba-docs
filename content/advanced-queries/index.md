@@ -103,8 +103,15 @@ The QuerySpec object allows for partial matching of a query term. To find, for i
     }
   ]
 }
-
 ```
+
+### QuerySpec in the NBA scratchpad
+The {{%scratchpad-link text="NBA query scratchpad"%}} is a convenient tool to design, optimise and debug QuerySpec 
+JSON strings. Its URL can even take a QuerySpec as parameter, and the query will
+be automatically visible in the scratchpad:
+
+[{{%scratchpad-link-text%}}/?_querySpec={my_queryspec_here}]({{%scratchpad-link-text%}}/?_querySpec={my_queryspec_here})
+
 
 ### Further QuerySpec options
 Next to the QueryCondition(s), the parameters `fields, size, from, logicalOperator, sortFields` can be set. 
@@ -384,6 +391,7 @@ Example: To retrieve all specimens and their associated taxa for the genus *Feli
 {{%nba-link%}}taxon/groupByScientificName/?identifications.scientificName.genusOrMonomial=Felis{{%/nba-link%}}
 
 The output of the `scientificNameGroup` queries can be tuned with some additional parameters when using advanced queries:
+
 * `groupSort` determines how buckets are sorted. Valid values are COUNT_DESC, COUNT_ASC (sort by the number of documents in each bucket), NAME_ASC, NAME_DESC (sort by the scientific name by which the buckets are grouped) and TOP_HIT_SCORE (sort by the highest score-value within each bucket).
 * `groupFilter` allows for filtering of documents based on the scientific name. It can be configured to either accept or reject, and has an implementation for a regular expression, or an array of values:
 
@@ -392,9 +400,9 @@ The output of the `scientificNameGroup` queries can be tuned with some additiona
   * `{ "acceptValues" : [ "meles meles", "larus fuscus" ] }`
   * `{ "rejectValues" : [ "? ?", "? meles", "unknown" ] }`
 
-    See the [Elasticsearch-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html) for their implementation of the regular expressions-syntax.
-  * `specimensSortFields`: controls the sorting of specimen within each bucket. Same syntax as 'sortFields'.
-  * `specimensFrom` & `specimensSize`: 'specimensFrom' and 'specimensSize' allow you to control which and how large a subset of the documents within each bucket are included in the resultset. Same syntax as 'from' and 'size'. Note that these parameters control the contents of all buckets at once.
-  * `noTaxa`: the specimen groupBy-query also returns corresponding taxon-records with the results. Set 'noTaxa' to true to suppress.
+* `specimensSortFields`: controls the sorting of specimen within each bucket. Same syntax as 'sortFields'.
+* `specimensFrom` & `specimensSize`: 'specimensFrom' and 'specimensSize' allow you to control which and how large a subset of the documents within each bucket are included in the resultset. Same syntax as 'from' and 'size'. Note that these parameters control the contents of all buckets at once.
+* `noTaxa`: the specimen groupBy-query also returns corresponding taxon-records with the results. Set `noTaxa` to true to suppress.
 
+See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html) for their implementation of the regular expressions-syntax.
 

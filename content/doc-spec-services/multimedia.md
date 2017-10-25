@@ -10,7 +10,7 @@ this dataset has great potential to be used in automatic image recognition appli
 videos and also artistic drawings of animals and plants. 
 
 ## Base URL
-The base URL for multimedia-specific services is {{%nba-link%}}multimedia{{%/nba-link%}}
+The base URL for multimedia-specific services is {{%nba-link-text%}}multimedia{{%/nba-link-text%}}
 
 ## Data Source Systems
 Most multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
@@ -20,10 +20,24 @@ the other data types, the source system can be retrieved by querying the fields 
 ## Available services
 
 ### Query
+Querying for multimedia data can be done using the {{%swagger-ui-link text="/multimedia/query/ endpoint"%}}#/multimedia/queryHttpGet_1{{%/swagger-ui-link%}},
+which accepts human-readable query strings and JSON encoded [QuerySpec](/advanced-queries/#queryspec) parameters.
 
 ### Data access
+Several access methods offer the convenient retrieval of multimedia records matching a certain identifier.
+The services {{%swagger-ui-link text="/multimedia/find/"%}}#/multimedia/find_2{{%/swagger-ui-link%}} and
+{{%swagger-ui-link text="/multimedia/findByIds/"%}}#/multimedia/findByIds_2{{%/swagger-ui-link%}} retrieve taxa
+according to their `id` fields (see [here](#multids)).
 
-### Metadata
+### Metadata{#md}
+Metadata services provide miscellaneous information about multimedia records.
+This includes detailed information about all {{%swagger-ui-link text="fields"%}}#/multimedia/getFieldInfo_1{{%/swagger-ui-link%}}
+and {{%swagger-ui-link text="paths"%}}#/multimedia/getPaths_1{{%/swagger-ui-link%}}. A description of all
+multimedia metadata services can be found {{%swagger-ui-link text="here"%}}#/multimedia{{%/swagger-ui-link%}}.
+
+## Identifiers{#multids}
+The field `sourceSystemId` of a geo area is the identifier as it is in the source database. The `surceSystemId`, in turn, 
+consists of the specimen `unitID` for which media was recorded, and an internal identifier(for example `RMNH.AVES.140023_2`).  A unique identifier consisting of `{sourceSystemId}@{sourceSystem.code}` is stored in the field `id`, e.g. `RMNH.AVES.140023_2@CRS`.
 
 ## Link to specimen and taxa
 Each multimedia record is linked either to the id of a specimen or a taxon via the fields `associatedSpecimenReference` 

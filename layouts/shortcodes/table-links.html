@@ -4,6 +4,6 @@
 
 <a href={{ getenv "SWAGGER_UI_URL" }}/#/{{.Get "type"}}/{{.Get "name"}} target="_blank"> Service details </a>
 <br>
-<a href={{ getenv "NBA_BASE_URL" }}/{{.Get "type"}}/metadata/getPaths target="_blank"> Search fields </a>
+<a href={{ getenv "NBA_BASE_URL" }}/v2/{{.Get "type"}}/metadata/getPaths target="_blank"> Search fields </a>
 <br>
 <a href={{.Get "ex"}}  target="_blank"> Examples </a>

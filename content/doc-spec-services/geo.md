@@ -10,7 +10,7 @@ region, to e.g. retrieve all the primate species collected on Madagascar. The ar
 All polygons are coded in the GeoJSON format (see below).
 
 ## Base URL
-The base URL for geo-area specific services is {{%nba-link%}}geo{{%/nba-link%}}
+The base URL for geo-area specific services is {{%nba-link-text%}}geo{{%/nba-link-text%}}
 
 ## Data Source Systems {#geo-sources}
 The data is comprised of 
@@ -22,13 +22,24 @@ The data is comprised of
 ## Available services
 
 ### Query
+Querying for geographical data can be done using the {{%swagger-ui-link text="/geo/query/ endpoint"%}}#/geo/queryHttpGet{{%/swagger-ui-link%}},
+which accepts human-readable query strings and JSON encoded [QuerySpec](/advanced-queries/#queryspec) parameters.
 
 ### Data access
+Several access methods offer the convenient retrieval of geo areas matching a certain identifier.
+The services {{%swagger-ui-link text="/geo/find/"%}}#/geo/find_1{{%/swagger-ui-link%}} and
+{{%swagger-ui-link text="/find/findByIds/"%}}#/geo/findByIds_1{{%/swagger-ui-link%}} retrieve records
+according to their `id` fields (see [here](#geoids)).
 
-### Metadata
+### Metadata{#md}
+Metadata services provide miscellaneous information about geo area records.
+This includes detailed information about all {{%swagger-ui-link text="fields"%}}#/geo/getFieldInfo{{%/swagger-ui-link%}}
+and {{%swagger-ui-link text="paths"%}}#/geo/getPaths{{%/swagger-ui-link%}}. A description of all
+geo area metadata services can be found {{%swagger-ui-link text="here"%}}#/geo{{%/swagger-ui-link%}}.
 
-## Identifiers
-
+## Identifiers{#geoids}
+The field `sourceSystemId` of a geo area is the identifier as it is in the source database. A unique identifier consisting of `{sourceSystemId}@{sourceSystem.code}` 
+is stored in the field `id`, e.g. `1003896@GEO`.
 
 ## GeoJSON
 Polygons of geographic regions as well as point occurrences of specimen are represented in the GeoJSON format 

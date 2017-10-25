@@ -6,7 +6,7 @@
   -->
 <p>
   {{ if .Get "text" }} 
-  <a href={{ getenv "NBA_BASE_URL" }}/{{htmlUnescape .Inner}} target="_blank"> {{ .Get "text" }} </a>
+  <a href={{ getenv "NBA_BASE_URL" }}/v2/{{htmlUnescape .Inner}} target="_blank"> {{ .Get "text" }} </a>
   {{ else }}
   <a href={{ getenv "NBA_BASE_URL" }}/v2/{{htmlUnescape .Inner}} target="_blank"> {{ getenv "NBA_BASE_URL" }}/v2/{{.Inner}} </a>
   {{ end }}

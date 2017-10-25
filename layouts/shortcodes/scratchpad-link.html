@@ -1,4 +1,8 @@
 <!-- 
 	 Get the scratchpad link from environment variables
   -->
+{{ if .Get "querySpec" }}
+<a href={{ getenv "SCRATCHPAD_URL" }}/{{ .Get "querySpec" }} target="_blank"> {{ .Get "text" }} </a>
+{{ else }}
 <a href={{ getenv "SCRATCHPAD_URL" }} target="_blank"> {{ .Get "text" }} </a>
+{{ end }}
