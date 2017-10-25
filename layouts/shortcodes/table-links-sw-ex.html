@@ -1,5 +1,3 @@
 <!-- makes a block of links for the table for swagger ui url and examples
   -->
 <a href={{ getenv "SWAGGER_UI_URL" }}/#/{{.Get "type"}}/{{.Get "name"}} target="_blank"> Service details </a>
-<br>
-<a href={{ getenv "NBADOCS_PATH"}}/{{.Get "ex"}}  target="_blank"> Examples </a>

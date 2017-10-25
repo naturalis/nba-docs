@@ -17,7 +17,7 @@ services:
             - SWAGGER_UI_URL=http://${SWAGGER_UI_HOST}:${SWAGGER_UI_PORT}/${SWAGGER_UI_PATH}
             - NBADOCS_HOST=$NBADOCS_HOST
             - NBADOCS_PORT=$NBADOCS_PORT
-	        - NBADOCS_PATH=$NBADOCS_PATH
+            - NBADOCS_PATH=$NBADOCS_PATH
             - NBA_BASE_URL=http://${NBA_HOST}:${NBA_PORT}
             - SCRATCHPAD_URL=http://${SCRATCHPAD_HOST}:${SCRATCHPAD_PORT}
         ports:
