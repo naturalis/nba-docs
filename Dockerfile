@@ -23,5 +23,5 @@ RUN git clone https://github.com/digitalcraftsman/hugo-material-docs.git \
 RUN hugo
 	
 # by default, serve site
-CMD hugo server -b http://${NBADOCS_HOST}:${NBADOCS_PORT} \
+CMD hugo server -b http://${NBADOCS_HOST}/${NBADOCS_PATH} \
 	 --bind=0.0.0.0 -p $NBADOCS_PORT
