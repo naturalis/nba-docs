@@ -13,7 +13,7 @@ googleAnalytics = ""
 	support_email="support@naturalis.nl"
 	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
 	description = "Netherlans Biodiversity Data Services - User documentation"	
-	copyright = "Released under the MIT license"
+	copyright = "Released under the Creative Commons Zero license"
 
 	# Repository
 	provider = "GitHub"
@@ -79,11 +79,6 @@ googleAnalytics = ""
 	name   = "Advanced queries"
 	url    = "advanced-queries/"
 	weight = 80
-
-[[menu.main]]
-	name   = "Download services"
-	url    = "download-services/"
-	weight = 90
 
 [[menu.purl]]
 	name   = "PURL services"
