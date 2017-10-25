@@ -34,7 +34,7 @@ NBA services and data models
 
 ## Version
 The current version of the Netherlands Biodiversity Services is **v2**. The documentation of the previous release (v0) can be 
-found [here](http://docs.biodiversitydata.nl/). 
+found [here](http://docs.biodiversitydata.nl/en/v0). 
 
 
 
