@@ -21,6 +21,19 @@ of a taxon (COL and NSR, respectively).
 The field `sourceSystemId` of a taxon is the identifier as it is in the source database. A unique identifier consisting of `{sourceSystem.code}@{sourceSystemId}` 
 is stored in the field id. The `recordURI` is a direct link to the database entry in the source system.
 
+## Available services
+
+### Query
+
+### Data access
+
+### Species collection download
+
+### Dynamic download
+
+### Metadata
+
+
 ## Classification
 The classification of the taxon is according to the source system. In taxon records, there are two different types of classification: 
 `systemClassification` and `defaultClassification`. The systemClassification is the verbatim classification as found in the taxonomic source system. 

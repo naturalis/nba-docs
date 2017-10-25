@@ -17,6 +17,14 @@ Most multimedia data are retrieved from our in-house registration systems for bo
 and most are plant photos. A small fraction items is retrieved from the [Dutch Species Registry](http://www.nederlandsesoorten.nl/). As for 
 the other data types, the source system can be retrieved by querying the fields `sourceSystem.code` and `sourceSystem.name`. 
 
+## Available services
+
+### Query
+
+### Data access
+
+### Metadata
+
 ## Link to specimen and taxa
 Each multimedia record is linked either to the id of a specimen or a taxon via the fields `associatedSpecimenReference` 
 and `associatedTaxonReference`, respectively. In order to provide a faster search for specific specimen/taxon attributes within multimedia 

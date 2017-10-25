@@ -19,6 +19,17 @@ The data is comprised of
 * detailed geographical data of the Netherlands, including provinces and municipalities, source: http://www.cbs.nl/
 * a comprehensive list of nature reserves, sources: http://www.natura2000.nl/, http://www.staatsbosbeheer.nl/, https://www.natuurmonumenten.nl/, http://www.pwn.nl/,  http://www.landschapnoordholland.nl/.
 
+## Available services
+
+### Query
+
+### Data access
+
+### Metadata
+
+## Identifiers
+
+
 ## GeoJSON
 Polygons of geographic regions as well as point occurrences of specimen are represented in the GeoJSON format 
 (https://en.wikipedia.org/wiki/GeoJSON), a geospatial data-exchange standard. GeoJSON allows for encoding various types of shapes. 
@@ -32,17 +43,19 @@ If a specimen is geo-referenced, the GeoJSON can be found in the field `gatherin
 
 Note that GeoJSON encodes a coordinate as a `[longitude, latitude]` array and that all GeoJSON coordinates in the NBA represent decimal degrees. 
 
-## Area type and Locality
+### Query for area type and Locality
 The NBA offers polygon data for the following areas (field areaType). Countries (world), and Nature, Municipality and Province (NL). Entries with 
-the `areaType` Nature are nature reservations in the Netherlands, such as the Veluwe, a push moraine in Gelderland. The field locality gives the name of 
+the `areaType` Nature are nature reserves in the Netherlands, such as the Veluwe, a push moraine in Gelderland. The field locality gives the name of 
 the locality. For example. To retrieve the polygon outlining the country Bermuda, we query for locality: 
 
-## Searching in geo shapes
-shape fields in geo areas can be compared using the operators `IN` and `NOT_IN`, telling us if one point or polygon is fully contained in another, 
+{{%nba-link%}}geo/query/?locality=Bermuda{{%/nba-link%}}
+
+### Searching in geo shapes
+Shape fields in geo areas can be compared using the operators `IN` and `NOT_IN`, telling us if one point or polygon is fully contained in another, 
 or not. For this, it is not necessary to use a GEOJson representation in the query; this can be done with either the id of a geo area record or 
 its locality field.
 
-Example: Retrieve all Nature reservation located in the Dutch province “Noord-Holland”. 
+Example: Retrieve all Nature reserves located in the Dutch province “Noord-Holland”. 
 
 ```JSON
 {
@@ -81,7 +94,7 @@ This time, we search for specimens, using either the search term “Bermuda” o
 
 This query yields 14 specimen occurrences.
 
-## Searching in custom GeoJSON Areas
+### Searching in custom GeoJSON Areas
 It is also possible to enter a GeoJSON directly into a query term. Suppose that we want to query for all specimens that were 
 collected in the *Bermuda Triangle*. However, the Bermuda Triangle is not available as a geo shape in the NBA, so we cannot search 
 using locality or id but must specify a custom location. The GeoJSON describing the Bermuda triangle is as follows:

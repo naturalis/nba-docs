@@ -25,6 +25,20 @@ information is stored in the path sourceSystem.code. The query
 Will return all plant and fungi specimens. In the future, Naturalis plans to also include specimen occurrence data from 
 third-party data providers.
 
+## Available services
+
+### Query
+
+### Data access
+
+### Collection download
+
+### Dynamic download
+
+### Metadata
+
+
+
 ## Identifiers
 Specimen records  have several identifiers. The field  `untitID` is the identifier from the specific source system. 
 Since uniqueness across source systems is not ensured, the field id, consisting of `{unitID}@{sourceSystem.code}`. Further, the 
