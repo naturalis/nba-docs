@@ -85,7 +85,12 @@ googleAnalytics = ""
 	url    = "purl-services/"
 	weight = 10
 	
+[[menu.misc]]
+	name   = "Known issues"
+	url    = "misc/issues/"
+	weight = 10
 
+	
 [blackfriday]
 	smartypants	= true
 	fractions = true

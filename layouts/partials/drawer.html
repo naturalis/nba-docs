@@ -51,7 +51,13 @@
 			<a href="{{ . }}/" target="_blank">API endpoint reference</a>
           </li>
 		  {{ end }}
-
+		  
+          {{ if gt (len .Site.Menus.misc) 0 }}
+          <ul>
+			{{ partial "nav-misc" . }}			
+          </ul>
+          {{ end }}
+		  
 		  {{ with .Site.Params.support_email }}
           <li>
             <a href="mailto:{{ . }}" title="Email of {{ . }}">
