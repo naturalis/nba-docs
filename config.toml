@@ -10,7 +10,7 @@ googleAnalytics = ""
 [params]
 	# General information
 	author = "Naturalis"
-	support_email="support@naturalis.nl"
+	support_email="nba@naturalis.nl"
 	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
 	description = "Netherlans Biodiversity Data Services - User documentation"	
 	copyright = "Released under the Creative Commons Zero license"
