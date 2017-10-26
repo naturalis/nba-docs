@@ -1,5 +1,0 @@
-# blocklist
-branches:
-  except:
-  - master
-  - v0
