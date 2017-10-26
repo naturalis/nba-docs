@@ -10,15 +10,20 @@ Welcome to the Netherlands Biodiversity Data Services documentation!
 Announcement launch of NBA v2 and discontinuation of NBA v0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**The current version of our API (NBA v0) will be replaced by a new version (NBA v2) over the course of the following months. At this moment NBA v0 is still available but is no longer supported and will be discontinued in October 1, 2017.**
+**The current version of our API (NBA v0) has been replaced by a new version (NBA v2.11) At this moment NBA v0 is still available but is no longer supported and will be discontinued in May 1, 2018.**
 
-**Note that NBA v2 is not backward compatible with NBA v0. Documentation for NBA v2 will be published with the new software.** 
+**Note that NBA v2 is not backward compatible with NBA v0.** 
 
-**NBA v2 has greatly improved query capabilities and a more stable and reliable query engine.**
+**The documentation of NBA v2.11 can be found** `here`_. 
 
-**For further information please contact the Naturalis development team: nba@naturalis.nl**
+**NBA v2.11 has greatly improved query capabilities and a more stable and reliable query engine.**
 
-**Posted: 01-05-2017**
+**For further information please contact the Naturalis development team:** `nba@naturalis.nl`_
+
+**Posted: 26-10-2017**
+
+.. _here: http://docs.biodiversitydata.nl/en/latest
+.. _nba@naturalis.nl: nba@naturalis.nl
 
 ----
 
