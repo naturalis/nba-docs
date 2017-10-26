@@ -19,7 +19,7 @@ services:
             - NBADOCS_PORT=$NBADOCS_PORT
             - NBADOCS_PATH=$NBADOCS_PATH
             - NBA_BASE_URL=http://${NBA_HOST}:${NBA_PORT}
-            - SCRATCHPAD_URL=http://${SCRATCHPAD_HOST}:${SCRATCHPAD_PORT}
+            - SCRATCHPAD_URL=http://${SCRATCHPAD_HOST}:${SCRATCHPAD_PORT}/${SCRATCHPAD_PATH}
         ports:
             - "$NBADOCS_PORT:8098"
    
