@@ -40,8 +40,8 @@ The NBA provides access to four basic data types that are interlinked:
 * **Taxonomic** information about a biological entity is provided in Taxon the taxon data type, 
   comprising hierarchy and placement in the Tree of Life, information on synonymy and the 
   mapping to common (species) names in different languages. These data are taken from two taxonomic databases, 
-  the [Catalogue of Life](http://www.catalogueoflife.org/) and [NSR](http://www.nederlandsesoorten.nl/), 
-  a comprehensive classification of all species in the Netherlands. Taxon and Specimen data types 
+  the [Catalogue of Life](http://www.catalogueoflife.org/) and the [Dutch Species Register (NSR)](http://www.nederlandsesoorten.nl/), 
+  a comprehensive classification of all species in the Netherlands. Taxon and Specimen data typesc 
   can be aggregated on fields such as scientific or common taxon names.
 * **Multimedia** data store photos, videos or drawings that are associated with Specimen and Taxon data.
   Data sources are our in-house collection registration systems and the [NSR](http://www.nederlandsesoorten.nl/). 

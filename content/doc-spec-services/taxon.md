@@ -14,7 +14,7 @@ The base URL for taxon-specific services is {{%nba-link-text%}}taxon{{%/nba-link
 
 ## Data source systems
 Currently, Naturalis provides data from (i) the [Catalogue of Life](http://www.catalogueoflife.org/) and (ii) 
-the [Dutch Species Registry](http://www.nederlandsesoorten.nl/). The field `sourceSystem.code` stores the source system 
+the [Dutch Species Register](http://www.nederlandsesoorten.nl/). The field `sourceSystem.code` stores the source system 
 of a taxon (COL and NSR, respectively).
 
 ## Available services

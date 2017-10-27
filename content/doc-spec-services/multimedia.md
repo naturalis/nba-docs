@@ -14,7 +14,7 @@ The base URL for multimedia-specific services is {{%nba-link-text%}}multimedia{{
 
 ## Data Source Systems
 Most multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
-and most are plant photos. A small fraction items is retrieved from the [Dutch Species Registry](http://www.nederlandsesoorten.nl/). As for 
+and most are plant photos. A small fraction items is retrieved from the [Dutch Species Register](http://www.nederlandsesoorten.nl/). As for 
 the other data types, the source system can be retrieved by querying the fields `sourceSystem.code` and `sourceSystem.name`. 
 
 ## Available services

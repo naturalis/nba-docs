@@ -162,7 +162,7 @@ classifications (`identifications.defaultClassification`) of the specimen. Also 
 date and references to scientific publications, type status and vernacular (common) taxon names are stored in the identifications block. 
 	Furthermore, the identification block features taxonomic enrichments. Taxonomic enrichments basically hold synonyms for species 
 name, scientific name, but also for names of higher level taxa. The synonyms are extracted from the Catalogue of Life and 
-the Dutch Species Registry. This allows for taxonomic name resolution. 
+the Dutch Species Register. This allows for taxonomic name resolution. 
 Example: The common vampire bat was previously classified as *Phyllostoma rotundum* but now the accepted scientific 
 name is *Desmodus rotondus*. If we search for the previous name: 
 
