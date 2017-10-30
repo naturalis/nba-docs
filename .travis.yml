@@ -12,7 +12,7 @@ branches:
   - V2_master
 env:
   global:
-    - DOCKER_TAG=v2.11.1
+    - DOCKER_TAG=v2.11.2
     - DOCKER_IMAGE_NAME=naturalis/nba-docs
 script:
   - docker build -t $DOCKER_IMAGE_NAME:$DOCKER_TAG -t $DOCKER_IMAGE_NAME:latest ./
