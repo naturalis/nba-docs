@@ -1,6 +1,6 @@
 ---
 title: Taxonomic data services
-weight: 50
+weight: 40
 ---
 
 A taxon record stores the hierarchical classification of a taxon, its scientific names and synonyms, and other relevant data retrieved 

@@ -1,6 +1,6 @@
 ---
 title: Geographical data services
-weight: 60
+weight: 50
 ---
 
 Geographical mapping of species occurrences is essential in biogeographical analyses. More than 1.2 Million of our specimen records are 

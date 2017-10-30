@@ -1,6 +1,6 @@
 ---
 title: Introduction
-weight: 20
+weight: 10
 ---
 
 ## Background

@@ -1,6 +1,6 @@
 ---
 title: Known issues
-weight: 10
+weight: 100
 ---
 
  * 26-10-2017: Live examples in the {{%swagger-ui-link text="NBA API endpoint reference"%}}{{%/swagger-ui-link%}} 

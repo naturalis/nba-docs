@@ -1,6 +1,6 @@
 ---
 title: Specimen occurrence services
-weight: 40
+weight: 30
 ---
 
 Specimen records constitute the core of data served by the NBA. Museum specimens can represent a whole variety of 

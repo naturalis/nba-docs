@@ -1,7 +1,7 @@
 ---
 type: index
 title: Netherlands Biodiversity Data services - User Documentation 
-weight: 10
+weight: 0
 ---
 
 Welcome to the user documentation of the Netherlands Biodiversity Data services - a collection of public services for retrieving biodiversity 
