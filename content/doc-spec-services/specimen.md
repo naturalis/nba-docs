@@ -3,102 +3,142 @@ title: Specimen occurrence services
 weight: 30
 ---
 
-Specimen records constitute the core of data served by the NBA. Museum specimens can represent a whole variety of 
-different objects such as plants, animals or single parts thereof, DNA samples, fossils, rocks or meteorites. 
-The specimens in our collection are therefore described using an extensive data model. All components and data 
-types in the Specimen model, as well as a comprehensive list of all specimen-related endpoints are documented in 
-the {{%swagger-ui-link text="API endpoint reference"%}}{{%/swagger-ui-link%}}. Below, the major components of specimen records are introduced 
-and examples are given on how to query them. A list of available fields is also available at 
+Specimen records constitute the core of data served by the NBA. Museum
+specimens can represent a whole variety of different objects such as
+plants, animals or single parts thereof, DNA samples, fossils, rocks
+or meteorites.  The specimens in our collection are therefore
+described using an extensive data model. All components and data types
+in the Specimen model, as well as a comprehensive list of all
+specimen-related endpoints are documented in the {{%swagger-ui-link
+text="API endpoint reference"%}}{{%/swagger-ui-link%}}. Below, the
+major components of specimen records are introduced and examples are
+given on how to query them. A list of available fields is also
+available at
 {{%nba-link%}}specimen/metadata/getFieldInfo{{%/nba-link%}}
 
-## Base URL
-The base URL for specimen-specific services is {{%nba-link-text%}}specimen{{%/nba-link-text%}}
+## Base URL 
+The base URL for specimen-specific services is
+{{%nba-link-text%}}specimen{{%/nba-link-text%}}
 
-## Data source systems
-Specimen occurrence data are harvested from two main data sources, (i) the CRS (Collection Registration System for zoological and 
-geological specimens) and (ii) BRAHMS (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen including fungi. This 
-information is stored in the path sourceSystem.code. The query
+## Data source systems 
+Specimen occurrence data are harvested from two
+main data sources, (i) the CRS (Collection Registration System for
+zoological and geological specimens) and (ii) BRAHMS
+(http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen
+including fungi. This information is stored in the path
+sourceSystem.code. The query
 
 {{%nba-link%}}specimen/query/?sourceSystem.code=BRAHMS{{%/nba-link%}}
 
-Will return all plant and fungi specimens. In the future, Naturalis plans to also include specimen occurrence data from 
-third-party data providers.
+Will return all plant and fungi specimens. In the future, Naturalis
+plans to also include specimen occurrence data from third-party data
+providers.
 
 ## Available services
 
 ### Query
-Querying for specimens can be done using the {{%swagger-ui-link text="/specimen/query/ endpoint"%}}#/specimen/queryHttpGet_2{{%/swagger-ui-link%}},
-which accepts human-readable query strings and JSON encoded [QuerySpec](/advanced-queries/#queryspec) parameters.
+Querying for specimens can be done using the 
+{{%swagger-ui-link text="/specimen/query/endpoint"%}}#/specimen/queryHttpGet_2{{%/swagger-ui-link%}}, 
+which accepts human-readable query strings and JSON encoded
+[QuerySpec](/advanced-queries/#queryspec) parameters.
 
-### Data access
-Several access methods offer the convenient retrieval of specimens matching a certain identifier or being part of a certain collection.
-The services {{%swagger-ui-link text="/specimen/findByUnitID/"%}}#/specimen/findByUnitID{{%/swagger-ui-link%}}, 
+### Data access 
+Several access methods offer the convenient retrieval
+of specimens matching a certain identifier or being part of a certain
+collection.  The services 
+{{%swagger-ui-link text="/specimen/findByUnitID/"%}}#/specimen/findByUnitID{{%/swagger-ui-link%}},
 {{%swagger-ui-link text="/specimen/find/"%}}#/specimen/find_3{{%/swagger-ui-link%}} and
-{{%swagger-ui-link text="/specimen/findByIds/"%}}#/specimen/findByIds_3{{%/swagger-ui-link%}} retrieve specimens
-according to their `unitID` or `id` fields (see [here](#specids)).
-The service 
-{{%swagger-ui-link text="/specimen/getNamedCollections/"%}}#/specimen/getNamedCollections{{%/swagger-ui-link%}} returns all 
-available collections of species (e.g. *Mammalia*) and 
-{{%swagger-ui-link text="/specimen/getIdsInCollection/"%}}#/specimen/getIdsInCollection{{%/swagger-ui-link%}} returns all 
-identifiers of specimen that are part of that collection.
+{{%swagger-ui-link text="/specimen/findByIds/"%}}#/specimen/findByIds_3{{%/swagger-ui-link%}}
+retrieve specimens according to their `unitID` or `id` fields (see
+[here](#specids)).  The service 
+{{%swagger-ui-link text="/specimen/getNamedCollections/"%}}#/specimen/getNamedCollections{{%/swagger-ui-link%}}
+returns all available collections of species (e.g. *Mammalia*) and
+{{%swagger-ui-link text="/specimen/getIdsInCollection/"%}}#/specimen/getIdsInCollection{{%/swagger-ui-link%}}
+returns all identifiers of specimen that are part of that collection.
 
 ### Download{#dl}
-Download services offer bulk retrieval of specimen occurrence data. Instead of 
-JSON format, download services return zip files containing the data. The zip files are formatted according to the [Darwin Core 
-archive standard for the exchange of biodiversity data](http://tools.gbif.org/dwca-assistant/gbif\_dwc-a\_asst\_en\_v1.1.pdf) (also see below). 
-While *collection* download services offer pre-compiled datasets, dynamic download services produce Darwin Core archives for the results of any query 
-for taxon or specimen data types.
+Download services offer bulk retrieval of specimen occurrence
+data. Instead of JSON format, download services return zip files
+containing the data. The zip files are formatted according to the
+[Darwin Core archive standard for the exchange of biodiversity data](http://tools.gbif.org/dwca-assistant/gbif\_dwc-a\_asst\_en\_v1.1.pdf)
+(also see below).  While *collection* download services offer
+pre-compiled datasets, dynamic download services produce Darwin Core
+archives for the results of any query for taxon or specimen data
+types.
 
 #### Collection download
-The endpoint for specimen collection downloads is {{%swagger-ui-link text="/specimen/dwca/getDataSet/"%}}#/specimen/dwcaGetDataSet1{{%/swagger-ui-link%}} 
-with the name of a specific dataset. The names of predefined datasets can be 
-retrieved with the endpoint {{%swagger-ui-link text="/specimen/dwca/getDataSetNames/"%}}#/specimen/dwcaGetDataSetNames1{{%/swagger-ui-link%}}. A dataset, 
-for instance the *tunicata* can then be downloaded as follows:
 
-{{%nba-link%}}specimen/dwca/getDataSet/nsr{{%/nba-link%}}
+The endpoint for specimen collection downloads is 
+{{%swagger-ui-link text="/specimen/dwca/getDataSet/"%}}#/specimen/dwcaGetDataSet1{{%/swagger-ui-link%}}
+with the name of a specific dataset. The names of predefined datasets
+can be retrieved with the endpoint 
+{{%swagger-ui-link text="/specimen/dwca/getDataSetNames/"%}}#/specimen/dwcaGetDataSetNames1{{%/swagger-ui-link%}}. 
+A dataset, for instance the *tunicata* can then be downloaded as
+follows:
+
+{{%nba-link%}}specimen/dwca/getDataSet/tunicata{{%/nba-link%}}
 
 #### Dynamic download
-Dynamic download queries follow the same syntax as regular queries with the query endpoint. Suppose we have a simple query 
-for specimen of the genus crocus: 
+Dynamic download queries follow the same syntax as regular queries
+with the query endpoint. Suppose we have a simple query for specimen
+of the genus crocus:
 
 {{%nba-link%}}specimen/query/?identifications.defaultClassification.genus=Crocus{{%/nba-link%}}
 
-Simply adding the path dwca in front of query will return the zipped archive:
+Simply adding the path dwca in front of query will return the zipped
+archive:
 
 {{%nba-link%}}specimen/dwca/query/?identifications.defaultClassification.genus=Crocus{{%/nba-link%}}
 
 #### Darwin Core archives
-Following files are contained in the zip archives generated by the download services:
+Following files are contained in the zip archives generated by the
+download services:
 
-* A *core data file* in csv format named Occurrence.txt. 
-  This file contains a tabular representation of the data with the first row defining the column names. 
-* A *descriptor file* named meta.xml which maps the columns in the core data file to their respective [TWDG term](http://rs.tdwg.org/dwc/terms/). 
-  Each column in the data is thus mapped to a specific concept termed by the TDWG consortium.
-* A *metadata file* named eml.xml formatted according to the Electronic Metadata Language specification 
-  [EML](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html). Metadata in this file includes a description of 
-  the dataset and details about the source institution.
+* A *core data file* in csv format named Occurrence.txt.  This file
+  contains a tabular representation of the data with the first row
+  defining the column names.
+* A *descriptor file* named meta.xml which maps the columns in the
+  core data file to their respective
+  [TWDG term](http://rs.tdwg.org/dwc/terms/).  Each column in the data
+  is thus mapped to a specific concept termed by the TDWG consortium.
+* A *metadata file* named eml.xml formatted according to the
+  Electronic Metadata Language specification
+  [EML](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html). Metadata
+  in this file includes a description of the dataset and details about
+  the source institution.
 
 ### Metadata{#md}
-Specimen metadata services provide miscellaneous information about specimen records.
-This includes detailed information about a specimen's {{%swagger-ui-link text="fields"%}}#/specimen/getFieldInfo_2{{%/swagger-ui-link%}}
-and {{%swagger-ui-link text="paths"%}}#/specimen/getPaths_2{{%/swagger-ui-link%}}. A description of all
-taxon metadata services can be found {{%swagger-ui-link text="here"%}}#/specimen{{%/swagger-ui-link%}}.
+Specimen metadata services provide miscellaneous information about
+specimen records.  This includes detailed information about a
+specimen's 
+{{%swagger-ui-link text="fields"%}}#/specimen/getFieldInfo_2{{%/swagger-ui-link%}} and
+{{%swagger-ui-link text="paths"%}}#/specimen/getPaths_2{{%/swagger-ui-link%}}. 
+A description of all taxon metadata services can be found
+{{%swagger-ui-link text="here"%}}#/specimen{{%/swagger-ui-link%}}.
 
 ## Identifiers{#specids}
-Specimen records  have several identifiers. The field  `untitID` is the identifier from the specific source system. 
-Since uniqueness across source systems is not ensured, the field id, consisting of `{unitID}@{sourceSystem.code}`. Further, the 
-field `unitGUID` represents the a permanent uniform web location (PURL, see also [PURL services](/purl-services)).
+Specimen records have several identifiers. The field `untitID` is the
+identifier from the specific source system.  Since uniqueness across
+source systems is not ensured, the field id, consisting of
+`{unitID}@{sourceSystem.code}`. Further, the field `unitGUID`
+represents the a permanent uniform web location (PURL, see also
+[PURL services](/purl-services)).
 
-## Collection types
-All of our more than 8 million specimens are categorised into different subcollections (e.g. mammals, aves, 
-petrology or paleobotany, …). The following query retrieves the names of all available collections and their specimen counts.
+## Collection types 
+All of our more than 8 million specimens are
+categorised into different subcollections (e.g. mammals, aves,
+petrology or paleobotany, …). The following query retrieves the names
+of all available collections and their specimen counts.
 
 {{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}
 
 ## Gathering events
-The gatheringEvent field of a specimen holds all relevant information about the process of obtaining the specimen. 
-This includes finder, date, exact location, and information about the estimated specimen age (biostratigraphy/litostratigraphy). 
-A use-case could be for instance the retrieval of all specimens that were collected between 1750 and 1800 by P. Miller:
+The gatheringEvent field of a specimen holds all relevant information
+about the process of obtaining the specimen.  This includes finder,
+date, exact location, and information about the estimated specimen age
+(biostratigraphy/litostratigraphy).  A use-case could be for instance
+the retrieval of all specimens that were collected between 1750 and
+1800 by P. Miller:
 
 ```JSON
 {
@@ -126,8 +166,10 @@ A use-case could be for instance the retrieval of all specimens that were collec
 }
 ```
 
-As a second example, we query for all specimen that are classified within the family *Passifloraceae* and that have lat-long 
-coordinates (fields `gatheringEvent.siteCoordinates.latitudeDecimal`, `gatheringEvent.siteCoordinates.longitudeDecimal`):
+As a second example, we query for all specimen that are classified
+within the family *Passifloraceae* and that have lat-long coordinates
+(fields `gatheringEvent.siteCoordinates.latitudeDecimal`,
+`gatheringEvent.siteCoordinates.longitudeDecimal`):
 
 ```JSON
 {
@@ -152,19 +194,29 @@ coordinates (fields `gatheringEvent.siteCoordinates.latitudeDecimal`, `gathering
 ```
 
 ## Identifications
-A crucial part of information about a biological specimen is its identification, i.e. the  assignment to an existing 
-taxonomic classification. The identifications field of a specimen can contain one or more species identifications. 
-Multiple identifications are possible if for instance a specimen has been re-identified e.g. using a new identification 
-key or DNA barcoding. Also concretions containing multiple fossils species will have multiple identifications. To indicate 
-that one identification is more reliable than the others, one identification of a specimen can have the `identification.preferred` flag 
-set to `true`. Identifications usually store taxonomic rank, the scientific (`identifications.scientificName`) name and higher-level 
-classifications (`identifications.defaultClassification`) of the specimen. Also the person who identified the specimen, 
-date and references to scientific publications, type status and vernacular (common) taxon names are stored in the identifications block. 
-	Furthermore, the identification block features taxonomic enrichments. Taxonomic enrichments basically hold synonyms for species 
-name, scientific name, but also for names of higher level taxa. The synonyms are extracted from the Catalogue of Life and 
-the Dutch Species Register. This allows for taxonomic name resolution. 
-Example: The common vampire bat was previously classified as *Phyllostoma rotundum* but now the accepted scientific 
-name is *Desmodus rotondus*. If we search for the previous name: 
+A crucial part of information about a biological specimen is its
+identification, i.e. the assignment to an existing taxonomic
+classification. The identifications field of a specimen can contain
+one or more species identifications.  Multiple identifications are
+possible if for instance a specimen has been re-identified e.g. using
+a new identification key or DNA barcoding. Also concretions containing
+multiple fossils species will have multiple identifications. To
+indicate that one identification is more reliable than the others, one
+identification of a specimen can have the `identification.preferred`
+flag set to `true`. Identifications usually store taxonomic rank, the
+scientific (`identifications.scientificName`) name and higher-level
+classifications (`identifications.defaultClassification`) of the
+specimen. Also the person who identified the specimen, date and
+references to scientific publications, type status and vernacular
+(common) taxon names are stored in the identifications block.
+Furthermore, the identification block features taxonomic
+enrichments. Taxonomic enrichments basically hold synonyms for species
+name, scientific name, but also for names of higher level taxa. The
+synonyms are extracted from the Catalogue of Life and the Dutch
+Species Register. This allows for taxonomic name resolution.  Example:
+The common vampire bat was previously classified as *Phyllostoma
+rotundum* but now the accepted scientific name is *Desmodus
+rotondus*. If we search for the previous name:
 
 ```JSON
 {
@@ -182,7 +234,8 @@ name is *Desmodus rotondus*. If we search for the previous name:
 }
 ```
 
-We won’t find any specimens of the vampire bat. If we, however, include synonyms into the search:
+We won’t find any specimens of the vampire bat. If we, however,
+include synonyms into the search:
 
 ```JSON
 {
@@ -207,9 +260,11 @@ We won’t find any specimens of the vampire bat. If we, however, include synony
 }
 ```
 
-We will have multiple vampire bat specimen in the results. 
+We will have multiple vampire bat specimen in the results.
 
 ## Multimedia
-A specimen record can link to one or more multimedia items. Multimedia information is stored in the multimedia data type. 
-Additionally, links to the associated multimedia records are also stored within specimens, 
-in the fields `associatedMultiMediaUris.accessUri` and `associatedMultiMediaUris.format`.
+A specimen record can link to one or more multimedia items. Multimedia
+information is stored in the multimedia data type.  Additionally,
+links to the associated multimedia records are also stored within
+specimens, in the fields `associatedMultiMediaUris.accessUri` and
+`associatedMultiMediaUris.format`.
