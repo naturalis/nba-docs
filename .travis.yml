@@ -22,4 +22,4 @@ after_success:
   - if [ -n "$TRAVIS_TAG" ];
     then docker tag $DOCKER_IMAGE_NAME:latest $DOCKER_IMAGE_NAME:$TRAVIS_TAG && docker push $DOCKER_IMAGE_NAME:$TRAVIS_TAG;
     fi
-   - docker logout
+  - docker logout
