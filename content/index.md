@@ -33,7 +33,7 @@ We have developed several tools to ease access to our data:
 NBA services and data models
 
 ## Version
-The current version of the NBA is **v2.11**. The documentation of the previous release (v0) can be 
+The current version of the NBA is **{{%nba-release%}}**. The documentation of the previous release (v0) can be 
 found [here](http://docs.biodiversitydata.nl/en/v0). 
 
 

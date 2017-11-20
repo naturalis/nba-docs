@@ -9,11 +9,13 @@ googleAnalytics = ""
 
 [params]
 	# General information
+	release = "V2.11.3-docsV7-2017-11-20"
+	nba_release = "V2.11.3"
 	author = "Naturalis"
 	support_email="nba@naturalis.nl"
 	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
 	description = "Netherlans Biodiversity Data Services - User documentation"	
-	copyright = "Released under the Creative Commons Zero license"
+	copyright = "License: CC0"
 
 	# Repository
 	provider = "GitHub"
