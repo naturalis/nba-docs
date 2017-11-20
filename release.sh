@@ -18,7 +18,6 @@ CURRENT_TAG=`git describe --abbrev=0`
 #             http://api.biodiversitydata.nl/v2 | grep Tag | perl -ne \
 #             '$_=~s/.*(V\d+\.\d+\.\d+)<.*/$1/g; print $_;'`
 
-
 # append date
 DATE=`date +%Y-%m-%d`
 TAG=${TAGVERSION}-${DATE}
@@ -27,6 +26,9 @@ if [ "$TAG" == "$CURRENT_TAG" ]; then
 	echo "Version $TAGVERSION already exists.";
 	exit 0;
 fi
+
+# substitute release in config file
+## sed -i -e 's|$CURRENT_TAG|$TAG|g'
 
 # set tag as travis environment variable
 travis env set TRAVIS_TAG $TAG
