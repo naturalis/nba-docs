@@ -7,9 +7,9 @@
 language: generic
 services:
   - docker
-branches:
-  only:
-  - V2_master
+#branches:
+#  only:
+#  - V2_master
 env:
   global:
     - DOCKER_IMAGE_NAME=naturalis/nba-docs
