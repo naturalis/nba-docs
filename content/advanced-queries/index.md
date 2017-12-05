@@ -336,7 +336,7 @@ can be found
 In many applications, scoring might not be relevant at all. To turn
 off scoring and sorting query results by score, the parameter
 `constantScore` can be set in a QuerySpec object
-(i.e. `“contantScore” : “true”`). Disabling the calculation of a
+(i.e. `“constantScore” : “true”`). Disabling the calculation of a
 relevance score generally results in faster queries.
 
 ## GET vs POST requests 
