@@ -30,7 +30,7 @@ and sorts the results by the name of the locality (country):
 
 {{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality{{%/nba-link%}}
 
-Note that more than one `_sortField` can be provided, separated by
+Note that more than one `_sortFields` can be provided, separated by
 commata. The results will then be first sorted on the first field, and
 if there are multiple results matching the first field, the latter
 fields will be considered in sorting the results.
