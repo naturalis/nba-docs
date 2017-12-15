@@ -3,7 +3,7 @@ title: Known issues
 weight: 100
 ---
 
-* 26-10-2017: The implementation for nested queries has proven to be
+* 15-12-2017: The implementation for nested queries has proven to be
   incorrect. Because of this, queries aimed at nested objects, like
   identifications or gatheringPersons, ignore the correlation between
   the inner fields of those objects. This means that searching with
