@@ -45,12 +45,15 @@ fi
 sed -i -e  "s|$CURRENT_TAG|$NEW_TAG|g" config.toml
 sed -i -e  "s|$CURRENT_NBA_VERSION|$NEW_NBA_VERSION|g" config.toml
 
+# commit config file
+git commit -m "Release $NEW_TAG" config.toml
+
 # set tag as travis environment variable
-travis env set TRAVIS_TAG $TAG
+travis env set TRAVIS_TAG $NEW_TAG
 
 # make git tag and push
-git tag -a $TAG -m "Release v$TAG"
-git push --tags
+git tag -a $NEW_TAG -m "Release v$NEW_TAG"
+git push && git push --tags
  
 # unset environment variable
 travis env unset TRAVIS_TAG
