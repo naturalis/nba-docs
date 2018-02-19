@@ -19,7 +19,7 @@ CURRENT_NBA_VERSION=`echo $CURRENT_TAG | \
 # get live NBA version
 NEW_NBA_VERSION=`curl -XGET -s \
              http://api.biodiversitydata.nl/v2 | grep Tag | perl -ne \
-             '$_=~s/.*(V\d+\.\d+\.\d+)<.*/$1/g; print $_;'`
+             '$_=~s/.*(V.*?)<.*/$1/g; print $_;'`
 
 # if there is a new NBA version, reset docs version counter to 0,
 #  otherwise increase
