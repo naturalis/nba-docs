@@ -1,5 +1,5 @@
 ## use hugo image based on alpine linux
-FROM jojomi/hugo:latest
+FROM jojomi/hugo:0.31.1
 
 MAINTAINER hettling <hannes.hettling@naturalis.nl>
 	
