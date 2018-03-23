@@ -15,7 +15,8 @@ RUN apk --update add git openssh && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
 
-## install theme	
+## install theme (clean up before, it case theme already came with ADD)
+RUN rm -rf themes/hugo-material-docs
 RUN git clone https://github.com/digitalcraftsman/hugo-material-docs.git \
 	themes/hugo-material-docs		
 
