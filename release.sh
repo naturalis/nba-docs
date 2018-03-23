@@ -14,7 +14,7 @@ CURRENT_DOCS_VERSION=`echo $CURRENT_TAG | \
 
 # parse current NBA version from tag
 CURRENT_NBA_VERSION=`echo $CURRENT_TAG | \
-                 perl -ne '$_=~ s/(V\d+\.\d+\.\d+)-.*/$1/g; print $_'`
+                 perl -ne '$_=~ s/-.*//g; print $_'`
 
 # get live NBA version
 NEW_NBA_VERSION=`curl -XGET -s \
