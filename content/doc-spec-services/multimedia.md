@@ -35,24 +35,39 @@ This includes detailed information about all {{%swagger-ui-link text="fields"%}}
 and {{%swagger-ui-link text="paths"%}}#/multimedia/getPaths_1{{%/swagger-ui-link%}}. A description of all
 multimedia metadata services can be found {{%swagger-ui-link text="here"%}}#/multimedia{{%/swagger-ui-link%}}.
 
-## Identifiers{#multids}
-The field `sourceSystemId` of a geo area is the identifier as it is in the source database. The `surceSystemId`, in turn, 
-consists of the specimen `unitID` for which media was recorded, and an internal identifier(for example `RMNH.AVES.140023_2`).  A unique identifier consisting of `{sourceSystemId}@{sourceSystem.code}` is stored in the field `id`, e.g. `RMNH.AVES.140023_2@CRS`.
+## Identifiers{#multids} 
+The field `sourceSystemId` of a geo area is
+the identifier as it is in the source database. The `surceSystemId`,
+in turn, consists of the specimen `unitID` for which media was
+recorded, and an internal identifier(for example
+`RMNH.AVES.140023_2`).  A unique identifier consisting of
+`{sourceSystemId}@{sourceSystem.code}` is stored in the field `id`,
+e.g. `RMNH.AVES.140023_2@CRS`.
 
-## Link to specimen and taxa
-Each multimedia record is linked either to the id of a specimen or a taxon via the fields `associatedSpecimenReference` 
-and `associatedTaxonReference`, respectively. In order to provide a faster search for specific specimen/taxon attributes within multimedia 
-content, their identifications block is included in a multimedia record. For example, one can search for 
-the pygmy cormorant, given its species name *Phalacrocorax pygmeus*:
+## Link to specimen and taxa 
+Each multimedia record is linked either
+to the id of a specimen or a taxon via the fields
+`associatedSpecimenReference` and `associatedTaxonReference`,
+respectively. In order to provide a faster search for specific
+specimen/taxon attributes within multimedia content, their
+identifications block is included in a multimedia record. For example,
+one can search for the pygmy cormorant, given its species name
+*Phalacrocorax pygmeus*:
 
 {{%nba-link%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus{{%/nba-link%}}
 
-## Downloading multimedia content
-Each multimedia record has one or more download URLs retrievable via the field(s) `serviceAccessPoints.accessURI`. Below we query for 
-the image location of the pygmy cormorant: 
+## Downloading multimedia content 
+Each multimedia record has one or
+more download URLs retrievable via the field(s)
+`serviceAccessPoints.accessURI`. Below we query for the image location
+of the pygmy cormorant:
 
-[{{%nba-link-text%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.
+{{%nba-link%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri{{%/nba-link%}}
+
+<!--[{{%nba-link-text%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.
 defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri{{%/nba-link-text%}}]({{%nba-link-text%}}multimedia/query/?identifications.defaultClassification.genus=Phalacrocorax&identifications.defaultClassification.specificEpithet=pygmeus&_fields=serviceAccessPoints.accessUri{{%/nba-link-text%}})
+-->
+
 
 <figure>
 <div style="text-align: center;">
