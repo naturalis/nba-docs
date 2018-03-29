@@ -4,7 +4,7 @@ weight: 10
 ---
 
 ## Background
-The Naturalis Biodiversity API (NBA) facilitates access to the Natural
+The Netherlands Biodiversity API (NBA) facilitates access to the Natural
 History Collection at the Naturalis Biodiversity Center. Next to than
 museum specimen records and metadata, access to taxonomic
 classification and nomenclature, geographical information, and to
