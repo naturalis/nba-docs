@@ -94,7 +94,7 @@ categorised into the following categories:
 * **Aggregation services** summarise a list of query results based on
   values that are shared for certain fields. Currently, this grouping
   is supported for specimen and taxon data types and the grouping is
-  done on the scientific name.
+  done on the scientific name. 
 
 
 A complete list of services can be found in the {{%swagger-ui-link
