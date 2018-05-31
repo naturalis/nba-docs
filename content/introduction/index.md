@@ -124,9 +124,9 @@ The NBA is implemented as a
 API and can thus be accessed using standard REST clients or a web
 browser. For exploration or testing of the NBA services and/or PURL
 services we recommend using a command-line tool for transferring data
-as e.g. [curl](https://curl.haxx.se/) or a rest client browser plugin,
-e.g. the [chrome rest client](https://advancedrestclient.com/).  A
-summary of available REST endpoints and data models present in the NBA
+as e.g. [curl](https://curl.haxx.se/) or a rest client browser 
+plugin, e.g. the [chrome rest client](https://advancedrestclient.com/).
+A summary of available REST endpoints and data models present in the NBA
 can be found {{%swagger-ui-link text="here"%}}{{%/swagger-ui-link%}}.
 
 ### API clients {#api-clients} 
