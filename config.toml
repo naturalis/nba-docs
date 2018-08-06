@@ -9,7 +9,7 @@ googleAnalytics = ""
 
 [params]
 	# General information
-	release = "V2.15-docsV0-2018-08-06"
+	release = "V2.15-docsV1-2018-08-06"
 	nba_release = "V2.15"
 	author = "Naturalis"
 	support_email="nba@naturalis.nl"
