@@ -23,25 +23,48 @@ of a taxon (COL and NSR, respectively).
 Querying for taxonomic data can be done using the {{%swagger-ui-link text="/taxon/query/ endpoint"%}}#/taxon/queryHttpGet_3{{%/swagger-ui-link%}},
 which accepts human-readable query strings and JSON encoded [QuerySpec](/advanced-queries/#queryspec) parameters.
 
+#### Retreiving large quantities of data
+Note that the query service is limited to a maximum of 10.000 rercords to retreive
+with one query. For larger quantities, we offer a 
+{{%swagger-ui-link text="/taxon/download"%}}#/taxon/downloadQueryHttpGet_1{{%/swagger-ui-link%}} 
+service which returns the data as a gzipped JSON stream.
+
 ### Data access
 Several access methods offer the convenient retrieval of taxa matching a certain identifier.
 The services {{%swagger-ui-link text="/taxon/find/"%}}#/taxon/find_4{{%/swagger-ui-link%}} and
 {{%swagger-ui-link text="/taxon/findByIds/"%}}#/taxon/findByIds_4{{%/swagger-ui-link%}} retrieve taxa
 according to their `id` fields (see [here](#taxids)).
 
-### Download{#dl}
+### Aggregation
+A count aggregation of query results (using query parameters or a QuerySpec object) can be done using the 
+{{%swagger-ui-link text="/taxon/count/"%}}#/taxon/countHttpGet_3{{%/swagger-ui-link%}} endpoint. 
+
+For a specific field, {{%swagger-ui-link text="/taxon/getDistinctValues/"%}}#/taxon/getDistinctValuesHttpGet_3{{%/swagger-ui-link%}} 
+returns all different values that there is in the data or that field. 
+
+Nested aggreation over two fields can be done with 
+{{%swagger-ui-link text="/taxon/getDistinctValuesPerGroup/"%}}#/taxon/getDistinctValuesPerGroupHttpGet_3{{%/swagger-ui-link%}}
+
+{{%swagger-ui-link text="/taxon/countDistinctValues/"%}}#/taxon/countDistinctValuesHttpGet_3{{%/swagger-ui-link%}}
+and {{%swagger-ui-link text="/taxon/countDistinctValuesPerGroup/"%}}#/taxon/countDistinctValuesPerGroupHttpGet_3{{%/swagger-ui-link%}}
+do the same as the above, but return only the counts instead of any data.
+
+For more information and examples on aggregation queries, please also refer to the 
+[advanced queries](/advanced-queries/#agg) section. 
+
+### DwC-A download{#dl}
 Download services offer bulk retrieval of taxonomic  data. Instead of 
 JSON format, download services return zip files containing the data. The zip files are formatted according to the [Darwin Core 
 archive standard for the exchange of biodiversity data](http://tools.gbif.org/dwca-assistant/gbif\_dwc-a\_asst\_en\_v1.1.pdf) (also see below). 
 While *collection* download services offer pre-compiled datasets, dynamic download services produce Darwin Core archives for the results of any query 
 for taxon or specimen data types.
 
-#### Species collection download
+#### Species collection DwC-A download
 The endpoint for downloading a collection of taxa (species) is {{%swagger-ui-link text="/taxon/dwcagetDataSet/"%}}#/taxon/dwcaGetDataSet2{{%/swagger-ui-link%}} 
 with the name of a specific dataset. The names of predefined datasets can be 
 retrieved with the endpoint {{%swagger-ui-link text="/taxon/dwca/getDataSetNames/"%}}#/taxon/dwcaGetDataSetNames2{{%/swagger-ui-link%}}. 
 
-#### Dynamic download
+#### Dynamic DwC-A download
 Dynamic download queries follow the same syntax as regular queries with the query endpoint. Suppose we have a simple query 
 for taxa that are in the genus crocus: 
 

@@ -441,6 +441,22 @@ collectionType:
 
 {{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}
 
+Similarly, the service `/{documentType}/countDistinctValues/{field}` 
+aggregates over a user-defined field, but returns the mere counts of 
+records instead of returning the actual data.
+
+### Distinct values per group
+Nested aggregation over two fields can be accomplished with 
+the `/{documentType}/getDistinctValuesPerGroup/{field}`.
+To retreive, for example, the continents of specimen collection, 
+grouped by colelction type, one can query:
+
+{{%nba-link%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.continent{{%/nba-link%}}
+
+The `/{documentType}/countDistinctValuesPerGroup/{field}` service
+does the same aggregation as above, but returns only the counts instead of the
+values.
+
 ### Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain
 taxon of a certain rank (e.g. species or subspecies) and the taxon
