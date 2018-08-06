@@ -133,10 +133,13 @@ can be found {{%swagger-ui-link text="here"%}}{{%/swagger-ui-link%}}.
 To provide programmatic access to the NBA, Naturalis plans to develop
 clients for several programming languages. Thes clients are build upon
 the NBA REST architecture and facilitate the integration of NBA access
-within scripts or software applications.  Currently, a NBA
-[Java client](https://github.com/naturalis/naturalis_data_api) is
-available (see
-[javadoc](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/)).
+within scripts or software applications.  Currently, clients for the following
+languages are available:
+
+* [Java](https://github.com/naturalis/naturalis_data_api), see also the
+[javadoc](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/).
+
+* [R](https://github.com/naturalis/nbaR), see also [here](https://naturalis.github.io/nbaR/).
 
 ### Bioportal
 The [Bioportal](http://bioportal.naturalis.nl/) provides easy access
