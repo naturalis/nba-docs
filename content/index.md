@@ -4,6 +4,8 @@ title: Netherlands Biodiversity Data services - User Documentation
 weight: 0
 ---
 
+## <span style="color:red">**WARNING 2018-08-22: NBA and PURL services are currently offline due to problems with the database backend. We are working on a solution to this problem.**</span> 
+
 Welcome to the user documentation of the Netherlands Biodiversity Data services - a collection of public services for retrieving biodiversity 
 related data from one of the largest natural history collections in the world, present 
 at the [Naturalis Biodiversity Center](http://www.naturalis.nl) in Leiden, the Netherlands. 
