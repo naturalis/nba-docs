@@ -42,12 +42,14 @@ Querying for specimens can be done using the
 which accepts human-readable query strings and JSON encoded
 [QuerySpec](/advanced-queries/#queryspec) parameters.
 
+<!--
 #### Retreiving large quantities of data
 Note that the query service is limited to a maximum of 10.000 rercords to retreive
 with one query. For larger quantities, we offer a *download* service which returns the
 data as a gzipped JSON stream. For example, retreiving the entire botany collection, 
 the {{%swagger-ui-link text="/specimen/download"%}}#/specimen/downloadQueryHttpGet_1{{%/swagger-ui-link%}},  
 service can be used. 
+-->
 
 ### Data access 
 Several access methods offer the convenient retrieval

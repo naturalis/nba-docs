@@ -23,11 +23,13 @@ of a taxon (COL and NSR, respectively).
 Querying for taxonomic data can be done using the {{%swagger-ui-link text="/taxon/query/ endpoint"%}}#/taxon/queryHttpGet_3{{%/swagger-ui-link%}},
 which accepts human-readable query strings and JSON encoded [QuerySpec](/advanced-queries/#queryspec) parameters.
 
+<!--
 #### Retreiving large quantities of data
 Note that the query service is limited to a maximum of 10.000 rercords to retreive
 with one query. For larger quantities, we offer a 
 {{%swagger-ui-link text="/taxon/download"%}}#/taxon/downloadQueryHttpGet_1{{%/swagger-ui-link%}} 
 service which returns the data as a gzipped JSON stream.
+-->
 
 ### Data access
 Several access methods offer the convenient retrieval of taxa matching a certain identifier.
