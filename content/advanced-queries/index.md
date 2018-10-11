@@ -449,13 +449,61 @@ records instead of returning the actual data.
 Nested aggregation over two fields can be accomplished with 
 the `/{documentType}/getDistinctValuesPerGroup/{field}`.
 To retreive, for example, the continents of specimen collection, 
-grouped by colelction type, one can query:
+grouped by collection type, one can query:
 
 {{%nba-link%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.continent{{%/nba-link%}}
 
+**Note**: The service also returns the counts for the distinct values in the first 
+and the second field that was specified. Note that the counts for the second field do not necessarily have to 
+sum up to the count of the first field; When e.g. aggregating taxon documents over
+first the authors of vernacular names (*vernacularNames.references.author.fullName*)
+and the language of the vernacular name (*vernacularNames.language*)
+
+
+{{%nba-link%}}taxon/getDistinctValuesPerGroup/vernacularNames.references.author.fullName/vernacularNames.language{{%/nba-link%}}
+
+most of the times, the sum of the counts for language are higher than for the 
+author's name (see the search hit below, for example):
+
+```JSON
+  {
+    "vernacularNames.references.author.fullName": "R.H. de Bruyne, F.A. Perk, H. Dekker & I. van Lente",
+    "count": 475,
+    "values": [
+      {
+        "vernacularNames.language": "Dutch",
+        "count": 577
+      },
+      {
+        "vernacularNames.language": "English",
+        "count": 123
+      },
+      {
+        "vernacularNames.language": "German",
+        "count": 94
+      },
+      {
+        "vernacularNames.language": "French",
+        "count": 13
+      },
+      {
+        "vernacularNames.language": "Spanish",
+        "count": 5
+      }
+    ]
+  },
+```
+
+This might be counter-intuitive, but is just a simple matter of cardinality: A taxon that has a vernacular name
+authored by *R.H. de Bruyne et al.* might have other vernacular names (also by other authors). The languages
+of these vernacular names are then respected in the counts of the nested field.
+
 The `/{documentType}/countDistinctValuesPerGroup/{field}` service
-does the same aggregation as above, but returns only the counts instead of the
-values.
+does the same aggregation as above, but returns the counts of the second field grouped within the first field.
+To see how many different values for *sex* there is per collection, we can query
+
+{{%nba-link%}}specimen/countDistinctValuesPerGroup/collectionType/sex{{%/nba-link%}}
+
 
 ### Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain
