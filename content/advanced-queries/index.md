@@ -453,6 +453,11 @@ grouped by collection type, one can query:
 
 {{%nba-link%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.continent{{%/nba-link%}}
 
+Note that the counts for the inner (second) aggregation can be higher than the first one; this
+stems from the cardinality of *vernacularName* fields in a taxon document - more documentation will follow.
+
+<!--
+
 **Note**: The service also returns the counts for the distinct values in the first 
 and the second field that was specified. Note that the counts for the second field do not necessarily have to 
 sum up to the count of the first field; When e.g. aggregating taxon documents over
@@ -497,6 +502,7 @@ author's name (see the search hit below, for example):
 This might be counter-intuitive, but is just a simple matter of cardinality: A taxon that has a vernacular name
 authored by *R.H. de Bruyne et al.* might have other vernacular names (also by other authors). The languages
 of these vernacular names are then respected in the counts of the nested field.
+-->
 
 The `/{documentType}/countDistinctValuesPerGroup/{field}` service
 does the same aggregation as above, but returns the counts of the second field grouped within the first field.
