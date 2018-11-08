@@ -3,18 +3,19 @@ title: Multimedia data services
 weight: 60
 ---
 
-Digitisation of the specimens in our collection includes a detailed photographic documentation. So far, there are more than 
-5 million photos stored in the Naturalis MediaLib. NBA’s multimedia data services provide an interface to the *MediaLib* for 
-the public. Since each multimedia record has to be associated with a specimen or taxon which in turn has to have an identification, 
-this dataset has great potential to be used in automatic image recognition applications. Furthermore, the MediaLib features 
-videos and also artistic drawings of animals and plants. 
+
+Naturalis stores a vast amount of multimedia in its internal document store. This can be multimedia captured from 
+physical specimens (e.g. photos of a specimen), but also from human observations (e.g. audio recordings of bird sounds).
+Digitisation of Naturalis museum objects include a detailed photographic documentation. So far, there are more than 
+5 million photos and several houndreds of thousands of bird sounds.
 
 ## Base URL
 The base URL for multimedia-specific services is {{%nba-link-text%}}multimedia{{%/nba-link-text%}}
 
 ## Data Source Systems
 Most multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
-and most are plant photos. A small fraction items is retrieved from the [Dutch Species Register](http://www.nederlandsesoorten.nl/). As for 
+and most are plant photos. In 2018, we added the records from [Xeno-canto](https://www.xeno-canto.org/), 
+the most comprehensive database of bird sounds to date. A small fraction items is retrieved from the [Dutch Species Register](http://www.nederlandsesoorten.nl/). As for 
 the other data types, the source system can be retrieved by querying the fields `sourceSystem.code` and `sourceSystem.name`. 
 
 ## Available services

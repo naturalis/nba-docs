@@ -4,16 +4,16 @@ weight: 30
 ---
 
 Specimen records constitute the core of data served by the NBA. Museum
-specimens can represent a whole variety of different objects such as
+objects and observations can represent a whole variety of different entities such as
 plants, animals or single parts thereof, DNA samples, fossils, rocks
-or meteorites.  The specimens in our collection are therefore
-described using an extensive data model. All components and data types
+or meteorites. Also species occurrences are described as a specimen in our data. 
+The specimens in our document store are therefore
+described with an extensive data model. All components and data types
 in the Specimen model, as well as a comprehensive list of all
 specimen-related endpoints are documented in the {{%swagger-ui-link
 text="API endpoint reference"%}}{{%/swagger-ui-link%}}. Below, the
 major components of specimen records are introduced and examples are
-given on how to query them. A list of available fields is also
-available at
+given on how to query them. A list of available fields can be found at
 {{%nba-link%}}specimen/metadata/getFieldInfo{{%/nba-link%}}
 
 ## Base URL 
@@ -21,12 +21,13 @@ The base URL for specimen-specific services is
 {{%nba-link-text%}}specimen{{%/nba-link-text%}}
 
 ## Data source systems 
-Specimen occurrence data are harvested from two
+Specimen occurrence data are harvested from three
 main data sources, (i) the CRS (Collection Registration System for
-zoological and geological specimens) and (ii) BRAHMS
+zoological and geological specimens), (ii) BRAHMS
 (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen
-including fungi. This information is stored in the path
-sourceSystem.code. The query
+including fungi, and (iii) the [Xeno-canto](https://www.xeno-canto.org/) database
+of bird sounds. This information is stored in the path
+*sourceSystem.code*. The query
 
 {{%nba-link%}}specimen/query/?sourceSystem.code=BRAHMS{{%/nba-link%}}
 
@@ -151,7 +152,7 @@ represents the a permanent uniform web location (PURL, see also
 ## Collection types 
 All of our more than 8 million specimens are
 categorised into different subcollections (e.g. mammals, aves,
-petrology or paleobotany, …). The following query retrieves the names
+petrology or paleobotany, birdsounds, …). The following query retrieves the names
 of all available collections and their specimen counts.
 
 {{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}

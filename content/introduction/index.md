@@ -30,14 +30,17 @@ From data sources to end users. Icons credit: Freepik from
 The NBA provides access to four basic data
 types that are interlinked:
 
-* A **Specimen** record represents a biological (botanical or
-  zoological) or geological entity stored at Naturalis. Specimen data
+* A **Specimen** record can represent a biological (botanical or
+  zoological) or geological entity stored at Naturalis. Also, records from the
+  bird sound database [Xeno-canto](https://www.xeno-canto.org/) are stored 
+  as specimen objects. Specimen data
   usually comprise information on preservation, identification,
   classification, taxonomy (see below), and details about the
   gathering/acquisition process of the specimen, such as geospatial
   information. Data are harvested from -- currently -- two in-house
   collection registration systems for animal and plant specimens,
-  respectively.
+  and the [Xeno-canto](https://www.xeno-canto.org/) bird sound database 
+  (hosted at Naturalis).
 * **Taxonomic** information about a biological entity is provided in
   Taxon the taxon data type, comprising hierarchy and placement in the
   Tree of Life, information on synonymy and the mapping to common
@@ -48,9 +51,11 @@ types that are interlinked:
   comprehensive classification of all species in the
   Netherlands. Taxon and Specimen data typesc can be aggregated on
   fields such as scientific or common taxon names.
-* **Multimedia** data store photos, videos or drawings that are
+* **Multimedia** data store images (such as photos, drawings or sonograms), 
+  videos, and sounds that are
   associated with Specimen and Taxon data.  Data sources are our
-  in-house collection registration systems and the
+  in-house collection registration systems, 
+  the [Xeno-canto](https://www.xeno-canto.org/) database and the
   [NSR](http://www.nederlandsesoorten.nl/).
 * Objects of type **GeoArea** refer to geographical regions coded as
   polygons in the GeoJSON format.  The NBA thereby facilitates
