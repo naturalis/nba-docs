@@ -3,7 +3,7 @@ FROM jojomi/hugo:0.31.1
 
 MAINTAINER hettling <hannes.hettling@naturalis.nl>
 
-#ENV appendPort="true"
+ENV appendPort="true"
 ## site will ge installed in /nba-docs
 RUN mkdir /nba-docs
 
@@ -25,5 +25,5 @@ RUN git clone https://github.com/digitalcraftsman/hugo-material-docs.git \
 RUN hugo
 	
 # by default, serve site
-CMD hugo server --appendPort=false -b https://${NBADOCS_HOST}/${NBADOCS_PATH} \
+CMD hugo server --appendPort=$appendPort -b https://${NBADOCS_HOST}/${NBADOCS_PATH} \
 	 --bind=0.0.0.0 -p $NBADOCS_PORT
