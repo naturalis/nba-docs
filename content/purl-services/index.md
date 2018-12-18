@@ -64,10 +64,12 @@ The following content types are accessible from a PURL (note that
 below, the content type in the accept header is passed via the query
 parameter `__accept`):
 
-* `image/jpeg` redirects to an image resource, if available,
-  e.g. http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=image/jpeg
 * `text/html` is the default content type, e.g.
   http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?\_\_accept=text/html
+* `image/jpeg` redirects to an image resource, if available,
+  e.g. http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858/?__accept=image/jpeg
+* `audio/mp3` redirects to an audio resource, if available, 
+  e.g. http://data.biodiversitydata.nl/xeno-canto/observation/XC144/?\_\_accept=audio/mp3
 * `video/mp4` redirects to a video resource, if available,
   e.g. http://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.110091?\_\_accept=video/mp4
 * `text/json` gives the JSON representation of the specimen, as served
