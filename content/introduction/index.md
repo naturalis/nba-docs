@@ -23,7 +23,7 @@ browsing biodiversity data that is served by the NBA.
 src="https://github.com/naturalis/nba-docs/raw/V2_master/static/images/overview.png"
 align="center" alt="overview" width=500> <figcaption>NBA overview:
 From data sources to end users. Icons credit: Freepik from
-[flaticon](www.flaticon.com)</figcaption> </div> </figure>
+www.flaticon.com</figcaption> </div> </figure>
 
 
 ## Available data types 
