@@ -25,15 +25,15 @@ Specimen occurrence data are harvested from three
 main data sources, (i) the CRS (Collection Registration System for
 zoological and geological specimens), (ii) BRAHMS
 (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen
-including fungi, and (iii) the [Xeno-canto](https://www.xeno-canto.org/) database
-of bird sounds. This information is stored in the path
+including fungi, (iii) the [Xeno-canto](https://www.xeno-canto.org/) database
+of bird sounds, and (iv) species occurrences in the Netherlands from 
+[Observation International](https://observation.org/).
+This information is stored in the path
 *sourceSystem.code*. The query
 
 {{%nba-link%}}specimen/query/?sourceSystem.code=BRAHMS{{%/nba-link%}}
 
-Will return all plant and fungi specimens. In the future, Naturalis
-plans to also include specimen occurrence data from third-party data
-providers.
+will return all plant and fungi specimens. 
 
 ## Available services
 

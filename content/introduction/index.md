@@ -32,15 +32,16 @@ types that are interlinked:
 
 * A **Specimen** record can represent a biological (botanical or
   zoological) or geological entity stored at Naturalis. Also, records from the
-  bird sound database [Xeno-canto](https://www.xeno-canto.org/) are stored 
-  as specimen objects. Specimen data
+  bird sound database [Xeno-canto](https://www.xeno-canto.org/) and species 
+  occurrences in the Netherlands from [Observation International](https://observation.org/) 
+  are stored as specimen objects. Specimen data
   usually comprise information on preservation, identification,
   classification, taxonomy (see below), and details about the
   gathering/acquisition process of the specimen, such as geospatial
-  information. Data are harvested from -- currently -- two in-house
+  information. Specimen data are harvested from -- currently -- two in-house
   collection registration systems for animal and plant specimens,
-  and the [Xeno-canto](https://www.xeno-canto.org/) bird sound database 
-  (hosted at Naturalis).
+  and the [Xeno-canto](https://www.xeno-canto.org/) and 
+  https://observation.org/ databases (both hosted at Naturalis).
 * **Taxonomic** information about a biological entity is provided in
   Taxon the taxon data type, comprising hierarchy and placement in the
   Tree of Life, information on synonymy and the mapping to common
