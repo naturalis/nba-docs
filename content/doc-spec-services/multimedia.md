@@ -38,7 +38,7 @@ multimedia metadata services can be found {{%swagger-ui-link text="here"%}}#/mul
 
 ## Identifiers{#multids} 
 The field `sourceSystemId` of a geo area is
-the identifier as it is in the source database. The `surceSystemId`,
+the identifier as it is in the source database. The `sourceSystemId`,
 in turn, consists of the specimen `unitID` for which media was
 recorded, and an internal identifier(for example
 `RMNH.AVES.140023_2`).  A unique identifier consisting of
