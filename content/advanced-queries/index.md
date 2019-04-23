@@ -51,7 +51,7 @@ the first number in the result set when using the query endpoint. It
 is important to note that by default, the results returned from a
 query are not sorted on any field. Controlling the size of the result
 therefore makes most sense on sorted data. The below example uses the
-`_size` parameter
+`_size` parameter: 
 
 {{%nba-link%}}geo/query/?areaType=Country&_fields=locality&_sortFields=locality&_size=100{{%/nba-link%}}
 
