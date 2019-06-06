@@ -145,7 +145,7 @@ languages are available:
 * [Java](https://github.com/naturalis/naturalis_data_api), see also the
 [javadoc](http://naturalis.github.io/naturalis_data_api/javadoc/v2/client/).
 
-* [R](https://github.com/naturalis/nbaR), see also [here](https://naturalis.github.io/nbaR/).
+* [R](https://github.com/ropensci/nbaR), see also [here](https://ropensci.github.io/nbaR/).
 
 ### Bioportal
 The [Bioportal](http://bioportal.naturalis.nl/) provides easy access
