@@ -46,7 +46,7 @@ http://data.biodiversitydata.nl/naturalis/specimen/RGM.443858
 
 resolves to 
 
-http://bioportal.naturalis.nl/nba/result?nba_request=specimen%2Fget-specimen%2F%3FunitID%3DRGM.443858
+https://bioportal.naturalis.nl/specimen/RGM.443858
 
 ## Content types 
 

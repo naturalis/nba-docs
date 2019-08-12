@@ -138,7 +138,7 @@ specimen records.  This includes detailed information about a
 specimen's 
 {{%swagger-ui-link text="fields"%}}#/specimen/getFieldInfo_2{{%/swagger-ui-link%}} and
 {{%swagger-ui-link text="paths"%}}#/specimen/getPaths_2{{%/swagger-ui-link%}}. 
-A description of all taxon metadata services can be found
+A description of all specimen metadata services can be found
 {{%swagger-ui-link text="here"%}}#/specimen{{%/swagger-ui-link%}}.
 
 ## Identifiers{#specids}

@@ -26,7 +26,7 @@ which accepts human-readable query strings and JSON encoded [QuerySpec](/advance
 #### Retreiving large quantities of data
 Note that the query service is limited to a maximum of 10.000 rercords to retreive
 with one query. For larger quantities, we offer a 
-{{%swagger-ui-link text="/taxon/download"%}}#/taxon/downloadQueryHttpGet_1{{%/swagger-ui-link%}} 
+{{%swagger-ui-link text="/taxon/download"%}}#/taxon/downloadQueryHttpGet_2{{%/swagger-ui-link%}} 
 service which returns the data as a gzipped JSON stream.
 
 ### Data access
