@@ -147,6 +147,8 @@ languages are available:
 
 * [R](https://github.com/ropensci/nbaR), see also [here](https://ropensci.github.io/nbaR/).
 
+* [PHP](https://github.com/naturalis/bioportal-php-client)
+
 ### Bioportal
 The [Bioportal](http://bioportal.naturalis.nl/) provides easy access
 via a web interface from which the user can browse and query the
