@@ -9,8 +9,8 @@ googleAnalytics = ""
 
 [params]
 	# General information
-	release = "V2.19-docsV3-2019-08-13"
-	nba_release = "V2.19"
+	release = "V2.21-docsV0-2020-03-20"
+	nba_release = "V2.21"
 	author = "Naturalis"
 	support_email="nba@naturalis.nl"
 	license="https://github.com/naturalis/naturalis_data_api/blob/V2_master/LICENSE"
