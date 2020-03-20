@@ -22,7 +22,7 @@ googleAnalytics = ""
 	repo_url = "https://github.com/naturalis/naturalis_data_api"
 
 	version = "v2"
-	logo = "images/NBA_logo.png"
+	logo = "images/Naturalis_logo_notext.png"
 	favicon = "images/favicon.ico"
 
 	permalink = "#"
