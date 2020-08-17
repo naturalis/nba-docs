@@ -21,7 +21,7 @@ The base URL for specimen-specific services is
 {{%nba-link-text%}}specimen{{%/nba-link-text%}}
 
 ## Data source systems 
-Specimen occurrence data are harvested from three
+Specimen occurrence data are harvested from four
 main data sources, (i) the CRS (Collection Registration System for
 zoological and geological specimens), (ii) BRAHMS
 (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen
@@ -43,10 +43,10 @@ Querying for specimens can be done using the
 which accepts human-readable query strings and JSON encoded
 [QuerySpec](/advanced-queries/#queryspec) parameters.
 
-#### Retreiving large quantities of data
-Note that the query service is limited to a maximum of 10.000 rercords to retreive
+#### Retrieving large quantities of data
+Note that the query service is limited to a maximum of 10.000 rercords to retrieve
 with one query. For larger quantities, we offer a *download* service which returns the
-data as a gzipped JSON stream. For example, retreiving the entire botany collection, 
+data as a gzipped JSON stream. For example, retrieving the entire botany collection, 
 the {{%swagger-ui-link text="/specimen/download"%}}#/specimen/downloadQueryHttpGet_1{{%/swagger-ui-link%}},  
 service can be used. 
 
@@ -124,7 +124,7 @@ download services:
   defining the column names.
 * A *descriptor file* named meta.xml which maps the columns in the
   core data file to their respective
-  [TWDG term](http://rs.tdwg.org/dwc/terms/).  Each column in the data
+  [TDWG term](http://rs.tdwg.org/dwc/terms/).  Each column in the data
   is thus mapped to a specific concept termed by the TDWG consortium.
 * A *metadata file* named eml.xml formatted according to the
   Electronic Metadata Language specification
@@ -150,9 +150,8 @@ represents the a permanent uniform web location (PURL, see also
 [PURL services](/purl-services)).
 
 ## Collection types 
-All of our more than 8 million specimens are
-categorised into different subcollections (e.g. mammals, aves,
-petrology or paleobotany, birdsounds, …). The following query retrieves the names
+All specimens are categorised into different subcollections (e.g. mammals, aves,
+petrology or paleobotany, birdsounds, observations, …). The following query retrieves the names
 of all available collections and their specimen counts.
 
 {{%nba-link%}}specimen/getDistinctValues/collectionType{{%/nba-link%}}
@@ -234,6 +233,60 @@ classifications (`identifications.defaultClassification`) of the
 specimen. Also the person who identified the specimen, date and
 references to scientific publications, type status and vernacular
 (common) taxon names are stored in the identifications block.
+
+Furthermore, the {{%nba-link%}}specimen/metadata/queryWithNameResolution{{%/nba-link%}} 
+service allows for searching  for specimens by names other than the 
+assigned taxonomic classification(s). The service accepts queries with 
+a `nameResolutionRequest` clause, which triggers a sub-query for
+synonyms and/or vernacular names in the Catalogue of Life and the Dutch
+Species Register. From the resulting records, scientific names are 
+extracted, which are subsequently used for the main specimen search. 
+Example:
+When we're not sure of the accepted scientific name of the European
+badger, we could search directly for specimen that contain 'badger' as
+part of the specimen record, using {{%nba-link%}}specimen/metadata/query{{%/nba-link%}}:
+
+```JSON
+{
+  "conditions" : [
+    { "field" : "identifications.vernacularNames.name", "operator" : "MATCHES", "value" : "badger" }
+  ],
+  "size": 1000
+}
+```
+
+However, as the `vernacularNames` field is not mandatory, the query 
+returns only a small number of records. If we, however, employ the name
+resolution request, using {{%nba-link%}}specimen/metadata/queryWithNameResolution{{%/nba-link%}}:
+
+```JSON
+{
+  "conditions": [],
+  "nameResolutionRequest" : 
+    {
+      "searchString" : "badger",
+      "nameTypes" : [ "VERNACULAR_NAME" ],
+      "matchWholeWords" : true,
+      "size" : 100
+   },
+  "size": 1000
+}
+```
+
+We will get a complete set of badger-specimen in the results.
+
+Please note that the `nameResolutionRequest` currently only supports MATCHES 
+and CONTAINS (`matchWholeWords : true` or `false`), which means that you may
+get a wide array of matching names in your results.
+
+
+To gain insight in the inner workings of `nameResolutionRequest` and see the
+results of the sub-query, you can run your query against
+{{%nba-link%}}specimen/metadata/explainNameResolution{{%/nba-link%}}. The output
+provides insight into the intermediate results, as well as the precise effect of
+the different query parameters.
+
+<!--
 Furthermore, the identification block features taxonomic
 enrichments. Taxonomic enrichments basically hold synonyms for species
 name, scientific name, but also for names of higher level taxa. The
@@ -286,6 +339,8 @@ include synonyms into the search:
 ```
 
 We will have multiple vampire bat specimen in the results.
+-->
+
 
 ## Multimedia
 A specimen record can link to one or more multimedia items. Multimedia
