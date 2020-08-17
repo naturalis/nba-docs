@@ -267,6 +267,7 @@ resolution request, using {{%nba-link%}}specimen/metadata/queryWithNameResolutio
       "searchString" : "badger",
       "nameTypes" : [ "VERNACULAR_NAME" ],
       "matchWholeWords" : true,
+      "useCoL" : false,
       "size" : 100
    },
   "size": 1000
@@ -275,10 +276,17 @@ resolution request, using {{%nba-link%}}specimen/metadata/queryWithNameResolutio
 
 We will get a complete set of badger-specimen in the results.
 
+When `useCoL` is set to true, the service will find scientific names by matching
+the search string against the Catalogue of Life name usage API (https://api.catalogue.life/nameusage),
+rather than by querying the Dutch Species Register and a local copy of the 
+Catalogue of Life. As the external service searches more recent data, this might
+improve results. But also be aware that when `useCoL` is set to true, your query
+is partly dependent on an external service the availability of which we have no
+direct control over.
+
 Please note that the `nameResolutionRequest` currently only supports MATCHES 
 and CONTAINS (`matchWholeWords : true` or `false`), which means that you may
 get a wide array of matching names in your results.
-
 
 To gain insight in the inner workings of `nameResolutionRequest` and see the
 results of the sub-query, you can run your query against
