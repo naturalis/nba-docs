@@ -33,7 +33,7 @@ types that are interlinked:
 * A **Specimen** record can represent a biological (botanical or
   zoological) or geological entity stored at Naturalis. Also, records from the
   bird sound database [Xeno-canto](https://www.xeno-canto.org/) and species 
-  occurrences in the Netherlands from [Observation International](https://observation.org/) 
+  occurrences from [Observation International](https://observation.org/) 
   are stored as specimen objects. Specimen data
   usually comprise information on preservation, identification,
   classification, taxonomy (see below), and details about the
@@ -41,7 +41,7 @@ types that are interlinked:
   information. Specimen data are harvested from -- currently -- two in-house
   collection registration systems for animal and plant specimens,
   and the [Xeno-canto](https://www.xeno-canto.org/) and 
-  https://observation.org/ databases (both hosted at Naturalis).
+  [Observation.org](https://observation.org/) databases (both hosted at Naturalis).
 * **Taxonomic** information about a biological entity is provided in
   Taxon the taxon data type, comprising hierarchy and placement in the
   Tree of Life, information on synonymy and the mapping to common
@@ -54,10 +54,10 @@ types that are interlinked:
   fields such as scientific or common taxon names.
 * **Multimedia** data store images (such as photos, drawings or sonograms), 
   videos, and sounds that are
-  associated with Specimen and Taxon data.  Data sources are our
+  associated with Specimen and Taxon data. Data sources are our
   in-house collection registration systems, 
-  the [Xeno-canto](https://www.xeno-canto.org/) database and the
-  [NSR](http://www.nederlandsesoorten.nl/).
+  the [Xeno-canto](https://www.xeno-canto.org/) and [Observation International](https://observation.org/) 
+  databases and the [NSR](http://www.nederlandsesoorten.nl/).
 * Objects of type **GeoArea** refer to geographical regions coded as
   polygons in the GeoJSON format.  The NBA thereby facilitates
   geographical searches such as searching for all specimens that were
