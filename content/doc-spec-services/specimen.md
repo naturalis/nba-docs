@@ -26,7 +26,7 @@ main data sources, (i) the CRS (Collection Registration System for
 zoological and geological specimens), (ii) BRAHMS
 (http://herbaria.plants.ox.ac.uk/bol/) for botanical specimen
 including fungi, (iii) the [Xeno-canto](https://www.xeno-canto.org/) database
-of bird sounds, and (iv) species occurrences in the Netherlands from 
+of bird sounds, and (iv) species occurrences from 
 [Observation International](https://observation.org/).
 This information is stored in the path
 *sourceSystem.code*. The query
@@ -274,7 +274,7 @@ resolution request, using {{%nba-link%}}specimen/metadata/queryWithNameResolutio
 }
 ```
 
-We will get a complete set of badger-specimen in the results.
+We will get a complete set of badger-specimens in the results.
 
 When `useCoL` is set to true, the service will find scientific names by matching
 the search string against the Catalogue of Life name usage API (https://api.catalogue.life/nameusage),

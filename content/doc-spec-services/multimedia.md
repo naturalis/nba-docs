@@ -7,16 +7,14 @@ weight: 60
 Naturalis stores a vast amount of multimedia in its internal document store. This can be multimedia captured from 
 physical specimens (e.g. photos of a specimen), but also from human observations (e.g. audio recordings of bird sounds).
 Digitisation of Naturalis museum objects include a detailed photographic documentation. So far, there are more than 
-5 million photos and several houndreds of thousands of bird sounds.
+13 million photos and several hundreds of thousands of bird sounds.
 
 ## Base URL
 The base URL for multimedia-specific services is {{%nba-link-text%}}multimedia{{%/nba-link-text%}}
 
 ## Data Source Systems
-Most multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, 
-and most are plant photos. In 2018, we added the records from [Xeno-canto](https://www.xeno-canto.org/), 
-the most comprehensive database of bird sounds to date. A small fraction items is retrieved from the [Dutch Species Register](http://www.nederlandsesoorten.nl/). As for 
-the other data types, the source system can be retrieved by querying the fields `sourceSystem.code` and `sourceSystem.name`. 
+Multimedia data are retrieved from our in-house registration systems for botanical (BRAHMS) or zoological/geological (CRS) specimens, and from our external partner Observation International. In 2018, we added the records from [Xeno-canto](https://www.xeno-canto.org/), 
+the most comprehensive database of bird sounds to date. A small fraction of items is retrieved from the [Dutch Species Register](http://www.nederlandsesoorten.nl/). 
 
 ## Available services
 
@@ -97,6 +95,6 @@ Among the results we find for instance this nice drawing of *Phalacrocorax arist
 </figure>
 
 ## Licensing
-Each multimedia item is published under a copyright license. Licenses can be accessed by the fields licenseType 
+License details for each multimedia item can be accessed by the fields licenseType 
 and license. Most of them are published under one of the [Creative Commons licenses](https://creativecommons.org/).
 
