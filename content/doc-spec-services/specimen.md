@@ -242,68 +242,9 @@ synonyms and/or vernacular names in the Catalogue of Life and the Dutch
 Species Register. From the resulting records, scientific names are 
 extracted, which are subsequently used for the main specimen search. 
 Example:
-When we're not sure of the accepted scientific name of the European
-badger, we could search directly for specimen that contain 'badger' as
-part of the specimen record, using {{%nba-link%}}specimen/metadata/query{{%/nba-link%}}:
-
-```JSON
-{
-  "conditions" : [
-    { "field" : "identifications.vernacularNames.name", "operator" : "MATCHES", "value" : "badger" }
-  ],
-  "size": 1000
-}
-```
-
-However, as the `vernacularNames` field is not mandatory, the query 
-returns only a small number of records. If we, however, employ the name
-resolution request, using {{%nba-link%}}specimen/metadata/queryWithNameResolution{{%/nba-link%}}:
-
-```JSON
-{
-  "conditions": [],
-  "nameResolutionRequest" : 
-    {
-      "searchString" : "badger",
-      "nameTypes" : [ "VERNACULAR_NAME" ],
-      "matchWholeWords" : true,
-      "useCoL" : false,
-      "size" : 100
-   },
-  "size": 1000
-}
-```
-
-We will get a complete set of badger-specimens in the results.
-
-When `useCoL` is set to true, the service will find scientific names by matching
-the search string against the Catalogue of Life name usage API (https://api.catalogue.life/nameusage),
-rather than by querying the Dutch Species Register and a local copy of the 
-Catalogue of Life. As the external service searches more recent data, this might
-improve results. But also be aware that when `useCoL` is set to true, your query
-is partly dependent on an external service the availability of which we have no
-direct control over.
-
-Please note that the `nameResolutionRequest` currently only supports MATCHES 
-and CONTAINS (`matchWholeWords : true` or `false`), which means that you may
-get a wide array of matching names in your results.
-
-To gain insight in the inner workings of `nameResolutionRequest` and see the
-results of the sub-query, you can run your query against
-{{%nba-link%}}specimen/metadata/explainNameResolution{{%/nba-link%}}. The output
-provides insight into the intermediate results, as well as the precise effect of
-the different query parameters.
-
-<!--
-Furthermore, the identification block features taxonomic
-enrichments. Taxonomic enrichments basically hold synonyms for species
-name, scientific name, but also for names of higher level taxa. The
-synonyms are extracted from the Catalogue of Life and the Dutch
-Species Register. This allows for taxonomic name resolution.  Example:
 The common vampire bat was previously classified as *Phyllostoma
 rotundum* but now the accepted scientific name is *Desmodus
 rotondus*. If we search for the previous name:
-
 ```JSON
 {
   "conditions": [
@@ -321,33 +262,27 @@ rotondus*. If we search for the previous name:
 ```
 
 We won’t find any specimens of the vampire bat. If we, however,
-include synonyms into the search:
+include a nameResolutionRequest-clause, the search will include
+synonyms into the search as well, using {{%nba-link%}}specimen/metadata/queryWithNameResolution{{%/nba-link%}}:
 
 ```JSON
 {
-  "conditions": [
-    {
-      "field": "identifications.scientificName.fullScientificName",
-      "operator": "MATCHES",
-      "value": "Phyllostoma rotundum",
-      "or": [
-        {
-          "field": "identifications.taxonomicEnrichments.synonyms.fullScientificName",
-          "operator": "MATCHES",
-          "value": "Phyllostoma rotundum"
-        }
-      ]
+    "conditions": [ ],
+    "nameResolutionRequest": {
+        "searchString": "Phyllostoma rotundum",
+        "nameTypes": [
+            "ACCEPTED_NAME",
+            "SYNONYM"
+        ],
+        "searchType": "STARTS_WITH",
+        "useCoL": false,
+        "fuzzyMatching": false,
+        "from": 0,
+        "size": 100
     }
-  ],
-  "fields": [
-    "identifications.scientificName.fullScientificName"
-  ],
-  "size": 1000
 }
 ```
-
 We will have multiple vampire bat specimen in the results.
--->
 
 
 ## Multimedia
