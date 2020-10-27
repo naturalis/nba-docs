@@ -3,6 +3,11 @@ title: Known issues
 weight: 100
 ---
 
+* 27-10-2020: When using a `nameResolutionRequest` clause with the `queryWithNameResolution` endpoint,
+  the query generates an error when `useCoL` is set to `true` and `nameTypes` contains the value
+  `VERNACULAR_NAME`. You can still look up vernacular names using the internal resolver, by setting
+  `useCoL` to `false`.
+
 * 12-08-2019: For taxon records imported from *Species 2000 - Catalogue of life*, the
   link in the field `recordURI` resolves to the general Catalogue of life search page instead
   of the taxon detail page. 
