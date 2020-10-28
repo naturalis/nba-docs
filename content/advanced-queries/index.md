@@ -538,6 +538,16 @@ Here is the
 [entire query (URL encoded)]({{%nba-link-text%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.country/?_querySpec=%7B%20%20%20%22conditions%22%20%3A%20%5B%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.kingdom%22%2C%20%22operator%22%20%3A%20%22EQUALS_IC%22%2C%20%22value%22%20%3A%20%22Animalia%22%20%7D%20%20%20%5D%2C%0A%20%20%22size%22%3A%2010%0A%7D).
 
 
+### Correctly interpreting frequencies
+Please note that when executing aggregation queries, different frequencies may sometimes
+be returned for the same variable when altering the value of the size parameter. This is
+an effect of the distributed architecture of  the underlying datastore. When choosing a 
+value for the size parameter that is smaller than the unique number of terms you are
+aggregating on, there is a chance the reported frequencies are too low. Increasing size
+can help minimize the effect, but as a rule, the frequencies in the output of the 
+aggregation functions are not to be considered exact values. If you need an exact count,
+it is advised to use a regular search query and count the returned documents.
+
 
 ## Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain
