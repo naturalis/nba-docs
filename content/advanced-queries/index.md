@@ -510,8 +510,36 @@ To see how many different values for *sex* there is per collection, we can query
 
 {{%nba-link%}}specimen/countDistinctValuesPerGroup/collectionType/sex{{%/nba-link%}}
 
+### Combining aggregations and the _querySpec parameter
+All aggregation functions can be combined with a _querySpec parameter to add further detail to your query. For
+instance, to get the frequency of gathering event-countries per collection type, taking into account only
+specimens from the kingdom Animalia, and restricting ourselves to the first ten collections, we can combine the
+aggregation query
 
-### Scientific Name Groups
+{{%nba-link%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.country?_querySpec={{%/nba-link%}}
+
+with the QueryObject:
+
+
+```JSON
+{
+    "conditions": [
+        {
+            "field": "identifications.defaultClassification.kingdom",
+            "operator": "EQUALS_IC",
+            "value": "Animalia"
+        }
+    ],
+    "size": 10
+}
+```
+
+Here is the
+[entire query (URL encoded)]({{%nba-link-text%}}specimen/getDistinctValuesPerGroup/collectionType/gatheringEvent.country/?_querySpec=%7B%20%20%20%22conditions%22%20%3A%20%5B%20%20%20%20%20%7B%20%22field%22%20%3A%20%22identifications.defaultClassification.kingdom%22%2C%20%22operator%22%20%3A%20%22EQUALS_IC%22%2C%20%22value%22%20%3A%20%22Animalia%22%20%7D%20%20%20%5D%2C%0A%20%20%22size%22%3A%2010%0A%7D).
+
+
+
+## Scientific Name Groups
 The identification of a museum specimen is its assignment to a certain
 taxon of a certain rank (e.g. species or subspecies) and the taxon
 must be defined in some taxonomic reference resource. The concept of
