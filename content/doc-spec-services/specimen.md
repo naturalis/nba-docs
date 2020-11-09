@@ -44,11 +44,38 @@ which accepts human-readable query strings and JSON encoded
 [QuerySpec](/advanced-queries/#queryspec) parameters.
 
 #### Retrieving large quantities of data
-Note that the query service is limited to a maximum of 10.000 rercords to retrieve
-with one query. For larger quantities, we offer a *download* service which returns the
-data as a gzipped JSON stream. For example, retrieving the entire botany collection, 
-the {{%swagger-ui-link text="/specimen/download"%}}#/specimen/downloadQueryHttpGet_1{{%/swagger-ui-link%}},  
-service can be used. 
+Note that the query service is limited to a maximum of 10.000 records to retrieve
+with one query. For larger quantities, we offer two services that can return the complete set of
+records matching your query: a *download* service, and a *BatchQuery* service.
+
+### Download service
+The *download* service returns records as a gzipped JSON stream. For example, retrieving the entire botany collection, 
+the {{%swagger-ui-link text="/specimen/download"%}}#/specimen/download{{%/swagger-ui-link%}} service can be used with the
+query
+```JSON
+{
+  "conditions" : [
+    { "field" : "collectionType", "operator" : "=", "value" : "Botany" }
+  ]
+}
+```
+
+### BatchQuery service
+To retrieve results in batches, use the *BatchQuery* service. This service returns the number of records indicated
+by the *size* parameter, as well as a token. This token can be used to retrieve subsequent batches, until a token is no
+longer present in the returned result, in which case you have retrieved the last available batch.
+For example, retrieving the entire botany collection, the {{%swagger-ui-link text="/specimen/batchQuery"%}}#/specimen/batchQuery{{%/swagger-ui-link%}}
+service can be used with the initial query:
+```JSON
+{
+  "conditions" : [
+    { "field" : "collectionType", "operator" : "=", "value" : "Botany" }
+  ].
+  "size" : 1000
+}
+```
+The results will include a token, which can be used in subsequent requests using the parameter *_token* instead of the *_querySpec* parameter.
+
 
 ### Data access 
 Several access methods offer the convenient retrieval
