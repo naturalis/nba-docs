@@ -70,7 +70,7 @@ service can be used with the initial query:
 {
   "conditions" : [
     { "field" : "collectionType", "operator" : "=", "value" : "Botany" }
-  ].
+  ],
   "size" : 1000
 }
 ```
