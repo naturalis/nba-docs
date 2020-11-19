@@ -311,6 +311,13 @@ synonyms into the search as well, using {{%nba-link%}}specimen/metadata/queryWit
 ```
 We will have multiple vampire bat specimen in the results.
 
+Please note: by setting the parameter `useCoL` to _true_, the service tries to look up
+the name specified by `searchString` using an external service of the Catalogue of Life.
+Currently, this only works for the name types `ACCEPTED_NAME` and `SYNONYM`. Trying to
+resolve a name of type `VERNACULAR_NAME` will cause an error when `useCoL` is set to _true_.
+However, when `useCoL` is _false_, the service will access the internal taxon index to
+look up the specified name , which supports all three name types, including `VERNACULAR_NAME`.
+
 
 ## Multimedia
 A specimen record can link to one or more multimedia items. Multimedia
